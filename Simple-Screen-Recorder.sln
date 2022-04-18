@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple-Screen-Recorder", "Simple-Screen-Recorder.csproj", "{35D88775-EA30-4C6F-8C91-41F2F0E236B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35D88775-EA30-4C6F-8C91-41F2F0E236B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35D88775-EA30-4C6F-8C91-41F2F0E236B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35D88775-EA30-4C6F-8C91-41F2F0E236B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35D88775-EA30-4C6F-8C91-41F2F0E236B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEF65B21-1C58-499E-A758-958BE2934791}
+	EndGlobalSection
+EndGlobal
