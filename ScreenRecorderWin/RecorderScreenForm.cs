@@ -40,7 +40,7 @@ namespace Simple_Screen_Recorder
                 RecSpeaker();
             }
 
-            var process = Process.Start("cmd.exe", "/k ffmpeg -hide_banner -f gdigrab -show_region 1 -framerate 60 -i desktop -b:v 15000k Recordings/" + VideoName + "");
+            var process = Process.Start("cmd.exe", "/k ffmpeg -hide_banner -f gdigrab -framerate 60 -i desktop -crf 0 -preset medium -color_range 2 -b:v 15000k -tune zerolatency Recordings/" + VideoName + "");
             this.ProcessId = process.Id;
         }
 
@@ -56,7 +56,7 @@ namespace Simple_Screen_Recorder
             catch (Exception)
             {
 
-                MessageBox.Show("You are not recording anything!", "Error");
+                MessageBox.Show("You are not recording anything", "Error");
             }
         }
 
@@ -132,7 +132,7 @@ namespace Simple_Screen_Recorder
 
         private void mergeVideoAndDesktopAudioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MergeVidDesk NewMergeVD = new();
+            MergeVidDeskForm NewMergeVD = new();
             NewMergeVD.ShowDialog();
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)

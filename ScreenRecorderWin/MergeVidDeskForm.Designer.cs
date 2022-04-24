@@ -1,6 +1,6 @@
 ﻿namespace Simple_Screen_Recorder.ScreenRecorderWin
 {
-    partial class MergeVidDesk
+    partial class MergeVidDeskForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MergeVidDesk));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MergeVidDeskForm));
             this.BtnMergeAll = new System.Windows.Forms.Button();
             this.txtAudioDesk = new System.Windows.Forms.TextBox();
             this.txtVideoPath = new System.Windows.Forms.TextBox();
@@ -45,9 +45,9 @@
             this.BtnMergeAll.ForeColor = System.Drawing.Color.Transparent;
             this.BtnMergeAll.Image = global::Simple_Screen_Recorder.Properties.Resources.mixing_button;
             this.BtnMergeAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMergeAll.Location = new System.Drawing.Point(44, 142);
+            this.BtnMergeAll.Location = new System.Drawing.Point(55, 139);
             this.BtnMergeAll.Name = "BtnMergeAll";
-            this.BtnMergeAll.Size = new System.Drawing.Size(125, 33);
+            this.BtnMergeAll.Size = new System.Drawing.Size(125, 39);
             this.BtnMergeAll.TabIndex = 13;
             this.BtnMergeAll.Text = "Start mixing";
             this.BtnMergeAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -111,16 +111,16 @@
             this.btnOutputF.ForeColor = System.Drawing.Color.Transparent;
             this.btnOutputF.Image = global::Simple_Screen_Recorder.Properties.Resources.folder_button;
             this.btnOutputF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOutputF.Location = new System.Drawing.Point(186, 142);
+            this.btnOutputF.Location = new System.Drawing.Point(197, 139);
             this.btnOutputF.Name = "btnOutputF";
-            this.btnOutputF.Size = new System.Drawing.Size(125, 33);
+            this.btnOutputF.Size = new System.Drawing.Size(125, 39);
             this.btnOutputF.TabIndex = 14;
             this.btnOutputF.Text = "Output folder";
             this.btnOutputF.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnOutputF.UseVisualStyleBackColor = true;
             this.btnOutputF.Click += new System.EventHandler(this.btnOutputF_Click);
             // 
-            // MergeVidDesk
+            // MergeVidDeskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,7 +136,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(400, 260);
             this.MaximizeBox = false;
-            this.Name = "MergeVidDesk";
+            this.Name = "MergeVidDeskForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Merge video and system sounds";
             this.Load += new System.EventHandler(this.MergeVD_Load);

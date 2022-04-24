@@ -3,9 +3,9 @@ using System.IO;
 
 namespace Simple_Screen_Recorder.ScreenRecorderWin
 {
-    public partial class MergeVidDesk : Form
+    public partial class MergeVidDeskForm : Form
     {
-        public MergeVidDesk()
+        public MergeVidDeskForm()
         {
             InitializeComponent();
         }
