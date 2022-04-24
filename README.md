@@ -5,7 +5,7 @@
 
 <h2 align="center">Install</h2>
 <p align="center">
-  Windows 7, 8.1, 10 | v1.0.2 (82.5 MB) | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.0.1/Simple-Screen-Recorder-Release-Portable.exe">Download</a><br><br>
+  Windows 7, 8.1, 10 | v1.0.2 (82.5 MB) | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.0.2/Simple-Screen-Recorder-Release-Portable.exe">Download</a><br><br>
   Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime">.Net 6.0</a><br><br>
   <a href="https://postimg.cc/"><img src="https://i.postimg.cc/hjpJFcBs/main-Screen-Inventory.png"></a>
 </p>
