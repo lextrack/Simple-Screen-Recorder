@@ -8,7 +8,7 @@ namespace Simple_Screen_Recorder
 {
     public partial class RecorderScreenForm
     {
-        private DateTime Tiempo = new DateTime();
+        private DateTime TimeRec = new DateTime();
         private string VideoName = "";
 
         public RecorderScreenForm()
@@ -27,7 +27,7 @@ namespace Simple_Screen_Recorder
         public void btnStartRecording_Click(object sender, EventArgs e)
         {
             LbTimer.ForeColor = Color.IndianRed;
-            Tiempo = DateTime.Now;
+            TimeRec = DateTime.Now;
             RecState.Enabled = true;
             VideoName = "Video." + Strings.Format(DateTime.Now, "dd-MM-yyyy.HH.mm.ss") + ".avi";
             if (RadioTwoTrack.Checked == true)
@@ -42,6 +42,8 @@ namespace Simple_Screen_Recorder
 
             var process = Process.Start("cmd.exe", "/k ffmpeg -hide_banner -f gdigrab -framerate 60 -i desktop -crf 0 -preset medium -color_range 2 -b:v 15000k -tune zerolatency Recordings/" + VideoName + "");
             this.ProcessId = process.Id;
+
+            btnStartRecording.Enabled = false;
         }
 
         private void BtnStop_Click(object sender, EventArgs e)
@@ -58,6 +60,8 @@ namespace Simple_Screen_Recorder
 
                 MessageBox.Show("You are not recording anything", "Error");
             }
+
+            btnStartRecording.Enabled=true;
         }
 
         public void StopRec()
@@ -115,7 +119,7 @@ namespace Simple_Screen_Recorder
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            var Difference = DateTime.Now.Subtract(Tiempo);
+            var Difference = DateTime.Now.Subtract(TimeRec);
             LbTimer.Text = "Rec: " + Difference.Hours.ToString() + ":" + Difference.Minutes.ToString() + ":" + Difference.Seconds.ToString();
         }
 

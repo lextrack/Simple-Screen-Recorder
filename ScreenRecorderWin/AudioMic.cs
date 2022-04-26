@@ -2,7 +2,7 @@
 using NAudio.Wave;
 using System.IO;
 
-namespace Simple_Screen_Recorder
+namespace Simple_Screen_Recorder.ScreenRecorderWin
 {
     public class AudioMic
     {
