@@ -24,6 +24,7 @@ namespace Simple_Screen_Recorder
             ComboBox2.DataSource = AudioDesktop.cboDIspositivos.DataSource;
         }
         public int ProcessId { get; private set; }
+
         public void btnStartRecording_Click(object sender, EventArgs e)
         {
             LbTimer.ForeColor = Color.IndianRed;
@@ -40,7 +41,8 @@ namespace Simple_Screen_Recorder
                 RecSpeaker();
             }
 
-            var process = Process.Start("cmd.exe", "/k ffmpeg -hide_banner -f gdigrab -framerate 60 -i desktop -crf 0 -preset medium -color_range 2 -b:v 15000k -tune zerolatency Recordings/" + VideoName + "");
+
+            var process = Process.Start("cmd.exe", "/k ffmpeg -hide_banner -loglevel quiet -f gdigrab -framerate 60 -i desktop -crf 0 -preset medium -color_range 2 -b:v 15000k -tune zerolatency Recordings/" + VideoName + "");
             this.ProcessId = process.Id;
 
             btnStartRecording.Enabled = false;
