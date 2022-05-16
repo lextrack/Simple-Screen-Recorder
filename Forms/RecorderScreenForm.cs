@@ -1,5 +1,8 @@
-using Microsoft.VisualBasic;
+﻿using Microsoft.VisualBasic;
 using NAudio.Wave;
+using Simple_Screen_Recorder.Forms;
+using Simple_Screen_Recorder.Langs;
+using Simple_Screen_Recorder.Properties;
 using Simple_Screen_Recorder.ScreenRecorderWin;
 using System.Diagnostics;
 using System.IO;
@@ -22,6 +25,7 @@ namespace Simple_Screen_Recorder
             ComboBox1.DataSource = AudioMic.cboDIspositivos.DataSource;
             AudioDesktop.OpenComp();
             ComboBox2.DataSource = AudioDesktop.cboDIspositivos.DataSource;
+            GetTextsMain();
         }
         public int ProcessId { get; private set; }
 
@@ -60,10 +64,10 @@ namespace Simple_Screen_Recorder
             catch (Exception)
             {
 
-                MessageBox.Show("You are not recording anything", "Error");
+                MessageBox.Show(StringsEN.message1, "Error");
             }
 
-            btnStartRecording.Enabled=true;
+            btnStartRecording.Enabled = true;
         }
 
         public void StopRec()
@@ -143,9 +147,51 @@ namespace Simple_Screen_Recorder
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            About NewAbout = new();
+            AboutForm NewAbout = new();
             NewAbout.ShowDialog();
         }
 
+        private void GetTextsMain()
+        {
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Settings.Default.Languages);
+            Label2.Text = StringsEN.Label2;
+            aboutToolStripMenuItem.Text = StringsEN.aboutToolStripMenuItem;
+            BtnExit.Text = StringsEN.BtnExit;
+            btnStartRecording.Text = StringsEN.btnStartRecording;
+            BtnStop.Text = StringsEN.BtnStop;
+            Label4.Text = StringsEN.Label4;
+            Label5.Text = StringsEN.Label5;
+            label6.Text = StringsEN.Label6;
+            label7.Text = StringsEN.Label7;
+            languagesToolStripMenuItem.Text = StringsEN.languagesToolStripMenuItem;
+            mergeVideoAndDesktopAudioToolStripMenuItem.Text = StringsEN.mergeVideoAndDesktopAudioToolStripMenuItem;
+            mergeVideoDesktopAndMicAudioToolStripMenuItem.Text = StringsEN.mergeVideoDesktopAndMicAudioToolStripMenuItem;
+            RadioDesktop.Text = StringsEN.RadioDesktop;
+            RadioTwoTrack.Text = StringsEN.RadioTwoTrack;
+            remuxToolStripMenuItem.Text = StringsEN.remuxToolStripMenuItem;
+        }
+
+        private void españolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Languages = "es-ES";
+            GetTextsMain();
+        }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Languages = "en-US";
+            GetTextsMain();
+        }
+
+        private void RecorderScreenForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Settings.Default.Save();
+        }
+
+        private void 中文简体ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Languages = "zh-CN";
+            GetTextsMain();
+        }
     }
 }

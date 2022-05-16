@@ -45,9 +45,9 @@
             this.BtnMergeAll.ForeColor = System.Drawing.Color.Transparent;
             this.BtnMergeAll.Image = global::Simple_Screen_Recorder.Properties.Resources.mixing_button;
             this.BtnMergeAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMergeAll.Location = new System.Drawing.Point(55, 139);
+            this.BtnMergeAll.Location = new System.Drawing.Point(79, 144);
             this.BtnMergeAll.Name = "BtnMergeAll";
-            this.BtnMergeAll.Size = new System.Drawing.Size(125, 39);
+            this.BtnMergeAll.Size = new System.Drawing.Size(140, 39);
             this.BtnMergeAll.TabIndex = 13;
             this.BtnMergeAll.Text = "Start mixing";
             this.BtnMergeAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -56,16 +56,16 @@
             // 
             // txtAudioDesk
             // 
-            this.txtAudioDesk.Location = new System.Drawing.Point(186, 57);
+            this.txtAudioDesk.Location = new System.Drawing.Point(237, 59);
             this.txtAudioDesk.Name = "txtAudioDesk";
-            this.txtAudioDesk.Size = new System.Drawing.Size(189, 23);
+            this.txtAudioDesk.Size = new System.Drawing.Size(210, 23);
             this.txtAudioDesk.TabIndex = 10;
             // 
             // txtVideoPath
             // 
-            this.txtVideoPath.Location = new System.Drawing.Point(186, 18);
+            this.txtVideoPath.Location = new System.Drawing.Point(237, 20);
             this.txtVideoPath.Name = "txtVideoPath";
-            this.txtVideoPath.Size = new System.Drawing.Size(189, 23);
+            this.txtVideoPath.Size = new System.Drawing.Size(210, 23);
             this.txtVideoPath.TabIndex = 9;
             // 
             // BtnDeskAudio
@@ -77,11 +77,11 @@
             this.BtnDeskAudio.ForeColor = System.Drawing.Color.Transparent;
             this.BtnDeskAudio.Image = global::Simple_Screen_Recorder.Properties.Resources.sound_waves_button;
             this.BtnDeskAudio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDeskAudio.Location = new System.Drawing.Point(12, 51);
+            this.BtnDeskAudio.Location = new System.Drawing.Point(12, 49);
             this.BtnDeskAudio.Name = "BtnDeskAudio";
-            this.BtnDeskAudio.Size = new System.Drawing.Size(168, 33);
+            this.BtnDeskAudio.Size = new System.Drawing.Size(219, 41);
             this.BtnDeskAudio.TabIndex = 8;
-            this.BtnDeskAudio.Text = "Select system sounds";
+            this.BtnDeskAudio.Text = "Select a system sound file";
             this.BtnDeskAudio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnDeskAudio.UseVisualStyleBackColor = true;
             this.BtnDeskAudio.Click += new System.EventHandler(this.BtnDeskAudio_Click);
@@ -95,11 +95,12 @@
             this.BtnVideo.ForeColor = System.Drawing.Color.Transparent;
             this.BtnVideo.Image = global::Simple_Screen_Recorder.Properties.Resources.video_button;
             this.BtnVideo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnVideo.Location = new System.Drawing.Point(12, 12);
+            this.BtnVideo.Location = new System.Drawing.Point(12, 10);
             this.BtnVideo.Name = "BtnVideo";
-            this.BtnVideo.Size = new System.Drawing.Size(168, 33);
+            this.BtnVideo.Size = new System.Drawing.Size(219, 41);
             this.BtnVideo.TabIndex = 7;
-            this.BtnVideo.Text = "Select video";
+            this.BtnVideo.Text = "Select a video file";
+            this.BtnVideo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnVideo.UseVisualStyleBackColor = true;
             this.BtnVideo.Click += new System.EventHandler(this.BtnVideo_Click);
             // 
@@ -111,9 +112,9 @@
             this.btnOutputF.ForeColor = System.Drawing.Color.Transparent;
             this.btnOutputF.Image = global::Simple_Screen_Recorder.Properties.Resources.folder_button;
             this.btnOutputF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOutputF.Location = new System.Drawing.Point(197, 139);
+            this.btnOutputF.Location = new System.Drawing.Point(225, 144);
             this.btnOutputF.Name = "btnOutputF";
-            this.btnOutputF.Size = new System.Drawing.Size(125, 39);
+            this.btnOutputF.Size = new System.Drawing.Size(140, 39);
             this.btnOutputF.TabIndex = 14;
             this.btnOutputF.Text = "Output folder";
             this.btnOutputF.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -125,7 +126,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(386, 187);
+            this.ClientSize = new System.Drawing.Size(458, 195);
             this.Controls.Add(this.btnOutputF);
             this.Controls.Add(this.BtnMergeAll);
             this.Controls.Add(this.txtAudioDesk);
@@ -136,9 +137,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(400, 260);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MergeVidDeskForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Merge video and system sounds";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MergeVidDeskForm_FormClosed);
             this.Load += new System.EventHandler(this.MergeVD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

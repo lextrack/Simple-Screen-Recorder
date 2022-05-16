@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using Simple_Screen_Recorder.Langs;
+using Simple_Screen_Recorder.Properties;
 
 namespace Simple_Screen_Recorder.ScreenRecorderWin
 {
@@ -12,7 +14,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
 
         private void MergeVDM_Load(object sender, EventArgs e)
         {
-
+            GetTextsMainAllMerge();
         }
 
         private void BtnMergeAll_Click(object sender, EventArgs e)
@@ -55,6 +57,21 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
         private void btnOutputF_Click(object sender, EventArgs e)
         {
             Process.Start("explorer.exe", Application.StartupPath);
+        }
+
+        private void GetTextsMainAllMerge()
+        {
+            this.Text = StringsEN.titleMerge2;
+            BtnVideo2.Text = StringsEN.BtnVideo2;
+            BtnDeskAudio2.Text = StringsEN.BtnDeskAudio2;
+            BtnMergeAll2.Text = StringsEN.BtnMergeAll2;
+            btnOutputF2.Text = StringsEN.btnOutputF2;
+            BtnMicAudio.Text = StringsEN.BtnMicAudio;
+        }
+
+        private void MergeAllForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Settings.Default.Save();
         }
     }
 }

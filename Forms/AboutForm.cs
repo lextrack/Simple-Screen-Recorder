@@ -1,8 +1,8 @@
 ﻿namespace Simple_Screen_Recorder.ScreenRecorderWin
 {
-    public partial class About : Form
+    public partial class AboutForm : Form
     {
-        public About()
+        public AboutForm()
         {
             InitializeComponent();
         }

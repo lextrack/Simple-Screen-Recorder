@@ -58,6 +58,10 @@ namespace Simple_Screen_Recorder
             this.mergeVideoAndDesktopAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mergeVideoDesktopAndMicAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.languagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.españolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.中文简体ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +71,7 @@ namespace Simple_Screen_Recorder
             this.RadioTwoTrack.Checked = true;
             this.RadioTwoTrack.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RadioTwoTrack.ForeColor = System.Drawing.SystemColors.Control;
-            this.RadioTwoTrack.Location = new System.Drawing.Point(16, 195);
+            this.RadioTwoTrack.Location = new System.Drawing.Point(25, 198);
             this.RadioTwoTrack.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RadioTwoTrack.Name = "RadioTwoTrack";
             this.RadioTwoTrack.Size = new System.Drawing.Size(279, 24);
@@ -81,13 +85,13 @@ namespace Simple_Screen_Recorder
             this.RadioDesktop.AutoSize = true;
             this.RadioDesktop.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RadioDesktop.ForeColor = System.Drawing.SystemColors.Control;
-            this.RadioDesktop.Location = new System.Drawing.Point(16, 225);
+            this.RadioDesktop.Location = new System.Drawing.Point(25, 228);
             this.RadioDesktop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RadioDesktop.Name = "RadioDesktop";
-            this.RadioDesktop.Size = new System.Drawing.Size(124, 24);
+            this.RadioDesktop.Size = new System.Drawing.Size(156, 24);
             this.RadioDesktop.TabIndex = 22;
             this.RadioDesktop.TabStop = true;
-            this.RadioDesktop.Text = "System sounds";
+            this.RadioDesktop.Text = "Only system sounds";
             this.RadioDesktop.UseVisualStyleBackColor = true;
             // 
             // Label2
@@ -95,7 +99,7 @@ namespace Simple_Screen_Recorder
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label2.ForeColor = System.Drawing.Color.SkyBlue;
-            this.Label2.Location = new System.Drawing.Point(16, 31);
+            this.Label2.Location = new System.Drawing.Point(25, 34);
             this.Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(96, 30);
@@ -111,10 +115,10 @@ namespace Simple_Screen_Recorder
             this.BtnStop.ForeColor = System.Drawing.Color.Transparent;
             this.BtnStop.Image = global::Simple_Screen_Recorder.Properties.Resources.stop_button;
             this.BtnStop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnStop.Location = new System.Drawing.Point(16, 111);
+            this.BtnStop.Location = new System.Drawing.Point(25, 113);
             this.BtnStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnStop.Name = "BtnStop";
-            this.BtnStop.Size = new System.Drawing.Size(158, 39);
+            this.BtnStop.Size = new System.Drawing.Size(167, 39);
             this.BtnStop.TabIndex = 20;
             this.BtnStop.Text = "Stop Recording";
             this.BtnStop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -130,13 +134,13 @@ namespace Simple_Screen_Recorder
             this.btnStartRecording.ForeColor = System.Drawing.Color.Transparent;
             this.btnStartRecording.Image = global::Simple_Screen_Recorder.Properties.Resources.record_button;
             this.btnStartRecording.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStartRecording.Location = new System.Drawing.Point(16, 66);
+            this.btnStartRecording.Location = new System.Drawing.Point(25, 68);
             this.btnStartRecording.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnStartRecording.Name = "btnStartRecording";
             this.btnStartRecording.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnStartRecording.Size = new System.Drawing.Size(158, 39);
+            this.btnStartRecording.Size = new System.Drawing.Size(167, 39);
             this.btnStartRecording.TabIndex = 19;
-            this.btnStartRecording.Text = "Star Recording";
+            this.btnStartRecording.Text = "Start Recording";
             this.btnStartRecording.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStartRecording.UseVisualStyleBackColor = true;
             this.btnStartRecording.Click += new System.EventHandler(this.btnStartRecording_Click);
@@ -146,7 +150,7 @@ namespace Simple_Screen_Recorder
             this.LbTimer.AutoSize = true;
             this.LbTimer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LbTimer.ForeColor = System.Drawing.Color.Black;
-            this.LbTimer.Location = new System.Drawing.Point(13, 422);
+            this.LbTimer.Location = new System.Drawing.Point(22, 425);
             this.LbTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LbTimer.Name = "LbTimer";
             this.LbTimer.Size = new System.Drawing.Size(50, 25);
@@ -158,7 +162,7 @@ namespace Simple_Screen_Recorder
             this.Label5.AutoSize = true;
             this.Label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.Label5.Location = new System.Drawing.Point(12, 351);
+            this.Label5.Location = new System.Drawing.Point(21, 354);
             this.Label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(171, 20);
@@ -170,7 +174,7 @@ namespace Simple_Screen_Recorder
             this.Label4.AutoSize = true;
             this.Label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.Label4.Location = new System.Drawing.Point(12, 291);
+            this.Label4.Location = new System.Drawing.Point(21, 294);
             this.Label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(89, 20);
@@ -182,10 +186,10 @@ namespace Simple_Screen_Recorder
             this.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ComboBox2.FormattingEnabled = true;
-            this.ComboBox2.Location = new System.Drawing.Point(13, 374);
+            this.ComboBox2.Location = new System.Drawing.Point(22, 377);
             this.ComboBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBox2.Name = "ComboBox2";
-            this.ComboBox2.Size = new System.Drawing.Size(274, 25);
+            this.ComboBox2.Size = new System.Drawing.Size(282, 25);
             this.ComboBox2.TabIndex = 37;
             // 
             // ComboBox1
@@ -193,10 +197,10 @@ namespace Simple_Screen_Recorder
             this.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ComboBox1.FormattingEnabled = true;
-            this.ComboBox1.Location = new System.Drawing.Point(13, 314);
+            this.ComboBox1.Location = new System.Drawing.Point(22, 317);
             this.ComboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBox1.Name = "ComboBox1";
-            this.ComboBox1.Size = new System.Drawing.Size(275, 25);
+            this.ComboBox1.Size = new System.Drawing.Size(282, 25);
             this.ComboBox1.TabIndex = 36;
             // 
             // RecState
@@ -208,7 +212,7 @@ namespace Simple_Screen_Recorder
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.SkyBlue;
-            this.label6.Location = new System.Drawing.Point(13, 160);
+            this.label6.Location = new System.Drawing.Point(22, 163);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(156, 30);
@@ -220,7 +224,7 @@ namespace Simple_Screen_Recorder
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.SkyBlue;
-            this.label7.Location = new System.Drawing.Point(12, 258);
+            this.label7.Location = new System.Drawing.Point(21, 261);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(154, 30);
@@ -236,10 +240,10 @@ namespace Simple_Screen_Recorder
             this.BtnExit.ForeColor = System.Drawing.Color.Transparent;
             this.BtnExit.Image = global::Simple_Screen_Recorder.Properties.Resources.log_out_button;
             this.BtnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnExit.Location = new System.Drawing.Point(165, 417);
+            this.BtnExit.Location = new System.Drawing.Point(174, 420);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(122, 39);
+            this.BtnExit.Size = new System.Drawing.Size(130, 39);
             this.BtnExit.TabIndex = 42;
             this.BtnExit.Text = "     Exit";
             this.BtnExit.UseVisualStyleBackColor = true;
@@ -251,10 +255,11 @@ namespace Simple_Screen_Recorder
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.remuxToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.languagesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(300, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(325, 25);
             this.menuStrip1.TabIndex = 43;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -263,14 +268,16 @@ namespace Simple_Screen_Recorder
             this.remuxToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mergeVideoAndDesktopAudioToolStripMenuItem,
             this.mergeVideoDesktopAndMicAudioToolStripMenuItem});
-            this.remuxToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.remuxToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.remuxToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.remuxToolStripMenuItem.Name = "remuxToolStripMenuItem";
-            this.remuxToolStripMenuItem.Size = new System.Drawing.Size(126, 21);
+            this.remuxToolStripMenuItem.Size = new System.Drawing.Size(127, 21);
             this.remuxToolStripMenuItem.Text = "Merge media files";
             // 
             // mergeVideoAndDesktopAudioToolStripMenuItem
             // 
             this.mergeVideoAndDesktopAudioToolStripMenuItem.BackColor = System.Drawing.Color.Gray;
+            this.mergeVideoAndDesktopAudioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mergeVideoAndDesktopAudioToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.mergeVideoAndDesktopAudioToolStripMenuItem.Name = "mergeVideoAndDesktopAudioToolStripMenuItem";
             this.mergeVideoAndDesktopAudioToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
@@ -280,6 +287,7 @@ namespace Simple_Screen_Recorder
             // mergeVideoDesktopAndMicAudioToolStripMenuItem
             // 
             this.mergeVideoDesktopAndMicAudioToolStripMenuItem.BackColor = System.Drawing.Color.Gray;
+            this.mergeVideoDesktopAndMicAudioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mergeVideoDesktopAndMicAudioToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.mergeVideoDesktopAndMicAudioToolStripMenuItem.Name = "mergeVideoDesktopAndMicAudioToolStripMenuItem";
             this.mergeVideoDesktopAndMicAudioToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
@@ -288,18 +296,61 @@ namespace Simple_Screen_Recorder
             // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.aboutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.aboutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(55, 21);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // languagesToolStripMenuItem
+            // 
+            this.languagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.españolToolStripMenuItem,
+            this.englishToolStripMenuItem,
+            this.中文简体ToolStripMenuItem});
+            this.languagesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.languagesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.languagesToolStripMenuItem.Name = "languagesToolStripMenuItem";
+            this.languagesToolStripMenuItem.Size = new System.Drawing.Size(85, 21);
+            this.languagesToolStripMenuItem.Text = "Languages";
+            // 
+            // españolToolStripMenuItem
+            // 
+            this.españolToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.españolToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.españolToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.españolToolStripMenuItem.Name = "españolToolStripMenuItem";
+            this.españolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.españolToolStripMenuItem.Text = "Español";
+            this.españolToolStripMenuItem.Click += new System.EventHandler(this.españolToolStripMenuItem_Click);
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.englishToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.englishToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.englishToolStripMenuItem.Text = "English";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // 中文简体ToolStripMenuItem
+            // 
+            this.中文简体ToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.中文简体ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.中文简体ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.中文简体ToolStripMenuItem.Name = "中文简体ToolStripMenuItem";
+            this.中文简体ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.中文简体ToolStripMenuItem.Text = "中文(简体)";
+            this.中文简体ToolStripMenuItem.Click += new System.EventHandler(this.中文简体ToolStripMenuItem_Click);
             // 
             // RecorderScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(300, 463);
+            this.ClientSize = new System.Drawing.Size(325, 463);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -322,6 +373,7 @@ namespace Simple_Screen_Recorder
             this.Name = "RecorderScreenForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simple Screen Recorder";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RecorderScreenForm_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -348,5 +400,9 @@ namespace Simple_Screen_Recorder
         private ToolStripMenuItem mergeVideoAndDesktopAudioToolStripMenuItem;
         private ToolStripMenuItem mergeVideoDesktopAndMicAudioToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
+        private ToolStripMenuItem languagesToolStripMenuItem;
+        private ToolStripMenuItem españolToolStripMenuItem;
+        private ToolStripMenuItem englishToolStripMenuItem;
+        private ToolStripMenuItem 中文简体ToolStripMenuItem;
     }
 }
