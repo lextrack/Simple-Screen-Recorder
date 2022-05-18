@@ -108,7 +108,7 @@ namespace Simple_Screen_Recorder
         {
             AudioMic.Cleanup();
             AudioMic.CreateWaveInDevice();
-            AudioMic.outputFilename = "AudioMic." + Strings.Format(DateTime.Now, "dd-MM-yyyy.HH.mm.ss") + ".wav";
+            AudioMic.outputFilename = "AudioMicrophone." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
             AudioMic.writer = new WaveFileWriter(Path.Combine(AudioMic.outputFolder, AudioMic.outputFilename), AudioMic.waveIn.WaveFormat);
             AudioMic.waveIn.StartRecording();
         }
@@ -118,7 +118,7 @@ namespace Simple_Screen_Recorder
             AudioDesktop.Cleanup();
             AudioDesktop.CreateWaveInDevice();
             GrabadorPantalla.My.MyProject.Computer.Audio.Play("Background.wav", AudioPlayMode.BackgroundLoop);
-            AudioDesktop.outputFilename = "AudioSystem." + Strings.Format(DateTime.Now, "dd-MM-yyyy.HH.mm.ss") + ".wav";
+            AudioDesktop.outputFilename = "AudioSystem." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
             AudioDesktop.writer = new WaveFileWriter(Path.Combine(AudioDesktop.outputFolder, AudioDesktop.outputFilename), AudioDesktop.waveIn.WaveFormat);
             AudioDesktop.waveIn.StartRecording();
         }
@@ -183,15 +183,21 @@ namespace Simple_Screen_Recorder
             GetTextsMain();
         }
 
-        private void RecorderScreenForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Settings.Default.Save();
-        }
-
         private void 中文简体ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Settings.Default.Languages = "zh-CN";
             GetTextsMain();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Languages = "pt-BR";
+            GetTextsMain();
+        }
+
+        private void RecorderScreenForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Settings.Default.Save();
         }
     }
 }

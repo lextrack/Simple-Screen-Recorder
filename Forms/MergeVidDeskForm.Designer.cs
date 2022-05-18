@@ -45,7 +45,7 @@
             this.BtnMergeAll.ForeColor = System.Drawing.Color.Transparent;
             this.BtnMergeAll.Image = global::Simple_Screen_Recorder.Properties.Resources.mixing_button;
             this.BtnMergeAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMergeAll.Location = new System.Drawing.Point(79, 144);
+            this.BtnMergeAll.Location = new System.Drawing.Point(91, 144);
             this.BtnMergeAll.Name = "BtnMergeAll";
             this.BtnMergeAll.Size = new System.Drawing.Size(140, 39);
             this.BtnMergeAll.TabIndex = 13;
@@ -112,7 +112,7 @@
             this.btnOutputF.ForeColor = System.Drawing.Color.Transparent;
             this.btnOutputF.Image = global::Simple_Screen_Recorder.Properties.Resources.folder_button;
             this.btnOutputF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOutputF.Location = new System.Drawing.Point(225, 144);
+            this.btnOutputF.Location = new System.Drawing.Point(237, 144);
             this.btnOutputF.Name = "btnOutputF";
             this.btnOutputF.Size = new System.Drawing.Size(140, 39);
             this.btnOutputF.TabIndex = 14;
@@ -135,7 +135,7 @@
             this.Controls.Add(this.BtnVideo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Location = new System.Drawing.Point(400, 260);
+            this.Location = new System.Drawing.Point(310, 256);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MergeVidDeskForm";

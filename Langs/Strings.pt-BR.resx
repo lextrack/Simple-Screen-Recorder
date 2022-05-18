@@ -118,84 +118,84 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="aboutToolStripMenuItem" xml:space="preserve">
-    <value>Acerca de</value>
+    <value>Sobre o</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
-    <value>Seleccionar audio del sistema</value>
+    <value>Selecionar áudio do sistema</value>
   </data>
   <data name="BtnDeskAudio2" xml:space="preserve">
-    <value>Seleccionar audio del sistema</value>
+    <value>Selecionar áudio do sistema</value>
   </data>
   <data name="BtnExit" xml:space="preserve">
-    <value>Salir</value>
+    <value>Sair</value>
   </data>
   <data name="BtnMergeAll" xml:space="preserve">
-    <value>Mezclar archivos</value>
+    <value>Misturar arquivos</value>
   </data>
   <data name="BtnMergeAll2" xml:space="preserve">
-    <value>Mezclar archivos</value>
+    <value>Misturar arquivos</value>
   </data>
   <data name="BtnMicAudio" xml:space="preserve">
-    <value>Seleccionar audio del micrófono</value>
+    <value>Selecione o áudio do microfone</value>
   </data>
   <data name="btnOutputF" xml:space="preserve">
-    <value>Carpeta de salida</value>
+    <value>Pasta de saída</value>
   </data>
   <data name="btnOutputF2" xml:space="preserve">
-    <value>Carpeta de salida</value>
+    <value>Pasta de saída</value>
   </data>
   <data name="btnStartRecording" xml:space="preserve">
-    <value>Iniciar Grabación</value>
+    <value>Comece a Gravar</value>
   </data>
   <data name="BtnStop" xml:space="preserve">
-    <value>Detener Grabación</value>
+    <value>Pare de Gravar</value>
   </data>
   <data name="BtnVideo" xml:space="preserve">
-    <value>Seleccionar un archivo de vídeo</value>
+    <value>Selecione um arquivo de vídeo</value>
   </data>
   <data name="BtnVideo2" xml:space="preserve">
-    <value>Seleccionar un archivo de vídeo</value>
+    <value>Selecione um arquivo de vídeo</value>
   </data>
   <data name="Label2" xml:space="preserve">
-    <value>Controles</value>
+    <value>Controles de gravação</value>
   </data>
   <data name="Label4" xml:space="preserve">
-    <value>Micrófonos</value>
+    <value>Microfones</value>
   </data>
   <data name="Label5" xml:space="preserve">
-    <value>Audios del sistema (parlantes o auriculares)</value>
+    <value>Selecione um sistema de áudio</value>
   </data>
   <data name="Label6" xml:space="preserve">
-    <value>Ajustes de audio</value>
+    <value>Configurações de áudio</value>
   </data>
   <data name="Label7" xml:space="preserve">
-    <value>Dispositivos de sonido</value>
+    <value>Dispositivos de som</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
-    <value>Idiomas</value>
+    <value>Línguas</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
-    <value>Mezclar solo el audio del sistema y vídeo</value>
+    <value>Misture apenas áudio e vídeo do sistema</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
-    <value>Mezclar todos los archivos</value>
+    <value>Misture todos os arquivos</value>
   </data>
   <data name="message1" xml:space="preserve">
-    <value>No estás grabando nada</value>
+    <value>Você não está registrando nada</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
-    <value>Solamente audio del sistema</value>
+    <value>Somente áudio do sistema</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
-    <value>Audio del sistema y micrófono</value>
+    <value>Áudio e microfone do sistema</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Mezclar archivos</value>
+    <value>Misturar arquivos</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>Mezclar solo vídeo y el audio de sistema</value>
+    <value>Misture apenas vídeo e áudio do sistema</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
-    <value>Mezclar todos los archivos</value>
+    <value>Misturar todos os arquivos</value>
   </data>
 </root>

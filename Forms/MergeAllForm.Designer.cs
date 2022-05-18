@@ -151,7 +151,7 @@
             this.Controls.Add(this.BtnVideo2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Location = new System.Drawing.Point(400, 260);
+            this.Location = new System.Drawing.Point(310, 256);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MergeAllForm";

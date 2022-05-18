@@ -121,19 +121,19 @@
     <value>关于本软件</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
-    <value>选择计算机音频</value>
+    <value>选择系统音频</value>
   </data>
   <data name="BtnDeskAudio2" xml:space="preserve">
-    <value>选择计算机音频</value>
+    <value>选择系统音频</value>
   </data>
   <data name="BtnExit" xml:space="preserve">
     <value>退出软件</value>
   </data>
   <data name="BtnMergeAll" xml:space="preserve">
-    <value>混合音频和视频文件</value>
+    <value>混合选定的文件</value>
   </data>
   <data name="BtnMergeAll2" xml:space="preserve">
-    <value>混合音频和视频文件</value>
+    <value>混合选定的文件</value>
   </data>
   <data name="BtnMicAudio" xml:space="preserve">
     <value>选择麦克风音频</value>
@@ -151,10 +151,10 @@
     <value>停止录影</value>
   </data>
   <data name="BtnVideo" xml:space="preserve">
-    <value>选择一个视频</value>
+    <value>选择一个视频文件</value>
   </data>
   <data name="BtnVideo2" xml:space="preserve">
-    <value>选择一个视频</value>
+    <value>选择一个视频文件</value>
   </data>
   <data name="Label2" xml:space="preserve">
     <value>控制措施</value>
@@ -163,7 +163,7 @@
     <value>显微镜</value>
   </data>
   <data name="Label5" xml:space="preserve">
-    <value>计算机音频（扬声器或耳机）</value>
+    <value>从系统中选择一个音频 （扬声器或耳机）</value>
   </data>
   <data name="Label6" xml:space="preserve">
     <value>音频设置</value>
@@ -184,16 +184,16 @@
     <value>你必须先按下录音按钮。</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
-    <value>仅计算机音频</value>
+    <value>仅限计算机音频</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
-    <value>计算机音频和麦克风</value>
+    <value>计算机音频和话筒</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>混合音频和视频文件</value>
+    <value>混合选定的文件</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>只混合计算机视频和音频</value>
+    <value>只混合来自计算机的视频和音频</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
     <value>混合所有文件</value>
