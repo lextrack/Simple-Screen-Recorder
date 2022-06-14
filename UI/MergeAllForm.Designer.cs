@@ -71,6 +71,7 @@
             // 
             // txtVideoPath
             // 
+            this.txtVideoPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVideoPath.Location = new System.Drawing.Point(236, 20);
             this.txtVideoPath.Name = "txtVideoPath";
             this.txtVideoPath.Size = new System.Drawing.Size(210, 23);
@@ -78,6 +79,7 @@
             // 
             // txtAudioDesk
             // 
+            this.txtAudioDesk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAudioDesk.Location = new System.Drawing.Point(236, 59);
             this.txtAudioDesk.Name = "txtAudioDesk";
             this.txtAudioDesk.Size = new System.Drawing.Size(210, 23);
@@ -85,6 +87,7 @@
             // 
             // txtAudioMic
             // 
+            this.txtAudioMic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAudioMic.Location = new System.Drawing.Point(236, 98);
             this.txtAudioMic.Name = "txtAudioMic";
             this.txtAudioMic.Size = new System.Drawing.Size(210, 23);
@@ -139,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(458, 195);
             this.Controls.Add(this.btnOutputF2);
             this.Controls.Add(this.BtnMergeAll2);
@@ -149,7 +152,7 @@
             this.Controls.Add(this.txtVideoPath);
             this.Controls.Add(this.BtnDeskAudio2);
             this.Controls.Add(this.BtnVideo2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(310, 256);
             this.MaximizeBox = false;

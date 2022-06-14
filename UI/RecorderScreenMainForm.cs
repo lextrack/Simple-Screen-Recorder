@@ -9,12 +9,12 @@ using System.IO;
 
 namespace Simple_Screen_Recorder
 {
-    public partial class RecorderScreenForm
+    public partial class RecorderScreenMainForm
     {
         private DateTime TimeRec = new DateTime();
         private string VideoName = "";
 
-        public RecorderScreenForm()
+        public RecorderScreenMainForm()
         {
             InitializeComponent();
         }
@@ -46,7 +46,7 @@ namespace Simple_Screen_Recorder
             }
 
 
-            var process = Process.Start("cmd.exe", "/k ffmpeg -hide_banner -loglevel quiet -f gdigrab -framerate 60 -i desktop -crf 0 -preset medium -color_range 2 -b:v 15000k -tune zerolatency Recordings/" + VideoName + "");
+            var process = Process.Start("cmd.exe", "/k ffmpeg -hide_banner -loglevel quiet -f gdigrab -framerate 60 -i desktop -crf 0 -preset medium -color_range 2 -b:v 10000k Recordings/" + VideoName + "");
             this.ProcessId = process.Id;
 
             btnStartRecording.Enabled = false;

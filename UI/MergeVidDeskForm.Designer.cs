@@ -56,6 +56,7 @@
             // 
             // txtAudioDesk
             // 
+            this.txtAudioDesk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAudioDesk.Location = new System.Drawing.Point(237, 59);
             this.txtAudioDesk.Name = "txtAudioDesk";
             this.txtAudioDesk.Size = new System.Drawing.Size(210, 23);
@@ -63,6 +64,7 @@
             // 
             // txtVideoPath
             // 
+            this.txtVideoPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVideoPath.Location = new System.Drawing.Point(237, 20);
             this.txtVideoPath.Name = "txtVideoPath";
             this.txtVideoPath.Size = new System.Drawing.Size(210, 23);
@@ -125,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(458, 195);
             this.Controls.Add(this.btnOutputF);
             this.Controls.Add(this.BtnMergeAll);
@@ -133,7 +135,7 @@
             this.Controls.Add(this.txtVideoPath);
             this.Controls.Add(this.BtnDeskAudio);
             this.Controls.Add(this.BtnVideo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(310, 256);
             this.MaximizeBox = false;

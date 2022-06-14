@@ -8,7 +8,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace Simple_Screen_Recorder
 {
     [DesignerGenerated()]
-    public partial class RecorderScreenForm : Form
+    public partial class RecorderScreenMainForm : Form
     {
 
         // Form overrides dispose to clean up the component list.
@@ -38,7 +38,7 @@ namespace Simple_Screen_Recorder
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecorderScreenForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecorderScreenMainForm));
             this.RadioTwoTrack = new System.Windows.Forms.RadioButton();
             this.RadioDesktop = new System.Windows.Forms.RadioButton();
             this.Label2 = new System.Windows.Forms.Label();
@@ -55,8 +55,8 @@ namespace Simple_Screen_Recorder
             this.BtnExit = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.remuxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mergeVideoAndDesktopAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mergeVideoDesktopAndMicAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mergeVideoAndDesktopAudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,6 +109,7 @@ namespace Simple_Screen_Recorder
             // 
             // BtnStop
             // 
+            this.BtnStop.FlatAppearance.BorderSize = 2;
             this.BtnStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
             this.BtnStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
             this.BtnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -119,7 +120,7 @@ namespace Simple_Screen_Recorder
             this.BtnStop.Location = new System.Drawing.Point(25, 113);
             this.BtnStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnStop.Name = "BtnStop";
-            this.BtnStop.Size = new System.Drawing.Size(308, 39);
+            this.BtnStop.Size = new System.Drawing.Size(308, 41);
             this.BtnStop.TabIndex = 20;
             this.BtnStop.Text = "Stop Recording";
             this.BtnStop.UseVisualStyleBackColor = true;
@@ -127,6 +128,7 @@ namespace Simple_Screen_Recorder
             // 
             // btnStartRecording
             // 
+            this.btnStartRecording.FlatAppearance.BorderSize = 2;
             this.btnStartRecording.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
             this.btnStartRecording.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
             this.btnStartRecording.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -138,7 +140,7 @@ namespace Simple_Screen_Recorder
             this.btnStartRecording.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnStartRecording.Name = "btnStartRecording";
             this.btnStartRecording.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnStartRecording.Size = new System.Drawing.Size(308, 39);
+            this.btnStartRecording.Size = new System.Drawing.Size(308, 41);
             this.btnStartRecording.TabIndex = 19;
             this.btnStartRecording.Text = "Start Recording";
             this.btnStartRecording.UseVisualStyleBackColor = true;
@@ -232,6 +234,7 @@ namespace Simple_Screen_Recorder
             // 
             // BtnExit
             // 
+            this.BtnExit.FlatAppearance.BorderSize = 2;
             this.BtnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
             this.BtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
             this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -265,23 +268,13 @@ namespace Simple_Screen_Recorder
             // remuxToolStripMenuItem
             // 
             this.remuxToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mergeVideoAndDesktopAudioToolStripMenuItem,
-            this.mergeVideoDesktopAndMicAudioToolStripMenuItem});
+            this.mergeVideoDesktopAndMicAudioToolStripMenuItem,
+            this.mergeVideoAndDesktopAudioToolStripMenuItem});
             this.remuxToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.remuxToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.remuxToolStripMenuItem.Name = "remuxToolStripMenuItem";
             this.remuxToolStripMenuItem.Size = new System.Drawing.Size(127, 21);
             this.remuxToolStripMenuItem.Text = "Merge media files";
-            // 
-            // mergeVideoAndDesktopAudioToolStripMenuItem
-            // 
-            this.mergeVideoAndDesktopAudioToolStripMenuItem.BackColor = System.Drawing.Color.Gray;
-            this.mergeVideoAndDesktopAudioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mergeVideoAndDesktopAudioToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.mergeVideoAndDesktopAudioToolStripMenuItem.Name = "mergeVideoAndDesktopAudioToolStripMenuItem";
-            this.mergeVideoAndDesktopAudioToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
-            this.mergeVideoAndDesktopAudioToolStripMenuItem.Text = "Merge video and system sounds";
-            this.mergeVideoAndDesktopAudioToolStripMenuItem.Click += new System.EventHandler(this.mergeVideoAndDesktopAudioToolStripMenuItem_Click);
             // 
             // mergeVideoDesktopAndMicAudioToolStripMenuItem
             // 
@@ -292,6 +285,16 @@ namespace Simple_Screen_Recorder
             this.mergeVideoDesktopAndMicAudioToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.mergeVideoDesktopAndMicAudioToolStripMenuItem.Text = "Merge all media";
             this.mergeVideoDesktopAndMicAudioToolStripMenuItem.Click += new System.EventHandler(this.mergeVideoDesktopAndMicAudioToolStripMenuItem_Click);
+            // 
+            // mergeVideoAndDesktopAudioToolStripMenuItem
+            // 
+            this.mergeVideoAndDesktopAudioToolStripMenuItem.BackColor = System.Drawing.Color.Gray;
+            this.mergeVideoAndDesktopAudioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mergeVideoAndDesktopAudioToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.mergeVideoAndDesktopAudioToolStripMenuItem.Name = "mergeVideoAndDesktopAudioToolStripMenuItem";
+            this.mergeVideoAndDesktopAudioToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
+            this.mergeVideoAndDesktopAudioToolStripMenuItem.Text = "Merge video and system sounds";
+            this.mergeVideoAndDesktopAudioToolStripMenuItem.Click += new System.EventHandler(this.mergeVideoAndDesktopAudioToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -355,11 +358,11 @@ namespace Simple_Screen_Recorder
             this.中文简体ToolStripMenuItem.Text = "中文(简体)";
             this.中文简体ToolStripMenuItem.Click += new System.EventHandler(this.中文简体ToolStripMenuItem_Click);
             // 
-            // RecorderScreenForm
+            // RecorderScreenMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(357, 476);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.label7);
@@ -375,12 +378,12 @@ namespace Simple_Screen_Recorder
             this.Controls.Add(this.BtnStop);
             this.Controls.Add(this.btnStartRecording);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
-            this.Name = "RecorderScreenForm";
+            this.Name = "RecorderScreenMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simple Screen Recorder";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RecorderScreenForm_FormClosed);
