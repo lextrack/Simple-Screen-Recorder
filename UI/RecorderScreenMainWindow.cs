@@ -132,7 +132,7 @@ namespace Simple_Screen_Recorder
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            Application.Exit();
         }
 
         private void mergeVideoDesktopAndMicAudioToolStripMenuItem_Click(object sender, EventArgs e)
