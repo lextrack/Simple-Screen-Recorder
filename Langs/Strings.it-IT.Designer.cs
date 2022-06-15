@@ -22,24 +22,24 @@ namespace Simple_Screen_Recorder.Langs {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class StringsIT {
+    public class Strings_it_ITT {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal StringsIT() {
+        internal Strings_it_ITT() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Simple_Screen_Recorder.Langs.Strings", typeof(StringsIT).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Simple_Screen_Recorder.Langs.Strings.it-ITT", typeof(Strings_it_ITT).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace Simple_Screen_Recorder.Langs {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,25 +63,88 @@ namespace Simple_Screen_Recorder.Langs {
         /// <summary>
         ///   Looks up a localized string similar to Info programma.
         /// </summary>
-        internal static string aboutToolStripMenuItem {
+        public static string aboutToolStripMenuItem {
             get {
                 return ResourceManager.GetString("aboutToolStripMenuItem", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Seleziona file audio.
+        /// </summary>
+        public static string BtnDeskAudio {
+            get {
+                return ResourceManager.GetString("BtnDeskAudio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selezione file audio sistema.
+        /// </summary>
+        public static string BtnDeskAudio2 {
+            get {
+                return ResourceManager.GetString("BtnDeskAudio2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Esci.
         /// </summary>
-        internal static string BtnExit {
+        public static string BtnExit {
             get {
                 return ResourceManager.GetString("BtnExit", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Avvia mixing.
+        /// </summary>
+        public static string BtnMergeAll {
+            get {
+                return ResourceManager.GetString("BtnMergeAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avvia mixing.
+        /// </summary>
+        public static string BtnMergeAll2 {
+            get {
+                return ResourceManager.GetString("BtnMergeAll2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seleziona file audio mic.
+        /// </summary>
+        public static string BtnMicAudio {
+            get {
+                return ResourceManager.GetString("BtnMicAudio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cartella destinazione.
+        /// </summary>
+        public static string btnOutputF {
+            get {
+                return ResourceManager.GetString("btnOutputF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cartella destinazione.
+        /// </summary>
+        public static string btnOutputF2 {
+            get {
+                return ResourceManager.GetString("btnOutputF2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Avvia registrazione.
         /// </summary>
-        internal static string btnStartRecording {
+        public static string btnStartRecording {
             get {
                 return ResourceManager.GetString("btnStartRecording", resourceCulture);
             }
@@ -90,16 +153,34 @@ namespace Simple_Screen_Recorder.Langs {
         /// <summary>
         ///   Looks up a localized string similar to Stop registrazione.
         /// </summary>
-        internal static string BtnStop {
+        public static string BtnStop {
             get {
                 return ResourceManager.GetString("BtnStop", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Seleziona file video.
+        /// </summary>
+        public static string BtnVideo {
+            get {
+                return ResourceManager.GetString("BtnVideo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seleziona file video.
+        /// </summary>
+        public static string BtnVideo2 {
+            get {
+                return ResourceManager.GetString("BtnVideo2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Controlli.
         /// </summary>
-        internal static string Label2 {
+        public static string Label2 {
             get {
                 return ResourceManager.GetString("Label2", resourceCulture);
             }
@@ -108,7 +189,7 @@ namespace Simple_Screen_Recorder.Langs {
         /// <summary>
         ///   Looks up a localized string similar to Microfono.
         /// </summary>
-        internal static string Label4 {
+        public static string Label4 {
             get {
                 return ResourceManager.GetString("Label4", resourceCulture);
             }
@@ -117,7 +198,7 @@ namespace Simple_Screen_Recorder.Langs {
         /// <summary>
         ///   Looks up a localized string similar to Audio sistema (altoparlanti).
         /// </summary>
-        internal static string Label5 {
+        public static string Label5 {
             get {
                 return ResourceManager.GetString("Label5", resourceCulture);
             }
@@ -126,7 +207,7 @@ namespace Simple_Screen_Recorder.Langs {
         /// <summary>
         ///   Looks up a localized string similar to Impostazioni audio.
         /// </summary>
-        internal static string Label6 {
+        public static string Label6 {
             get {
                 return ResourceManager.GetString("Label6", resourceCulture);
             }
@@ -135,7 +216,7 @@ namespace Simple_Screen_Recorder.Langs {
         /// <summary>
         ///   Looks up a localized string similar to Dispositivi audio.
         /// </summary>
-        internal static string Label7 {
+        public static string Label7 {
             get {
                 return ResourceManager.GetString("Label7", resourceCulture);
             }
@@ -144,16 +225,16 @@ namespace Simple_Screen_Recorder.Langs {
         /// <summary>
         ///   Looks up a localized string similar to Lingua.
         /// </summary>
-        internal static string languagesToolStripMenuItem {
+        public static string languagesToolStripMenuItem {
             get {
                 return ResourceManager.GetString("languagesToolStripMenuItem", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unisci video e audio di sistema.
+        ///   Looks up a localized string similar to Unisci video e audio sistema.
         /// </summary>
-        internal static string mergeVideoAndDesktopAudioToolStripMenuItem {
+        public static string mergeVideoAndDesktopAudioToolStripMenuItem {
             get {
                 return ResourceManager.GetString("mergeVideoAndDesktopAudioToolStripMenuItem", resourceCulture);
             }
@@ -162,7 +243,7 @@ namespace Simple_Screen_Recorder.Langs {
         /// <summary>
         ///   Looks up a localized string similar to Unisci tutti i media.
         /// </summary>
-        internal static string mergeVideoDesktopAndMicAudioToolStripMenuItem {
+        public static string mergeVideoDesktopAndMicAudioToolStripMenuItem {
             get {
                 return ResourceManager.GetString("mergeVideoDesktopAndMicAudioToolStripMenuItem", resourceCulture);
             }
@@ -171,16 +252,16 @@ namespace Simple_Screen_Recorder.Langs {
         /// <summary>
         ///   Looks up a localized string similar to Non stai registrando nulla.
         /// </summary>
-        internal static string message1 {
+        public static string message1 {
             get {
                 return ResourceManager.GetString("message1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Audio sistema.
+        ///   Looks up a localized string similar to Solo audio sistema.
         /// </summary>
-        internal static string RadioDesktop {
+        public static string RadioDesktop {
             get {
                 return ResourceManager.GetString("RadioDesktop", resourceCulture);
             }
@@ -189,106 +270,36 @@ namespace Simple_Screen_Recorder.Langs {
         /// <summary>
         ///   Looks up a localized string similar to Audio sistema e audio microfono.
         /// </summary>
-        internal static string RadioTwoTrack {
+        public static string RadioTwoTrack {
             get {
                 return ResourceManager.GetString("RadioTwoTrack", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unisci file multimediali.
+        ///   Looks up a localized string similar to Unisci file media.
         /// </summary>
-        internal static string remuxToolStripMenuItem {
+        public static string remuxToolStripMenuItem {
             get {
                 return ResourceManager.GetString("remuxToolStripMenuItem", resourceCulture);
             }
         }
-
-        internal static string BtnVideo
-        {
-            get
-            {
-                return ResourceManager.GetString("BtnVideo", resourceCulture);
-            }
-        }
-
-        internal static string BtnDeskAudio
-        {
-            get
-            {
-                return ResourceManager.GetString("BtnDeskAudio", resourceCulture);
-            }
-        }
-
-        internal static string BtnMergeAll
-        {
-            get
-            {
-                return ResourceManager.GetString("BtnMergeAll", resourceCulture);
-            }
-        }
-
-        internal static string btnOutputF
-        {
-            get
-            {
-                return ResourceManager.GetString("btnOutputF", resourceCulture);
-            }
-        }
-
-        internal static string titleMerge1
-        {
-            get
-            {
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unisci video ed audio sistema.
+        /// </summary>
+        public static string titleMerge1 {
+            get {
                 return ResourceManager.GetString("titleMerge1", resourceCulture);
             }
         }
-
-        internal static string titleMerge2
-        {
-            get
-            {
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unisci tutti i media.
+        /// </summary>
+        public static string titleMerge2 {
+            get {
                 return ResourceManager.GetString("titleMerge2", resourceCulture);
-            }
-        }
-
-        internal static string BtnVideo2
-        {
-            get
-            {
-                return ResourceManager.GetString("BtnVideo2", resourceCulture);
-            }
-        }
-
-        internal static string BtnDeskAudio2
-        {
-            get
-            {
-                return ResourceManager.GetString("BtnDeskAudio2", resourceCulture);
-            }
-        }
-
-        internal static string BtnMergeAll2
-        {
-            get
-            {
-                return ResourceManager.GetString("BtnMergeAll2", resourceCulture);
-            }
-        }
-
-        internal static string btnOutputF2
-        {
-            get
-            {
-                return ResourceManager.GetString("btnOutputF2", resourceCulture);
-            }
-        }
-
-        internal static string BtnMicAudio
-        {
-            get
-            {
-                return ResourceManager.GetString("BtnMicAudio", resourceCulture);
             }
         }
     }

@@ -10,9 +10,9 @@ namespace GrabadorPantalla.My
         internal partial class MyForms
         {
             [EditorBrowsable(EditorBrowsableState.Never)]
-            public RecorderScreenMainForm m_Form1;
+            public RecorderScreenMainWindow m_Form1;
 
-            public RecorderScreenMainForm Form1
+            public RecorderScreenMainWindow Form1
             {
                 [DebuggerHidden]
                 get

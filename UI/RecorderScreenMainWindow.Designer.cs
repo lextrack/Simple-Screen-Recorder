@@ -8,7 +8,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace Simple_Screen_Recorder
 {
     [DesignerGenerated()]
-    public partial class RecorderScreenMainForm : Form
+    public partial class RecorderScreenMainWindow : Form
     {
 
         // Form overrides dispose to clean up the component list.
@@ -38,7 +38,7 @@ namespace Simple_Screen_Recorder
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecorderScreenMainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecorderScreenMainWindow));
             this.RadioTwoTrack = new System.Windows.Forms.RadioButton();
             this.RadioDesktop = new System.Windows.Forms.RadioButton();
             this.Label2 = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@ namespace Simple_Screen_Recorder
             this.españolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.中文简体ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.italianoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +77,7 @@ namespace Simple_Screen_Recorder
             this.RadioTwoTrack.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RadioTwoTrack.Name = "RadioTwoTrack";
             this.RadioTwoTrack.Size = new System.Drawing.Size(279, 24);
-            this.RadioTwoTrack.TabIndex = 23;
+            this.RadioTwoTrack.TabIndex = 3;
             this.RadioTwoTrack.TabStop = true;
             this.RadioTwoTrack.Text = "System sounds and microphone audio";
             this.RadioTwoTrack.UseVisualStyleBackColor = true;
@@ -90,7 +91,7 @@ namespace Simple_Screen_Recorder
             this.RadioDesktop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RadioDesktop.Name = "RadioDesktop";
             this.RadioDesktop.Size = new System.Drawing.Size(156, 24);
-            this.RadioDesktop.TabIndex = 22;
+            this.RadioDesktop.TabIndex = 4;
             this.RadioDesktop.TabStop = true;
             this.RadioDesktop.Text = "Only system sounds";
             this.RadioDesktop.UseVisualStyleBackColor = true;
@@ -121,7 +122,7 @@ namespace Simple_Screen_Recorder
             this.BtnStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnStop.Name = "BtnStop";
             this.BtnStop.Size = new System.Drawing.Size(308, 41);
-            this.BtnStop.TabIndex = 20;
+            this.BtnStop.TabIndex = 2;
             this.BtnStop.Text = "Stop Recording";
             this.BtnStop.UseVisualStyleBackColor = true;
             this.BtnStop.Click += new System.EventHandler(this.BtnStop_Click);
@@ -141,7 +142,7 @@ namespace Simple_Screen_Recorder
             this.btnStartRecording.Name = "btnStartRecording";
             this.btnStartRecording.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnStartRecording.Size = new System.Drawing.Size(308, 41);
-            this.btnStartRecording.TabIndex = 19;
+            this.btnStartRecording.TabIndex = 1;
             this.btnStartRecording.Text = "Start Recording";
             this.btnStartRecording.UseVisualStyleBackColor = true;
             this.btnStartRecording.Click += new System.EventHandler(this.btnStartRecording_Click);
@@ -191,7 +192,7 @@ namespace Simple_Screen_Recorder
             this.ComboBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBox2.Name = "ComboBox2";
             this.ComboBox2.Size = new System.Drawing.Size(311, 25);
-            this.ComboBox2.TabIndex = 37;
+            this.ComboBox2.TabIndex = 6;
             // 
             // ComboBox1
             // 
@@ -202,7 +203,7 @@ namespace Simple_Screen_Recorder
             this.ComboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboBox1.Name = "ComboBox1";
             this.ComboBox1.Size = new System.Drawing.Size(311, 25);
-            this.ComboBox1.TabIndex = 36;
+            this.ComboBox1.TabIndex = 5;
             // 
             // RecState
             // 
@@ -311,7 +312,8 @@ namespace Simple_Screen_Recorder
             this.englishToolStripMenuItem,
             this.españolToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.中文简体ToolStripMenuItem});
+            this.中文简体ToolStripMenuItem,
+            this.italianoToolStripMenuItem});
             this.languagesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.languagesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.languagesToolStripMenuItem.Name = "languagesToolStripMenuItem";
@@ -358,7 +360,17 @@ namespace Simple_Screen_Recorder
             this.中文简体ToolStripMenuItem.Text = "中文(简体)";
             this.中文简体ToolStripMenuItem.Click += new System.EventHandler(this.中文简体ToolStripMenuItem_Click);
             // 
-            // RecorderScreenMainForm
+            // italianoToolStripMenuItem
+            // 
+            this.italianoToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.italianoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.italianoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
+            this.italianoToolStripMenuItem.Name = "italianoToolStripMenuItem";
+            this.italianoToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.italianoToolStripMenuItem.Text = "Italiano";
+            this.italianoToolStripMenuItem.Click += new System.EventHandler(this.italianoToolStripMenuItem_Click);
+            // 
+            // RecorderScreenMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -383,7 +395,7 @@ namespace Simple_Screen_Recorder
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
-            this.Name = "RecorderScreenMainForm";
+            this.Name = "RecorderScreenMainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simple Screen Recorder";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RecorderScreenForm_FormClosed);
@@ -418,5 +430,6 @@ namespace Simple_Screen_Recorder
         private ToolStripMenuItem englishToolStripMenuItem;
         private ToolStripMenuItem 中文简体ToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem italianoToolStripMenuItem;
     }
 }

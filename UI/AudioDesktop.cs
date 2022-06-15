@@ -2,7 +2,7 @@
 using NAudio.Wave;
 using System.IO;
 
-namespace Simple_Screen_Recorder.Forms
+namespace Simple_Screen_Recorder.UI
 {
     public class AudioDesktop
     {

@@ -1,20 +1,21 @@
 ﻿using Microsoft.VisualBasic;
 using NAudio.Wave;
-using Simple_Screen_Recorder.Forms;
 using Simple_Screen_Recorder.Langs;
 using Simple_Screen_Recorder.Properties;
 using Simple_Screen_Recorder.ScreenRecorderWin;
+using Simple_Screen_Recorder.UI;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace Simple_Screen_Recorder
 {
-    public partial class RecorderScreenMainForm
+    public partial class RecorderScreenMainWindow
     {
         private DateTime TimeRec = new DateTime();
         private string VideoName = "";
 
-        public RecorderScreenMainForm()
+        public RecorderScreenMainWindow()
         {
             InitializeComponent();
         }
@@ -34,7 +35,7 @@ namespace Simple_Screen_Recorder
             LbTimer.ForeColor = Color.IndianRed;
             TimeRec = DateTime.Now;
             RecState.Enabled = true;
-            VideoName = "Video." + Strings.Format(DateTime.Now, "dd-MM-yyyy.HH.mm.ss") + ".avi";
+            VideoName = "Video." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".avi";
             if (RadioTwoTrack.Checked == true)
             {
                 RecMic();
@@ -46,7 +47,7 @@ namespace Simple_Screen_Recorder
             }
 
 
-            var process = Process.Start("cmd.exe", "/k ffmpeg -hide_banner -loglevel quiet -f gdigrab -framerate 60 -i desktop -crf 0 -preset medium -color_range 2 -b:v 10000k Recordings/" + VideoName + "");
+            var process = Process.Start("cmd.exe", "/k ffmpeg -hide_banner -loglevel quiet -f gdigrab -framerate 60 -i desktop -crf 51 -preset veryfast -color_range 2 -b:v 16000k Recordings/" + VideoName + "");
             this.ProcessId = process.Id;
 
             btnStartRecording.Enabled = false;
@@ -137,19 +138,21 @@ namespace Simple_Screen_Recorder
         private void mergeVideoDesktopAndMicAudioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MergeAllForm NewMergeVDM = new();
-            NewMergeVDM.ShowDialog();
+            NewMergeVDM.Show();
         }
 
         private void mergeVideoAndDesktopAudioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MergeVidDeskForm NewMergeVD = new();
-            NewMergeVD.ShowDialog();
+            NewMergeVD.Show();
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutForm NewAbout = new();
             NewAbout.ShowDialog();
         }
+
+        #region TranslationCode
 
         private void GetTextsMain()
         {
@@ -194,6 +197,14 @@ namespace Simple_Screen_Recorder
             Settings.Default.Languages = "pt-BR";
             GetTextsMain();
         }
+
+        private void italianoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Languages = "it-IT";
+            GetTextsMain();
+        }
+
+        #endregion
 
         private void RecorderScreenForm_FormClosed(object sender, FormClosedEventArgs e)
         {
