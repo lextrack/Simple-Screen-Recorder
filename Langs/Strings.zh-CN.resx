@@ -157,10 +157,10 @@
     <value>选择一个视频文件</value>
   </data>
   <data name="Label2" xml:space="preserve">
-    <value>控制措施</value>
+    <value>视频录制控制</value>
   </data>
   <data name="Label4" xml:space="preserve">
-    <value>显微镜</value>
+    <value>选择一个话筒</value>
   </data>
   <data name="Label5" xml:space="preserve">
     <value>从系统中选择一个音频 （扬声器或耳机）</value>
@@ -190,7 +190,7 @@
     <value>计算机音频和话筒</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>混合选定的文件</value>
+    <value>合并媒体文件</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
     <value>只混合来自计算机的视频和音频</value>
