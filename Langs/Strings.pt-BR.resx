@@ -117,8 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutForm" xml:space="preserve">
+    <value>Sobre o software</value>
+  </data>
   <data name="aboutToolStripMenuItem" xml:space="preserve">
-    <value>Sobre o</value>
+    <value>Sobre o software</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>Selecionar áudio do sistema</value>
@@ -173,6 +176,16 @@
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Línguas</value>
+  </data>
+  <data name="LbAbout1" xml:space="preserve">
+    <value>Você pode encontrar este projeto no GitHub,
+seu nome é "Gravador de tela simples",e meu
+nome é "Lextrack". Fique alerta, haverá mais
+próximas atualizações!</value>
+  </data>
+  <data name="LbAbout2" xml:space="preserve">
+    <value>Este software é possível por 
+TutorialesVbNET e Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>Misture apenas áudio e vídeo do sistema</value>

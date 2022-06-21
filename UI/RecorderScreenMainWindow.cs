@@ -4,9 +4,12 @@ using Simple_Screen_Recorder.Langs;
 using Simple_Screen_Recorder.Properties;
 using Simple_Screen_Recorder.ScreenRecorderWin;
 using Simple_Screen_Recorder.UI;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
+using static System.Net.Mime.MediaTypeNames;
+using Application = System.Windows.Forms.Application;
 
 namespace Simple_Screen_Recorder
 {
@@ -30,7 +33,7 @@ namespace Simple_Screen_Recorder
         }
         public int ProcessId { get; private set; }
 
-        public void btnStartRecording_Click(object sender, EventArgs e)
+        private void btnStartRecording_Click(object sender, EventArgs e)
         {
             LbTimer.ForeColor = Color.IndianRed;
             TimeRec = DateTime.Now;
@@ -46,9 +49,11 @@ namespace Simple_Screen_Recorder
                 RecSpeaker();
             }
 
-
-            var process = Process.Start("cmd.exe", "/k ffmpeg -hide_banner -loglevel quiet -f gdigrab -framerate 60 -i desktop -crf 51 -preset veryfast -color_range 2 -b:v 16000k Recordings/" + VideoName + "");
-            this.ProcessId = process.Id;
+            ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -hide_banner -loglevel quiet -f gdigrab -framerate 60 -i desktop -crf 28 -preset faster -b:v 15000k Recordings/" + VideoName + "");
+            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+            ProcessId.CreateNoWindow = true;
+            ProcessId.RedirectStandardOutput = true;
+            Process.Start(ProcessId);
 
             btnStartRecording.Enabled = false;
         }
@@ -65,14 +70,13 @@ namespace Simple_Screen_Recorder
             catch (Exception)
             {
 
-                MessageBox.Show(StringsEN.message1, "Error");
+                return;
             }
-
-            btnStartRecording.Enabled = true;
         }
 
         public void StopRec()
         {
+            btnStartRecording.Enabled = true;
 
             if (RadioTwoTrack.Checked == true)
             {

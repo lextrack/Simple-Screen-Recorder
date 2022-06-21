@@ -291,5 +291,29 @@ namespace Simple_Screen_Recorder.Langs {
                 return ResourceManager.GetString("BtnMicAudio", resourceCulture);
             }
         }
+
+        internal static string AboutForm
+        {
+            get
+            {
+                return ResourceManager.GetString("AboutForm", resourceCulture);
+            }
+        }
+
+        internal static string LbAbout1
+        {
+            get
+            {
+                return ResourceManager.GetString("LbAbout1", resourceCulture);
+            }
+        }
+
+        internal static string LbAbout2
+        {
+            get
+            {
+                return ResourceManager.GetString("LbAbout2", resourceCulture);
+            }
+        }
     }
 }

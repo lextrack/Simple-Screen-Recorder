@@ -7,7 +7,7 @@ namespace Simple_Screen_Recorder.UI
     public class AudioDesktop
     {
 
-        // Public Shared Time As New DateTime
+ 
         public static IWaveIn waveIn;
         public static WaveFileWriter writer;
         public static string outputFilename;

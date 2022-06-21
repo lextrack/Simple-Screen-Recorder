@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutForm" xml:space="preserve">
+    <value>关于本软件</value>
+  </data>
   <data name="aboutToolStripMenuItem" xml:space="preserve">
     <value>关于本软件</value>
   </data>
@@ -173,6 +176,15 @@
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>语言</value>
+  </data>
+  <data name="LbAbout1" xml:space="preserve">
+    <value>你可以在GitHub上找到这个项目，它的名字是
+"Simple-Screen-Recorder"。而我的名字是
+"Lextrack"。请继续关注，很快会有更多的更新。</value>
+  </data>
+  <data name="LbAbout2" xml:space="preserve">
+    <value>这个软件是由于
+教程VbNET 和 Flaticon。</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>只混合计算机音频和视频</value>

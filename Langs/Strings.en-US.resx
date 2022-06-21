@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutForm" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="aboutToolStripMenuItem" xml:space="preserve">
     <value>About</value>
   </data>
@@ -173,6 +176,16 @@
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Languages</value>
+  </data>
+  <data name="LbAbout1" xml:space="preserve">
+    <value>You can find this project on GitHub, its name
+is "Simple-Screen-Recorder", and my nickname
+is "Lextrack". Keep an eye on this project, more
+updates coming soon!</value>
+  </data>
+  <data name="LbAbout2" xml:space="preserve">
+    <value>This software is made possible by
+TutorialesVbNET and Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>Merge video and system sounds</value>
