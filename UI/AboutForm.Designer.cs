@@ -68,7 +68,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 30);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Simple Screen Recorder\r\nv1.1.0";
+            this.label3.Text = "Simple Screen Recorder\r\nv1.1.1";
             // 
             // label2
             // 

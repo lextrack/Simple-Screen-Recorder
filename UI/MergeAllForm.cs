@@ -26,7 +26,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
         private void BtnVideo_Click(object sender, EventArgs e)
         {
             var archivo = new OpenFileDialog();
-            archivo.InitialDirectory = "Recordings";
+            archivo.InitialDirectory = Directory.GetCurrentDirectory();
             if (archivo.ShowDialog() == DialogResult.OK)
             {
                 txtVideoPath.Text = archivo.FileName;
@@ -36,7 +36,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
         private void BtnDeskAudio_Click(object sender, EventArgs e)
         {
             var archivo = new OpenFileDialog();
-            archivo.InitialDirectory = "Recordings";
+            archivo.InitialDirectory = Directory.GetCurrentDirectory();
             if (archivo.ShowDialog() == DialogResult.OK)
             {
                 txtAudioDesk.Text = archivo.FileName;
@@ -46,7 +46,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
         private void BtnMicAudio_Click(object sender, EventArgs e)
         {
             var archivo = new OpenFileDialog();
-            archivo.InitialDirectory = "Recordings";
+            archivo.InitialDirectory = Directory.GetCurrentDirectory();
             if (archivo.ShowDialog() == DialogResult.OK)
             {
                 txtAudioMic.Text = archivo.FileName;
