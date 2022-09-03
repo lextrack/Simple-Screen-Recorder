@@ -8,10 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Simple_Screen_Recorder.Langs {
+namespace Simple_Screen_Recorder.Langs
+{
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,184 +23,224 @@ namespace Simple_Screen_Recorder.Langs {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class StringsEN {
-        
+    internal class StringsEN
+    {
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal StringsEN() {
+        internal StringsEN()
+        {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if (object.ReferenceEquals(resourceMan, null)) {
+        internal static global::System.Resources.ResourceManager ResourceManager
+        {
+            get
+            {
+                if (object.ReferenceEquals(resourceMan, null))
+                {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Simple_Screen_Recorder.Langs.Strings", typeof(StringsEN).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
-            get {
+        internal static global::System.Globalization.CultureInfo Culture
+        {
+            get
+            {
                 return resourceCulture;
             }
-            set {
+            set
+            {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Acerca de.
         /// </summary>
-        internal static string aboutToolStripMenuItem {
-            get {
+        internal static string aboutToolStripMenuItem
+        {
+            get
+            {
                 return ResourceManager.GetString("aboutToolStripMenuItem", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
-        internal static string BtnExit {
-            get {
+        internal static string BtnExit
+        {
+            get
+            {
                 return ResourceManager.GetString("BtnExit", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Star Recording.
         /// </summary>
-        internal static string btnStartRecording {
-            get {
+        internal static string btnStartRecording
+        {
+            get
+            {
                 return ResourceManager.GetString("btnStartRecording", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Stop Recording.
         /// </summary>
-        internal static string BtnStop {
-            get {
+        internal static string BtnStop
+        {
+            get
+            {
                 return ResourceManager.GetString("BtnStop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Controls.
         /// </summary>
-        internal static string Label2 {
-            get {
+        internal static string Label2
+        {
+            get
+            {
                 return ResourceManager.GetString("Label2", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Microphone.
         /// </summary>
-        internal static string Label4 {
-            get {
+        internal static string Label4
+        {
+            get
+            {
                 return ResourceManager.GetString("Label4", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to System sounds (speaker).
         /// </summary>
-        internal static string Label5 {
-            get {
+        internal static string Label5
+        {
+            get
+            {
                 return ResourceManager.GetString("Label5", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Audio settings.
         /// </summary>
-        internal static string Label6 {
-            get {
+        internal static string Label6
+        {
+            get
+            {
                 return ResourceManager.GetString("Label6", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sound devices.
         /// </summary>
-        internal static string Label7 {
-            get {
+        internal static string Label7
+        {
+            get
+            {
                 return ResourceManager.GetString("Label7", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Languages.
         /// </summary>
-        internal static string languagesToolStripMenuItem {
-            get {
+        internal static string languagesToolStripMenuItem
+        {
+            get
+            {
                 return ResourceManager.GetString("languagesToolStripMenuItem", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Merge video and system sounds.
         /// </summary>
-        internal static string mergeVideoAndDesktopAudioToolStripMenuItem {
-            get {
+        internal static string mergeVideoAndDesktopAudioToolStripMenuItem
+        {
+            get
+            {
                 return ResourceManager.GetString("mergeVideoAndDesktopAudioToolStripMenuItem", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Merge all media.
         /// </summary>
-        internal static string mergeVideoDesktopAndMicAudioToolStripMenuItem {
-            get {
+        internal static string mergeVideoDesktopAndMicAudioToolStripMenuItem
+        {
+            get
+            {
                 return ResourceManager.GetString("mergeVideoDesktopAndMicAudioToolStripMenuItem", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to You are not recording anything.
         /// </summary>
-        internal static string message1 {
-            get {
+        internal static string message1
+        {
+            get
+            {
                 return ResourceManager.GetString("message1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to System sounds.
         /// </summary>
-        internal static string RadioDesktop {
-            get {
+        internal static string RadioDesktop
+        {
+            get
+            {
                 return ResourceManager.GetString("RadioDesktop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to System sounds and microphone audio.
         /// </summary>
-        internal static string RadioTwoTrack {
-            get {
+        internal static string RadioTwoTrack
+        {
+            get
+            {
                 return ResourceManager.GetString("RadioTwoTrack", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Merge media files.
         /// </summary>
-        internal static string remuxToolStripMenuItem {
-            get {
+        internal static string remuxToolStripMenuItem
+        {
+            get
+            {
                 return ResourceManager.GetString("remuxToolStripMenuItem", resourceCulture);
             }
         }
@@ -313,6 +354,14 @@ namespace Simple_Screen_Recorder.Langs {
             get
             {
                 return ResourceManager.GetString("LbAbout2", resourceCulture);
+            }
+        }
+
+        internal static string btnOutputRecordings
+        {
+            get
+            {
+                return ResourceManager.GetString("btnOutputRecordings", resourceCulture);
             }
         }
     }

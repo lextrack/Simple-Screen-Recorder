@@ -49,7 +49,7 @@ namespace Simple_Screen_Recorder
                 RecSpeaker();
             }
 
-            ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -hide_banner -loglevel quiet -f gdigrab -framerate 60 -i desktop -crf 28 -preset faster -b:v 15000k Recordings/" + VideoName + "");
+            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -hide_banner -loglevel quiet -f gdigrab -framerate 30 -i desktop -crf 18 -preset faster -b:v 10000k Recordings/" + VideoName + "");
             ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
             ProcessId.CreateNoWindow = true;
             ProcessId.RedirectStandardOutput = true;
@@ -176,6 +176,7 @@ namespace Simple_Screen_Recorder
             RadioDesktop.Text = StringsEN.RadioDesktop;
             RadioTwoTrack.Text = StringsEN.RadioTwoTrack;
             remuxToolStripMenuItem.Text = StringsEN.remuxToolStripMenuItem;
+            btnOutputRecordings.Text = StringsEN.btnOutputRecordings;
         }
 
         private void españolToolStripMenuItem_Click(object sender, EventArgs e)
@@ -213,6 +214,11 @@ namespace Simple_Screen_Recorder
         private void RecorderScreenForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Settings.Default.Save();
+        }
+
+        private void btnOutputRecordings_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", "Recordings");
         }
     }
 }

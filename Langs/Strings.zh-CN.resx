@@ -130,7 +130,7 @@
     <value>选择系统音频</value>
   </data>
   <data name="BtnExit" xml:space="preserve">
-    <value>退出软件</value>
+    <value>退出</value>
   </data>
   <data name="BtnMergeAll" xml:space="preserve">
     <value>混合选定的文件</value>
@@ -147,11 +147,14 @@
   <data name="btnOutputF2" xml:space="preserve">
     <value>输出文件夹</value>
   </data>
+  <data name="btnOutputRecordings" xml:space="preserve">
+    <value>显示录像</value>
+  </data>
   <data name="btnStartRecording" xml:space="preserve">
-    <value>开始录音</value>
+    <value>开始录制</value>
   </data>
   <data name="BtnStop" xml:space="preserve">
-    <value>停止录影</value>
+    <value>停止录制</value>
   </data>
   <data name="BtnVideo" xml:space="preserve">
     <value>选择一个视频文件</value>

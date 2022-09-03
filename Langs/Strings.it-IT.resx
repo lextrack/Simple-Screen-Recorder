@@ -147,6 +147,9 @@
   <data name="btnOutputF2" xml:space="preserve">
     <value>Cartella destinazione</value>
   </data>
+  <data name="btnOutputRecordings" xml:space="preserve">
+    <value>Aprire la cartella delle registrazioni</value>
+  </data>
   <data name="btnStartRecording" xml:space="preserve">
     <value>Avvia registrazione</value>
   </data>

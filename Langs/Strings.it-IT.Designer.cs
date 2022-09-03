@@ -326,5 +326,12 @@ namespace Simple_Screen_Recorder.Langs {
                 return ResourceManager.GetString("LbAbout2", resourceCulture);
             }
         }
+        internal static string btnOutputRecordings
+        {
+            get
+            {
+                return ResourceManager.GetString("btnOutputRecordings", resourceCulture);
+            }
+        }
     }
 }

@@ -147,6 +147,9 @@
   <data name="btnOutputF2" xml:space="preserve">
     <value>Pasta de saída</value>
   </data>
+  <data name="btnOutputRecordings" xml:space="preserve">
+    <value>Abrir pasta de gravações</value>
+  </data>
   <data name="btnStartRecording" xml:space="preserve">
     <value>Comece a Gravar</value>
   </data>
