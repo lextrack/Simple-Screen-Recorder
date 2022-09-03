@@ -49,7 +49,7 @@ namespace Simple_Screen_Recorder
                 RecSpeaker();
             }
 
-            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -hide_banner -loglevel quiet -f gdigrab -framerate 30 -i desktop -crf 18 -preset faster -b:v 10000k Recordings/" + VideoName + "");
+            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 60 -i desktop -b:v 11000k Recordings/" + VideoName + "");
             ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
             ProcessId.CreateNoWindow = true;
             ProcessId.RedirectStandardOutput = true;
