@@ -12,7 +12,7 @@
 
 <h2 align="center">Features</h2>
 
-- Screen recording in .avi format (15000k bitrate and 60 fps)<br>
+- Screen recording in .avi format (10000k bitrate and 60 fps)<br>
 - Ability to record system sounds or microphone (or both)<br>
 - Merge media files (mkv format)<br>
 - Cursor capturing
