@@ -32,8 +32,8 @@ namespace Simple_Screen_Recorder
             AudioDesktop.OpenComp();
             ComboBox2.DataSource = AudioDesktop.cboDIspositivos.DataSource;
 
-            comboBoxCodec.Items.Add("H264 NVENC (Nvidia graphics cards)");
             comboBoxCodec.Items.Add("MPEG-4");
+            comboBoxCodec.Items.Add("H264 NVENC (Nvidia graphics cards)");
             comboBoxCodec.SelectedIndex = 0;
         }
         public int ProcessId { get; private set; }

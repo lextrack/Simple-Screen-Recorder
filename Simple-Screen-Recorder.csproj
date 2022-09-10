@@ -14,8 +14,8 @@
     <Copyright>Lextrack</Copyright>
     <AssemblyVersion>1.1.2</AssemblyVersion>
     <FileVersion>1.1.2</FileVersion>
-    <PackageIcon>videocamera-1.png</PackageIcon>
-    <ApplicationIcon>videocamera.ico</ApplicationIcon>
+    <PackageIcon>screen recorder.png</PackageIcon>
+    <ApplicationIcon>Resources\screen recorder.ico</ApplicationIcon>
     <PlatformTarget>x64</PlatformTarget>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <RepositoryUrl>https://github.com/lextrack/Simple-Screen-Recorder</RepositoryUrl>
@@ -23,12 +23,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="videocamera.ico" />
+    <Content Include="Resources\screen recorder.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="NAudio" Version="2.0.1" />
-    <PackageReference Include="NAudio.Core" Version="2.0.0" />
+    <PackageReference Include="NAudio" Version="2.1.0" />
+    <PackageReference Include="NAudio.Core" Version="2.1.0" />
     <PackageReference Include="System.ComponentModel.Composition" Version="6.0.0" />
   </ItemGroup>
 
@@ -101,6 +101,10 @@
     <None Update="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Resources\screen recorder.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
