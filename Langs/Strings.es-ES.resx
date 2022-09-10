@@ -166,16 +166,19 @@
     <value>Controles</value>
   </data>
   <data name="Label4" xml:space="preserve">
-    <value>Micrófonos</value>
+    <value>Micrófono (Mic/Aux)</value>
   </data>
   <data name="Label5" xml:space="preserve">
-    <value>Audios del sistema (parlantes o auriculares)</value>
+    <value>Audio del sistema (Desktop Audio)</value>
   </data>
   <data name="Label6" xml:space="preserve">
     <value>Ajustes de audio</value>
   </data>
   <data name="Label7" xml:space="preserve">
     <value>Dispositivos de sonido</value>
+  </data>
+  <data name="labelCodec" xml:space="preserve">
+    <value>Codificador</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Idiomas</value>

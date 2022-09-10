@@ -148,7 +148,7 @@
     <value>Cartella destinazione</value>
   </data>
   <data name="btnOutputRecordings" xml:space="preserve">
-    <value>Aprire la cartella delle registrazioni</value>
+    <value>Visualizza le registrazioni</value>
   </data>
   <data name="btnStartRecording" xml:space="preserve">
     <value>Avvia registrazione</value>
@@ -166,16 +166,19 @@
     <value>Controlli</value>
   </data>
   <data name="Label4" xml:space="preserve">
-    <value>Microfono</value>
+    <value>Microfono (Mic/Aux)</value>
   </data>
   <data name="Label5" xml:space="preserve">
-    <value>Audio sistema (altoparlanti)</value>
+    <value>Audio sistema (Desktop Audio)</value>
   </data>
   <data name="Label6" xml:space="preserve">
     <value>Impostazioni audio</value>
   </data>
   <data name="Label7" xml:space="preserve">
     <value>Dispositivi audio</value>
+  </data>
+  <data name="labelCodec" xml:space="preserve">
+    <value>Codifica</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Lingua</value>

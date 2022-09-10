@@ -166,16 +166,19 @@
     <value>视频录制控制</value>
   </data>
   <data name="Label4" xml:space="preserve">
-    <value>选择一个话筒</value>
+    <value>麦克风 (Mic/Aux)</value>
   </data>
   <data name="Label5" xml:space="preserve">
-    <value>从系统中选择一个音频 （扬声器或耳机）</value>
+    <value>系统声音 (Desktop Audio)</value>
   </data>
   <data name="Label6" xml:space="preserve">
     <value>音频设置</value>
   </data>
   <data name="Label7" xml:space="preserve">
     <value>音频器件</value>
+  </data>
+  <data name="labelCodec" xml:space="preserve">
+    <value>编码器</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>语言</value>
@@ -199,10 +202,10 @@
     <value>你必须先按下录音按钮。</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
-    <value>仅限计算机音频</value>
+    <value>只有系统音频（桌面音频）</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
-    <value>计算机音频和话筒</value>
+    <value>系统声音和话筒音频</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
     <value>合并媒体文件</value>

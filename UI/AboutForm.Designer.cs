@@ -62,13 +62,13 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(87, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 30);
+            this.label3.Size = new System.Drawing.Size(151, 38);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Simple Screen Recorder\r\nv1.1.1";
+            this.label3.Text = "Simple Screen Recorder\r\nv1.1.2";
             // 
             // label2
             // 
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(284, 224);
             this.Controls.Add(this.LbAbout2);
             this.Controls.Add(this.LbAbout1);

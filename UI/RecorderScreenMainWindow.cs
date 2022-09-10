@@ -25,11 +25,16 @@ namespace Simple_Screen_Recorder
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            GetTextsMain();
+
             AudioMic.OpenComp();
             ComboBox1.DataSource = AudioMic.cboDIspositivos.DataSource;
             AudioDesktop.OpenComp();
             ComboBox2.DataSource = AudioDesktop.cboDIspositivos.DataSource;
-            GetTextsMain();
+
+            comboBoxCodec.Items.Add("H264 NVENC (Nvidia graphics cards)");
+            comboBoxCodec.Items.Add("MPEG-4");
+            comboBoxCodec.SelectedIndex = 0;
         }
         public int ProcessId { get; private set; }
 
@@ -39,6 +44,7 @@ namespace Simple_Screen_Recorder
             TimeRec = DateTime.Now;
             RecState.Enabled = true;
             VideoName = "Video." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".avi";
+
             if (RadioTwoTrack.Checked == true)
             {
                 RecMic();
@@ -49,34 +55,15 @@ namespace Simple_Screen_Recorder
                 RecSpeaker();
             }
 
-            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 60 -i desktop -b:v 11000k Recordings/" + VideoName + "");
-            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-            ProcessId.CreateNoWindow = true;
-            ProcessId.RedirectStandardOutput = true;
-            Process.Start(ProcessId);
-
-            btnStartRecording.Enabled = false;
-        }
-
-        private void BtnStop_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                LbTimer.ForeColor = Color.Black;
-                RecState.Enabled = false;
-                StopRec();
-
-            }
-            catch (Exception)
-            {
-
-                return;
-            }
+            VideoCodecs();
         }
 
         public void StopRec()
         {
             btnStartRecording.Enabled = true;
+            comboBoxCodec.Enabled = true;
+            ComboBox1.Enabled = true;
+            ComboBox2.Enabled = true;
 
             if (RadioTwoTrack.Checked == true)
             {
@@ -109,6 +96,55 @@ namespace Simple_Screen_Recorder
             proc.Kill();
         }
 
+        public void VideoCodecs()
+        {
+            if (comboBoxCodec.SelectedItem == "MPEG-4")
+            {
+
+                ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                ProcessId.CreateNoWindow = true;
+                ProcessId.RedirectStandardOutput = true;
+                Process.Start(ProcessId);
+
+                btnStartRecording.Enabled = false;
+                ComboBox1.Enabled = false;
+                ComboBox2.Enabled = false;
+                comboBoxCodec.Enabled = false;
+            }
+            else if (comboBoxCodec.SelectedItem == "H264 NVENC (Nvidia graphics cards)")
+            {
+                ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                ProcessId.CreateNoWindow = true;
+                ProcessId.RedirectStandardOutput = true;
+                Process.Start(ProcessId);
+
+                btnStartRecording.Enabled = false;
+                ComboBox1.Enabled = false;
+                ComboBox2.Enabled = false;
+                comboBoxCodec.Enabled = false;
+            }
+
+        }
+
+        private void BtnStop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LbTimer.ForeColor = Color.White;
+                LbTimer.Text = "00:00:00";
+                RecState.Enabled = false;
+                StopRec();
+
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
+        }
+
         public void RecMic()
         {
             AudioMic.Cleanup();
@@ -134,11 +170,6 @@ namespace Simple_Screen_Recorder
             LbTimer.Text = "Rec: " + Difference.Hours.ToString() + ":" + Difference.Minutes.ToString() + ":" + Difference.Seconds.ToString();
         }
 
-        private void BtnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void mergeVideoDesktopAndMicAudioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MergeAllForm NewMergeVDM = new();
@@ -154,6 +185,21 @@ namespace Simple_Screen_Recorder
         {
             AboutForm NewAbout = new();
             NewAbout.ShowDialog();
+        }
+
+        private void RecorderScreenForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Settings.Default.Save();
+        }
+
+        private void btnOutputRecordings_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", "Recordings");
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         #region TranslationCode
@@ -177,6 +223,7 @@ namespace Simple_Screen_Recorder
             RadioTwoTrack.Text = StringsEN.RadioTwoTrack;
             remuxToolStripMenuItem.Text = StringsEN.remuxToolStripMenuItem;
             btnOutputRecordings.Text = StringsEN.btnOutputRecordings;
+            labelCodec.Text = StringsEN.labelCodec;
         }
 
         private void españolToolStripMenuItem_Click(object sender, EventArgs e)
@@ -210,15 +257,5 @@ namespace Simple_Screen_Recorder
         }
 
         #endregion
-
-        private void RecorderScreenForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Settings.Default.Save();
-        }
-
-        private void btnOutputRecordings_Click(object sender, EventArgs e)
-        {
-            Process.Start("explorer.exe", "Recordings");
-        }
     }
 }

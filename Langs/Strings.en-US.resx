@@ -166,16 +166,19 @@
     <value>Controls</value>
   </data>
   <data name="Label4" xml:space="preserve">
-    <value>Microphones</value>
+    <value>Microphone (Mic/Aux)</value>
   </data>
   <data name="Label5" xml:space="preserve">
-    <value>System sounds (speaker)</value>
+    <value>System sound (Desktop Audio)</value>
   </data>
   <data name="Label6" xml:space="preserve">
     <value>Audio settings</value>
   </data>
   <data name="Label7" xml:space="preserve">
     <value>Sound devices</value>
+  </data>
+  <data name="labelCodec" xml:space="preserve">
+    <value>Encoder</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Languages</value>
@@ -200,10 +203,10 @@ TutorialesVbNET and Flaticon.</value>
     <value>You are not recording anything</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
-    <value>Only system sounds (desktop audio)</value>
+    <value>System audio only (Desktop Audio)</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
-    <value>System sounds and microphone audio</value>
+    <value>System sound and microphone audio</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
     <value>Merge media files</value>
