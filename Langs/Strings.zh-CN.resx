@@ -180,6 +180,9 @@
   <data name="labelCodec" xml:space="preserve">
     <value>编码器</value>
   </data>
+  <data name="labelResolution" xml:space="preserve">
+    <value>分辦率</value>
+  </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>语言</value>
   </data>

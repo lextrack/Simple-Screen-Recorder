@@ -180,6 +180,9 @@
   <data name="labelCodec" xml:space="preserve">
     <value>Codifica</value>
   </data>
+  <data name="labelResolution" xml:space="preserve">
+    <value>Risoluzione dello schermo</value>
+  </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Lingua</value>
   </data>

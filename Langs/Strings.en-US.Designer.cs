@@ -372,5 +372,13 @@ namespace Simple_Screen_Recorder.Langs
                 return ResourceManager.GetString("labelCodec", resourceCulture);
             }
         }
+
+        internal static string labelResolution
+        {
+            get
+            {
+                return ResourceManager.GetString("labelResolution", resourceCulture);
+            }
+        }
     }
 }

@@ -9,11 +9,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <StartupObject>Simple_Screen_Recorder.Program</StartupObject>
     <UseWPF>True</UseWPF>
-    <Version>1.1.2</Version>
+    <Version>1.1.3</Version>
     <Authors>Lextrack</Authors>
     <Copyright>Lextrack</Copyright>
-    <AssemblyVersion>1.1.2</AssemblyVersion>
-    <FileVersion>1.1.2</FileVersion>
+    <AssemblyVersion>1.1.3</AssemblyVersion>
+    <FileVersion>1.1.3</FileVersion>
     <PackageIcon>screen recorder.png</PackageIcon>
     <ApplicationIcon>Resources\screen recorder.ico</ApplicationIcon>
     <PlatformTarget>x64</PlatformTarget>

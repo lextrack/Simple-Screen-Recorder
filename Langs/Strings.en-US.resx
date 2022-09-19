@@ -180,6 +180,9 @@
   <data name="labelCodec" xml:space="preserve">
     <value>Encoder</value>
   </data>
+  <data name="labelResolution" xml:space="preserve">
+    <value>Display resolution</value>
+  </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Languages</value>
   </data>
