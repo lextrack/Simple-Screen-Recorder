@@ -380,5 +380,29 @@ namespace Simple_Screen_Recorder.Langs
                 return ResourceManager.GetString("labelResolution", resourceCulture);
             }
         }
+
+        internal static string crownGroupBox1
+        {
+            get
+            {
+                return ResourceManager.GetString("crownGroupBox1", resourceCulture);
+            }
+        }
+
+        internal static string crownGroupBox2
+        {
+            get
+            {
+                return ResourceManager.GetString("crownGroupBox2", resourceCulture);
+            }
+        }
+
+        internal static string crownGroupBox3
+        {
+            get
+            {
+                return ResourceManager.GetString("crownGroupBox3", resourceCulture);
+            }
+        }
     }
 }

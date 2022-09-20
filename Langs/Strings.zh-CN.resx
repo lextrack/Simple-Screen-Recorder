@@ -162,6 +162,15 @@
   <data name="BtnVideo2" xml:space="preserve">
     <value>选择一个视频文件</value>
   </data>
+  <data name="crownGroupBox1" xml:space="preserve">
+    <value>视频设置</value>
+  </data>
+  <data name="crownGroupBox2" xml:space="preserve">
+    <value>音频设置</value>
+  </data>
+  <data name="crownGroupBox3" xml:space="preserve">
+    <value>视频录制控制</value>
+  </data>
   <data name="Label2" xml:space="preserve">
     <value>视频录制控制</value>
   </data>
@@ -172,7 +181,7 @@
     <value>系统声音 (Desktop Audio)</value>
   </data>
   <data name="Label6" xml:space="preserve">
-    <value>音频设置</value>
+    <value>音频录制方法</value>
   </data>
   <data name="Label7" xml:space="preserve">
     <value>音频器件</value>

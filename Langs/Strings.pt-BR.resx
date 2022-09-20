@@ -151,16 +151,25 @@
     <value>Mostrar gravações</value>
   </data>
   <data name="btnStartRecording" xml:space="preserve">
-    <value>Comece a Gravar</value>
+    <value>Iniciar Gravação</value>
   </data>
   <data name="BtnStop" xml:space="preserve">
-    <value>Pare de Gravar</value>
+    <value>Interromper Gravação</value>
   </data>
   <data name="BtnVideo" xml:space="preserve">
     <value>Selecione um arquivo de vídeo</value>
   </data>
   <data name="BtnVideo2" xml:space="preserve">
     <value>Selecione um arquivo de vídeo</value>
+  </data>
+  <data name="crownGroupBox1" xml:space="preserve">
+    <value>Configurações de vídeo</value>
+  </data>
+  <data name="crownGroupBox2" xml:space="preserve">
+    <value>Configurações de áudio</value>
+  </data>
+  <data name="crownGroupBox3" xml:space="preserve">
+    <value>Controles de gravação</value>
   </data>
   <data name="Label2" xml:space="preserve">
     <value>Controles de gravação</value>
@@ -172,7 +181,7 @@
     <value>Selecione um sistema de áudio (Desktop Audio)</value>
   </data>
   <data name="Label6" xml:space="preserve">
-    <value>Configurações de áudio</value>
+    <value>Método de gravação áudio</value>
   </data>
   <data name="Label7" xml:space="preserve">
     <value>Dispositivos de som</value>

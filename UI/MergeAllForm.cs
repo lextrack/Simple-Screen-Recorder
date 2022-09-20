@@ -1,7 +1,7 @@
-﻿using System.Diagnostics;
-using System.IO;
-using Simple_Screen_Recorder.Langs;
+﻿using Simple_Screen_Recorder.Langs;
 using Simple_Screen_Recorder.Properties;
+using System.Diagnostics;
+using System.IO;
 
 namespace Simple_Screen_Recorder.ScreenRecorderWin
 {

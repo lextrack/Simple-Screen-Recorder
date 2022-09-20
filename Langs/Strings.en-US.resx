@@ -162,6 +162,15 @@
   <data name="BtnVideo2" xml:space="preserve">
     <value>Select a video file</value>
   </data>
+  <data name="crownGroupBox1" xml:space="preserve">
+    <value>Video settings</value>
+  </data>
+  <data name="crownGroupBox2" xml:space="preserve">
+    <value>Audio settings</value>
+  </data>
+  <data name="crownGroupBox3" xml:space="preserve">
+    <value>Controls</value>
+  </data>
   <data name="Label2" xml:space="preserve">
     <value>Controls</value>
   </data>
@@ -172,7 +181,7 @@
     <value>System sound (Desktop Audio)</value>
   </data>
   <data name="Label6" xml:space="preserve">
-    <value>Audio settings</value>
+    <value>Audio recording method</value>
   </data>
   <data name="Label7" xml:space="preserve">
     <value>Sound devices</value>

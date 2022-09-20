@@ -7,7 +7,7 @@ namespace Simple_Screen_Recorder.UI
     public class AudioDesktop
     {
 
- 
+
         public static IWaveIn waveIn;
         public static WaveFileWriter writer;
         public static string outputFilename;

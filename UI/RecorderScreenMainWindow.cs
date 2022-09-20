@@ -4,11 +4,8 @@ using Simple_Screen_Recorder.Langs;
 using Simple_Screen_Recorder.Properties;
 using Simple_Screen_Recorder.ScreenRecorderWin;
 using Simple_Screen_Recorder.UI;
-using System;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.InteropServices;
-using static System.Net.Mime.MediaTypeNames;
 using Application = System.Windows.Forms.Application;
 
 namespace Simple_Screen_Recorder
@@ -17,6 +14,7 @@ namespace Simple_Screen_Recorder
     {
         private DateTime TimeRec = new DateTime();
         private string VideoName = "";
+        public int ProcessId { get; private set; }
 
         public RecorderScreenMainWindow()
         {
@@ -25,12 +23,14 @@ namespace Simple_Screen_Recorder
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
+
             GetTextsMain();
 
             AudioMic.OpenComp();
-            ComboBox1.DataSource = AudioMic.cboDIspositivos.DataSource;
+            ComboBoxMicrophone.DataSource = AudioMic.cboDIspositivos.DataSource;
             AudioDesktop.OpenComp();
-            ComboBox2.DataSource = AudioDesktop.cboDIspositivos.DataSource;
+            ComboBoxSpeaker.DataSource = AudioDesktop.cboDIspositivos.DataSource;
 
             comboBoxCodec.Items.Add("MPEG-4");
             comboBoxCodec.Items.Add("H264 NVENC (Nvidia Graphics Cards)");
@@ -40,9 +40,9 @@ namespace Simple_Screen_Recorder
             comboBoxResolution.Items.Add("1600x900");
             comboBoxResolution.Items.Add("1536x864");
             comboBoxResolution.Items.Add("1366x768");
+            comboBoxResolution.Items.Add("1024x768");
             comboBoxResolution.SelectedIndex = 0;
         }
-        public int ProcessId { get; private set; }
 
         private void btnStartRecording_Click(object sender, EventArgs e)
         {
@@ -68,9 +68,11 @@ namespace Simple_Screen_Recorder
         {
             btnStartRecording.Enabled = true;
             comboBoxCodec.Enabled = true;
-            ComboBox1.Enabled = true;
-            ComboBox2.Enabled = true;
+            ComboBoxMicrophone.Enabled = true;
+            ComboBoxSpeaker.Enabled = true;
             comboBoxResolution.Enabled = true;
+            RadioTwoTrack.Enabled = true;
+            RadioDesktop.Enabled = true;
 
             if (RadioTwoTrack.Checked == true)
             {
@@ -103,7 +105,6 @@ namespace Simple_Screen_Recorder
             proc.Kill();
         }
 
-        #region Codecs and resolutions
         public void VideoCodecs()
         {
             switch (comboBoxCodec.SelectedItem)
@@ -121,10 +122,12 @@ namespace Simple_Screen_Recorder
                                     Process.Start(ProcessId);
 
                                     btnStartRecording.Enabled = false;
-                                    ComboBox1.Enabled = false;
-                                    ComboBox2.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
                                     comboBoxCodec.Enabled = false;
                                     comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
                                     break;
                                 }
 
@@ -137,10 +140,12 @@ namespace Simple_Screen_Recorder
                                     Process.Start(ProcessId);
 
                                     btnStartRecording.Enabled = false;
-                                    ComboBox1.Enabled = false;
-                                    ComboBox2.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
                                     comboBoxCodec.Enabled = false;
                                     comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
                                     break;
                                 }
 
@@ -153,10 +158,12 @@ namespace Simple_Screen_Recorder
                                     Process.Start(ProcessId);
 
                                     btnStartRecording.Enabled = false;
-                                    ComboBox1.Enabled = false;
-                                    ComboBox2.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
                                     comboBoxCodec.Enabled = false;
                                     comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
                                     break;
                                 }
 
@@ -169,10 +176,30 @@ namespace Simple_Screen_Recorder
                                     Process.Start(ProcessId);
 
                                     btnStartRecording.Enabled = false;
-                                    ComboBox1.Enabled = false;
-                                    ComboBox2.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
                                     comboBoxCodec.Enabled = false;
                                     comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    break;
+                                }
+
+                            case "1024x768":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1024x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
                                     break;
                                 }
                         }
@@ -193,10 +220,12 @@ namespace Simple_Screen_Recorder
                                     Process.Start(ProcessId);
 
                                     btnStartRecording.Enabled = false;
-                                    ComboBox1.Enabled = false;
-                                    ComboBox2.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
                                     comboBoxCodec.Enabled = false;
                                     comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
                                     break;
                                 }
 
@@ -209,10 +238,12 @@ namespace Simple_Screen_Recorder
                                     Process.Start(ProcessId);
 
                                     btnStartRecording.Enabled = false;
-                                    ComboBox1.Enabled = false;
-                                    ComboBox2.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
                                     comboBoxCodec.Enabled = false;
                                     comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
                                     break;
                                 }
 
@@ -225,10 +256,12 @@ namespace Simple_Screen_Recorder
                                     Process.Start(ProcessId);
 
                                     btnStartRecording.Enabled = false;
-                                    ComboBox1.Enabled = false;
-                                    ComboBox2.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
                                     comboBoxCodec.Enabled = false;
                                     comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
                                     break;
                                 }
 
@@ -241,10 +274,30 @@ namespace Simple_Screen_Recorder
                                     Process.Start(ProcessId);
 
                                     btnStartRecording.Enabled = false;
-                                    ComboBox1.Enabled = false;
-                                    ComboBox2.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
                                     comboBoxCodec.Enabled = false;
                                     comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    break;
+                                }
+
+                            case "1024x768":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1024x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
                                     break;
                                 }
                         }
@@ -254,7 +307,6 @@ namespace Simple_Screen_Recorder
             }
 
         }
-        #endregion
 
         private void BtnStop_Click(object sender, EventArgs e)
         {
@@ -335,7 +387,6 @@ namespace Simple_Screen_Recorder
         private void GetTextsMain()
         {
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Settings.Default.Languages);
-            Label2.Text = StringsEN.Label2;
             aboutToolStripMenuItem.Text = StringsEN.aboutToolStripMenuItem;
             BtnExit.Text = StringsEN.BtnExit;
             btnStartRecording.Text = StringsEN.btnStartRecording;
@@ -353,6 +404,9 @@ namespace Simple_Screen_Recorder
             btnOutputRecordings.Text = StringsEN.btnOutputRecordings;
             labelCodec.Text = StringsEN.labelCodec;
             labelResolution.Text = StringsEN.labelResolution;
+            crownGroupBox1.Text = StringsEN.crownGroupBox1;
+            crownGroupBox2.Text = StringsEN.crownGroupBox2;
+            crownGroupBox3.Text = StringsEN.crownGroupBox3;
         }
 
         private void españolToolStripMenuItem_Click(object sender, EventArgs e)
@@ -386,5 +440,28 @@ namespace Simple_Screen_Recorder
         }
 
         #endregion
+
+        private void RecorderScreenMainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (btnStartRecording.Enabled == true && e.KeyCode == Keys.F9)
+            {
+                btnStartRecording.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F9)
+            {
+                BtnStop.PerformClick();
+            }
+
+            if (e.KeyCode == Keys.F10)
+            {
+                btnOutputRecordings.PerformClick();
+            }
+
+            if (e.KeyCode == Keys.Escape)
+            {
+                BtnExit.PerformClick();
+            }
+
+        }
     }
 }
