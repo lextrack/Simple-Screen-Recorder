@@ -40,6 +40,8 @@ namespace Simple_Screen_Recorder
             comboBoxResolution.Items.Add("1600x900");
             comboBoxResolution.Items.Add("1536x864");
             comboBoxResolution.Items.Add("1366x768");
+            comboBoxResolution.Items.Add("1360x768");
+            comboBoxResolution.Items.Add("1280x720");
             comboBoxResolution.Items.Add("1024x768");
             comboBoxResolution.SelectedIndex = 0;
         }
@@ -185,6 +187,42 @@ namespace Simple_Screen_Recorder
                                     break;
                                 }
 
+                            case "1360x768":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    break;
+                                }
+
+                            case "1280x720":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1280x720 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    break;
+                                }
+
                             case "1024x768":
                                 {
                                     ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1024x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
@@ -268,6 +306,42 @@ namespace Simple_Screen_Recorder
                             case "1366x768":
                                 {
                                     ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1366x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    break;
+                                }
+
+                            case "1360x768":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    break;
+                                }
+
+                            case "1x720":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;

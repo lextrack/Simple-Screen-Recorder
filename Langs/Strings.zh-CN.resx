@@ -190,7 +190,7 @@
     <value>编码器</value>
   </data>
   <data name="labelResolution" xml:space="preserve">
-    <value>分辦率</value>
+    <value>分辨率</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>语言</value>
