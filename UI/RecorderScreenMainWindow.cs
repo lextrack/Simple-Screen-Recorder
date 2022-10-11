@@ -399,7 +399,7 @@ namespace Simple_Screen_Recorder
         {
             AudioDesktop.Cleanup();
             AudioDesktop.CreateWaveInDevice();
-            //GrabadorPantalla.My.MyProject.Computer.Audio.Play("Background.wav", AudioPlayMode.BackgroundLoop);
+            GrabadorPantalla.My.MyProject.Computer.Audio.Play(Path.Combine(Directory.GetCurrentDirectory(), @"Resources\silence.wav"), AudioPlayMode.BackgroundLoop);
             AudioDesktop.outputFilename = "AudioSystem." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
             AudioDesktop.writer = new WaveFileWriter(Path.Combine(AudioDesktop.outputFolder, AudioDesktop.outputFilename), AudioDesktop.waveIn.WaveFormat);
             AudioDesktop.waveIn.StartRecording();
