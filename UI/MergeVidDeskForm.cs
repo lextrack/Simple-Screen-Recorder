@@ -1,6 +1,5 @@
 ﻿using Simple_Screen_Recorder.Langs;
 using Simple_Screen_Recorder.Properties;
-using Simple_Screen_Recorder.UI;
 using System.Diagnostics;
 using System.IO;
 
@@ -19,7 +18,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
 
         public void BtnMergeAll_Click(object sender, EventArgs e)
         {
-            Process.Start("cmd.exe", $"/k {AudioDesktop.ResourcePath} -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -c:v copy -c:a aac -b:a 320k output.mkv & exit /b");
+            Process.Start("cmd.exe", "/k ffmpeg -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -c:v copy -c:a aac -b:a 320k output.mkv & exit /b");
         }
 
         private void BtnVideo_Click(object sender, EventArgs e)

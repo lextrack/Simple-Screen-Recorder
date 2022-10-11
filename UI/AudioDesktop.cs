@@ -6,12 +6,13 @@ namespace Simple_Screen_Recorder.UI
 {
     public class AudioDesktop
     {
+
+
         public static IWaveIn waveIn;
         public static WaveFileWriter writer;
         public static string outputFilename;
         public static string outputFolder;
         public static ComboBox cboDIspositivos = new ComboBox();
-        public static string ResourcePath = Path.Combine(Directory.GetCurrentDirectory(), @"FFmpegResources\ffmpeg"); // FFMpeg Path
 
         public static void OpenComp()
         {
