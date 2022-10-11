@@ -14,13 +14,11 @@ namespace Simple_Screen_Recorder
     {
         private DateTime TimeRec = new DateTime();
         private string VideoName = "";
-
         public int ProcessId { get; private set; }
 
         public RecorderScreenMainWindow()
         {
             InitializeComponent();
-            FormClosing += RecorderScreenMainWindow_FormClosing;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -61,7 +59,9 @@ namespace Simple_Screen_Recorder
                 RecSpeaker();
             }
             else
+            {
                 RecSpeaker();
+            }
 
             VideoCodecs();
         }
@@ -79,20 +79,32 @@ namespace Simple_Screen_Recorder
             if (RadioTwoTrack.Checked == true)
             {
                 if (AudioMic.waveIn is object)
+                {
                     AudioMic.waveIn.StopRecording();
+                }
 
                 if (AudioDesktop.waveIn is object)
+                {
                     AudioDesktop.waveIn.StopRecording();
-            }//
-
+                }
+            }
             else if (AudioDesktop.waveIn is object)
+            {
                 AudioDesktop.waveIn.StopRecording();
+            }
 
             GrabadorPantalla.My.MyProject.Computer.Audio.Stop();
 
             foreach (Process proceso in Process.GetProcesses())
+            {
                 if (proceso.ProcessName == "ffmpeg")
+                {
                     proceso.Kill();
+                }
+            }
+
+            Process proc = Process.GetProcessById(ProcessId);
+            proc.Kill();
         }
 
         public void VideoCodecs()
@@ -105,7 +117,7 @@ namespace Simple_Screen_Recorder
                         {
                             case "1920x1080":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1920x1200 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1920x1080 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -123,7 +135,7 @@ namespace Simple_Screen_Recorder
 
                             case "1600x900":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1600x900 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1600x900 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -141,7 +153,7 @@ namespace Simple_Screen_Recorder
 
                             case "1536x864":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1536x864 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1536x864 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -159,7 +171,7 @@ namespace Simple_Screen_Recorder
 
                             case "1366x768":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1366x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1366x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -177,7 +189,7 @@ namespace Simple_Screen_Recorder
 
                             case "1360x768":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -195,7 +207,7 @@ namespace Simple_Screen_Recorder
 
                             case "1280x720":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1280x720 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1280x720 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -213,7 +225,7 @@ namespace Simple_Screen_Recorder
 
                             case "1024x768":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1024x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1024x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -239,7 +251,7 @@ namespace Simple_Screen_Recorder
                         {
                             case "1920x1080":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1920x1080 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1920x1080 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -257,7 +269,7 @@ namespace Simple_Screen_Recorder
 
                             case "1600x900":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1600x900 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1600x900 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -275,7 +287,7 @@ namespace Simple_Screen_Recorder
 
                             case "1536x864":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1536x864 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1536x864 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -293,7 +305,7 @@ namespace Simple_Screen_Recorder
 
                             case "1366x768":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1366x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1366x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -311,7 +323,7 @@ namespace Simple_Screen_Recorder
 
                             case "1360x768":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -329,7 +341,7 @@ namespace Simple_Screen_Recorder
 
                             case "1x720":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -347,7 +359,7 @@ namespace Simple_Screen_Recorder
 
                             case "1024x768":
                                 {
-                                    ProcessStartInfo ProcessId = new("cmd.exe", $"/c {AudioDesktop.ResourcePath} -f gdigrab -framerate 30 -video_size 1024x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1024x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -382,6 +394,7 @@ namespace Simple_Screen_Recorder
             }
             catch (Exception)
             {
+
                 return;
             }
         }
@@ -399,7 +412,7 @@ namespace Simple_Screen_Recorder
         {
             AudioDesktop.Cleanup();
             AudioDesktop.CreateWaveInDevice();
-            //GrabadorPantalla.My.MyProject.Computer.Audio.Play("Background.wav", AudioPlayMode.BackgroundLoop);
+            GrabadorPantalla.My.MyProject.Computer.Audio.Play("Background.wav", AudioPlayMode.BackgroundLoop);
             AudioDesktop.outputFilename = "AudioSystem." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
             AudioDesktop.writer = new WaveFileWriter(Path.Combine(AudioDesktop.outputFolder, AudioDesktop.outputFilename), AudioDesktop.waveIn.WaveFormat);
             AudioDesktop.waveIn.StartRecording();
@@ -522,12 +535,7 @@ namespace Simple_Screen_Recorder
             {
                 BtnExit.PerformClick();
             }
-        }//
 
-        private void RecorderScreenMainWindow_FormClosing(object? sender, FormClosingEventArgs e)
-        {
-            StopRec(); // dispose on close
         }
-
     }
 }
