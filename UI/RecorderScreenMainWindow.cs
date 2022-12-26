@@ -51,7 +51,7 @@ namespace Simple_Screen_Recorder
             LbTimer.ForeColor = Color.IndianRed;
             TimeRec = DateTime.Now;
             RecState.Enabled = true;
-            VideoName = "Video." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".mp4";
+            VideoName = "Video." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".avi";
 
             if (RadioTwoTrack.Checked == true)
             {
