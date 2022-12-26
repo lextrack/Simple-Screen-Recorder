@@ -137,7 +137,7 @@
             this.Controls.Add(this.BtnVideo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Location = new System.Drawing.Point(310, 256);
+            this.Location = new System.Drawing.Point(250, 178);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MergeVidDeskForm";

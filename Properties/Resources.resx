@@ -118,28 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="stop button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stop button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mixing button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mixing button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="video button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\video button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sound-waves button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sound-waves button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="record button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\record button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="folder button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="log-out button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\log-out button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stop2b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stop2b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mic button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mic button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mixing button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mixing button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="voice-control" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice-control.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sound-waves button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound-waves button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="log-out button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\log-out button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stop-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stop-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mic2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mic2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="video button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\video button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="record button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\record button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stop original" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stop original.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

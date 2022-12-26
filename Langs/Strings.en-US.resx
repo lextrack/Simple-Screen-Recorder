@@ -123,6 +123,9 @@
   <data name="aboutToolStripMenuItem" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="audioToolStripMenuItem" xml:space="preserve">
+    <value>Audio recording</value>
+  </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>Select a system sound file</value>
   </data>
@@ -184,7 +187,7 @@
     <value>Audio recording method</value>
   </data>
   <data name="Label7" xml:space="preserve">
-    <value>Sound devices</value>
+    <value>Audio devices</value>
   </data>
   <data name="labelCodec" xml:space="preserve">
     <value>Encoder</value>
@@ -206,7 +209,7 @@ updates coming soon!</value>
 TutorialesVbNET and Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
-    <value>Merge video and system sounds</value>
+    <value>Merge video and only one audio file</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
     <value>Merge all media</value>
@@ -216,6 +219,9 @@ TutorialesVbNET and Flaticon.</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>System audio only (Desktop Audio)</value>
+  </data>
+  <data name="radioMicrophone" xml:space="preserve">
+    <value>Microphone audio only</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
     <value>System sound and microphone audio</value>

@@ -93,6 +93,16 @@ namespace Simple_Screen_Recorder.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mic2 {
+            get {
+                object obj = ResourceManager.GetObject("mic2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mixing_button {
             get {
                 object obj = ResourceManager.GetObject("mixing button", resourceCulture);
@@ -125,7 +135,27 @@ namespace Simple_Screen_Recorder.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap stop_button {
             get {
-                object obj = ResourceManager.GetObject("stop button", resourceCulture);
+                object obj = ResourceManager.GetObject("stop-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stop_original {
+            get {
+                object obj = ResourceManager.GetObject("stop original", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stop2b {
+            get {
+                object obj = ResourceManager.GetObject("stop2b", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +166,16 @@ namespace Simple_Screen_Recorder.Properties {
         internal static System.Drawing.Bitmap video_button {
             get {
                 object obj = ResourceManager.GetObject("video button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap voice_control {
+            get {
+                object obj = ResourceManager.GetObject("voice-control", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

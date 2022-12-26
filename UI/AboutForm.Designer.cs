@@ -68,7 +68,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 38);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Simple Screen Recorder\r\nv1.1.5";
+            this.label3.Text = "Simple Screen Recorder\r\nv1.1.6";
             // 
             // label2
             // 
@@ -79,7 +79,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 15);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Copyright © 2022 Lextrack.";
+            this.label2.Text = "Copyright © 2023 Lextrack.";
             // 
             // label1
             // 

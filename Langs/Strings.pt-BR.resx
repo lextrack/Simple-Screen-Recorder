@@ -121,7 +121,10 @@
     <value>Sobre o software</value>
   </data>
   <data name="aboutToolStripMenuItem" xml:space="preserve">
-    <value>Sobre o software</value>
+    <value>Sobre</value>
+  </data>
+  <data name="audioToolStripMenuItem" xml:space="preserve">
+    <value>Gravação de áudio</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>Selecionar áudio do sistema</value>
@@ -178,13 +181,13 @@
     <value>Microfone (Mic/Aux)</value>
   </data>
   <data name="Label5" xml:space="preserve">
-    <value>Selecione um sistema de áudio (Desktop Audio)</value>
+    <value>Áudio do sistema (Desktop Audio)</value>
   </data>
   <data name="Label6" xml:space="preserve">
     <value>Método de gravação áudio</value>
   </data>
   <data name="Label7" xml:space="preserve">
-    <value>Dispositivos de som</value>
+    <value>Dispositivos de áudio</value>
   </data>
   <data name="labelCodec" xml:space="preserve">
     <value>Codificador</value>
@@ -206,16 +209,19 @@ próximas atualizações!</value>
 TutorialesVbNET e Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
-    <value>Misture apenas áudio e vídeo do sistema</value>
+    <value>Misturando apenas um vídeo e um arquivo de áudio</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
-    <value>Misture todos os arquivos</value>
+    <value>Misturar todos os arquivos</value>
   </data>
   <data name="message1" xml:space="preserve">
     <value>Você não está registrando nada</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>Somente áudio do sistema</value>
+  </data>
+  <data name="radioMicrophone" xml:space="preserve">
+    <value>Somente áudio do microfone</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
     <value>Sistema de som e microfone de áudio</value>

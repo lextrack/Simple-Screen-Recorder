@@ -5,9 +5,9 @@
 
 <h2 align="center">Install</h2>
 <p align="center">
-  Windows 7, 8.1, 10, 11 (64 bits) | v1.1.5 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.1.5/Simple-Screen-Recorder-Release-Portable.zip">Download</a><br><br>
-  Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0">.Net 6.0</a> and <a href="https://github.com/BtbN/FFmpeg-Builds">ffmpeg (lgpl-shared-5.1)</a> <br><br>
-  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/pVgr0y40/screenrecorder1-5.png"></a>
+  Windows 8.1, 10, 11 (64 bits) | v1.1.6 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.1.6/Simple-Screen-Recorder-Release-Portable.zip">Download</a><br><br>
+  Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 6.0</a> and <a href="https://github.com/BtbN/FFmpeg-Builds">ffmpeg (lgpl-shared-5.1)</a> <br><br>
+  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/Z5NsL8nb/screen-recorder-1-1-6.png"></a>
 </p>
 
 <h2 align="center">Features</h2>
@@ -16,4 +16,5 @@
 - Possibility to record your microphone or desktop audio (or both at the same time)<br>
 - Merge media files (mkv output format)<br>
 - Keyboard shortcuts: F9 to start and stop recordings, F10 to open recordings folders and ESC to close the app<br>
-- Resolution and encoder selector
+- Audio recording separately<br>
+- Encoder selector

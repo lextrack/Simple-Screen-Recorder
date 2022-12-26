@@ -404,5 +404,21 @@ namespace Simple_Screen_Recorder.Langs
                 return ResourceManager.GetString("crownGroupBox3", resourceCulture);
             }
         }
+
+        internal static string audioToolStripMenuItem
+        {
+            get
+            {
+                return ResourceManager.GetString("audioToolStripMenuItem", resourceCulture);
+            }
+        }
+
+        internal static string radioMicrophone
+        {
+            get
+            {
+                return ResourceManager.GetString("radioMicrophone", resourceCulture);
+            }
+        }
     }
 }

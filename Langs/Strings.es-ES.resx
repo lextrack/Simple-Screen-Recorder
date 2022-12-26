@@ -123,6 +123,9 @@
   <data name="aboutToolStripMenuItem" xml:space="preserve">
     <value>Acerca de</value>
   </data>
+  <data name="audioToolStripMenuItem" xml:space="preserve">
+    <value>Grabador de audio</value>
+  </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>Seleccionar audio del sistema</value>
   </data>
@@ -206,7 +209,7 @@ habrán más actualizaciones próximante!</value>
 TutorialesVbNET y Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
-    <value>Mezclar solo el audio del sistema y vídeo</value>
+    <value>Mezclar vídeo y solo un archivo de audio</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
     <value>Mezclar todos los archivos</value>
@@ -216,6 +219,9 @@ TutorialesVbNET y Flaticon.</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>Solamente audio del sistema</value>
+  </data>
+  <data name="radioMicrophone" xml:space="preserve">
+    <value>Solamente micrófono</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
     <value>Audio del sistema y micrófono</value>

@@ -123,6 +123,9 @@
   <data name="aboutToolStripMenuItem" xml:space="preserve">
     <value>关于本软件</value>
   </data>
+  <data name="audioToolStripMenuItem" xml:space="preserve">
+    <value>音频录制</value>
+  </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>选择系统音频</value>
   </data>
@@ -184,7 +187,7 @@
     <value>音频录制方法</value>
   </data>
   <data name="Label7" xml:space="preserve">
-    <value>音频器件</value>
+    <value>音频设备</value>
   </data>
   <data name="labelCodec" xml:space="preserve">
     <value>编码器</value>
@@ -205,7 +208,7 @@
 教程VbNET 和 Flaticon。</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
-    <value>只混合计算机音频和视频</value>
+    <value>混合视频和只有一个音频文件</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
     <value>混合所有媒体文件</value>
@@ -214,7 +217,10 @@
     <value>你必须先按下录音按钮。</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
-    <value>只有系统音频（桌面音频）</value>
+    <value>只有系统音频 （Desktop Audio）</value>
+  </data>
+  <data name="radioMicrophone" xml:space="preserve">
+    <value>只有麦克风音频 （Mic/Aux）</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
     <value>系统声音和话筒音频</value>
