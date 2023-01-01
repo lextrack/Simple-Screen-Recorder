@@ -6,7 +6,7 @@
 
 <h2 align="center">Introduction</h2>
 <p align="left">
-The Simple Screen Recorder is a tool that allows users to record their screen activity and audio. This manual provides instructions on how to use the Simple Screen Recorder to create screen recordings.
+Simple Screen Recorder is a tool that allows users to record their screen activity and audio. Here comes instructions on how to use the Simple Screen Recorder to create screen recordings.
 </p>
 
 <h2 align="center">Getting Started</h2>
