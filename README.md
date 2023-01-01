@@ -16,7 +16,7 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 
 - Select the audio output device that you want to use to record the audio track from the "System sound (Desktop Audio)" dropdown menu.<br>
 
-- Select the codec that you want to use from the "Codec" dropdown menu. The available codecs are "MPEG-4" and "H264 NVENC (Nvidia Graphics Cards)".<br>
+- Select the codec that you want to use from the "Encoder" dropdown menu. The available codecs are "MPEG-4" and "H264 NVENC (Nvidia Graphics Cards)".<br>
 
 - Select the resolution that you want to use from the "Resolution" dropdown menu. Available resolutions include "1920x1080", "1600x900", "1536x864", "1366x768", "1360x768", "1280x720", and "1024x768".<br>
 
