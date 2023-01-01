@@ -9,7 +9,7 @@
 Simple Screen Recorder is a tool that allows users to record their screen activity and audio. Here comes instructions on how to use the Simple Screen Recorder to create screen recordings.
 </p>
 
-<h2 align="center">Getting Started</h2>
+<h2 align="center">How to use?</h2>
 <p align="center">
 
 - In the main screen recording window, select the **audio input device** that you want to use to record the audio track from the "Microphone (Mic/Aux)" dropdown menu.<br>
