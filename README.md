@@ -18,7 +18,7 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 
 - Select the **codec** that you want to use from the "Encoder" dropdown menu. The available codecs are "MPEG-4" and "H264 NVENC (Nvidia Graphics Cards)".<br>
 
-- Select the **resolution** that you want to use from the "Resolution" dropdown menu. Available resolutions include "1920x1080", "1600x900", "1536x864", "1366x768", "1360x768", "1280x720", and "1024x768". (This selector always will take your primary monitor. Sometimes, you must adjust you current resolution in the app.)<br>
+- Select the **resolution** that you want to use from the "Resolution" dropdown menu. Available resolutions include "1920x1080", "1600x900", "1536x864", "1366x768", "1360x768", "1280x720", and "1024x768". (This selector always will take your primary monitor. Depending on your display resolution, you must adjust the resolution in the app.)<br>
 
 - Use the radio buttons to select whether you want to record the audio from both the microphone and desktop Audio, just the microphone, or just the desktop Audio.<br>
 
