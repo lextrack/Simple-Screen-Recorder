@@ -215,7 +215,7 @@ TutorialesVbNET y Flaticon.</value>
     <value>Mezclar todos los archivos</value>
   </data>
   <data name="message1" xml:space="preserve">
-    <value>No estás grabando nada</value>
+    <value>¡No estás grabando nada!</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>Solamente audio del sistema</value>

@@ -206,16 +206,16 @@ ce ne saranno altri prossimi aggiornamenti!</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
     <value>Questo software è stato realizzato grazie a
-TutorialVbNET e Flaticon.</value>
+TutorialesVbNET e Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>Unisce video e un file audio</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
-    <value>Unisci tutti i media</value>
+    <value>Unisci tutti i file multimediali</value>
   </data>
   <data name="message1" xml:space="preserve">
-    <value>Non stai registrando nulla</value>
+    <value>Non stai registrando nulla!</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>Solo audio sistema</value>
@@ -227,12 +227,12 @@ TutorialVbNET e Flaticon.</value>
     <value>Audio sistema e audio microfono</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Unisci file media</value>
+    <value>Unisci file multimediali</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
     <value>Unisci video ed audio sistema</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
-    <value>Unisci tutti i media</value>
+    <value>Unisci tutti i file multimediali</value>
   </data>
 </root>

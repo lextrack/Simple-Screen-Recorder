@@ -118,121 +118,121 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutForm" xml:space="preserve">
-    <value>Sobre o software</value>
+    <value>Про програму</value>
   </data>
   <data name="aboutToolStripMenuItem" xml:space="preserve">
-    <value>Sobre</value>
+    <value>Про програму</value>
   </data>
   <data name="audioToolStripMenuItem" xml:space="preserve">
-    <value>Gravação de áudio</value>
+    <value>Аудіозапис</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
-    <value>Selecionar áudio do sistema</value>
+    <value>Виберіть системний звуковий файл</value>
   </data>
   <data name="BtnDeskAudio2" xml:space="preserve">
-    <value>Selecionar áudio do sistema</value>
+    <value>Виберіть системний звуковий файл</value>
   </data>
   <data name="BtnExit" xml:space="preserve">
-    <value>Sair</value>
+    <value>Вихід</value>
   </data>
   <data name="BtnMergeAll" xml:space="preserve">
-    <value>Misturar arquivos</value>
+    <value>змішувати файли</value>
   </data>
   <data name="BtnMergeAll2" xml:space="preserve">
-    <value>Misturar arquivos</value>
+    <value>змішувати файли</value>
   </data>
   <data name="BtnMicAudio" xml:space="preserve">
-    <value>Selecione o áudio do microfone</value>
+    <value>Виберіть аудіофайл мікрофона</value>
   </data>
   <data name="btnOutputF" xml:space="preserve">
-    <value>Pasta de saída</value>
+    <value>Вихідна папка</value>
   </data>
   <data name="btnOutputF2" xml:space="preserve">
-    <value>Pasta de saída</value>
+    <value>Вихідна папка</value>
   </data>
   <data name="btnOutputRecordings" xml:space="preserve">
-    <value>Mostrar gravações</value>
+    <value>Відкрийте папку записів</value>
   </data>
   <data name="btnStartRecording" xml:space="preserve">
-    <value>Iniciar Gravação</value>
+    <value>Почати записування</value>
   </data>
   <data name="BtnStop" xml:space="preserve">
-    <value>Interromper Gravação</value>
+    <value>Зупинити записування</value>
   </data>
   <data name="BtnVideo" xml:space="preserve">
-    <value>Selecione um arquivo de vídeo</value>
+    <value>Виберіть відеофайл</value>
   </data>
   <data name="BtnVideo2" xml:space="preserve">
-    <value>Selecione um arquivo de vídeo</value>
+    <value>Виберіть відеофайл</value>
   </data>
   <data name="crownGroupBox1" xml:space="preserve">
-    <value>Configurações de vídeo</value>
+    <value>Налаштування відео</value>
   </data>
   <data name="crownGroupBox2" xml:space="preserve">
-    <value>Configurações de áudio</value>
+    <value>Налаштування звуку</value>
   </data>
   <data name="crownGroupBox3" xml:space="preserve">
-    <value>Controles de gravação</value>
+    <value>елементи керування записом</value>
   </data>
   <data name="Label2" xml:space="preserve">
-    <value>Controles de gravação</value>
+    <value>елементи керування записом</value>
   </data>
   <data name="Label4" xml:space="preserve">
-    <value>Microfone (Mic/Aux)</value>
+    <value>мікрофон (Mic/Aux)</value>
   </data>
   <data name="Label5" xml:space="preserve">
-    <value>Áudio do sistema (Desktop Audio)</value>
+    <value>Системний звук (Desktop Audio)</value>
   </data>
   <data name="Label6" xml:space="preserve">
-    <value>Método de gravação áudio</value>
+    <value>Метод аудіозапису</value>
   </data>
   <data name="Label7" xml:space="preserve">
-    <value>Dispositivos de áudio</value>
+    <value>Аудіопристрої</value>
   </data>
   <data name="labelCodec" xml:space="preserve">
-    <value>Codificador</value>
+    <value>Кодувальник</value>
   </data>
   <data name="labelResolution" xml:space="preserve">
-    <value>Resolução da tela</value>
+    <value>Роздільна здатність дисплея</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
-    <value>Línguas</value>
+    <value>Мова</value>
   </data>
   <data name="LbAbout1" xml:space="preserve">
-    <value>Você pode encontrar este projeto no GitHub,
-seu nome é "Simple-Screen-Recorder",e meu
-nome é "Lextrack". Fique alerta, haverá mais
-próximas atualizações!</value>
+    <value>Ви можете знайти цей проект на GitHub, його назву
+це "Simple-Screen-Recorder", і мій псевдонім
+це "Lextrack". Слідкуйте за цим проектом, більше
+оновлення незабаром!</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
-    <value>Este software é possível por 
-TutorialesVbNET e Flaticon.</value>
+    <value>Це програмне забезпечення стало можливим завдяки
+TutorialesVbNET і Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
-    <value>Misturando apenas um vídeo e um arquivo de áudio</value>
+    <value>Об'єднайте відео та лише один аудіофайл</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
-    <value>Mesclar todos os arquivos de mídia</value>
+    <value>Об’єднати всі медіафайли</value>
   </data>
   <data name="message1" xml:space="preserve">
-    <value>Você não está registrando nada!</value>
+    <value>Ви нічого не записуєте!</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
-    <value>Somente áudio do sistema</value>
+    <value>Лише системний звук (Desktop Audio)</value>
   </data>
   <data name="radioMicrophone" xml:space="preserve">
-    <value>Somente áudio do microfone</value>
+    <value>Лише звук мікрофона</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
-    <value>Sistema de som e microfone de áudio</value>
+    <value>Системний звук і звук мікрофона</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Mesclar arquivos de mídia</value>
+    <value>Об’єднати мультимедійні файли</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>Misture apenas vídeo e áudio do sistema</value>
+    <value>Об'єднайте відео та системні звуки</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
-    <value>Mesclar todos os arquivos de mídia</value>
+    <value>Об’єднати всі мультимедійні файли</value>
   </data>
 </root>

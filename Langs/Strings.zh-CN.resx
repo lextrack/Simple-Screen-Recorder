@@ -211,10 +211,10 @@
     <value>混合视频和只有一个音频文件</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
-    <value>混合所有媒体文件</value>
+    <value>合并所有媒体文件</value>
   </data>
   <data name="message1" xml:space="preserve">
-    <value>你必须先按下录音按钮。</value>
+    <value>你没有记录任何东西！</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>只有系统音频 （Desktop Audio）</value>
@@ -232,6 +232,6 @@
     <value>只混合来自计算机的视频和音频</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
-    <value>混合所有文件</value>
+    <value>合并所有媒体文件</value>
   </data>
 </root>

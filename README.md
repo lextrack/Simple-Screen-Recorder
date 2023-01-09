@@ -16,9 +16,9 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 
 - Select the **audio output device** that you want to use to record the audio track from the "System sound (Desktop Audio)" dropdown menu.<br>
 
-- Select the **codec** that you want to use from the "Encoder" dropdown menu. The available codecs are "MPEG-4" and "H264 NVENC (Nvidia Graphics Cards)".<br>
+- Select the **codec** that you want to use from the "Encoder" dropdown menu. The available codecs are "MPEG-4 (default)", "H264 NVENC (Nvidia Graphics Cards)" and "H264 AMF (AMD Graphics Cards)".<br>
 
-- Select the **resolution** that you want to use from the "Resolution" dropdown menu. Available resolutions include "1920x1080", "1600x900", "1536x864", "1366x768", "1360x768", "1280x720", and "1024x768". (This selector always will take your primary monitor. Depending on your display resolution, you must adjust the resolution in the app.)<br>
+- Select the **resolution** that you want to use from the "Resolution" dropdown menu. Available resolutions include "3840x2160", "1920x1080", "1600x900", "1536x864", "1366x768", "1360x768", "1280x720", and "1024x768". (This selector always will take your primary monitor. Depending on your display resolution, you must adjust the resolution in the app.)<br>
 
 - Use the radio buttons to select whether you want to record the audio from both the microphone and desktop Audio, just the microphone, or just the desktop Audio.<br>
 
@@ -37,12 +37,12 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 - Keyboard shortcuts: F9 to start and stop recordings, F10 to open recordings folders and ESC to close the app<br>
 - Audio recording separately<br>
 - Encoder selector<br>
-- Availability in five languages (English, Español, 中文(简体), Português do Brasil and Italiano)
+- Availability in six languages (English, Español, 中文(简体), Português do Brasil, Українська and Italiano)
 
 <h2 align="center">Install</h2>
 <p align="center">
-  Windows 8.1, 10, 11 (64 bits) | v1.1.6 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.1.6/Simple-Screen-Recorder-Release-Portable.zip">Download</a><br><br>
-  Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 7.0</a> and <a href="https://github.com/BtbN/FFmpeg-Builds">ffmpeg (lgpl-shared-5.1)</a> <br><br>
+  Windows 8.1, 10, 11 (64 bits) | v1.1.7 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.1.7/Simple-Screen-Recorder-Release-Portable.zip">Download</a><br><br>
+  Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 7.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-release-full-shared 5.1.2)</a> <br><br>
   <a href="https://postimg.cc/"><img src="https://i.postimg.cc/Z5NsL8nb/screen-recorder-1-1-6.png"></a>
 </p>
 

@@ -202,7 +202,7 @@
     <value>You can find this project on GitHub, its name
 is "Simple-Screen-Recorder", and my nickname
 is "Lextrack". Keep an eye on this project, more
-updates coming soon!</value>
+are updates coming soon!</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
     <value>This software is made possible by
@@ -212,10 +212,10 @@ TutorialesVbNET and Flaticon.</value>
     <value>Merge video and only one audio file</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
-    <value>Merge all media</value>
+    <value>Merge all media files</value>
   </data>
   <data name="message1" xml:space="preserve">
-    <value>You are not recording anything</value>
+    <value>You are not recording anything!</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>System audio only (Desktop Audio)</value>
@@ -233,6 +233,6 @@ TutorialesVbNET and Flaticon.</value>
     <value>Merge video and system sounds</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
-    <value>Merge all media</value>
+    <value>Merge all media files</value>
   </data>
 </root>

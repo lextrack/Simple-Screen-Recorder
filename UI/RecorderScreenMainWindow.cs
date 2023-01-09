@@ -34,8 +34,10 @@ namespace Simple_Screen_Recorder
 
             comboBoxCodec.Items.Add("MPEG-4");
             comboBoxCodec.Items.Add("H264 NVENC (Nvidia Graphics Cards)");
+            comboBoxCodec.Items.Add("H264 AMF (AMD Graphics Cards)");
             comboBoxCodec.SelectedIndex = 0;
 
+            comboBoxResolution.Items.Add("3840x2160");
             comboBoxResolution.Items.Add("1920x1080");
             comboBoxResolution.Items.Add("1600x900");
             comboBoxResolution.Items.Add("1536x864");
@@ -43,7 +45,7 @@ namespace Simple_Screen_Recorder
             comboBoxResolution.Items.Add("1360x768");
             comboBoxResolution.Items.Add("1280x720");
             comboBoxResolution.Items.Add("1024x768");
-            comboBoxResolution.SelectedIndex = 0;
+            comboBoxResolution.SelectedIndex = 1;
         }
 
         private void btnStartRecording_Click(object sender, EventArgs e)
@@ -79,6 +81,25 @@ namespace Simple_Screen_Recorder
                     {
                         switch (comboBoxResolution.SelectedItem)
                         {
+                            case "3840x2160":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 3840x2160 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    radioMicrophone.Enabled = false;
+                                    break;
+                                }
+
                             case "1920x1080":
                                 {
                                     ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1920x1080 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
@@ -220,6 +241,25 @@ namespace Simple_Screen_Recorder
                     {
                         switch (comboBoxResolution.SelectedItem)
                         {
+                            case "3840x2160":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 3840x2160 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    radioMicrophone.Enabled = false;
+                                    break;
+                                }
+
                             case "1920x1080":
                                 {
                                     ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1920x1080 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
@@ -337,6 +377,166 @@ namespace Simple_Screen_Recorder
                             case "1024x768":
                                 {
                                     ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1024x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    radioMicrophone.Enabled = false;
+                                    break;
+                                }
+                        }
+
+                        break;
+                    }
+
+                case "H264 AMF (AMD Graphics Cards)":
+                    {
+                        switch (comboBoxResolution.SelectedItem)
+                        {
+                            case "3840x2160":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 3840x2160 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    radioMicrophone.Enabled = false;
+                                    break;
+                                }
+
+                            case "1920x1080":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1920x1080 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    radioMicrophone.Enabled = false;
+                                    break;
+                                }
+
+                            case "1600x900":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1600x900 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    radioMicrophone.Enabled = false;
+                                    break;
+                                }
+
+                            case "1536x864":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1536x864 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    radioMicrophone.Enabled = false;
+                                    break;
+                                }
+
+                            case "1366x768":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1366x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    radioMicrophone.Enabled = false;
+                                    break;
+                                }
+
+                            case "1360x768":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    radioMicrophone.Enabled = false;
+                                    break;
+                                }
+
+                            case "1280x720":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1280x720 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
+                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                                    ProcessId.CreateNoWindow = true;
+                                    ProcessId.RedirectStandardOutput = true;
+                                    Process.Start(ProcessId);
+
+                                    btnStartRecording.Enabled = false;
+                                    ComboBoxMicrophone.Enabled = false;
+                                    ComboBoxSpeaker.Enabled = false;
+                                    comboBoxCodec.Enabled = false;
+                                    comboBoxResolution.Enabled = false;
+                                    RadioTwoTrack.Enabled = false;
+                                    RadioDesktop.Enabled = false;
+                                    radioMicrophone.Enabled = false;
+                                    break;
+                                }
+
+                            case "1024x768":
+                                {
+                                    ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate 30 -video_size 1024x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
                                     ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                                     ProcessId.CreateNoWindow = true;
                                     ProcessId.RedirectStandardOutput = true;
@@ -546,6 +746,12 @@ namespace Simple_Screen_Recorder
             GetTextsMain();
         }
 
+        private void ukranianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Languages = "uk-UA";
+            GetTextsMain();
+        }
+
         #endregion
 
         private void RecorderScreenMainWindow_KeyDown(object sender, KeyEventArgs e)
@@ -570,6 +776,5 @@ namespace Simple_Screen_Recorder
             }
 
         }
-
     }
 }
