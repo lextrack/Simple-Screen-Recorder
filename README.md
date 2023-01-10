@@ -41,7 +41,7 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 
 <h2 align="center">Install</h2>
 <p align="center">
-  Windows 8.1, 10, 11 (64 bits) | v1.1.7 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.1.7/Simple-Screen-Recorder-Release-Portable.zip">Download</a><br><br>
+  Windows 8.1, 10, 11 (64 bits) | v1.1.7 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.1.7/Simple-Screen-Recorder-Release-Portable.zip">Download directly from GitHub</a> or <a href="https://www.softpedia.com/get/Multimedia/Video/Video-Recording/Simple-Screen-Recorder.shtml">Download from Softpedia</a><br><br>
   Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 7.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-release-full-shared 5.1.2)</a> <br><br>
   <a href="https://postimg.cc/"><img src="https://i.postimg.cc/Z5NsL8nb/screen-recorder-1-1-6.png"></a>
 </p>
