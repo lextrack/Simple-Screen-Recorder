@@ -28,7 +28,7 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 - To stop the screen recording, click the "Stop Recording" button. The recorded video file will be saved in the "Recordings" folder.<br>
 
 - Additionally, you can record audio separately. Using the system of the screen recorder, you can record individually your microphone, desktop audio, or both of them. 
-In the main window, select the option "Audio Recording" and then, you might record audio from your PC. The recorded audio file will be saved in the "AudioRecordings" folder.<br>
+In the main window, select the "Audio Recording" option and then, you could record audio from your PC. The recorded audio file will be saved in the "AudioRecordings" folder.<br>
 </p>
 
 <h2 align="center">Features</h2>
