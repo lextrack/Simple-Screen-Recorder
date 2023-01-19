@@ -20,8 +20,7 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 
 - Select the **framerate** that you want to use from the "Video framerate" dropdown menu. You can record a video at 30 or 60 fps (I recommend selecting 30).<br>
 
-- Select the **resolution** that you want to use from the "Resolution" dropdown menu. Available resolutions include "3840x2160", "1920x1080", "1600x900", "1536x864", "1366x768", "1360x768", "1280x720", and "1024x768". This selector always will take your primary monitor.
-  **Depending on your display resolution, you must adjust the resolution in the app.**<br>
+- Select the **resolution** that you want to use from the "Resolution" dropdown menu. Available resolutions include "3840x2160", "1920x1080", "1600x900", "1536x864", "1366x768", "1360x768" and "1280x720". **This selector always will take your primary monitor. Depending on your display resolution, you must adjust the resolution in the app.**<br>
 
 - Use the radio buttons to select whether you want to record the audio from both the microphone and desktop Audio, just the microphone, or just the desktop Audio.<br>
 
@@ -49,7 +48,7 @@ Select the Audio Recording option in the main window and you can record audio fr
 <p align="center">
   Windows 8.1, 10, 11 (64 bits) | v1.1.8 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.1.8/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a> or <a href="https://www.softpedia.com/get/Multimedia/Video/Video-Recording/Simple-Screen-Recorder.shtml">Download from Softpedia</a><br><br>
   Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 7.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-release-full-shared 5.1.2)</a> <br><br>
-  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/Z5NsL8nb/screen-recorder-1-1-6.png"></a>
+  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/brpGqGnt/screen-recorder-1-1-8.png"></a>
 </p>
 
 <h2 align="center">Acknowledgments</h2>
