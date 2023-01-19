@@ -127,7 +127,7 @@
     <value>Аудіозапис</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
-    <value>Виберіть системний звуковий файл</value>
+    <value>Виберіть аудіофайл</value>
   </data>
   <data name="BtnDeskAudio2" xml:space="preserve">
     <value>Виберіть системний звуковий файл</value>
@@ -191,6 +191,9 @@
   </data>
   <data name="labelCodec" xml:space="preserve">
     <value>Кодувальник</value>
+  </data>
+  <data name="labelFps" xml:space="preserve">
+    <value>Частота кадрів</value>
   </data>
   <data name="labelResolution" xml:space="preserve">
     <value>Роздільна здатність дисплея</value>

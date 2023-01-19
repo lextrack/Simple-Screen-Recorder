@@ -145,6 +145,7 @@
             // radioMicrophone
             // 
             this.radioMicrophone.AutoSize = true;
+            this.radioMicrophone.BackColor = System.Drawing.Color.Transparent;
             this.radioMicrophone.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioMicrophone.ForeColor = System.Drawing.SystemColors.Control;
             this.radioMicrophone.Location = new System.Drawing.Point(14, 106);
@@ -154,11 +155,12 @@
             this.radioMicrophone.TabIndex = 55;
             this.radioMicrophone.TabStop = true;
             this.radioMicrophone.Text = "Microphone audio only";
-            this.radioMicrophone.UseVisualStyleBackColor = true;
+            this.radioMicrophone.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Crimson;
             this.label6.Location = new System.Drawing.Point(7, 22);
@@ -171,6 +173,7 @@
             // Label4
             // 
             this.Label4.AutoSize = true;
+            this.Label4.BackColor = System.Drawing.Color.Transparent;
             this.Label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Label4.ForeColor = System.Drawing.SystemColors.Control;
             this.Label4.Location = new System.Drawing.Point(11, 208);
@@ -183,6 +186,7 @@
             // RadioTwoTrack
             // 
             this.RadioTwoTrack.AutoSize = true;
+            this.RadioTwoTrack.BackColor = System.Drawing.Color.Transparent;
             this.RadioTwoTrack.Checked = true;
             this.RadioTwoTrack.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RadioTwoTrack.ForeColor = System.Drawing.SystemColors.Control;
@@ -193,11 +197,12 @@
             this.RadioTwoTrack.TabIndex = 54;
             this.RadioTwoTrack.TabStop = true;
             this.RadioTwoTrack.Text = "System sounds and microphone audio";
-            this.RadioTwoTrack.UseVisualStyleBackColor = true;
+            this.RadioTwoTrack.UseVisualStyleBackColor = false;
             // 
             // Label5
             // 
             this.Label5.AutoSize = true;
+            this.Label5.BackColor = System.Drawing.Color.Transparent;
             this.Label5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Label5.ForeColor = System.Drawing.SystemColors.Control;
             this.Label5.Location = new System.Drawing.Point(10, 156);
@@ -210,6 +215,7 @@
             // RadioDesktop
             // 
             this.RadioDesktop.AutoSize = true;
+            this.RadioDesktop.BackColor = System.Drawing.Color.Transparent;
             this.RadioDesktop.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RadioDesktop.ForeColor = System.Drawing.SystemColors.Control;
             this.RadioDesktop.Location = new System.Drawing.Point(14, 76);
@@ -219,11 +225,12 @@
             this.RadioDesktop.TabIndex = 53;
             this.RadioDesktop.TabStop = true;
             this.RadioDesktop.Text = "System audio only (Desktop Audio)";
-            this.RadioDesktop.UseVisualStyleBackColor = true;
+            this.RadioDesktop.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Crimson;
             this.label7.Location = new System.Drawing.Point(7, 133);

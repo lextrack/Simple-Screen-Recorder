@@ -127,7 +127,7 @@
     <value>Grabador de audio</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
-    <value>Seleccionar audio del sistema</value>
+    <value>Seleccionar un audio</value>
   </data>
   <data name="BtnDeskAudio2" xml:space="preserve">
     <value>Seleccionar audio del sistema</value>
@@ -191,6 +191,9 @@
   </data>
   <data name="labelCodec" xml:space="preserve">
     <value>Codificador</value>
+  </data>
+  <data name="labelFps" xml:space="preserve">
+    <value>Fotogramas por segundo</value>
   </data>
   <data name="labelResolution" xml:space="preserve">
     <value>Resolution del monitor</value>

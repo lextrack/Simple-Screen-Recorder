@@ -13,6 +13,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
         {
             InitializeComponent();
         }
+
         private void MergeVD_Load(object sender, EventArgs e)
         {
             GetTextsMainMerge();
@@ -20,7 +21,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
 
         public void BtnMergeAll_Click(object sender, EventArgs e)
         {
-            Process.Start("cmd.exe", "/k ffmpeg -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -c:v copy -c:a aac -b:a 320k " + outputFileName + " & exit /b");
+            Process.Start("cmd.exe", "/k ffmpeg -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -shortest -c:v copy -c:a aac -b:a 320k " + outputFileName + " & exit /b");
         }
 
         private void BtnVideo_Click(object sender, EventArgs e)

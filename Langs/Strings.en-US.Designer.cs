@@ -420,5 +420,13 @@ namespace Simple_Screen_Recorder.Langs
                 return ResourceManager.GetString("radioMicrophone", resourceCulture);
             }
         }
+        internal static string labelFps
+        {
+            get
+            {
+                return ResourceManager.GetString("labelFps", resourceCulture);
+            }
+        }
+
     }
 }

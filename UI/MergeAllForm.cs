@@ -21,8 +21,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
 
         private void BtnMergeAll_Click(object sender, EventArgs e)
         {
-
-            Process.Start("cmd.exe", "/k ffmpeg -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -i " + txtAudioMic.Text + " -filter_complex amerge -c:v copy -c:a aac -b:a 320k " + outputFileName + " & exit /b");
+            Process.Start("cmd.exe", "/k ffmpeg -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -i " + txtAudioMic.Text + " -filter_complex amerge -shortest -c:v copy -c:a aac -b:a 320k " + outputFileName + " & exit /b");
         }
 
         private void BtnVideo_Click(object sender, EventArgs e)

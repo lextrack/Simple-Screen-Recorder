@@ -127,7 +127,7 @@
     <value>音频录制</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
-    <value>选择系统音频</value>
+    <value>选择一个音频文件</value>
   </data>
   <data name="BtnDeskAudio2" xml:space="preserve">
     <value>选择系统音频</value>
@@ -191,6 +191,9 @@
   </data>
   <data name="labelCodec" xml:space="preserve">
     <value>编码器</value>
+  </data>
+  <data name="labelFps" xml:space="preserve">
+    <value>视频帧率</value>
   </data>
   <data name="labelResolution" xml:space="preserve">
     <value>分辨率</value>
