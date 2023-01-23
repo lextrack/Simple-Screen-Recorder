@@ -7,11 +7,14 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
 {
     public partial class MergeAllForm : Form
     {
-        string outputFileName = "output-" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".mkv";
+        string outputFileName = "output-" + DateTime.Now.ToString("MM-dd-yyyy-HH-mm-ss") + ".mkv";
 
         public MergeAllForm()
         {
             InitializeComponent();
+
+            string outputFolder = Application.StartupPath + @"\OutputFiles";
+            Directory.CreateDirectory(outputFolder);
         }
 
         private void MergeVDM_Load(object sender, EventArgs e)
@@ -21,7 +24,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
 
         private void BtnMergeAll_Click(object sender, EventArgs e)
         {
-            Process.Start("cmd.exe", "/k ffmpeg -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -i " + txtAudioMic.Text + " -filter_complex amerge -shortest -c:v copy -c:a aac -b:a 320k " + outputFileName + " & exit /b");
+            Process.Start("cmd.exe", "/k ffmpeg -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -i " + txtAudioMic.Text + " -filter_complex amerge -shortest -c:v copy -c:a aac -b:a 320k OutputFiles/" + outputFileName + " & exit /b");
         }
 
         private void BtnVideo_Click(object sender, EventArgs e)
@@ -52,12 +55,11 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
             {
                 txtAudioMic.Text = archivo.FileName;
             }
-
         }
 
         private void btnOutputF_Click(object sender, EventArgs e)
         {
-            Process.Start("explorer.exe", Application.StartupPath);
+            Process.Start("explorer.exe", "OutputFiles");
         }
 
         private void GetTextsMainAllMerge()

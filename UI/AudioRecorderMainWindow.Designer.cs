@@ -291,7 +291,7 @@
             this.MaximizeBox = false;
             this.Name = "AudioRecorderMainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Audio recording";
+            this.Text = "Audio recorder";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AudioRecorderMainWindow_FormClosed);
             this.Load += new System.EventHandler(this.AudioRecorderMainWindow_Load);
             this.crownGroupBox3.ResumeLayout(false);

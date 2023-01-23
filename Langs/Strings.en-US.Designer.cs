@@ -427,6 +427,13 @@ namespace Simple_Screen_Recorder.Langs
                 return ResourceManager.GetString("labelFps", resourceCulture);
             }
         }
+        internal static string CheckBoxAllMonitors
+        {
+            get
+            {
+                return ResourceManager.GetString("CheckBoxAllMonitors", resourceCulture);
+            }
+        }
 
     }
 }

@@ -1,7 +1,5 @@
 ﻿using Microsoft.VisualBasic;
 using NAudio.Wave;
-using ReaLTaiizor.Controls;
-using ReaLTaiizor.Forms;
 using Simple_Screen_Recorder.Langs;
 using Simple_Screen_Recorder.Properties;
 using Simple_Screen_Recorder.ScreenRecorderWin;
@@ -25,6 +23,7 @@ namespace Simple_Screen_Recorder
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             this.KeyPreview = true;
 
             GetTextsMain();
@@ -40,25 +39,47 @@ namespace Simple_Screen_Recorder
             comboBoxCodec.SelectedIndex = 0;
 
             comboBoxResolution.Items.Add("3840x2160");
+            comboBoxResolution.Items.Add("2560x1440");
             comboBoxResolution.Items.Add("1920x1080");
             comboBoxResolution.Items.Add("1600x900");
             comboBoxResolution.Items.Add("1536x864");
+            comboBoxResolution.Items.Add("1440x900");
             comboBoxResolution.Items.Add("1366x768");
             comboBoxResolution.Items.Add("1360x768");
             comboBoxResolution.Items.Add("1280x720");
-            comboBoxResolution.SelectedIndex = 1;
+            comboBoxResolution.SelectedIndex = 2;
 
             comboBoxFps.Items.Add("30");
             comboBoxFps.Items.Add("60");
             comboBoxFps.SelectedIndex = 0;
+
+            ComboBoxFormat.Items.Add(".mkv");
+            ComboBoxFormat.Items.Add(".avi");
+            ComboBoxFormat.SelectedIndex = 0;
         }
 
         private void btnStartRecording_Click(object sender, EventArgs e)
         {
-            LbTimer.ForeColor = Color.IndianRed;
-            TimeRec = DateTime.Now;
-            RecState.Enabled = true;
-            VideoName = "Video." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".avi";
+            switch (ComboBoxFormat.SelectedItem)
+            {
+                case ".mkv":
+                    {
+                        LbTimer.ForeColor = Color.IndianRed;
+                        TimeRec = DateTime.Now;
+                        RecState.Enabled = true;
+                        VideoName = "Video." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".mkv";
+                        break;
+                    }
+
+                case ".avi":
+                    {
+                        LbTimer.ForeColor = Color.IndianRed;
+                        TimeRec = DateTime.Now;
+                        RecState.Enabled = true;
+                        VideoName = "Video." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".avi";
+                        break;
+                    }
+            }
 
             if (RadioTwoTrack.Checked == true)
             {
@@ -80,467 +101,160 @@ namespace Simple_Screen_Recorder
 
         private void VideoCodecs()
         {
-            switch (comboBoxCodec.SelectedItem)
+            if (CheckBoxAllMonitors.Checked == true)
             {
-                case "MPEG-4":
-                    {
-                        switch (comboBoxResolution.SelectedItem)
+                switch (comboBoxCodec.SelectedItem)
+                {
+                    case "MPEG-4":
                         {
-                            case "3840x2160":
+                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
 
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 3840x2160 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 11000k Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-
-                            case "1920x1080":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1920x1080 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 11000k Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-
-                            case "1600x900":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1600x900 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 11000k Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            case "1536x864":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1536x864 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 11000k Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            case "1366x768":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1366x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 11000k Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            case "1360x768":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 11000k Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            case "1280x720":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1280x720 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v mpeg4 -b:v 11000k Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            default:
-                                break;
+                            btnStartRecording.Enabled = false;
+                            ComboBoxMicrophone.Enabled = false;
+                            ComboBoxSpeaker.Enabled = false;
+                            comboBoxCodec.Enabled = false;
+                            comboBoxResolution.Enabled = false;
+                            comboBoxFps.Enabled = false;
+                            RadioTwoTrack.Enabled = false;
+                            RadioDesktop.Enabled = false;
+                            radioMicrophone.Enabled = false;
+                            CheckBoxAllMonitors.Enabled = false;
+                            ComboBoxFormat.Enabled = false;
+                            break;
                         }
-                        break;
-                    }
 
-                case "H264 NVENC (Nvidia Graphics Cards)":
-                    {
-                        switch (comboBoxResolution.SelectedItem)
+                    case "H264 NVENC (Nvidia Graphics Cards)":
                         {
-                            case "3840x2160":
+                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
 
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 3840x2160 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-
-                            case "1920x1080":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1920x1080 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-
-                            case "1600x900":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1600x900 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            case "1536x864":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1536x864 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            case "1366x768":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1366x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            case "1360x768":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            case "1280x720":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1280x720 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-
+                            btnStartRecording.Enabled = false;
+                            ComboBoxMicrophone.Enabled = false;
+                            ComboBoxSpeaker.Enabled = false;
+                            comboBoxCodec.Enabled = false;
+                            comboBoxResolution.Enabled = false;
+                            comboBoxFps.Enabled = false;
+                            RadioTwoTrack.Enabled = false;
+                            RadioDesktop.Enabled = false;
+                            radioMicrophone.Enabled = false;
+                            CheckBoxAllMonitors.Enabled = false;
+                            ComboBoxFormat.Enabled = false;
+                            break;
                         }
-                        break;
-                    }
-                case "H264 AMF (AMD Graphics Cards)":
-                    {
-                        switch (comboBoxResolution.SelectedItem)
+
+                    case "H264 AMF (AMD Graphics Cards)":
                         {
-                            case "3840x2160":
+                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
 
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 3840x2160 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-
-                            case "1920x1080":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1920x1080 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-
-                            case "1600x900":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1600x900 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            case "1536x864":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1536x864 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            case "1366x768":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1366x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            case "1360x768":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1360x768 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            case "1280x720":
-                                {
-                                    int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                                    ProcessStartInfo ProcessId = new ProcessStartInfo("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size 1280x720 -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
-                                    ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                                    ProcessId.CreateNoWindow = true;
-                                    ProcessId.RedirectStandardOutput = true;
-                                    Process.Start(ProcessId);
-
-                                    btnStartRecording.Enabled = false;
-                                    ComboBoxMicrophone.Enabled = false;
-                                    ComboBoxSpeaker.Enabled = false;
-                                    comboBoxCodec.Enabled = false;
-                                    comboBoxResolution.Enabled = false;
-                                    comboBoxFps.Enabled = false;
-                                    RadioTwoTrack.Enabled = false;
-                                    RadioDesktop.Enabled = false;
-                                    radioMicrophone.Enabled = false;
-                                    break;
-                                }
-                            default:
-                                break;
+                            btnStartRecording.Enabled = false;
+                            ComboBoxMicrophone.Enabled = false;
+                            ComboBoxSpeaker.Enabled = false;
+                            comboBoxCodec.Enabled = false;
+                            comboBoxResolution.Enabled = false;
+                            comboBoxFps.Enabled = false;
+                            RadioTwoTrack.Enabled = false;
+                            RadioDesktop.Enabled = false;
+                            radioMicrophone.Enabled = false;
+                            CheckBoxAllMonitors.Enabled = false;
+                            ComboBoxFormat.Enabled = false;
+                            break;
                         }
-                        break;
-                    }
+                }
+
             }
-        }
+            else
+            {
+                switch (comboBoxCodec.SelectedItem)
+                {
+                    case "MPEG-4":
+                        {
+                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+                            string? resolution = comboBoxResolution.SelectedItem.ToString();
+                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size " + resolution + " -offset_x 0 -offset_y 0 -show_region 1  -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
 
+                            btnStartRecording.Enabled = false;
+                            ComboBoxMicrophone.Enabled = false;
+                            ComboBoxSpeaker.Enabled = false;
+                            comboBoxCodec.Enabled = false;
+                            comboBoxResolution.Enabled = false;
+                            comboBoxFps.Enabled = false;
+                            RadioTwoTrack.Enabled = false;
+                            RadioDesktop.Enabled = false;
+                            radioMicrophone.Enabled = false;
+                            CheckBoxAllMonitors.Enabled = false;
+                            ComboBoxFormat.Enabled = false;
+                            break;
+                        }
+
+                    case "H264 NVENC (Nvidia Graphics Cards)":
+                        {
+                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+                            string? resolution = comboBoxResolution.SelectedItem.ToString();
+                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size " + resolution + " -offset_x 0 -offset_y 0 -show_region 1  -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
+
+                            btnStartRecording.Enabled = false;
+                            ComboBoxMicrophone.Enabled = false;
+                            ComboBoxSpeaker.Enabled = false;
+                            comboBoxCodec.Enabled = false;
+                            comboBoxResolution.Enabled = false;
+                            comboBoxFps.Enabled = false;
+                            RadioTwoTrack.Enabled = false;
+                            RadioDesktop.Enabled = false;
+                            radioMicrophone.Enabled = false;
+                            CheckBoxAllMonitors.Enabled = false;
+                            ComboBoxFormat.Enabled = false;
+                            break;
+                        }
+
+                    case "H264 AMF (AMD Graphics Cards)":
+                        {
+                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+                            string? resolution = comboBoxResolution.SelectedItem.ToString();
+                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -video_size " + resolution + " -offset_x 0 -offset_y 0 -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
+
+                            btnStartRecording.Enabled = false;
+                            ComboBoxMicrophone.Enabled = false;
+                            ComboBoxSpeaker.Enabled = false;
+                            comboBoxCodec.Enabled = false;
+                            comboBoxResolution.Enabled = false;
+                            comboBoxFps.Enabled = false;
+                            RadioTwoTrack.Enabled = false;
+                            RadioDesktop.Enabled = false;
+                            radioMicrophone.Enabled = false;
+                            CheckBoxAllMonitors.Enabled = false;
+                            ComboBoxFormat.Enabled = false;
+                            break;
+                        }
+                }
+            }
+
+        }
 
         public void StopRec()
         {
@@ -553,6 +267,8 @@ namespace Simple_Screen_Recorder
             RadioDesktop.Enabled = true;
             radioMicrophone.Enabled = true;
             comboBoxFps.Enabled = true;
+            CheckBoxAllMonitors.Enabled = true;
+            ComboBoxFormat.Enabled = true;
 
             if (RadioTwoTrack.Checked == true)
             {
@@ -594,7 +310,7 @@ namespace Simple_Screen_Recorder
             try
             {
                 LbTimer.ForeColor = Color.White;
-                LbTimer.Text = "0:0:0";
+                LbTimer.Text = "00:00:00";
                 RecState.Enabled = false;
                 StopRec();
 
@@ -625,10 +341,22 @@ namespace Simple_Screen_Recorder
             AudioDesktop.waveIn.StartRecording();
         }
 
+        private void CheckBoxAllMonitors_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBoxAllMonitors.Checked)
+            {
+                comboBoxResolution.Enabled = false;
+            }
+            else
+            {
+                comboBoxResolution.Enabled = true;
+            }
+        }
+
         private void Timer1_Tick(object sender, EventArgs e)
         {
             var Difference = DateTime.Now.Subtract(TimeRec);
-            LbTimer.Text = "Rec: " + Difference.Hours.ToString() + ":" + Difference.Minutes.ToString() + ":" + Difference.Seconds.ToString();
+            LbTimer.Text = "Rec: " + Difference.Hours.ToString().PadLeft(2, '0') + ":" + Difference.Minutes.ToString().PadLeft(2, '0') + ":" + Difference.Seconds.ToString().PadLeft(2, '0');
         }
 
         private void mergeVideoDesktopAndMicAudioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -698,6 +426,7 @@ namespace Simple_Screen_Recorder
             audioToolStripMenuItem.Text = StringsEN.audioToolStripMenuItem;
             radioMicrophone.Text = StringsEN.radioMicrophone;
             labelFps.Text = StringsEN.labelFps;
+            CheckBoxAllMonitors.Text = StringsEN.CheckBoxAllMonitors;
         }
 
         private void españolToolStripMenuItem_Click(object sender, EventArgs e)

@@ -124,7 +124,7 @@
     <value>Acerca de</value>
   </data>
   <data name="audioToolStripMenuItem" xml:space="preserve">
-    <value>Grabador de audio</value>
+    <value>Grabadora de audio</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>Seleccionar un audio</value>
@@ -164,6 +164,9 @@
   </data>
   <data name="BtnVideo2" xml:space="preserve">
     <value>Seleccionar un archivo de vídeo</value>
+  </data>
+  <data name="CheckBoxAllMonitors" xml:space="preserve">
+    <value>Capturar todos los monitores</value>
   </data>
   <data name="crownGroupBox1" xml:space="preserve">
     <value>Ajustes de video</value>
@@ -221,10 +224,10 @@ TutorialesVbNET y Flaticon.</value>
     <value>¡No estás grabando nada!</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
-    <value>Solamente audio del sistema</value>
+    <value>Solamente el audio del sistema</value>
   </data>
   <data name="radioMicrophone" xml:space="preserve">
-    <value>Solamente micrófono</value>
+    <value>Solamente el micrófono</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
     <value>Audio del sistema y micrófono</value>
@@ -233,7 +236,7 @@ TutorialesVbNET y Flaticon.</value>
     <value>Mezclar archivos</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>Mezclar solo vídeo y el audio de sistema</value>
+    <value>Mezclar solo vídeo y un audio</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
     <value>Mezclar todos los archivos</value>

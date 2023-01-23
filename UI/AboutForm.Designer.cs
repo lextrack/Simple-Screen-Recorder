@@ -40,7 +40,7 @@
             // 
             this.LbAbout2.AutoSize = true;
             this.LbAbout2.ForeColor = System.Drawing.SystemColors.Control;
-            this.LbAbout2.Location = new System.Drawing.Point(16, 175);
+            this.LbAbout2.Location = new System.Drawing.Point(16, 182);
             this.LbAbout2.Name = "LbAbout2";
             this.LbAbout2.Size = new System.Drawing.Size(182, 30);
             this.LbAbout2.TabIndex = 9;
@@ -68,14 +68,14 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 38);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Simple Screen Recorder\r\nv1.1.8";
+            this.label3.Text = "Simple Screen Recorder\r\nv1.1.9";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(16, 80);
+            this.label2.Location = new System.Drawing.Point(16, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 15);
             this.label2.TabIndex = 6;
@@ -94,7 +94,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(284, 224);
+            this.ClientSize = new System.Drawing.Size(284, 233);
             this.Controls.Add(this.LbAbout2);
             this.Controls.Add(this.LbAbout1);
             this.Controls.Add(this.label3);

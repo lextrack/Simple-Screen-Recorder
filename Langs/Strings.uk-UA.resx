@@ -124,7 +124,7 @@
     <value>Про програму</value>
   </data>
   <data name="audioToolStripMenuItem" xml:space="preserve">
-    <value>Аудіозапис</value>
+    <value>Аудіозаписувач</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>Виберіть аудіофайл</value>
@@ -165,6 +165,9 @@
   <data name="BtnVideo2" xml:space="preserve">
     <value>Виберіть відеофайл</value>
   </data>
+  <data name="CheckBoxAllMonitors" xml:space="preserve">
+    <value>Захоплення всіх моніторів одночасно</value>
+  </data>
   <data name="crownGroupBox1" xml:space="preserve">
     <value>Налаштування відео</value>
   </data>
@@ -202,13 +205,15 @@
     <value>Мова</value>
   </data>
   <data name="LbAbout1" xml:space="preserve">
-    <value>Ви можете знайти цей проект на GitHub, його назву
-це "Simple-Screen-Recorder", і мій псевдонім
-це "Lextrack". Слідкуйте за цим проектом, більше
-оновлення незабаром!</value>
+    <value>Ви можете знайти цей проект на GitHub,
+його назву це "Simple-Screen-Recorder",
+і мій псевдонім це "Lextrack". Слідкуйте
+за цим проектом, більше оновлення
+незабаром!</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
-    <value>Це програмне забезпечення стало можливим завдяки
+    <value>Це програмне забезпечення 
+стало можливим завдяки
 TutorialesVbNET і Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
@@ -230,10 +235,10 @@ TutorialesVbNET і Flaticon.</value>
     <value>Системний звук і звук мікрофона</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Об’єднати мультимедійні файли</value>
+    <value>Об'єднання медіафайлів</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>Об'єднайте відео та системні звуки</value>
+    <value>Об'єднання відео та одного аудіофайлу</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
     <value>Об’єднати всі мультимедійні файли</value>

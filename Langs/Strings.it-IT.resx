@@ -124,7 +124,7 @@
     <value>Info programma</value>
   </data>
   <data name="audioToolStripMenuItem" xml:space="preserve">
-    <value>Registrazione audio</value>
+    <value>Registratore audio</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>Seleziona un file audio</value>
@@ -164,6 +164,9 @@
   </data>
   <data name="BtnVideo2" xml:space="preserve">
     <value>Seleziona file video</value>
+  </data>
+  <data name="CheckBoxAllMonitors" xml:space="preserve">
+    <value>Cattura tutti i monitor</value>
   </data>
   <data name="crownGroupBox1" xml:space="preserve">
     <value>Impostazioni video</value>
@@ -233,7 +236,7 @@ TutorialesVbNET e Flaticon.</value>
     <value>Unisci file multimediali</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>Unisci video ed audio sistema</value>
+    <value>Unisci video e un singolo file audio</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
     <value>Unisci tutti i file multimediali</value>

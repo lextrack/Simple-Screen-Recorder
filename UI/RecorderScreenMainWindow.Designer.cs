@@ -72,6 +72,9 @@ namespace Simple_Screen_Recorder
             this.RadioTwoTrack = new System.Windows.Forms.RadioButton();
             this.RadioDesktop = new System.Windows.Forms.RadioButton();
             this.crownGroupBox1 = new ReaLTaiizor.Controls.CrownGroupBox();
+            this.labelFormat = new System.Windows.Forms.Label();
+            this.ComboBoxFormat = new ReaLTaiizor.Controls.CrownComboBox();
+            this.CheckBoxAllMonitors = new ReaLTaiizor.Controls.CrownCheckBox();
             this.comboBoxFps = new ReaLTaiizor.Controls.CrownComboBox();
             this.labelFps = new System.Windows.Forms.Label();
             this.crownGroupBox2 = new ReaLTaiizor.Controls.CrownGroupBox();
@@ -96,7 +99,7 @@ namespace Simple_Screen_Recorder
             this.BtnStop.Location = new System.Drawing.Point(21, 67);
             this.BtnStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnStop.Name = "BtnStop";
-            this.BtnStop.Size = new System.Drawing.Size(343, 40);
+            this.BtnStop.Size = new System.Drawing.Size(351, 40);
             this.BtnStop.TabIndex = 2;
             this.BtnStop.Text = "Stop Recording";
             this.BtnStop.UseVisualStyleBackColor = true;
@@ -116,7 +119,7 @@ namespace Simple_Screen_Recorder
             this.btnStartRecording.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnStartRecording.Name = "btnStartRecording";
             this.btnStartRecording.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnStartRecording.Size = new System.Drawing.Size(343, 40);
+            this.btnStartRecording.Size = new System.Drawing.Size(351, 40);
             this.btnStartRecording.TabIndex = 1;
             this.btnStartRecording.Text = "Start Recording";
             this.btnStartRecording.UseVisualStyleBackColor = true;
@@ -127,12 +130,12 @@ namespace Simple_Screen_Recorder
             this.LbTimer.AutoSize = true;
             this.LbTimer.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LbTimer.ForeColor = System.Drawing.Color.White;
-            this.LbTimer.Location = new System.Drawing.Point(22, 656);
+            this.LbTimer.Location = new System.Drawing.Point(24, 676);
             this.LbTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LbTimer.Name = "LbTimer";
-            this.LbTimer.Size = new System.Drawing.Size(50, 23);
+            this.LbTimer.Size = new System.Drawing.Size(80, 23);
             this.LbTimer.TabIndex = 29;
-            this.LbTimer.Text = "0:0:0";
+            this.LbTimer.Text = "00:00:00";
             // 
             // Label5
             // 
@@ -200,11 +203,11 @@ namespace Simple_Screen_Recorder
             this.BtnExit.ForeColor = System.Drawing.Color.Transparent;
             this.BtnExit.Image = global::Simple_Screen_Recorder.Properties.Resources.log_out_button;
             this.BtnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnExit.Location = new System.Drawing.Point(284, 645);
+            this.BtnExit.Location = new System.Drawing.Point(292, 669);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(119, 39);
-            this.BtnExit.TabIndex = 8;
+            this.BtnExit.Size = new System.Drawing.Size(123, 39);
+            this.BtnExit.TabIndex = 11;
             this.BtnExit.Text = "    Exit";
             this.BtnExit.UseVisualStyleBackColor = true;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
@@ -221,7 +224,7 @@ namespace Simple_Screen_Recorder
             this.toolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(428, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(440, 24);
             this.menuStrip1.TabIndex = 43;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -261,8 +264,8 @@ namespace Simple_Screen_Recorder
             this.audioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.audioToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.audioToolStripMenuItem.Name = "audioToolStripMenuItem";
-            this.audioToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
-            this.audioToolStripMenuItem.Text = "Audio recording";
+            this.audioToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.audioToolStripMenuItem.Text = "Audio recorder";
             this.audioToolStripMenuItem.Click += new System.EventHandler(this.audioToolStripMenuItem_Click);
             // 
             // languagesToolStripMenuItem
@@ -367,8 +370,8 @@ namespace Simple_Screen_Recorder
             this.btnOutputRecordings.Location = new System.Drawing.Point(21, 112);
             this.btnOutputRecordings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnOutputRecordings.Name = "btnOutputRecordings";
-            this.btnOutputRecordings.Size = new System.Drawing.Size(343, 40);
-            this.btnOutputRecordings.TabIndex = 7;
+            this.btnOutputRecordings.Size = new System.Drawing.Size(351, 40);
+            this.btnOutputRecordings.TabIndex = 10;
             this.btnOutputRecordings.Text = " Open Recordings Folder";
             this.btnOutputRecordings.UseVisualStyleBackColor = true;
             this.btnOutputRecordings.Click += new System.EventHandler(this.btnOutputRecordings_Click);
@@ -379,7 +382,7 @@ namespace Simple_Screen_Recorder
             this.labelCodec.BackColor = System.Drawing.Color.Transparent;
             this.labelCodec.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelCodec.ForeColor = System.Drawing.Color.Crimson;
-            this.labelCodec.Location = new System.Drawing.Point(15, 73);
+            this.labelCodec.Location = new System.Drawing.Point(15, 74);
             this.labelCodec.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCodec.Name = "labelCodec";
             this.labelCodec.Size = new System.Drawing.Size(72, 21);
@@ -406,8 +409,8 @@ namespace Simple_Screen_Recorder
             this.comboBoxCodec.FormattingEnabled = true;
             this.comboBoxCodec.Location = new System.Drawing.Point(19, 97);
             this.comboBoxCodec.Name = "comboBoxCodec";
-            this.comboBoxCodec.Size = new System.Drawing.Size(346, 26);
-            this.comboBoxCodec.TabIndex = 3;
+            this.comboBoxCodec.Size = new System.Drawing.Size(212, 26);
+            this.comboBoxCodec.TabIndex = 4;
             // 
             // comboBoxResolution
             // 
@@ -416,8 +419,8 @@ namespace Simple_Screen_Recorder
             this.comboBoxResolution.FormattingEnabled = true;
             this.comboBoxResolution.Location = new System.Drawing.Point(18, 46);
             this.comboBoxResolution.Name = "comboBoxResolution";
-            this.comboBoxResolution.Size = new System.Drawing.Size(346, 26);
-            this.comboBoxResolution.TabIndex = 5;
+            this.comboBoxResolution.Size = new System.Drawing.Size(354, 26);
+            this.comboBoxResolution.TabIndex = 3;
             // 
             // ComboBoxSpeaker
             // 
@@ -426,8 +429,8 @@ namespace Simple_Screen_Recorder
             this.ComboBoxSpeaker.FormattingEnabled = true;
             this.ComboBoxSpeaker.Location = new System.Drawing.Point(18, 172);
             this.ComboBoxSpeaker.Name = "ComboBoxSpeaker";
-            this.ComboBoxSpeaker.Size = new System.Drawing.Size(347, 26);
-            this.ComboBoxSpeaker.TabIndex = 6;
+            this.ComboBoxSpeaker.Size = new System.Drawing.Size(355, 26);
+            this.ComboBoxSpeaker.TabIndex = 8;
             // 
             // ComboBoxMicrophone
             // 
@@ -436,8 +439,8 @@ namespace Simple_Screen_Recorder
             this.ComboBoxMicrophone.FormattingEnabled = true;
             this.ComboBoxMicrophone.Location = new System.Drawing.Point(18, 224);
             this.ComboBoxMicrophone.Name = "ComboBoxMicrophone";
-            this.ComboBoxMicrophone.Size = new System.Drawing.Size(347, 26);
-            this.ComboBoxMicrophone.TabIndex = 52;
+            this.ComboBoxMicrophone.Size = new System.Drawing.Size(355, 26);
+            this.ComboBoxMicrophone.TabIndex = 9;
             // 
             // RadioTwoTrack
             // 
@@ -450,7 +453,7 @@ namespace Simple_Screen_Recorder
             this.RadioTwoTrack.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RadioTwoTrack.Name = "RadioTwoTrack";
             this.RadioTwoTrack.Size = new System.Drawing.Size(279, 24);
-            this.RadioTwoTrack.TabIndex = 54;
+            this.RadioTwoTrack.TabIndex = 7;
             this.RadioTwoTrack.TabStop = true;
             this.RadioTwoTrack.Text = "System sounds and microphone audio";
             this.RadioTwoTrack.UseVisualStyleBackColor = false;
@@ -473,6 +476,9 @@ namespace Simple_Screen_Recorder
             // crownGroupBox1
             // 
             this.crownGroupBox1.BorderColor = System.Drawing.Color.Gray;
+            this.crownGroupBox1.Controls.Add(this.labelFormat);
+            this.crownGroupBox1.Controls.Add(this.ComboBoxFormat);
+            this.crownGroupBox1.Controls.Add(this.CheckBoxAllMonitors);
             this.crownGroupBox1.Controls.Add(this.comboBoxFps);
             this.crownGroupBox1.Controls.Add(this.labelFps);
             this.crownGroupBox1.Controls.Add(this.comboBoxResolution);
@@ -480,12 +486,46 @@ namespace Simple_Screen_Recorder
             this.crownGroupBox1.Controls.Add(this.labelResolution);
             this.crownGroupBox1.Controls.Add(this.comboBoxCodec);
             this.crownGroupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.crownGroupBox1.Location = new System.Drawing.Point(22, 193);
+            this.crownGroupBox1.Location = new System.Drawing.Point(25, 193);
             this.crownGroupBox1.Name = "crownGroupBox1";
-            this.crownGroupBox1.Size = new System.Drawing.Size(381, 184);
+            this.crownGroupBox1.Size = new System.Drawing.Size(390, 206);
             this.crownGroupBox1.TabIndex = 55;
             this.crownGroupBox1.TabStop = false;
             this.crownGroupBox1.Text = "Video settings";
+            // 
+            // labelFormat
+            // 
+            this.labelFormat.AutoSize = true;
+            this.labelFormat.BackColor = System.Drawing.Color.Transparent;
+            this.labelFormat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelFormat.ForeColor = System.Drawing.Color.Crimson;
+            this.labelFormat.Location = new System.Drawing.Point(246, 74);
+            this.labelFormat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFormat.Name = "labelFormat";
+            this.labelFormat.Size = new System.Drawing.Size(93, 21);
+            this.labelFormat.TabIndex = 52;
+            this.labelFormat.Text = "File format";
+            // 
+            // ComboBoxFormat
+            // 
+            this.ComboBoxFormat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.ComboBoxFormat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboBoxFormat.FormattingEnabled = true;
+            this.ComboBoxFormat.Location = new System.Drawing.Point(246, 97);
+            this.ComboBoxFormat.Name = "ComboBoxFormat";
+            this.ComboBoxFormat.Size = new System.Drawing.Size(126, 26);
+            this.ComboBoxFormat.TabIndex = 51;
+            // 
+            // CheckBoxAllMonitors
+            // 
+            this.CheckBoxAllMonitors.AutoSize = true;
+            this.CheckBoxAllMonitors.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CheckBoxAllMonitors.Location = new System.Drawing.Point(21, 178);
+            this.CheckBoxAllMonitors.Name = "CheckBoxAllMonitors";
+            this.CheckBoxAllMonitors.Size = new System.Drawing.Size(163, 24);
+            this.CheckBoxAllMonitors.TabIndex = 6;
+            this.CheckBoxAllMonitors.Text = "Capture all monitors";
+            this.CheckBoxAllMonitors.CheckedChanged += new System.EventHandler(this.CheckBoxAllMonitors_CheckedChanged);
             // 
             // comboBoxFps
             // 
@@ -494,8 +534,8 @@ namespace Simple_Screen_Recorder
             this.comboBoxFps.FormattingEnabled = true;
             this.comboBoxFps.Location = new System.Drawing.Point(19, 149);
             this.comboBoxFps.Name = "comboBoxFps";
-            this.comboBoxFps.Size = new System.Drawing.Size(345, 26);
-            this.comboBoxFps.TabIndex = 4;
+            this.comboBoxFps.Size = new System.Drawing.Size(353, 26);
+            this.comboBoxFps.TabIndex = 5;
             // 
             // labelFps
             // 
@@ -503,7 +543,7 @@ namespace Simple_Screen_Recorder
             this.labelFps.BackColor = System.Drawing.Color.Transparent;
             this.labelFps.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelFps.ForeColor = System.Drawing.Color.Crimson;
-            this.labelFps.Location = new System.Drawing.Point(15, 125);
+            this.labelFps.Location = new System.Drawing.Point(15, 126);
             this.labelFps.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFps.Name = "labelFps";
             this.labelFps.Size = new System.Drawing.Size(134, 21);
@@ -523,9 +563,9 @@ namespace Simple_Screen_Recorder
             this.crownGroupBox2.Controls.Add(this.ComboBoxMicrophone);
             this.crownGroupBox2.Controls.Add(this.ComboBoxSpeaker);
             this.crownGroupBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.crownGroupBox2.Location = new System.Drawing.Point(21, 379);
+            this.crownGroupBox2.Location = new System.Drawing.Point(24, 401);
             this.crownGroupBox2.Name = "crownGroupBox2";
-            this.crownGroupBox2.Size = new System.Drawing.Size(382, 260);
+            this.crownGroupBox2.Size = new System.Drawing.Size(391, 260);
             this.crownGroupBox2.TabIndex = 56;
             this.crownGroupBox2.TabStop = false;
             this.crownGroupBox2.Text = "Audio settings";
@@ -552,9 +592,9 @@ namespace Simple_Screen_Recorder
             this.crownGroupBox3.Controls.Add(this.btnStartRecording);
             this.crownGroupBox3.Controls.Add(this.BtnStop);
             this.crownGroupBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.crownGroupBox3.Location = new System.Drawing.Point(22, 27);
+            this.crownGroupBox3.Location = new System.Drawing.Point(25, 27);
             this.crownGroupBox3.Name = "crownGroupBox3";
-            this.crownGroupBox3.Size = new System.Drawing.Size(381, 164);
+            this.crownGroupBox3.Size = new System.Drawing.Size(390, 164);
             this.crownGroupBox3.TabIndex = 56;
             this.crownGroupBox3.TabStop = false;
             this.crownGroupBox3.Text = "Controls";
@@ -564,7 +604,7 @@ namespace Simple_Screen_Recorder
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(428, 694);
+            this.ClientSize = new System.Drawing.Size(440, 715);
             this.Controls.Add(this.crownGroupBox3);
             this.Controls.Add(this.crownGroupBox2);
             this.Controls.Add(this.crownGroupBox1);
@@ -632,5 +672,8 @@ namespace Simple_Screen_Recorder
         private ToolStripMenuItem toolStripMenuItem2;
         internal Label labelFps;
         private ReaLTaiizor.Controls.CrownComboBox comboBoxFps;
+        private ReaLTaiizor.Controls.CrownCheckBox CheckBoxAllMonitors;
+        private ReaLTaiizor.Controls.CrownComboBox ComboBoxFormat;
+        internal Label labelFormat;
     }
 }

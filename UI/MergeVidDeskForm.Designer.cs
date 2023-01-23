@@ -83,7 +83,7 @@
             this.BtnDeskAudio.Name = "BtnDeskAudio";
             this.BtnDeskAudio.Size = new System.Drawing.Size(236, 41);
             this.BtnDeskAudio.TabIndex = 8;
-            this.BtnDeskAudio.Text = "Select a system sound file";
+            this.BtnDeskAudio.Text = "Select an audio file";
             this.BtnDeskAudio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnDeskAudio.UseVisualStyleBackColor = true;
             this.BtnDeskAudio.Click += new System.EventHandler(this.BtnDeskAudio_Click);

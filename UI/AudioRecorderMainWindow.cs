@@ -75,7 +75,6 @@ namespace Simple_Screen_Recorder.UI
             }
             catch (Exception)
             {
-
                 return;
             }
         }
@@ -156,7 +155,6 @@ namespace Simple_Screen_Recorder.UI
         private void GetTextsMain()
         {
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Settings.Default.Languages);
-
 
             btnStartRecording.Text = StringsEN.btnStartRecording;
             BtnStop.Text = StringsEN.BtnStop;
