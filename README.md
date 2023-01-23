@@ -16,7 +16,7 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 
 - Select the **audio output device** that you want to use to record the audio track from the "System sound (Desktop Audio)" dropdown menu.<br>
 
-- Select the **codec** that you want to use from the "Encoder" dropdown menu. The available codecs are "MPEG-4 (default)", "H264 NVENC (Nvidia Graphics Cards)" and "H264 AMF (AMD Graphics Cards)".<br>
+- Select the **codec** that you want to use from the "Encoder" dropdown menu. The available codecs are "MPEG-4", "H264 NVENC (Nvidia Graphics Cards)" and "H264 AMF (AMD Graphics Cards)".<br>
 
 - Select the **file format** that you want to use from the "File Format" dropdown menu. The available formats are "MKV" and "AVI".<br>
 
@@ -52,7 +52,7 @@ Select the Audio Recording option in the main window and you can record audio fr
 <p align="center">
   Windows 8.1, 10, 11 (64 bits) | v1.1.9 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.1.9/Simple-Screen-Recorder-Release-Portable.zip">Download directly from GitHub</a> or <a href="https://www.softpedia.com/get/Multimedia/Video/Video-Recording/Simple-Screen-Recorder.shtml">Download from Softpedia</a><br><br>
   Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 7.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-release-full-shared 5.1.2)</a> <br><br>
-  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/0jvbXFnx/screen-recorder-1-1-9.png"></a>
+  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/QdRF2Fxj/recorder-1-1-9.png"></a>
 </p>
 
 <h2 align="center">Acknowledgments</h2>
