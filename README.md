@@ -40,7 +40,7 @@ Select the Audio Recording option in the main window and you can record audio fr
 
 <h2 align="center">Features</h2>
 
-- Screen recording in .avi or .mkv file format (with a wide range of encoders) and .wav audio format (10000k bit rate and 30 or 60 frames per second)<br>
+- Screen recording in .avi or .mkv file format (with a wide range of encoders) and .wav audio format. (10000k bitrate and 30 or 60 frames per second).<br>
 - Possibility to record your microphone or desktop audio (or both at the same time)<br>
 - Merge media files (mkv output format)<br>
 - Keyboard shortcuts: F9 to start and stop recordings, F10 to open recordings folders and ESC to close the app<br>
@@ -52,7 +52,7 @@ Select the Audio Recording option in the main window and you can record audio fr
 <p align="center">
   Windows 8.1, 10, 11 (64 bits) | v1.1.9 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.1.9/Simple-Screen-Recorder-Release-Portable.zip">Download directly from GitHub</a> or <a href="https://www.softpedia.com/get/Multimedia/Video/Video-Recording/Simple-Screen-Recorder.shtml">Download from Softpedia</a><br><br>
   Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 7.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-release-full-shared 5.1.2)</a> <br><br>
-  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/vBf4zbW3/screen-recorder-1-1-9.png"></a>
+  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/0jvbXFnx/screen-recorder-1-1-9.png"></a>
 </p>
 
 <h2 align="center">Acknowledgments</h2>
