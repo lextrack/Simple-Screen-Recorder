@@ -68,7 +68,7 @@ namespace Simple_Screen_Recorder.UI
             try
             {
                 LbTimer.ForeColor = Color.White;
-                LbTimer.Text = "0:0:0";
+                LbTimer.Text = "00:00:00";
                 RecState.Enabled = false;
                 StopRec();
 
@@ -79,7 +79,7 @@ namespace Simple_Screen_Recorder.UI
             }
         }
 
-        public void StopRec()
+        private void StopRec()
         {
             btnStartRecording.Enabled = true;
             ComboBoxMicrophone.Enabled = true;
@@ -122,21 +122,21 @@ namespace Simple_Screen_Recorder.UI
             proc.Kill();
         }
 
-        public void RecMic()
+        public static void RecMic()
         {
             AudioRecMic.Cleanup();
             AudioRecMic.CreateWaveInDevice();
-            AudioRecMic.outputFilename = "MicrophoneAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".aac";
+            AudioRecMic.outputFilename = "MicrophoneAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
             AudioRecMic.writer = new WaveFileWriter(Path.Combine(AudioRecMic.outputFolder, AudioRecMic.outputFilename), AudioRecMic.waveIn.WaveFormat);
             AudioRecMic.waveIn.StartRecording();
         }
 
-        public void RecSpeaker()
+        public static void RecSpeaker()
         {
             AudioRecDesktop.Cleanup();
             AudioRecDesktop.CreateWaveInDevice();
             GrabadorPantalla.My.MyProject.Computer.Audio.Play("Background.wav", AudioPlayMode.BackgroundLoop);
-            AudioRecDesktop.outputFilename = "SystemAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".aac";
+            AudioRecDesktop.outputFilename = "SystemAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
             AudioRecDesktop.writer = new WaveFileWriter(Path.Combine(AudioRecDesktop.outputFolder, AudioRecDesktop.outputFilename), AudioRecDesktop.waveIn.WaveFormat);
             AudioRecDesktop.waveIn.StartRecording();
         }
@@ -149,7 +149,7 @@ namespace Simple_Screen_Recorder.UI
         private void RecState_Tick(object sender, EventArgs e)
         {
             var Difference = DateTime.Now.Subtract(TimeRec);
-            LbTimer.Text = "Rec: " + Difference.Hours.ToString() + ":" + Difference.Minutes.ToString() + ":" + Difference.Seconds.ToString();
+            LbTimer.Text = "Rec: " + Difference.Hours.ToString().PadLeft(2, '0') + ":" + Difference.Minutes.ToString().PadLeft(2, '0') + ":" + Difference.Seconds.ToString().PadLeft(2, '0');
         }
 
         private void GetTextsMain()

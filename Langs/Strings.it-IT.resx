@@ -195,6 +195,9 @@
   <data name="labelCodec" xml:space="preserve">
     <value>Codifica</value>
   </data>
+  <data name="labelFormat" xml:space="preserve">
+    <value>Formato del file</value>
+  </data>
   <data name="labelFps" xml:space="preserve">
     <value>Frequenza dei fotogrammi</value>
   </data>

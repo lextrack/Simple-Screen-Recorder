@@ -10,25 +10,25 @@ namespace GrabadorPantalla.My
         internal partial class MyForms
         {
             [EditorBrowsable(EditorBrowsableState.Never)]
-            public RecorderScreenMainWindow m_Form1;
+            public RecorderScreenMainWindow m_RecorderScreenMainWindow;
 
-            public RecorderScreenMainWindow Form1
+            public RecorderScreenMainWindow RecorderScreenMainWindow
             {
                 [DebuggerHidden]
                 get
                 {
-                    m_Form1 = Create__Instance__(m_Form1);
-                    return m_Form1;
+                    m_RecorderScreenMainWindow = Create__Instance__(m_RecorderScreenMainWindow);
+                    return m_RecorderScreenMainWindow;
                 }
 
                 [DebuggerHidden]
                 set
                 {
-                    if (ReferenceEquals(value, m_Form1))
+                    if (ReferenceEquals(value, m_RecorderScreenMainWindow))
                         return;
                     if (value is object)
                         throw new ArgumentException("Property can only be set to Nothing");
-                    Dispose__Instance__(ref m_Form1);
+                    Dispose__Instance__(ref m_RecorderScreenMainWindow);
                 }
             }
         }

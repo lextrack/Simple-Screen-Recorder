@@ -435,5 +435,13 @@ namespace Simple_Screen_Recorder.Langs
             }
         }
 
+        internal static string labelFormat
+        {
+            get
+            {
+                return ResourceManager.GetString("labelFormat", resourceCulture);
+            }
+        }
+
     }
 }

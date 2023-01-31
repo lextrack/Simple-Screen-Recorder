@@ -23,7 +23,6 @@ namespace Simple_Screen_Recorder
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             this.KeyPreview = true;
 
             GetTextsMain();
@@ -53,8 +52,8 @@ namespace Simple_Screen_Recorder
             comboBoxFps.Items.Add("60");
             comboBoxFps.SelectedIndex = 0;
 
-            ComboBoxFormat.Items.Add(".mkv");
             ComboBoxFormat.Items.Add(".avi");
+            ComboBoxFormat.Items.Add(".mkv");
             ComboBoxFormat.SelectedIndex = 0;
         }
 
@@ -322,7 +321,7 @@ namespace Simple_Screen_Recorder
             }
         }
 
-        public void RecMic()
+        public static void RecMic()
         {
             AudioMic.Cleanup();
             AudioMic.CreateWaveInDevice();
@@ -331,7 +330,7 @@ namespace Simple_Screen_Recorder
             AudioMic.waveIn.StartRecording();
         }
 
-        public void RecSpeaker()
+        public static void RecSpeaker()
         {
             AudioDesktop.Cleanup();
             AudioDesktop.CreateWaveInDevice();
@@ -427,6 +426,7 @@ namespace Simple_Screen_Recorder
             radioMicrophone.Text = StringsEN.radioMicrophone;
             labelFps.Text = StringsEN.labelFps;
             CheckBoxAllMonitors.Text = StringsEN.CheckBoxAllMonitors;
+            labelFormat.Text = StringsEN.labelFormat;
         }
 
         private void españolToolStripMenuItem_Click(object sender, EventArgs e)

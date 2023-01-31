@@ -6,10 +6,10 @@ namespace Simple_Screen_Recorder.UI
 {
     public class AudioMic
     {
-        public static IWaveIn waveIn;
-        public static WaveFileWriter writer;
-        public static string outputFilename;
-        public static string outputFolder;
+        public static IWaveIn? waveIn;
+        public static WaveFileWriter? writer;
+        public static string? outputFilename;
+        public static string? outputFolder;
         public static ComboBox cboDIspositivos = new ComboBox();
 
         public static void OpenComp()

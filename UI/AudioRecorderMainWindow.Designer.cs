@@ -56,8 +56,8 @@
             this.crownGroupBox3.Controls.Add(this.btnOutputRecordings);
             this.crownGroupBox3.Controls.Add(this.btnStartRecording);
             this.crownGroupBox3.Controls.Add(this.BtnStop);
-            this.crownGroupBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.crownGroupBox3.Location = new System.Drawing.Point(12, 9);
+            this.crownGroupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.crownGroupBox3.Location = new System.Drawing.Point(18, 4);
             this.crownGroupBox3.Name = "crownGroupBox3";
             this.crownGroupBox3.Size = new System.Drawing.Size(321, 164);
             this.crownGroupBox3.TabIndex = 57;
@@ -134,8 +134,8 @@
             this.crownGroupBox2.Controls.Add(this.label7);
             this.crownGroupBox2.Controls.Add(this.ComboBoxMicrophone);
             this.crownGroupBox2.Controls.Add(this.ComboBoxSpeaker);
-            this.crownGroupBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.crownGroupBox2.Location = new System.Drawing.Point(12, 179);
+            this.crownGroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.crownGroupBox2.Location = new System.Drawing.Point(18, 174);
             this.crownGroupBox2.Name = "crownGroupBox2";
             this.crownGroupBox2.Size = new System.Drawing.Size(322, 268);
             this.crownGroupBox2.TabIndex = 58;
@@ -161,12 +161,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Crimson;
             this.label6.Location = new System.Drawing.Point(7, 22);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(198, 21);
+            this.label6.Size = new System.Drawing.Size(181, 20);
             this.label6.TabIndex = 40;
             this.label6.Text = "Audio recording method";
             // 
@@ -231,12 +231,12 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Crimson;
             this.label7.Location = new System.Drawing.Point(7, 133);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 21);
+            this.label7.Size = new System.Drawing.Size(106, 20);
             this.label7.TabIndex = 41;
             this.label7.Text = "Audio devices";
             // 
@@ -269,19 +269,19 @@
             this.LbTimer.AutoSize = true;
             this.LbTimer.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LbTimer.ForeColor = System.Drawing.Color.White;
-            this.LbTimer.Location = new System.Drawing.Point(12, 452);
+            this.LbTimer.Location = new System.Drawing.Point(18, 449);
             this.LbTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LbTimer.Name = "LbTimer";
-            this.LbTimer.Size = new System.Drawing.Size(50, 23);
+            this.LbTimer.Size = new System.Drawing.Size(80, 23);
             this.LbTimer.TabIndex = 59;
-            this.LbTimer.Text = "0:0:0";
+            this.LbTimer.Text = "00:00:00";
             // 
             // AudioRecorderMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(345, 481);
+            this.ClientSize = new System.Drawing.Size(358, 481);
             this.Controls.Add(this.LbTimer);
             this.Controls.Add(this.crownGroupBox2);
             this.Controls.Add(this.crownGroupBox3);

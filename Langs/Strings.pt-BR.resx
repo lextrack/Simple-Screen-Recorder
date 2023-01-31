@@ -195,6 +195,9 @@
   <data name="labelCodec" xml:space="preserve">
     <value>Codificador</value>
   </data>
+  <data name="labelFormat" xml:space="preserve">
+    <value>Formato de arquivo</value>
+  </data>
   <data name="labelFps" xml:space="preserve">
     <value>Quadros por segundo</value>
   </data>

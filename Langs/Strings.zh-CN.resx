@@ -195,6 +195,9 @@
   <data name="labelCodec" xml:space="preserve">
     <value>编码器</value>
   </data>
+  <data name="labelFormat" xml:space="preserve">
+    <value>文件格式</value>
+  </data>
   <data name="labelFps" xml:space="preserve">
     <value>视频帧率</value>
   </data>
