@@ -51,7 +51,7 @@ Select the Audio Recording option in the main window and you can record audio fr
 
 <h2 align="center">Install</h2>
 <p align="center">
-  Windows 8.1, 10, 11 (64 bits) | v1.2.2 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.1/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a> or <a href="https://www.softpedia.com/get/Multimedia/Video/Video-Recording/Simple-Screen-Recorder.shtml">Download from Softpedia</a><br><br>
+  Windows 8.1, 10, 11 (64 bits) | v1.2.1 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.1/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a> or <a href="https://www.softpedia.com/get/Multimedia/Video/Video-Recording/Simple-Screen-Recorder.shtml">Download from Softpedia</a><br><br>
   Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 7.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-release-full-shared 5.1.2)</a> <br><br>
   <a href="https://postimg.cc/"><img src="https://i.postimg.cc/6q7GnNZw/screenrec1-2-1.png"></a>
 </p>
