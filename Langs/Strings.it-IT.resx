@@ -201,8 +201,8 @@
   <data name="labelFps" xml:space="preserve">
     <value>Frequenza dei fotogrammi</value>
   </data>
-  <data name="labelResolution" xml:space="preserve">
-    <value>Risoluzione dello schermo</value>
+  <data name="labelMonitorSelector" xml:space="preserve">
+    <value>Selettore del monitor</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Lingua</value>
@@ -225,6 +225,9 @@ TutorialesVbNET e Flaticon.</value>
   </data>
   <data name="message1" xml:space="preserve">
     <value>Non stai registrando nulla!</value>
+  </data>
+  <data name="message2" xml:space="preserve">
+    <value>Devi prima interrompere la registrazione!</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>Solo audio sistema</value>

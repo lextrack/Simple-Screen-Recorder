@@ -118,133 +118,134 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutForm" xml:space="preserve">
-    <value>Sobre o software</value>
+    <value>について</value>
   </data>
   <data name="aboutToolStripMenuItem" xml:space="preserve">
-    <value>Sobre</value>
+    <value>について</value>
   </data>
   <data name="audioToolStripMenuItem" xml:space="preserve">
-    <value>Gravador de áudio</value>
+    <value>オーディオレコーダー</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
-    <value>Selecione um arquivo de áudio</value>
+    <value>オーディオファイルを選択する</value>
   </data>
   <data name="BtnDeskAudio2" xml:space="preserve">
-    <value>Selecionar áudio do sistema</value>
+    <value>システムサウンドファイルを選択する</value>
   </data>
   <data name="BtnExit" xml:space="preserve">
-    <value>Sair</value>
+    <value>終了</value>
   </data>
   <data name="BtnMergeAll" xml:space="preserve">
-    <value>Misturar arquivos</value>
+    <value>ミキシングを開始する</value>
   </data>
   <data name="BtnMergeAll2" xml:space="preserve">
-    <value>Misturar arquivos</value>
+    <value>ミキシングを開始する</value>
   </data>
   <data name="BtnMicAudio" xml:space="preserve">
-    <value>Selecione o áudio do microfone</value>
+    <value>マイクオーディオファイルを選択する</value>
   </data>
   <data name="btnOutputF" xml:space="preserve">
-    <value>Pasta de saída</value>
+    <value>出力フォルダー</value>
   </data>
   <data name="btnOutputF2" xml:space="preserve">
-    <value>Pasta de saída</value>
+    <value>出力フォルダー</value>
   </data>
   <data name="btnOutputRecordings" xml:space="preserve">
-    <value>Mostrar gravações</value>
+    <value>録音フォルダーを開く</value>
   </data>
   <data name="btnStartRecording" xml:space="preserve">
-    <value>Iniciar Gravação</value>
+    <value>録画を開始する</value>
   </data>
   <data name="BtnStop" xml:space="preserve">
-    <value>Interromper Gravação</value>
+    <value>録画を停止する</value>
   </data>
   <data name="BtnVideo" xml:space="preserve">
-    <value>Selecione um arquivo de vídeo</value>
+    <value>ビデオファイルを選択する</value>
   </data>
   <data name="BtnVideo2" xml:space="preserve">
-    <value>Selecione um arquivo de vídeo</value>
+    <value>ビデオファイルを選択する</value>
   </data>
   <data name="CheckBoxAllMonitors" xml:space="preserve">
-    <value>Capture todos os monitores</value>
+    <value>すべてのモニターをキャプチャする</value>
   </data>
   <data name="crownGroupBox1" xml:space="preserve">
-    <value>Configurações de vídeo</value>
+    <value>ビデオ設定</value>
   </data>
   <data name="crownGroupBox2" xml:space="preserve">
-    <value>Configurações de áudio</value>
+    <value>オーディオ設定</value>
   </data>
   <data name="crownGroupBox3" xml:space="preserve">
-    <value>Controles de gravação</value>
+    <value>コントロール</value>
   </data>
   <data name="Label2" xml:space="preserve">
-    <value>Controles de gravação</value>
+    <value>コントロール</value>
   </data>
   <data name="Label4" xml:space="preserve">
-    <value>Microfone (Mic/Aux)</value>
+    <value>マイクロフォン (Mic/Aux)</value>
   </data>
   <data name="Label5" xml:space="preserve">
-    <value>Áudio do sistema (Desktop Audio)</value>
+    <value>システムサウンド (Desktop Audio)</value>
   </data>
   <data name="Label6" xml:space="preserve">
-    <value>Método de gravação áudio</value>
+    <value>オーディオ録音方法</value>
   </data>
   <data name="Label7" xml:space="preserve">
-    <value>Dispositivos de áudio</value>
+    <value>オーディオデバイス</value>
   </data>
   <data name="labelCodec" xml:space="preserve">
-    <value>Codificador</value>
+    <value>エンコーダー</value>
   </data>
   <data name="labelFormat" xml:space="preserve">
-    <value>Formato de arquivo</value>
+    <value>ファイルフォーマット</value>
   </data>
   <data name="labelFps" xml:space="preserve">
-    <value>Quadros por segundo</value>
+    <value>ビデオフレームレート</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Seletor de tela</value>
+    <value>モニターセレクター</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
-    <value>Línguas</value>
+    <value>言語</value>
   </data>
   <data name="LbAbout1" xml:space="preserve">
-    <value>Você pode encontrar este projeto no GitHub,
-seu nome é "Simple-Screen-Recorder",e meu
-nome é "Lextrack". Fique alerta, haverá mais
-próximas atualizações!</value>
+    <value>このプロジェクトはGitHubで見つけることができます。
+プロジェクト名は「Simple-Screen-Recorder」
+で、私のニックネームは「Lextrack」です。
+このプロジェクトにはもっと多くのアップデートがありますので、
+お見逃しなく！</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
-    <value>Este software é possível por 
-TutorialesVbNET e Flaticon.</value>
+    <value>このソフトウェアはTutorialesVbNETと
+Flaticonによって可能になりました。</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
-    <value>Misturando apenas um vídeo e um arquivo de áudio</value>
+    <value>ビデオと1つのオーディオファイルをマージする</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
-    <value>Mesclar todos os arquivos de mídia</value>
+    <value>すべてのメディアファイルをマージする</value>
   </data>
   <data name="message1" xml:space="preserve">
-    <value>Você não está registrando nada!</value>
+    <value>何も録音していません！</value>
   </data>
   <data name="message2" xml:space="preserve">
-    <value>Você deve parar a gravação primeiro!</value>
+    <value>最初に記録を停止する必要があります！</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
-    <value>Somente áudio do sistema</value>
+    <value>システムオーディオのみ (Desktop Audio)</value>
   </data>
   <data name="radioMicrophone" xml:space="preserve">
-    <value>Somente áudio do microfone</value>
+    <value>マイクロフォンオーディオのみ</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
-    <value>Sistema de som e microfone de áudio</value>
+    <value>システムサウンドとマイクロフォンオーディオ</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Mesclar arquivos de mídia</value>
+    <value>メディアファイルをマージする</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>Mesclar vídeo e um único arquivo de áudio</value>
+    <value>ビデオと1つのオーディオファイルをマージする</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
-    <value>Mesclar todos os arquivos de mídia</value>
+    <value>すべてのメディアファイルをマージする</value>
   </data>
 </root>

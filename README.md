@@ -6,7 +6,7 @@
 
 <h2 align="center">Introduction</h2>
 <p align="left">
-Simple Screen Recorder is a tool that allows users to record their screen activity and audio. Here comes instructions on how to use the Simple Screen Recorder to create screen and audio recordings.
+Simple Screen Recorder is a tool that allows users to record their screen activity and audio. Here are instructions on how to use the Simple Screen Recorder to create screen recordings and audio recordings.
 </p>
 
 <h2 align="center">How to use it?</h2>
@@ -20,9 +20,9 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 
 - Select the **file format** that you want to use from the "File Format" dropdown menu. The available formats are "MKV" and "AVI".<br>
 
-- Select the **framerate** that you want to use from the "Video framerate" dropdown menu. You can record a video at 30 or 60 fps (I recommend selecting 30).<br>
+- Select the **framerate** that you want to use from the "Video framerate" dropdown menu. You can record a video at 30 or 60 fps.<br>
 
-- Select the **resolution** that you want to use from the "Resolution" dropdown menu. Available resolutions include "3840x2160", "2560x1440", "1920x1080", "1600x900", "1536x864", "1366x768", "1360x768" and "1280x720". **This selector always will take your primary monitor. Depending on your display resolution, you must adjust the resolution in the app.**<br>
+- Select the **monitor** that you want to record from the "Monitor selector" dropdown menu.<br>
 
 - If you check the "Capture all monitors" option, the app is going to create a video with all the monitors connected to the system.<br>
 
@@ -46,13 +46,14 @@ Select the Audio Recording option in the main window and you can record audio fr
 - Keyboard shortcuts: F9 to start and stop recordings, F10 to open recordings folders and ESC to close the app<br>
 - Audio recording separately<br>
 - Encoder selector<br>
-- Availability in six languages (English, Español, 中文(简体), Português do Brasil, Українська and Italiano)
+- Grab the screen or output from any monitor connected to your PC<br>
+- Availability in eight languages (English, Español, Deutsch, Українська, 日本語, Português do Brasil, 中文(简体) and Italiano)
 
 <h2 align="center">Install</h2>
 <p align="center">
-  Windows 8.1, 10, 11 (64 bits) | v1.2.0 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.0/Simple-Screen-Recorder-Release-Portable.zip">Download directly from GitHub</a> or <a href="https://www.softpedia.com/get/Multimedia/Video/Video-Recording/Simple-Screen-Recorder.shtml">Download from Softpedia</a><br><br>
+  Windows 8.1, 10, 11 (64 bits) | v1.2.1 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.1/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a> or <a href="https://www.softpedia.com/get/Multimedia/Video/Video-Recording/Simple-Screen-Recorder.shtml">Download from Softpedia</a><br><br>
   Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 7.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-release-full-shared 5.1.2)</a> <br><br>
-  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/QdRF2Fxj/recorder-1-1-9.png"></a>
+  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/Y0d9tY4P/screen-1-2-1.png"></a>
 </p>
 
 <h2 align="center">Acknowledgments</h2>

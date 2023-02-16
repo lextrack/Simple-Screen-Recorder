@@ -118,133 +118,133 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutForm" xml:space="preserve">
-    <value>Sobre o software</value>
+    <value>Über</value>
   </data>
   <data name="aboutToolStripMenuItem" xml:space="preserve">
-    <value>Sobre</value>
+    <value>Über</value>
   </data>
   <data name="audioToolStripMenuItem" xml:space="preserve">
-    <value>Gravador de áudio</value>
+    <value>Audiorekorder</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
-    <value>Selecione um arquivo de áudio</value>
+    <value>Wählen Sie eine Audio-Datei aus</value>
   </data>
   <data name="BtnDeskAudio2" xml:space="preserve">
-    <value>Selecionar áudio do sistema</value>
+    <value>Wählen Sie eine System-Sound-Datei aus</value>
   </data>
   <data name="BtnExit" xml:space="preserve">
-    <value>Sair</value>
+    <value>Beenden</value>
   </data>
   <data name="BtnMergeAll" xml:space="preserve">
-    <value>Misturar arquivos</value>
+    <value>Mischung starten</value>
   </data>
   <data name="BtnMergeAll2" xml:space="preserve">
-    <value>Misturar arquivos</value>
+    <value>Mischung starten</value>
   </data>
   <data name="BtnMicAudio" xml:space="preserve">
-    <value>Selecione o áudio do microfone</value>
+    <value>Wählen Sie eine Mikrofon-Audio-Datei aus</value>
   </data>
   <data name="btnOutputF" xml:space="preserve">
-    <value>Pasta de saída</value>
+    <value>Ausgabeordner</value>
   </data>
   <data name="btnOutputF2" xml:space="preserve">
-    <value>Pasta de saída</value>
+    <value>Ausgabeordner</value>
   </data>
   <data name="btnOutputRecordings" xml:space="preserve">
-    <value>Mostrar gravações</value>
+    <value>Aufnahmeordner öffnen</value>
   </data>
   <data name="btnStartRecording" xml:space="preserve">
-    <value>Iniciar Gravação</value>
+    <value>Aufnahme starten</value>
   </data>
   <data name="BtnStop" xml:space="preserve">
-    <value>Interromper Gravação</value>
+    <value>Aufnahme beenden</value>
   </data>
   <data name="BtnVideo" xml:space="preserve">
-    <value>Selecione um arquivo de vídeo</value>
+    <value>Wählen Sie eine Video-Datei aus</value>
   </data>
   <data name="BtnVideo2" xml:space="preserve">
-    <value>Selecione um arquivo de vídeo</value>
+    <value>Wählen Sie eine Video-Datei aus</value>
   </data>
   <data name="CheckBoxAllMonitors" xml:space="preserve">
-    <value>Capture todos os monitores</value>
+    <value>Alle Monitore erfassen</value>
   </data>
   <data name="crownGroupBox1" xml:space="preserve">
-    <value>Configurações de vídeo</value>
+    <value>Videoeinstellungen</value>
   </data>
   <data name="crownGroupBox2" xml:space="preserve">
-    <value>Configurações de áudio</value>
+    <value>Audioeinstellungen</value>
   </data>
   <data name="crownGroupBox3" xml:space="preserve">
-    <value>Controles de gravação</value>
+    <value>Steuerungen</value>
   </data>
   <data name="Label2" xml:space="preserve">
-    <value>Controles de gravação</value>
+    <value>Steuerungen</value>
   </data>
   <data name="Label4" xml:space="preserve">
-    <value>Microfone (Mic/Aux)</value>
+    <value>Mikrofon (Mic/Aux)</value>
   </data>
   <data name="Label5" xml:space="preserve">
-    <value>Áudio do sistema (Desktop Audio)</value>
+    <value>Systemsound (Desktop Audio)</value>
   </data>
   <data name="Label6" xml:space="preserve">
-    <value>Método de gravação áudio</value>
+    <value>Aufnahmemethode für Audio</value>
   </data>
   <data name="Label7" xml:space="preserve">
-    <value>Dispositivos de áudio</value>
+    <value>Audiogeräte</value>
   </data>
   <data name="labelCodec" xml:space="preserve">
-    <value>Codificador</value>
+    <value>Codierer</value>
   </data>
   <data name="labelFormat" xml:space="preserve">
-    <value>Formato de arquivo</value>
+    <value>Dateiformat</value>
   </data>
   <data name="labelFps" xml:space="preserve">
-    <value>Quadros por segundo</value>
+    <value>Bilder pro Sekunde</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Seletor de tela</value>
+    <value>Monitorauswahl</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
-    <value>Línguas</value>
+    <value>Sprachen</value>
   </data>
   <data name="LbAbout1" xml:space="preserve">
-    <value>Você pode encontrar este projeto no GitHub,
-seu nome é "Simple-Screen-Recorder",e meu
-nome é "Lextrack". Fique alerta, haverá mais
-próximas atualizações!</value>
+    <value>Sie können dieses Projekt auf GitHub finden, 
+es heißt "Simple-Screen-Recorder" und mein Spitzname ist "Lextrack".
+Halten Sie Ausschau nach diesem Projekt, 
+weitere Updates werden bald verfügbar sein!</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
-    <value>Este software é possível por 
-TutorialesVbNET e Flaticon.</value>
+    <value>Diese Software wird ermöglicht 
+durch TutorialesVbNET und Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
-    <value>Misturando apenas um vídeo e um arquivo de áudio</value>
+    <value>Video zusammenführen mit nur einer Audio-Datei</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
-    <value>Mesclar todos os arquivos de mídia</value>
+    <value>Alle Mediendateien zusammenführen</value>
   </data>
   <data name="message1" xml:space="preserve">
-    <value>Você não está registrando nada!</value>
+    <value>Sie nehmen derzeit nichts auf!</value>
   </data>
   <data name="message2" xml:space="preserve">
-    <value>Você deve parar a gravação primeiro!</value>
+    <value>Sie müssen die Aufnahme zuerst stoppen!</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
-    <value>Somente áudio do sistema</value>
+    <value>Nur Systemsound (Desktop Audio)</value>
   </data>
   <data name="radioMicrophone" xml:space="preserve">
-    <value>Somente áudio do microfone</value>
+    <value>Nur Mikrofonaudio</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
-    <value>Sistema de som e microfone de áudio</value>
+    <value>Systemsound und Mikrofonaudio</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Mesclar arquivos de mídia</value>
+    <value>Mediendateien zusammenführen</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>Mesclar vídeo e um único arquivo de áudio</value>
+    <value>Video zusammenführen mit einer einzigen Audio-Datei</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
-    <value>Mesclar todos os arquivos de mídia</value>
+    <value>Alle Mediendateien zusammenführen</value>
   </data>
 </root>

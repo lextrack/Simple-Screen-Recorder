@@ -201,8 +201,8 @@
   <data name="labelFps" xml:space="preserve">
     <value>Video framerate</value>
   </data>
-  <data name="labelResolution" xml:space="preserve">
-    <value>Display resolution</value>
+  <data name="labelMonitorSelector" xml:space="preserve">
+    <value>Monitor selector</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Languages</value>
@@ -225,6 +225,9 @@ TutorialesVbNET and Flaticon.</value>
   </data>
   <data name="message1" xml:space="preserve">
     <value>You are not recording anything!</value>
+  </data>
+  <data name="message2" xml:space="preserve">
+    <value>You must stop the recording first!</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>System audio only (Desktop Audio)</value>

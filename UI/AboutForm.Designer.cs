@@ -40,7 +40,7 @@
             // 
             this.LbAbout2.AutoSize = true;
             this.LbAbout2.ForeColor = System.Drawing.SystemColors.Control;
-            this.LbAbout2.Location = new System.Drawing.Point(16, 182);
+            this.LbAbout2.Location = new System.Drawing.Point(22, 184);
             this.LbAbout2.Name = "LbAbout2";
             this.LbAbout2.Size = new System.Drawing.Size(182, 30);
             this.LbAbout2.TabIndex = 9;
@@ -51,7 +51,7 @@
             this.LbAbout1.AutoSize = true;
             this.LbAbout1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LbAbout1.ForeColor = System.Drawing.SystemColors.Control;
-            this.LbAbout1.Location = new System.Drawing.Point(16, 106);
+            this.LbAbout1.Location = new System.Drawing.Point(22, 106);
             this.LbAbout1.Name = "LbAbout1";
             this.LbAbout1.Size = new System.Drawing.Size(257, 60);
             this.LbAbout1.TabIndex = 8;
@@ -64,18 +64,18 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(87, 20);
+            this.label3.Location = new System.Drawing.Point(93, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 38);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Simple Screen Recorder\r\nv1.2.0";
+            this.label3.Text = "Simple Screen Recorder\r\nv1.2.1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(16, 79);
+            this.label2.Location = new System.Drawing.Point(22, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 15);
             this.label2.TabIndex = 6;
@@ -84,7 +84,7 @@
             // label1
             // 
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(16, 9);
+            this.label1.Location = new System.Drawing.Point(22, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 54);
             this.label1.TabIndex = 5;
@@ -94,7 +94,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(284, 233);
+            this.ClientSize = new System.Drawing.Size(302, 233);
             this.Controls.Add(this.LbAbout2);
             this.Controls.Add(this.LbAbout1);
             this.Controls.Add(this.label3);

@@ -201,8 +201,8 @@
   <data name="labelFps" xml:space="preserve">
     <value>Частота кадрів</value>
   </data>
-  <data name="labelResolution" xml:space="preserve">
-    <value>Роздільна здатність дисплея</value>
+  <data name="labelMonitorSelector" xml:space="preserve">
+    <value>Вибір монітора</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Мова</value>
@@ -227,6 +227,9 @@ TutorialesVbNET і Flaticon.</value>
   </data>
   <data name="message1" xml:space="preserve">
     <value>Ви нічого не записуєте!</value>
+  </data>
+  <data name="message2" xml:space="preserve">
+    <value>Ви повинні спочатку зупинити запис!</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>Лише системний звук (Desktop Audio)</value>

@@ -23,7 +23,7 @@ namespace Simple_Screen_Recorder.Langs
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class StringsEN
+    internal class Strings_ja_JP
     {
 
         private static global::System.Resources.ResourceManager resourceMan;
@@ -31,7 +31,7 @@ namespace Simple_Screen_Recorder.Langs
         private static global::System.Globalization.CultureInfo resourceCulture;
 
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal StringsEN()
+        internal Strings_ja_JP()
         {
         }
 
@@ -45,7 +45,7 @@ namespace Simple_Screen_Recorder.Langs
             {
                 if (object.ReferenceEquals(resourceMan, null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Simple_Screen_Recorder.Langs.Strings", typeof(StringsEN).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Simple_Screen_Recorder.Langs.Strings.ja_JP", typeof(Strings_ja_JP).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -448,13 +448,6 @@ namespace Simple_Screen_Recorder.Langs
             get
             {
                 return ResourceManager.GetString("labelMonitorSelector", resourceCulture);
-            }
-        }
-        internal static string message2
-        {
-            get
-            {
-                return ResourceManager.GetString("message2", resourceCulture);
             }
         }
 

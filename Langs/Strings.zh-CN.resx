@@ -201,8 +201,8 @@
   <data name="labelFps" xml:space="preserve">
     <value>视频帧率</value>
   </data>
-  <data name="labelResolution" xml:space="preserve">
-    <value>分辨率</value>
+  <data name="labelMonitorSelector" xml:space="preserve">
+    <value>显示器选择器</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>语言</value>
@@ -224,6 +224,9 @@
   </data>
   <data name="message1" xml:space="preserve">
     <value>你没有记录任何东西！</value>
+  </data>
+  <data name="message2" xml:space="preserve">
+    <value>您必须先停止录制！</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>只有系统音频 （Desktop Audio）</value>
