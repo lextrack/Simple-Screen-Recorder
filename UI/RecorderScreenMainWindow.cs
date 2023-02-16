@@ -36,7 +36,7 @@ namespace Simple_Screen_Recorder
                 }
                 else
                 {
-                    comboBoxMonitors.Items.Add("Screen " + (i + 1) + " (" + Screen.AllScreens[i].Bounds.Width + "x" + Screen.AllScreens[i].Bounds.Height + ")");
+                    comboBoxMonitors.Items.Add("Monitor " + (i + 1) + " (" + Screen.AllScreens[i].Bounds.Width + "x" + Screen.AllScreens[i].Bounds.Height + ")");
                 }
             }
 
@@ -188,8 +188,8 @@ namespace Simple_Screen_Recorder
                             Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
                             Rectangle bounds = selectedScreen.Bounds;
                             int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                            string args = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
-                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg " + args);
+                            string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
+                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg " + getScreen);
                             ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                             ProcessId.CreateNoWindow = true;
                             ProcessId.RedirectStandardOutput = true;
@@ -214,8 +214,8 @@ namespace Simple_Screen_Recorder
                             Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
                             Rectangle bounds = selectedScreen.Bounds;
                             int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                            string args = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
-                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg " + args);
+                            string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
+                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg " + getScreen);
                             ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                             ProcessId.CreateNoWindow = true;
                             ProcessId.RedirectStandardOutput = true;
@@ -240,8 +240,8 @@ namespace Simple_Screen_Recorder
                             Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
                             Rectangle bounds = selectedScreen.Bounds;
                             int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                            string args = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
-                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg " + args);
+                            string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
+                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg " + getScreen);
                             ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                             ProcessId.CreateNoWindow = true;
                             ProcessId.RedirectStandardOutput = true;

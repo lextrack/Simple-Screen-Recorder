@@ -18,7 +18,7 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 
 - Select the **codec** that you want to use from the "Encoder" dropdown menu. The available codecs are "MPEG-4", "H264 NVENC (Nvidia Graphics Cards)" and "H264 AMF (AMD Graphics Cards)".<br>
 
-- Select the **file format** that you want to use from the "File Format" dropdown menu. The available formats are "MKV" and "AVI".<br>
+- Select the **file format** that you want to use from the "File Format" dropdown menu. The available formats are "MKV" and "AVI". I recommend using AVI.<br>
 
 - Select the **framerate** that you want to use from the "Video framerate" dropdown menu. You can record a video at 30 or 60 fps.<br>
 
@@ -51,9 +51,9 @@ Select the Audio Recording option in the main window and you can record audio fr
 
 <h2 align="center">Install</h2>
 <p align="center">
-  Windows 8.1, 10, 11 (64 bits) | v1.2.1 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.1/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a> or <a href="https://www.softpedia.com/get/Multimedia/Video/Video-Recording/Simple-Screen-Recorder.shtml">Download from Softpedia</a><br><br>
+  Windows 8.1, 10, 11 (64 bits) | v1.2.2 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.1/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a> or <a href="https://www.softpedia.com/get/Multimedia/Video/Video-Recording/Simple-Screen-Recorder.shtml">Download from Softpedia</a><br><br>
   Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 7.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-release-full-shared 5.1.2)</a> <br><br>
-  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/Y0d9tY4P/screen-1-2-1.png"></a>
+  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/6q7GnNZw/screenrec1-2-1.png"></a>
 </p>
 
 <h2 align="center">Acknowledgments</h2>
