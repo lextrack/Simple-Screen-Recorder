@@ -6,7 +6,6 @@ using Simple_Screen_Recorder.ScreenRecorderWin;
 using Simple_Screen_Recorder.UI;
 using System.Diagnostics;
 using System.IO;
-using System.Windows;
 using Application = System.Windows.Forms.Application;
 
 namespace Simple_Screen_Recorder

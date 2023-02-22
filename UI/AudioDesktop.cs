@@ -34,6 +34,7 @@ namespace Simple_Screen_Recorder.UI
         public static void CreateWaveInDevice()
         {
             waveIn = new WasapiLoopbackCapture();
+            waveIn.WaveFormat = new WaveFormat(44000, 2);
             waveIn.DataAvailable += OnDataAvailable;
             waveIn.RecordingStopped += OnRecordingStopped;
         }
