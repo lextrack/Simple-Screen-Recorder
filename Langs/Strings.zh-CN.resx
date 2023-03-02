@@ -126,6 +126,9 @@
   <data name="audioToolStripMenuItem" xml:space="preserve">
     <value>音频记录器</value>
   </data>
+  <data name="BtnBackScreen" xml:space="preserve">
+    <value>返回</value>
+  </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>选择一个音频文件</value>
   </data>
@@ -228,6 +231,12 @@
   <data name="message2" xml:space="preserve">
     <value>您必须先停止录制！</value>
   </data>
+  <data name="MessageMerge" xml:space="preserve">
+    <value>合并过程完成</value>
+  </data>
+  <data name="MessageMergeTitle" xml:space="preserve">
+    <value>媒体合并工具</value>
+  </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>只有系统音频 （Desktop Audio）</value>
   </data>
@@ -238,10 +247,10 @@
     <value>系统声音和话筒音频</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>合并媒体文件</value>
+    <value>媒体合并工具</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>合并视频和单一音频文件</value>
+    <value>合并视频和单个音频文件</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
     <value>合并所有媒体文件</value>

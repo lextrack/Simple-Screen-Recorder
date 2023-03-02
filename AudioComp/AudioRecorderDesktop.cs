@@ -2,9 +2,9 @@
 using NAudio.Wave;
 using System.IO;
 
-namespace Simple_Screen_Recorder.UI
+namespace Simple_Screen_Recorder.AudioComp
 {
-    public class AudioDesktop
+    public class AudioRecorderDesktop
     {
         public static IWaveIn? waveIn;
         public static WaveFileWriter? writer;
@@ -19,7 +19,7 @@ namespace Simple_Screen_Recorder.UI
                 LoadWasapiDevicesCombo();
             }
 
-            outputFolder = Application.StartupPath + @"\Recordings";
+            outputFolder = Application.StartupPath + @"\AudioRecordings";
             Directory.CreateDirectory(outputFolder);
         }
 

@@ -63,6 +63,16 @@ namespace Simple_Screen_Recorder.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap folder_button {
             get {
                 object obj = ResourceManager.GetObject("folder button", resourceCulture);
@@ -123,9 +133,9 @@ namespace Simple_Screen_Recorder.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sound_waves_button {
+        internal static System.Drawing.Bitmap refresh {
             get {
-                object obj = ResourceManager.GetObject("sound-waves button", resourceCulture);
+                object obj = ResourceManager.GetObject("refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +143,9 @@ namespace Simple_Screen_Recorder.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap stop_button {
+        internal static System.Drawing.Bitmap sound_waves_button {
             get {
-                object obj = ResourceManager.GetObject("stop-button", resourceCulture);
+                object obj = ResourceManager.GetObject("sound-waves button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

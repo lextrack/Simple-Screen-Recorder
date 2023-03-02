@@ -126,6 +126,9 @@
   <data name="audioToolStripMenuItem" xml:space="preserve">
     <value>Registratore audio</value>
   </data>
+  <data name="BtnBackScreen" xml:space="preserve">
+    <value>Indietro</value>
+  </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>Seleziona un file audio</value>
   </data>
@@ -218,7 +221,7 @@ ce ne saranno altri prossimi aggiornamenti!</value>
 TutorialesVbNET e Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
-    <value>Unisce video e un file audio</value>
+    <value>Unire un video e un singolo file audio</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
     <value>Unisci tutti i file multimediali</value>
@@ -228,6 +231,12 @@ TutorialesVbNET e Flaticon.</value>
   </data>
   <data name="message2" xml:space="preserve">
     <value>Devi prima interrompere la registrazione!</value>
+  </data>
+  <data name="MessageMerge" xml:space="preserve">
+    <value>Processo di unione completato</value>
+  </data>
+  <data name="MessageMergeTitle" xml:space="preserve">
+    <value>Strumento di unione media</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>Solo audio sistema</value>
@@ -239,10 +248,10 @@ TutorialesVbNET e Flaticon.</value>
     <value>Audio sistema e audio microfono</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Unisci file multimediali</value>
+    <value>Strumento di unione media</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>Unisci video e un singolo file audio</value>
+    <value>Unire un video e un singolo file audio</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
     <value>Unisci tutti i file multimediali</value>

@@ -32,7 +32,7 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 
 - To stop the screen recording, click the "Stop Recording" button. The recorded video file will be saved in the "Recordings" folder.<br>
 
-- When you enter the "Recordings" folder, you'll see the audio and video files separated. Having the files like this is very useful if you want to edit the video and audio tracks with total freedom. However, you also can combine your audio and video files using the "Merge Media Files" tool. All the merged files will be saved in the "Output Files" folder.<br>
+- When you enter the "Recordings" folder, you'll see the audio and video files separated. Having the files like this is very useful if you want to edit the video and audio tracks with total freedom. However, you also can combine/merge your audio and video files using the "Media Merge" tool. All the merged files will be saved in the "Output Files" folder.<br>
 
 - You can also record audio separately. You can record your microphone, desktop audio, or both separately. 
 Select the Audio Recording option in the main window and you can record audio from your PC. The recorded audio files are stored in the "Audio Recordings" folder.<br>
@@ -51,9 +51,9 @@ Select the Audio Recording option in the main window and you can record audio fr
 
 <h2 align="center">Install</h2>
 <p align="center">
-  Windows 7, 8.1, 10, 11 (64 bits) | v1.2.2 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.2/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
-  Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 7.0</a> and <a href="https://github.com/BtbN/FFmpeg-Builds">FFmpeg (ffmpeg-n5.1-latest-win64-lgpl-shared-5.1)</a> <br><br>
-  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/6q7GnNZw/screenrec1-2-1.png"></a>
+  Windows 7, 8.1, 10, 11 (64 bits) | v1.2.3 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.3/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
+  Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 7.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/s">FFmpeg (ffmpeg-5.1.2-full_build-shared)</a> <br><br>
+  <a href="https://postimg.cc/"><img src="https://i.postimg.cc/qvvZm4PT/screenrecorder1-2-3.png"></a>
 </p>
 
 <h2 align="center">Acknowledgments</h2>

@@ -126,6 +126,9 @@
   <data name="audioToolStripMenuItem" xml:space="preserve">
     <value>Gravador de áudio</value>
   </data>
+  <data name="BtnBackScreen" xml:space="preserve">
+    <value>Voltar</value>
+  </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>Selecione um arquivo de áudio</value>
   </data>
@@ -218,7 +221,7 @@ próximas atualizações!</value>
 TutorialesVbNET e Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
-    <value>Misturando apenas um vídeo e um arquivo de áudio</value>
+    <value>Mesclar vídeo e um único arquivo de áudio</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
     <value>Mesclar todos os arquivos de mídia</value>
@@ -228,6 +231,12 @@ TutorialesVbNET e Flaticon.</value>
   </data>
   <data name="message2" xml:space="preserve">
     <value>Você deve parar a gravação primeiro!</value>
+  </data>
+  <data name="MessageMerge" xml:space="preserve">
+    <value>Processo de mesclagem concluído</value>
+  </data>
+  <data name="MessageMergeTitle" xml:space="preserve">
+    <value>Ferramenta de fusão de mídia</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>Somente áudio do sistema</value>
@@ -239,7 +248,7 @@ TutorialesVbNET e Flaticon.</value>
     <value>Sistema de som e microfone de áudio</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Mesclar arquivos de mídia</value>
+    <value>Ferramenta de fusão de mídia</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
     <value>Mesclar vídeo e um único arquivo de áudio</value>

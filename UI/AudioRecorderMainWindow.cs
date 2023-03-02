@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using NAudio.Wave;
+using Simple_Screen_Recorder.AudioComp;
 using Simple_Screen_Recorder.Langs;
 using Simple_Screen_Recorder.Properties;
 using System.Diagnostics;
@@ -22,18 +23,18 @@ namespace Simple_Screen_Recorder.UI
         {
             GetTextsMain();
 
-            AudioRecMic.OpenComp();
-            ComboBoxMicrophone.DataSource = AudioRecMic.cboDIspositivos.DataSource;
-            AudioRecDesktop.OpenComp();
-            ComboBoxSpeaker.DataSource = AudioRecDesktop.cboDIspositivos.DataSource;
+            AudioRecorderMic.OpenComp();
+            ComboBoxMicrophone.DataSource = AudioRecorderMic.cboDIspositivos.DataSource;
+            AudioRecorderDesktop.OpenComp();
+            ComboBoxSpeaker.DataSource = AudioRecorderDesktop.cboDIspositivos.DataSource;
         }
 
         private void btnStartRecording_Click(object sender, EventArgs e)
         {
             LbTimer.ForeColor = Color.IndianRed;
             TimeRec = DateTime.Now;
-            RecState.Enabled = true;
-            AudioName = "Audio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".avi";
+            CountRecAudio.Enabled = true;
+            AudioName = "Audio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss");
 
             if (RadioTwoTrack.Checked == true)
             {
@@ -55,12 +56,19 @@ namespace Simple_Screen_Recorder.UI
             ProcessId.RedirectStandardOutput = true;
             Process.Start(ProcessId);
 
+            CheckElementsAudioRecordings();
+
+        }
+
+        private void CheckElementsAudioRecordings()
+        {
             btnStartRecording.Enabled = false;
             ComboBoxMicrophone.Enabled = false;
             ComboBoxSpeaker.Enabled = false;
             RadioTwoTrack.Enabled = false;
             RadioDesktop.Enabled = false;
-
+            radioMicrophone.Enabled = false;
+            BtnBackScreen.Enabled = false;
         }
 
         private void BtnStop_Click(object sender, EventArgs e)
@@ -69,8 +77,8 @@ namespace Simple_Screen_Recorder.UI
             {
                 LbTimer.ForeColor = Color.White;
                 LbTimer.Text = "00:00:00";
-                RecState.Enabled = false;
-                StopRec();
+                CountRecAudio.Enabled = false;
+                StopAudioRec();
 
             }
             catch (Exception)
@@ -79,36 +87,39 @@ namespace Simple_Screen_Recorder.UI
             }
         }
 
-        private void StopRec()
+        private void StopAudioRec()
         {
             btnStartRecording.Enabled = true;
             ComboBoxMicrophone.Enabled = true;
             ComboBoxSpeaker.Enabled = true;
             RadioTwoTrack.Enabled = true;
             RadioDesktop.Enabled = true;
+            radioMicrophone.Enabled = true;
+            BtnBackScreen.Enabled = true;
 
             if (RadioTwoTrack.Checked == true)
             {
-                if (AudioRecMic.waveIn is object)
+                if (AudioRecorderMic.waveIn is object)
                 {
-                    AudioRecMic.waveIn.StopRecording();
+                    AudioRecorderMic.waveIn.StopRecording();
                 }
 
-                if (AudioRecDesktop.waveIn is object)
+                if (AudioRecorderDesktop.waveIn is object)
                 {
-                    AudioRecDesktop.waveIn.StopRecording();
+                    AudioRecorderDesktop.waveIn.StopRecording();
                 }
             }
-            else if (AudioRecDesktop.waveIn is object)
+            else if (AudioRecorderDesktop.waveIn is object)
             {
-                AudioRecDesktop.waveIn.StopRecording();
+                AudioRecorderDesktop.waveIn.StopRecording();
             }
-            else if (AudioRecMic.waveIn is object)
+            else if (AudioRecorderMic.waveIn is object)
             {
-                AudioRecMic.waveIn.StopRecording();
+                AudioRecorderMic.waveIn.StopRecording();
             }
 
-            GrabadorPantalla.My.MyProject.Computer.Audio.Stop();
+            var soundPlayer = new System.Media.SoundPlayer();
+            soundPlayer.Stop();
 
             foreach (Process proceso in Process.GetProcesses())
             {
@@ -122,34 +133,32 @@ namespace Simple_Screen_Recorder.UI
             proc.Kill();
         }
 
-        public static void RecMic()
+        private static void RecMic()
         {
-            AudioRecMic.Cleanup();
-            AudioRecMic.CreateWaveInDevice();
-            AudioRecMic.outputFilename = "MicrophoneAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
-            AudioRecMic.writer = new WaveFileWriter(Path.Combine(AudioRecMic.outputFolder, AudioRecMic.outputFilename), AudioRecMic.waveIn.WaveFormat);
-            AudioRecMic.waveIn.StartRecording();
+            AudioRecorderMic.Cleanup();
+            AudioRecorderMic.CreateWaveInDevice();
+            AudioRecorderMic.outputFilename = "MicrophoneAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
+            AudioRecorderMic.writer = new WaveFileWriter(Path.Combine(AudioRecorderMic.outputFolder, AudioRecorderMic.outputFilename), AudioRecorderMic.waveIn.WaveFormat);
+            AudioRecorderMic.waveIn.StartRecording();
         }
 
-        public static void RecSpeaker()
+        private static void RecSpeaker()
         {
-            AudioRecDesktop.Cleanup();
-            AudioRecDesktop.CreateWaveInDevice();
-            GrabadorPantalla.My.MyProject.Computer.Audio.Play("Background.wav", AudioPlayMode.BackgroundLoop);
-            AudioRecDesktop.outputFilename = "SystemAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
-            AudioRecDesktop.writer = new WaveFileWriter(Path.Combine(AudioRecDesktop.outputFolder, AudioRecDesktop.outputFilename), AudioRecDesktop.waveIn.WaveFormat);
-            AudioRecDesktop.waveIn.StartRecording();
+            AudioRecorderDesktop.Cleanup();
+            AudioRecorderDesktop.CreateWaveInDevice();
+
+            var soundPlayer = new System.Media.SoundPlayer("Background.wav");
+
+            soundPlayer.PlayLooping();
+
+            AudioRecorderDesktop.outputFilename = "SystemAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
+            AudioRecorderDesktop.writer = new WaveFileWriter(Path.Combine(AudioRecorderDesktop.outputFolder, AudioRecorderDesktop.outputFilename), AudioRecorderDesktop.waveIn.WaveFormat);
+            AudioRecorderDesktop.waveIn.StartRecording();
         }
 
         private void btnOutputRecordings_Click(object sender, EventArgs e)
         {
             Process.Start("explorer.exe", "AudioRecordings");
-        }
-
-        private void RecState_Tick(object sender, EventArgs e)
-        {
-            var Difference = DateTime.Now.Subtract(TimeRec);
-            LbTimer.Text = "Rec: " + Difference.Hours.ToString().PadLeft(2, '0') + ":" + Difference.Minutes.ToString().PadLeft(2, '0') + ":" + Difference.Seconds.ToString().PadLeft(2, '0');
         }
 
         private void GetTextsMain()
@@ -168,11 +177,25 @@ namespace Simple_Screen_Recorder.UI
             crownGroupBox2.Text = StringsEN.crownGroupBox2;
             crownGroupBox3.Text = StringsEN.crownGroupBox3;
             radioMicrophone.Text = StringsEN.radioMicrophone;
+            BtnBackScreen.Text = StringsEN.BtnBackScreen;
         }
 
         private void AudioRecorderMainWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             Settings.Default.Save();
+        }
+
+        private void BtnBackScreen_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            RecorderScreenMainWindow backscreenrec = new RecorderScreenMainWindow();
+            backscreenrec.Show();
+        }
+
+        private void CountRecAudio_Tick(object sender, EventArgs e)
+        {
+            var Difference = DateTime.Now.Subtract(TimeRec);
+            LbTimer.Text = "Rec: " + Difference.Hours.ToString().PadLeft(2, '0') + ":" + Difference.Minutes.ToString().PadLeft(2, '0') + ":" + Difference.Seconds.ToString().PadLeft(2, '0');
         }
     }
 }

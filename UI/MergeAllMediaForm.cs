@@ -15,6 +15,10 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
 
             string outputFolder = Application.StartupPath + @"\OutputFiles";
             Directory.CreateDirectory(outputFolder);
+
+            notifyResultMergeAllMedia = new NotifyIcon();
+            notifyResultMergeAllMedia.Icon = SystemIcons.Information;
+            notifyResultMergeAllMedia.Visible = false;
         }
 
         private void MergeVDM_Load(object sender, EventArgs e)
@@ -24,7 +28,21 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
 
         private void BtnMergeAll_Click(object sender, EventArgs e)
         {
-            Process.Start("cmd.exe", "/k ffmpeg -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -i " + txtAudioMic.Text + " -filter_complex amerge -shortest -c:v copy -c:a aac -b:a 320k OutputFiles/" + outputFileName + " & exit /b");
+            Process conversionProcess = new Process();
+            conversionProcess.StartInfo.FileName = "cmd.exe";
+            conversionProcess.StartInfo.Arguments = "/k ffmpeg -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -i " + txtAudioMic.Text + " -filter_complex amerge -shortest -c:v copy -c:a aac -b:a 320k OutputFiles/" + outputFileName + " & exit /b";
+            conversionProcess.Start();
+
+            conversionProcess.EnableRaisingEvents = true;
+            conversionProcess.Exited += ConversionProcess_Exited;
+        }
+
+        private void ConversionProcess_Exited(object sender, EventArgs e)
+        {
+            notifyResultMergeAllMedia.BalloonTipTitle = StringsEN.MessageMergeTitle;
+            notifyResultMergeAllMedia.BalloonTipText = StringsEN.MessageMerge;
+            notifyResultMergeAllMedia.Visible = true;
+            notifyResultMergeAllMedia.ShowBalloonTip(5000);
         }
 
         private void BtnVideo_Click(object sender, EventArgs e)

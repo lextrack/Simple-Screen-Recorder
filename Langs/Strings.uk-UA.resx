@@ -126,6 +126,9 @@
   <data name="audioToolStripMenuItem" xml:space="preserve">
     <value>Аудіозаписувач</value>
   </data>
+  <data name="BtnBackScreen" xml:space="preserve">
+    <value>Назад</value>
+  </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>Виберіть аудіофайл</value>
   </data>
@@ -231,6 +234,12 @@ TutorialesVbNET і Flaticon.</value>
   <data name="message2" xml:space="preserve">
     <value>Ви повинні спочатку зупинити запис!</value>
   </data>
+  <data name="MessageMerge" xml:space="preserve">
+    <value>Об'єднання завершено</value>
+  </data>
+  <data name="MessageMergeTitle" xml:space="preserve">
+    <value>Інструмент злиття медіа</value>
+  </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>Лише системний звук (Desktop Audio)</value>
   </data>
@@ -241,10 +250,10 @@ TutorialesVbNET і Flaticon.</value>
     <value>Системний звук і звук мікрофона</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Об'єднання медіафайлів</value>
+    <value>Інструмент злиття медіа</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>Об'єднання відео та одного аудіофайлу</value>
+    <value>Об'єднати відео та один аудіофайл</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
     <value>Об’єднати всі мультимедійні файли</value>

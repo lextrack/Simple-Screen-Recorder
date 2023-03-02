@@ -2,9 +2,9 @@
 using NAudio.Wave;
 using System.IO;
 
-namespace Simple_Screen_Recorder.UI
+namespace Simple_Screen_Recorder.AudioComp
 {
-    public class AudioMic
+    public class ScreenAudioDesktop
     {
         public static IWaveIn? waveIn;
         public static WaveFileWriter? writer;
@@ -33,7 +33,7 @@ namespace Simple_Screen_Recorder.UI
 
         public static void CreateWaveInDevice()
         {
-            waveIn = new WaveIn();
+            waveIn = new WasapiLoopbackCapture();
             waveIn.WaveFormat = new WaveFormat(44000, 2);
             waveIn.DataAvailable += OnDataAvailable;
             waveIn.RecordingStopped += OnRecordingStopped;

@@ -126,6 +126,9 @@
   <data name="audioToolStripMenuItem" xml:space="preserve">
     <value>Audiorekorder</value>
   </data>
+  <data name="BtnBackScreen" xml:space="preserve">
+    <value>Zurück</value>
+  </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>Wählen Sie eine Audio-Datei aus</value>
   </data>
@@ -229,6 +232,12 @@ durch TutorialesVbNET und Flaticon.</value>
   <data name="message2" xml:space="preserve">
     <value>Sie müssen die Aufnahme zuerst stoppen!</value>
   </data>
+  <data name="MessageMerge" xml:space="preserve">
+    <value>Zusammenführungsprozess abgeschlossen</value>
+  </data>
+  <data name="MessageMergeTitle" xml:space="preserve">
+    <value>Medienzusammenführungswerkzeug</value>
+  </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>Nur Systemsound (Desktop Audio)</value>
   </data>
@@ -239,10 +248,10 @@ durch TutorialesVbNET und Flaticon.</value>
     <value>Systemsound und Mikrofonaudio</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Mediendateien zusammenführen</value>
+    <value>Medienzusammenführungswerkzeug</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>Video zusammenführen mit einer einzigen Audio-Datei</value>
+    <value>Video und eine einzelne Audiodatei zusammenführen</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
     <value>Alle Mediendateien zusammenführen</value>

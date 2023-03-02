@@ -2,9 +2,9 @@
 using NAudio.Wave;
 using System.IO;
 
-namespace Simple_Screen_Recorder.UI
+namespace Simple_Screen_Recorder.AudioComp
 {
-    public class AudioRecMic
+    public class AudioRecorderMic
     {
         public static IWaveIn? waveIn;
         public static WaveFileWriter? writer;

@@ -126,6 +126,9 @@
   <data name="audioToolStripMenuItem" xml:space="preserve">
     <value>オーディオレコーダー</value>
   </data>
+  <data name="BtnBackScreen" xml:space="preserve">
+    <value>戻る</value>
+  </data>
   <data name="BtnDeskAudio" xml:space="preserve">
     <value>オーディオファイルを選択する</value>
   </data>
@@ -230,6 +233,12 @@ Flaticonによって可能になりました。</value>
   <data name="message2" xml:space="preserve">
     <value>最初に記録を停止する必要があります！</value>
   </data>
+  <data name="MessageMerge" xml:space="preserve">
+    <value>マージプロセスが完了しました</value>
+  </data>
+  <data name="MessageMergeTitle" xml:space="preserve">
+    <value>メディア統合ツール</value>
+  </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>システムオーディオのみ (Desktop Audio)</value>
   </data>
@@ -240,10 +249,10 @@ Flaticonによって可能になりました。</value>
     <value>システムサウンドとマイクロフォンオーディオ</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>メディアファイルをマージする</value>
+    <value>メディア統合ツール</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>ビデオと1つのオーディオファイルをマージする</value>
+    <value>動画と単一のオーディオファイルをマージする</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
     <value>すべてのメディアファイルをマージする</value>

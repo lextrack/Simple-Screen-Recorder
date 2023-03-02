@@ -458,5 +458,29 @@ namespace Simple_Screen_Recorder.Langs
             }
         }
 
+        internal static string BtnBackScreen
+        {
+            get
+            {
+                return ResourceManager.GetString("BtnBackScreen", resourceCulture);
+            }
+        }
+
+        internal static string MessageMerge
+        {
+            get
+            {
+                return ResourceManager.GetString("MessageMerge", resourceCulture);
+            }
+        }
+
+        internal static string MessageMergeTitle
+        {
+            get
+            {
+                return ResourceManager.GetString("MessageMergeTitle", resourceCulture);
+            }
+        }
+
     }
 }
