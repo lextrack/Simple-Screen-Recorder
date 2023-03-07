@@ -30,7 +30,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
         {
             Process conversionProcess = new Process();
             conversionProcess.StartInfo.FileName = "cmd.exe";
-            conversionProcess.StartInfo.Arguments = "/k ffmpeg -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -shortest -c:v copy -c:a aac -b:a 320k OutputFiles/" + outputFileName + " & exit /b";
+            conversionProcess.StartInfo.Arguments = $"/c {RecorderScreenMainWindow.ResourcePath} -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -shortest -c:v copy -c:a aac -b:a 320k OutputFiles/" + outputFileName + " & exit /b";
             conversionProcess.Start();
 
             conversionProcess.EnableRaisingEvents = true;

@@ -17,6 +17,7 @@ namespace Simple_Screen_Recorder
         private DateTime TimeRec = DateTime.MinValue;
         private string VideoName = "";
         public int ProcessId { get; private set; }
+        public static string ResourcePath = Path.Combine(Directory.GetCurrentDirectory(), @"FFmpegResources\ffmpeg");
 
         public RecorderScreenMainWindow()
         {
@@ -28,8 +29,6 @@ namespace Simple_Screen_Recorder
             this.KeyPreview = true;
 
             GetTextsMain();
-
-            CheckMonitors();
 
             ScreenAudioMic.OpenComp();
             ComboBoxMicrophone.DataSource = ScreenAudioMic.cboDIspositivos.DataSource;
@@ -44,6 +43,8 @@ namespace Simple_Screen_Recorder
 
             ComboBoxFormat.Items.AddRange(new[] { ".avi", ".mkv" });
             ComboBoxFormat.SelectedIndex = 0;
+
+            CheckMonitors();
         }
 
         private void btnStartRecording_Click(object sender, EventArgs e)
@@ -97,7 +98,7 @@ namespace Simple_Screen_Recorder
                     case "MPEG-4":
                         {
                             int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} -f gdigrab -framerate " + fps + " -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/" + VideoName + "");
                             ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                             ProcessId.CreateNoWindow = true;
                             ProcessId.RedirectStandardOutput = true;
@@ -110,7 +111,7 @@ namespace Simple_Screen_Recorder
                     case "H264 NVENC (Nvidia Graphics Cards)":
                         {
                             int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} -f gdigrab -framerate " + fps + " -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/" + VideoName + "");
                             ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                             ProcessId.CreateNoWindow = true;
                             ProcessId.RedirectStandardOutput = true;
@@ -123,7 +124,7 @@ namespace Simple_Screen_Recorder
                     case "H264 AMF (AMD Graphics Cards)":
                         {
                             int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab -framerate " + fps + " -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} -f gdigrab -framerate " + fps + " -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/" + VideoName + "");
                             ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                             ProcessId.CreateNoWindow = true;
                             ProcessId.RedirectStandardOutput = true;
@@ -144,7 +145,7 @@ namespace Simple_Screen_Recorder
                             Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
                             Rectangle bounds = selectedScreen.Bounds;
                             string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -show_region 1 -i desktop -c:v mpeg4 -b:v 10000k Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
-                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg " + getScreen);
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} " + getScreen);
                             ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                             ProcessId.CreateNoWindow = true;
                             ProcessId.RedirectStandardOutput = true;
@@ -159,7 +160,7 @@ namespace Simple_Screen_Recorder
                             Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
                             Rectangle bounds = selectedScreen.Bounds;
                             string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -show_region 1 -i desktop -c:v h264_nvenc -qp 0 Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
-                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg " + getScreen);
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} " + getScreen);
                             ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                             ProcessId.CreateNoWindow = true;
                             ProcessId.RedirectStandardOutput = true;
@@ -174,7 +175,7 @@ namespace Simple_Screen_Recorder
                             Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
                             Rectangle bounds = selectedScreen.Bounds;
                             string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -show_region 1 -i desktop -c:v h264_amf -qp 0 Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
-                            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg " + getScreen);
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} " + getScreen);
                             ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
                             ProcessId.CreateNoWindow = true;
                             ProcessId.RedirectStandardOutput = true;
@@ -271,7 +272,7 @@ namespace Simple_Screen_Recorder
             ScreenAudioDesktop.Cleanup();
             ScreenAudioDesktop.CreateWaveInDevice();
 
-            var soundPlayer = new System.Media.SoundPlayer("Background.wav");
+            var soundPlayer = new System.Media.SoundPlayer(Properties.Resources.Background);
             soundPlayer.PlayLooping();
 
             ScreenAudioDesktop.outputFilename = "SystemAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";

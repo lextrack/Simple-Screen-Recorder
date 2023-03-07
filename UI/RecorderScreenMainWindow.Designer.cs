@@ -562,9 +562,9 @@ namespace Simple_Screen_Recorder
             crownGroupBox2.Controls.Add(RadioDesktop);
             crownGroupBox2.Controls.Add(label7);
             crownGroupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            crownGroupBox2.Location = new Point(15, 358);
+            crownGroupBox2.Location = new Point(16, 358);
             crownGroupBox2.Name = "crownGroupBox2";
-            crownGroupBox2.Size = new Size(446, 258);
+            crownGroupBox2.Size = new Size(445, 258);
             crownGroupBox2.TabIndex = 56;
             crownGroupBox2.TabStop = false;
             crownGroupBox2.Text = "Audio settings";

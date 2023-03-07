@@ -9,11 +9,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <StartupObject>Simple_Screen_Recorder.Program</StartupObject>
     <UseWPF>True</UseWPF>
-    <Version>1.2.3</Version>
+    <Version>1.2.4</Version>
     <Authors>Lextrack</Authors>
     <Copyright>Lextrack</Copyright>
-    <AssemblyVersion>1.2.3</AssemblyVersion>
-    <FileVersion>1.2.3</FileVersion>
+    <AssemblyVersion>1.2.4</AssemblyVersion>
+    <FileVersion>1.2.4</FileVersion>
     <PackageIcon>screen recorder.png</PackageIcon>
     <ApplicationIcon>Resources\screen recorder.ico</ApplicationIcon>
     <PlatformTarget>x64</PlatformTarget>
@@ -21,6 +21,10 @@
     <RepositoryType>git</RepositoryType>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Background.wav" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\screen recorder.ico" />
@@ -124,6 +128,39 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="FFmpegResources\avcodec-59.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="FFmpegResources\avdevice-59.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="FFmpegResources\avfilter-8.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="FFmpegResources\avformat-59.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="FFmpegResources\avutil-57.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="FFmpegResources\ffmpeg.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="FFmpegResources\ffplay.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="FFmpegResources\ffprobe.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="FFmpegResources\postproc-56.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="FFmpegResources\swresample-4.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="FFmpegResources\swscale-6.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -132,6 +169,14 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="FFmpegResources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Background.wav" />
   </ItemGroup>
 
 </Project>

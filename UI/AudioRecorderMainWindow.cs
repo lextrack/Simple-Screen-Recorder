@@ -50,7 +50,7 @@ namespace Simple_Screen_Recorder.UI
                 RecMic();
             }
 
-            ProcessStartInfo ProcessId = new("cmd.exe", "/c ffmpeg -f gdigrab AudioRecordings/" + AudioName + "");
+            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {RecorderScreenMainWindow.ResourcePath} -f gdigrab AudioRecordings/" + AudioName + "");
             ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
             ProcessId.CreateNoWindow = true;
             ProcessId.RedirectStandardOutput = true;
@@ -147,8 +147,7 @@ namespace Simple_Screen_Recorder.UI
             AudioRecorderDesktop.Cleanup();
             AudioRecorderDesktop.CreateWaveInDevice();
 
-            var soundPlayer = new System.Media.SoundPlayer("Background.wav");
-
+            var soundPlayer = new System.Media.SoundPlayer(Properties.Resources.Background);
             soundPlayer.PlayLooping();
 
             AudioRecorderDesktop.outputFilename = "SystemAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
