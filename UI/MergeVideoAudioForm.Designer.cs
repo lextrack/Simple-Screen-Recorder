@@ -47,9 +47,9 @@
             BtnMergeAll.ForeColor = Color.Transparent;
             BtnMergeAll.Image = Properties.Resources.mixing_button;
             BtnMergeAll.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnMergeAll.Location = new Point(100, 144);
+            BtnMergeAll.Location = new Point(97, 144);
             BtnMergeAll.Name = "BtnMergeAll";
-            BtnMergeAll.Size = new Size(147, 39);
+            BtnMergeAll.Size = new Size(150, 39);
             BtnMergeAll.TabIndex = 13;
             BtnMergeAll.Text = "Start mixing";
             BtnMergeAll.TextAlign = ContentAlignment.MiddleRight;
@@ -59,19 +59,21 @@
             // txtAudioDesk
             // 
             txtAudioDesk.BorderStyle = BorderStyle.FixedSingle;
-            txtAudioDesk.Location = new Point(252, 60);
+            txtAudioDesk.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtAudioDesk.Location = new Point(253, 60);
             txtAudioDesk.Name = "txtAudioDesk";
             txtAudioDesk.RightToLeft = RightToLeft.Yes;
-            txtAudioDesk.Size = new Size(216, 23);
+            txtAudioDesk.Size = new Size(216, 22);
             txtAudioDesk.TabIndex = 10;
             // 
             // txtVideoPath
             // 
             txtVideoPath.BorderStyle = BorderStyle.FixedSingle;
-            txtVideoPath.Location = new Point(252, 21);
+            txtVideoPath.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            txtVideoPath.Location = new Point(253, 21);
             txtVideoPath.Name = "txtVideoPath";
             txtVideoPath.RightToLeft = RightToLeft.Yes;
-            txtVideoPath.Size = new Size(216, 23);
+            txtVideoPath.Size = new Size(216, 22);
             txtVideoPath.TabIndex = 9;
             // 
             // BtnDeskAudio
@@ -120,7 +122,7 @@
             btnOutputF.ImageAlign = ContentAlignment.MiddleLeft;
             btnOutputF.Location = new Point(253, 144);
             btnOutputF.Name = "btnOutputF";
-            btnOutputF.Size = new Size(147, 39);
+            btnOutputF.Size = new Size(150, 39);
             btnOutputF.TabIndex = 14;
             btnOutputF.Text = "Output folder";
             btnOutputF.TextAlign = ContentAlignment.MiddleRight;

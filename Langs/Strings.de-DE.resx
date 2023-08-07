@@ -133,7 +133,8 @@
     <value>Wählen Sie eine Audio-Datei aus</value>
   </data>
   <data name="BtnDeskAudio2" xml:space="preserve">
-    <value>Wählen Sie eine System-Sound-Datei aus</value>
+    <value>Wählen Sie eine
+System-Sound-Datei aus</value>
   </data>
   <data name="BtnExit" xml:space="preserve">
     <value>Beenden</value>
@@ -144,8 +145,12 @@
   <data name="BtnMergeAll2" xml:space="preserve">
     <value>Mischung starten</value>
   </data>
+  <data name="btnMergedFiles" xml:space="preserve">
+    <value>Zusammengeführte Medien öffnen</value>
+  </data>
   <data name="BtnMicAudio" xml:space="preserve">
-    <value>Wählen Sie eine Mikrofon-Audio-Datei aus</value>
+    <value>Wählen Sie eine 
+Mikrofon-Audio-Datei aus</value>
   </data>
   <data name="btnOutputF" xml:space="preserve">
     <value>Ausgabeordner</value>
@@ -239,7 +244,7 @@ durch TutorialesVbNET und Flaticon.</value>
     <value>Medienzusammenführungswerkzeug</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
-    <value>Nur Systemsound (Desktop Audio)</value>
+    <value>Nur Systemsound</value>
   </data>
   <data name="radioMicrophone" xml:space="preserve">
     <value>Nur Mikrofonaudio</value>
@@ -248,7 +253,7 @@ durch TutorialesVbNET und Flaticon.</value>
     <value>Systemsound und Mikrofonaudio</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Medienzusammenführungswerkzeug</value>
+    <value>Medienfusionstool</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
     <value>Video und eine einzelne Audiodatei zusammenführen</value>

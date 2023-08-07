@@ -23,7 +23,7 @@ namespace Simple_Screen_Recorder.Langs
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class StringsEN
+    internal class Stringsfrcopy
     {
 
         private static global::System.Resources.ResourceManager resourceMan;
@@ -31,7 +31,7 @@ namespace Simple_Screen_Recorder.Langs
         private static global::System.Globalization.CultureInfo resourceCulture;
 
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal StringsEN()
+        internal Stringsfrcopy()
         {
         }
 
@@ -45,7 +45,7 @@ namespace Simple_Screen_Recorder.Langs
             {
                 if (object.ReferenceEquals(resourceMan, null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Simple_Screen_Recorder.Langs.Strings", typeof(StringsEN).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Simple_Screen_Recorder.Langs.Strings - Copy", typeof(Stringsfrcopy).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -372,123 +372,5 @@ namespace Simple_Screen_Recorder.Langs
                 return ResourceManager.GetString("labelCodec", resourceCulture);
             }
         }
-
-        internal static string labelResolution
-        {
-            get
-            {
-                return ResourceManager.GetString("labelResolution", resourceCulture);
-            }
-        }
-
-        internal static string crownGroupBox1
-        {
-            get
-            {
-                return ResourceManager.GetString("crownGroupBox1", resourceCulture);
-            }
-        }
-
-        internal static string crownGroupBox2
-        {
-            get
-            {
-                return ResourceManager.GetString("crownGroupBox2", resourceCulture);
-            }
-        }
-
-        internal static string crownGroupBox3
-        {
-            get
-            {
-                return ResourceManager.GetString("crownGroupBox3", resourceCulture);
-            }
-        }
-
-        internal static string audioToolStripMenuItem
-        {
-            get
-            {
-                return ResourceManager.GetString("audioToolStripMenuItem", resourceCulture);
-            }
-        }
-
-        internal static string radioMicrophone
-        {
-            get
-            {
-                return ResourceManager.GetString("radioMicrophone", resourceCulture);
-            }
-        }
-        internal static string labelFps
-        {
-            get
-            {
-                return ResourceManager.GetString("labelFps", resourceCulture);
-            }
-        }
-        internal static string CheckBoxAllMonitors
-        {
-            get
-            {
-                return ResourceManager.GetString("CheckBoxAllMonitors", resourceCulture);
-            }
-        }
-
-        internal static string labelFormat
-        {
-            get
-            {
-                return ResourceManager.GetString("labelFormat", resourceCulture);
-            }
-        }
-
-        internal static string labelMonitorSelector
-        {
-            get
-            {
-                return ResourceManager.GetString("labelMonitorSelector", resourceCulture);
-            }
-        }
-        internal static string message2
-        {
-            get
-            {
-                return ResourceManager.GetString("message2", resourceCulture);
-            }
-        }
-
-        internal static string BtnBackScreen
-        {
-            get
-            {
-                return ResourceManager.GetString("BtnBackScreen", resourceCulture);
-            }
-        }
-
-        internal static string MessageMerge
-        {
-            get
-            {
-                return ResourceManager.GetString("MessageMerge", resourceCulture);
-            }
-        }
-
-        internal static string MessageMergeTitle
-        {
-            get
-            {
-                return ResourceManager.GetString("MessageMergeTitle", resourceCulture);
-            }
-        }
-
-        internal static string btnMergedFiles
-        {
-            get
-            {
-                return ResourceManager.GetString("btnMergedFiles", resourceCulture);
-            }
-        }
-
     }
 }

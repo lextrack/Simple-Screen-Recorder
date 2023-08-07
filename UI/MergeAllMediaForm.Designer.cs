@@ -74,28 +74,31 @@
             // txtVideoPath
             // 
             txtVideoPath.BorderStyle = BorderStyle.FixedSingle;
+            txtVideoPath.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             txtVideoPath.Location = new Point(253, 21);
             txtVideoPath.Name = "txtVideoPath";
             txtVideoPath.RightToLeft = RightToLeft.Yes;
-            txtVideoPath.Size = new Size(216, 23);
+            txtVideoPath.Size = new Size(216, 22);
             txtVideoPath.TabIndex = 2;
             // 
             // txtAudioDesk
             // 
             txtAudioDesk.BorderStyle = BorderStyle.FixedSingle;
+            txtAudioDesk.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAudioDesk.Location = new Point(253, 60);
             txtAudioDesk.Name = "txtAudioDesk";
             txtAudioDesk.RightToLeft = RightToLeft.Yes;
-            txtAudioDesk.Size = new Size(216, 23);
+            txtAudioDesk.Size = new Size(216, 22);
             txtAudioDesk.TabIndex = 3;
             // 
             // txtAudioMic
             // 
             txtAudioMic.BorderStyle = BorderStyle.FixedSingle;
+            txtAudioMic.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             txtAudioMic.Location = new Point(253, 99);
             txtAudioMic.Name = "txtAudioMic";
             txtAudioMic.RightToLeft = RightToLeft.Yes;
-            txtAudioMic.Size = new Size(216, 23);
+            txtAudioMic.Size = new Size(216, 22);
             txtAudioMic.TabIndex = 5;
             // 
             // BtnMicAudio
@@ -119,9 +122,9 @@
             BtnMergeAll2.ForeColor = Color.Transparent;
             BtnMergeAll2.Image = Properties.Resources.mixing_button;
             BtnMergeAll2.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnMergeAll2.Location = new Point(100, 144);
+            BtnMergeAll2.Location = new Point(97, 144);
             BtnMergeAll2.Name = "BtnMergeAll2";
-            BtnMergeAll2.Size = new Size(147, 39);
+            BtnMergeAll2.Size = new Size(150, 39);
             BtnMergeAll2.TabIndex = 6;
             BtnMergeAll2.Text = "Start mixing";
             BtnMergeAll2.TextAlign = ContentAlignment.MiddleRight;
@@ -136,7 +139,7 @@
             btnOutputF2.ImageAlign = ContentAlignment.MiddleLeft;
             btnOutputF2.Location = new Point(253, 144);
             btnOutputF2.Name = "btnOutputF2";
-            btnOutputF2.Size = new Size(147, 39);
+            btnOutputF2.Size = new Size(150, 39);
             btnOutputF2.TabIndex = 15;
             btnOutputF2.Text = "Output folder";
             btnOutputF2.TextAlign = ContentAlignment.MiddleRight;

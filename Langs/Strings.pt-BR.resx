@@ -144,6 +144,9 @@
   <data name="BtnMergeAll2" xml:space="preserve">
     <value>Misturar arquivos</value>
   </data>
+  <data name="btnMergedFiles" xml:space="preserve">
+    <value>Abrir Pasta de Mídias Mescladas</value>
+  </data>
   <data name="BtnMicAudio" xml:space="preserve">
     <value>Selecione o áudio do microfone</value>
   </data>

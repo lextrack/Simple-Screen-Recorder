@@ -144,6 +144,9 @@
   <data name="BtnMergeAll2" xml:space="preserve">
     <value>Avvia mixing</value>
   </data>
+  <data name="btnMergedFiles" xml:space="preserve">
+    <value>Apri Cartella Media Unita</value>
+  </data>
   <data name="BtnMicAudio" xml:space="preserve">
     <value>Seleziona file audio mic</value>
   </data>

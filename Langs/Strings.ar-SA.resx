@@ -118,145 +118,145 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutForm" xml:space="preserve">
-    <value>About</value>
+    <value>حول</value>
   </data>
   <data name="aboutToolStripMenuItem" xml:space="preserve">
-    <value>About</value>
+    <value>حول</value>
   </data>
   <data name="audioToolStripMenuItem" xml:space="preserve">
-    <value>Audio recorder</value>
+    <value>مُسجل الصوت</value>
   </data>
   <data name="BtnBackScreen" xml:space="preserve">
-    <value>Back</value>
+    <value>رجوع</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
-    <value>Select an audio file</value>
+    <value>اختر ملف صوتي</value>
   </data>
   <data name="BtnDeskAudio2" xml:space="preserve">
-    <value>Select a system sound file</value>
+    <value>اختر ملف صوت نظام</value>
   </data>
   <data name="BtnExit" xml:space="preserve">
-    <value>Exit</value>
+    <value>خروج</value>
   </data>
   <data name="BtnMergeAll" xml:space="preserve">
-    <value>Start mixing</value>
+    <value>بدء الدمج</value>
   </data>
   <data name="BtnMergeAll2" xml:space="preserve">
-    <value>Start mixing</value>
+    <value>بدء الدمج</value>
   </data>
   <data name="btnMergedFiles" xml:space="preserve">
-    <value>Open Merged Media Folder</value>
+    <value>فتح مجلد وسائط مدموجة</value>
   </data>
   <data name="BtnMicAudio" xml:space="preserve">
-    <value>Select a mic audio file</value>
+    <value>اختر ملف صوتي للميكروفون</value>
   </data>
   <data name="btnOutputF" xml:space="preserve">
-    <value>Output folder</value>
+    <value>مجلد الإخراج</value>
   </data>
   <data name="btnOutputF2" xml:space="preserve">
-    <value>Output folder</value>
+    <value>مجلد الإخراج</value>
   </data>
   <data name="btnOutputRecordings" xml:space="preserve">
-    <value>Open Recordings Folder</value>
+    <value>فتح مجلد التسجيلات</value>
   </data>
   <data name="btnStartRecording" xml:space="preserve">
-    <value>Start Recording</value>
+    <value>بدء التسجيل</value>
   </data>
   <data name="BtnStop" xml:space="preserve">
-    <value>Stop Recording</value>
+    <value>إيقاف التسجيل</value>
   </data>
   <data name="BtnVideo" xml:space="preserve">
-    <value>Select a video file</value>
+    <value>اختر ملف فيديو</value>
   </data>
   <data name="BtnVideo2" xml:space="preserve">
-    <value>Select a video file</value>
+    <value>اختر ملف فيديو</value>
   </data>
   <data name="CheckBoxAllMonitors" xml:space="preserve">
-    <value>Capture all monitors</value>
+    <value>التقاط جميع الشاشات</value>
   </data>
   <data name="crownGroupBox1" xml:space="preserve">
-    <value>Video settings</value>
+    <value>إعدادات الفيديو</value>
   </data>
   <data name="crownGroupBox2" xml:space="preserve">
-    <value>Audio settings</value>
+    <value>إعدادات الصوت</value>
   </data>
   <data name="crownGroupBox3" xml:space="preserve">
-    <value>Controls</value>
+    <value>التحكم</value>
   </data>
   <data name="Label2" xml:space="preserve">
-    <value>Controls</value>
+    <value>التحكم</value>
   </data>
   <data name="Label4" xml:space="preserve">
-    <value>Microphone (Mic/Aux)</value>
+    <value>الميكروفون (Mic/Aux)</value>
   </data>
   <data name="Label5" xml:space="preserve">
-    <value>System sound (Desktop Audio)</value>
+    <value>صوت النظام (صوت سطح المكتب)</value>
   </data>
   <data name="Label6" xml:space="preserve">
-    <value>Audio recording method</value>
+    <value>طريقة تسجيل الصوت</value>
   </data>
   <data name="Label7" xml:space="preserve">
-    <value>Audio devices</value>
+    <value>أجهزة الصوت</value>
   </data>
   <data name="labelCodec" xml:space="preserve">
-    <value>Encoder</value>
+    <value>مشفر</value>
   </data>
   <data name="labelFormat" xml:space="preserve">
-    <value>File format</value>
+    <value>تنسيق الملف</value>
   </data>
   <data name="labelFps" xml:space="preserve">
-    <value>Video framerate</value>
+    <value>معدل الإطار فيديو</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Monitor selector</value>
+    <value>محدد الشاشة</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
-    <value>Languages</value>
+    <value>اللغات</value>
   </data>
   <data name="LbAbout1" xml:space="preserve">
-    <value>You can find this project on GitHub, its name
-is "Simple-Screen-Recorder", and my nickname
-is "Lextrack". Keep an eye on this project, more
-are updates coming soon!</value>
+    <value>يمكنك العثور على هذا المشروع على GitHub، واسمه 
+"Simple-Screen-Recorder"، واسمي الحرفي هو 
+"Lextrack". ابق عينك على هذا المشروع،
+ ستكون هناك مزيد من التحديثات قريبًا!</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
-    <value>This software is made possible by
-TutorialesVbNET and Flaticon.</value>
+    <value>هذا البرنامج ممكن بفضل 
+TutorialesVbNET و Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
-    <value>Merge video and a single audio file</value>
+    <value>دمج ملف فيديو وملف صوتي واحد</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
-    <value>Merge all media files</value>
+    <value>دمج جميع ملفات الوسائط</value>
   </data>
   <data name="message1" xml:space="preserve">
-    <value>You are not recording anything!</value>
+    <value>أنت لا تقوم بتسجيل أي شيء!</value>
   </data>
   <data name="message2" xml:space="preserve">
-    <value>You must stop the recording first!</value>
+    <value>يجب أن تتوقف عن التسجيل أولاً!</value>
   </data>
   <data name="MessageMerge" xml:space="preserve">
-    <value>Merge process completed</value>
+    <value>اكتمل عملية الدمج</value>
   </data>
   <data name="MessageMergeTitle" xml:space="preserve">
-    <value>Media Merge Tool</value>
+    <value>أداة دمج الوسائط</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
-    <value>System audio only</value>
+    <value>الصوت النظام فقط</value>
   </data>
   <data name="radioMicrophone" xml:space="preserve">
-    <value>Microphone audio only</value>
+    <value>الصوت من الميكروفون فقط</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
-    <value>System sound and microphone audio</value>
+    <value>الصوت النظام والميكروفون</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Media merge tool</value>
+    <value>أداة دمج الوسائط</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>Merge video and a single audio file</value>
+    <value>دمج ملف فيديو وملف صوتي واحد</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
-    <value>Merge all media files</value>
+    <value>دمج جميع ملفات الوسائط</value>
   </data>
 </root>

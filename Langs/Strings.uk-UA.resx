@@ -133,7 +133,8 @@
     <value>Виберіть аудіофайл</value>
   </data>
   <data name="BtnDeskAudio2" xml:space="preserve">
-    <value>Виберіть системний звуковий файл</value>
+    <value>Виберіть системний
+звуковий файл</value>
   </data>
   <data name="BtnExit" xml:space="preserve">
     <value>Вихід</value>
@@ -143,6 +144,9 @@
   </data>
   <data name="BtnMergeAll2" xml:space="preserve">
     <value>змішувати файли</value>
+  </data>
+  <data name="btnMergedFiles" xml:space="preserve">
+    <value>Відкрити папку об'єднаних медіафайлів</value>
   </data>
   <data name="BtnMicAudio" xml:space="preserve">
     <value>Виберіть аудіофайл мікрофона</value>
@@ -157,10 +161,12 @@
     <value>Відкрийте папку записів</value>
   </data>
   <data name="btnStartRecording" xml:space="preserve">
-    <value>Почати записування</value>
+    <value>Почати 
+записування</value>
   </data>
   <data name="BtnStop" xml:space="preserve">
-    <value>Зупинити записування</value>
+    <value>Зупинити
+записування</value>
   </data>
   <data name="BtnVideo" xml:space="preserve">
     <value>Виберіть відеофайл</value>
@@ -241,7 +247,7 @@ TutorialesVbNET і Flaticon.</value>
     <value>Інструмент злиття медіа</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
-    <value>Лише системний звук (Desktop Audio)</value>
+    <value>Лише системний звук</value>
   </data>
   <data name="radioMicrophone" xml:space="preserve">
     <value>Лише звук мікрофона</value>

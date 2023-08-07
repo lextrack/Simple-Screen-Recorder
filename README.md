@@ -40,18 +40,17 @@ Select the Audio Recording option in the main window and you can record audio fr
 
 <h2 align="center">Features</h2>
 
-- Screen recording in .avi or .mkv file format (with a wide range of encoders) and .wav audio format. (10000k bitrate and 30 or 60 frames per second).<br>
+- Screen recording in avi or mkv file format with a wide range of encoders, frames per second and bitrate<br>
 - Possibility to record your microphone or desktop audio (or both at the same time)<br>
 - Merge media files (mkv output format)<br>
-- Keyboard shortcuts: F9 to start and stop recordings, F10 to open recordings folders and ESC to close the app<br>
+- Keyboard shortcuts (video recording): F9 to start and stop recordings, F10 to open recordings folders and ESC to close the app<br>
 - Audio recording separately<br>
-- Encoder selector<br>
 - Grab the screen or output from any monitor connected to your PC<br>
-- Availability in eight languages (English, Español, Deutsch, Українська, 日本語, Português do Brasil, 中文(简体) and Italiano)
+- Availability in ten languages (English, Español, Français, Deutsch, Українська, 日本語, Português do Brasil, 中文(简体), العربية and Italiano)
 
 <h2 align="center">Install</h2>
 <p align="center">
-  Windows 7, 8.1, 10, 11 (64 bits) | v1.2.4 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.4/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
+  Windows 7, 8.1, 10, 11 (64 bits) | v1.2.5 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.5/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
   Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.Net 7.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-5.1.2-full_build-shared)</a> <br><br>
   <img src="./Capture.png">
 </p>

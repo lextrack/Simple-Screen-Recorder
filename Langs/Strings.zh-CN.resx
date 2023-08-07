@@ -144,6 +144,9 @@
   <data name="BtnMergeAll2" xml:space="preserve">
     <value>混合选定的文件</value>
   </data>
+  <data name="btnMergedFiles" xml:space="preserve">
+    <value>打开合并的媒体文件夹</value>
+  </data>
   <data name="BtnMicAudio" xml:space="preserve">
     <value>选择麦克风音频</value>
   </data>

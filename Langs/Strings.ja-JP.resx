@@ -144,6 +144,9 @@
   <data name="BtnMergeAll2" xml:space="preserve">
     <value>ミキシングを開始する</value>
   </data>
+  <data name="btnMergedFiles" xml:space="preserve">
+    <value>マージされたメディアフォルダを開く</value>
+  </data>
   <data name="BtnMicAudio" xml:space="preserve">
     <value>マイクオーディオファイルを選択する</value>
   </data>
@@ -243,7 +246,7 @@ Flaticonによって可能になりました。</value>
     <value>システムオーディオのみ (Desktop Audio)</value>
   </data>
   <data name="radioMicrophone" xml:space="preserve">
-    <value>マイクロフォンオーディオのみ</value>
+    <value>マイクロフォンオーディオのみ (Mic/Aux)</value>
   </data>
   <data name="RadioTwoTrack" xml:space="preserve">
     <value>システムサウンドとマイクロフォンオーディオ</value>
