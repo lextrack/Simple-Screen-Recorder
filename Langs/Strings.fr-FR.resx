@@ -240,6 +240,9 @@ grâce à TutorialesVbNET et Flaticon.</value>
   <data name="message2" xml:space="preserve">
     <value>Vous devez d'abord arrêter l'enregistrement!</value>
   </data>
+  <data name="message3" xml:space="preserve">
+    <value>Vous n'avez pas de microphone connecté à l'ordinateur. Seul le son du haut-parleur sera enregistré.</value>
+  </data>
   <data name="MessageMerge" xml:space="preserve">
     <value>Processus de fusion terminé</value>
   </data>

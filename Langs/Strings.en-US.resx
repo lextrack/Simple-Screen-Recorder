@@ -235,6 +235,9 @@ TutorialesVbNET and Flaticon.</value>
   <data name="message2" xml:space="preserve">
     <value>You must stop the recording first!</value>
   </data>
+  <data name="message3" xml:space="preserve">
+    <value>You don't have a microphone connected to the computer. Only speaker will be recorded.</value>
+  </data>
   <data name="MessageMerge" xml:space="preserve">
     <value>Merge process completed</value>
   </data>

@@ -98,7 +98,7 @@ namespace Simple_Screen_Recorder
             BtnStop.FlatAppearance.MouseDownBackColor = Color.DarkViolet;
             BtnStop.FlatAppearance.MouseOverBackColor = Color.DarkViolet;
             BtnStop.FlatStyle = FlatStyle.Flat;
-            BtnStop.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnStop.Font = new Font("Segoe UI", 9F);
             BtnStop.ForeColor = Color.Transparent;
             BtnStop.Image = Properties.Resources.stop_original;
             BtnStop.ImageAlign = ContentAlignment.MiddleLeft;
@@ -117,7 +117,7 @@ namespace Simple_Screen_Recorder
             btnStartRecording.FlatAppearance.MouseDownBackColor = Color.ForestGreen;
             btnStartRecording.FlatAppearance.MouseOverBackColor = Color.ForestGreen;
             btnStartRecording.FlatStyle = FlatStyle.Flat;
-            btnStartRecording.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnStartRecording.Font = new Font("Segoe UI", 9F);
             btnStartRecording.ForeColor = Color.Transparent;
             btnStartRecording.Image = Properties.Resources.record_button;
             btnStartRecording.ImageAlign = ContentAlignment.MiddleLeft;
@@ -134,7 +134,7 @@ namespace Simple_Screen_Recorder
             // LbTimer
             // 
             LbTimer.AutoSize = true;
-            LbTimer.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            LbTimer.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             LbTimer.ForeColor = Color.White;
             LbTimer.Location = new Point(11, 622);
             LbTimer.Margin = new Padding(4, 0, 4, 0);
@@ -147,7 +147,7 @@ namespace Simple_Screen_Recorder
             // 
             Label5.AutoSize = true;
             Label5.BackColor = Color.Transparent;
-            Label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Label5.Font = new Font("Segoe UI", 9.75F);
             Label5.ForeColor = Color.White;
             Label5.Location = new Point(10, 153);
             Label5.Margin = new Padding(4, 0, 4, 0);
@@ -160,7 +160,7 @@ namespace Simple_Screen_Recorder
             // 
             Label4.AutoSize = true;
             Label4.BackColor = Color.Transparent;
-            Label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Label4.Font = new Font("Segoe UI", 9.75F);
             Label4.ForeColor = Color.White;
             Label4.Location = new Point(9, 202);
             Label4.Margin = new Padding(4, 0, 4, 0);
@@ -177,7 +177,7 @@ namespace Simple_Screen_Recorder
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             label6.ForeColor = Color.Crimson;
             label6.Location = new Point(10, 27);
             label6.Margin = new Padding(4, 0, 4, 0);
@@ -190,9 +190,9 @@ namespace Simple_Screen_Recorder
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             label7.ForeColor = Color.Crimson;
-            label7.Location = new Point(10, 130);
+            label7.Location = new Point(10, 131);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(94, 17);
@@ -204,14 +204,14 @@ namespace Simple_Screen_Recorder
             BtnExit.FlatAppearance.MouseDownBackColor = Color.CornflowerBlue;
             BtnExit.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
             BtnExit.FlatStyle = FlatStyle.Flat;
-            BtnExit.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnExit.Font = new Font("Segoe UI", 11.25F);
             BtnExit.ForeColor = Color.Transparent;
             BtnExit.Image = Properties.Resources.log_out_button;
             BtnExit.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnExit.Location = new Point(320, 612);
+            BtnExit.Location = new Point(315, 612);
             BtnExit.Margin = new Padding(4, 3, 4, 3);
             BtnExit.Name = "BtnExit";
-            BtnExit.Size = new Size(138, 39);
+            BtnExit.Size = new Size(143, 39);
             BtnExit.TabIndex = 11;
             BtnExit.Text = "    Exit";
             BtnExit.UseVisualStyleBackColor = true;
@@ -223,7 +223,7 @@ namespace Simple_Screen_Recorder
             btnOutputRecordings.FlatAppearance.MouseDownBackColor = Color.CornflowerBlue;
             btnOutputRecordings.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
             btnOutputRecordings.FlatStyle = FlatStyle.Flat;
-            btnOutputRecordings.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnOutputRecordings.Font = new Font("Segoe UI", 9F);
             btnOutputRecordings.ForeColor = Color.Transparent;
             btnOutputRecordings.Image = Properties.Resources.folder_button_1;
             btnOutputRecordings.ImageAlign = ContentAlignment.MiddleLeft;
@@ -240,7 +240,7 @@ namespace Simple_Screen_Recorder
             // 
             labelCodec.AutoSize = true;
             labelCodec.BackColor = Color.Transparent;
-            labelCodec.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelCodec.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             labelCodec.ForeColor = Color.Crimson;
             labelCodec.Location = new Point(230, 79);
             labelCodec.Margin = new Padding(4, 0, 4, 0);
@@ -252,7 +252,7 @@ namespace Simple_Screen_Recorder
             // comboBoxCodec
             // 
             comboBoxCodec.DrawMode = DrawMode.OwnerDrawVariable;
-            comboBoxCodec.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxCodec.Font = new Font("Segoe UI", 8.25F);
             comboBoxCodec.FormattingEnabled = true;
             comboBoxCodec.Location = new Point(230, 99);
             comboBoxCodec.Name = "comboBoxCodec";
@@ -264,7 +264,7 @@ namespace Simple_Screen_Recorder
             RadioTwoTrack.AutoSize = true;
             RadioTwoTrack.BackColor = Color.Transparent;
             RadioTwoTrack.Checked = true;
-            RadioTwoTrack.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            RadioTwoTrack.Font = new Font("Segoe UI", 9.75F);
             RadioTwoTrack.ForeColor = Color.White;
             RadioTwoTrack.Location = new Point(13, 48);
             RadioTwoTrack.Margin = new Padding(4, 3, 4, 3);
@@ -279,7 +279,7 @@ namespace Simple_Screen_Recorder
             // 
             RadioDesktop.AutoSize = true;
             RadioDesktop.BackColor = Color.Transparent;
-            RadioDesktop.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            RadioDesktop.Font = new Font("Segoe UI", 9.75F);
             RadioDesktop.ForeColor = Color.White;
             RadioDesktop.Location = new Point(13, 73);
             RadioDesktop.Margin = new Padding(4, 3, 4, 3);
@@ -304,7 +304,7 @@ namespace Simple_Screen_Recorder
             crownGroupBox1.Controls.Add(labelFps);
             crownGroupBox1.Controls.Add(labelCodec);
             crownGroupBox1.Controls.Add(comboBoxCodec);
-            crownGroupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            crownGroupBox1.Font = new Font("Segoe UI", 12F);
             crownGroupBox1.Location = new Point(13, 191);
             crownGroupBox1.Name = "crownGroupBox1";
             crownGroupBox1.Size = new Size(445, 156);
@@ -315,7 +315,7 @@ namespace Simple_Screen_Recorder
             // comboBoxBitrate
             // 
             comboBoxBitrate.DrawMode = DrawMode.OwnerDrawVariable;
-            comboBoxBitrate.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxBitrate.Font = new Font("Segoe UI", 8.25F);
             comboBoxBitrate.FormattingEnabled = true;
             comboBoxBitrate.Location = new Point(372, 99);
             comboBoxBitrate.Name = "comboBoxBitrate";
@@ -324,7 +324,7 @@ namespace Simple_Screen_Recorder
             // 
             // RefreshMonitors
             // 
-            RefreshMonitors.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            RefreshMonitors.Font = new Font("Segoe UI", 8.25F);
             RefreshMonitors.Image = Properties.Resources.refresh;
             RefreshMonitors.Location = new Point(187, 45);
             RefreshMonitors.Name = "RefreshMonitors";
@@ -337,7 +337,7 @@ namespace Simple_Screen_Recorder
             // 
             labelMonitorSelector.AutoSize = true;
             labelMonitorSelector.BackColor = Color.Transparent;
-            labelMonitorSelector.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelMonitorSelector.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             labelMonitorSelector.ForeColor = Color.Crimson;
             labelMonitorSelector.Location = new Point(8, 25);
             labelMonitorSelector.Margin = new Padding(4, 0, 4, 0);
@@ -349,7 +349,7 @@ namespace Simple_Screen_Recorder
             // comboBoxMonitors
             // 
             comboBoxMonitors.DrawMode = DrawMode.OwnerDrawVariable;
-            comboBoxMonitors.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxMonitors.Font = new Font("Segoe UI", 8.25F);
             comboBoxMonitors.FormattingEnabled = true;
             comboBoxMonitors.Location = new Point(10, 45);
             comboBoxMonitors.Name = "comboBoxMonitors";
@@ -360,7 +360,7 @@ namespace Simple_Screen_Recorder
             // 
             labelFormat.AutoSize = true;
             labelFormat.BackColor = Color.Transparent;
-            labelFormat.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelFormat.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             labelFormat.ForeColor = Color.Crimson;
             labelFormat.Location = new Point(230, 25);
             labelFormat.Margin = new Padding(4, 0, 4, 0);
@@ -372,7 +372,7 @@ namespace Simple_Screen_Recorder
             // ComboBoxFormat
             // 
             ComboBoxFormat.DrawMode = DrawMode.OwnerDrawVariable;
-            ComboBoxFormat.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBoxFormat.Font = new Font("Segoe UI", 8.25F);
             ComboBoxFormat.FormattingEnabled = true;
             ComboBoxFormat.Location = new Point(230, 45);
             ComboBoxFormat.Name = "ComboBoxFormat";
@@ -382,7 +382,7 @@ namespace Simple_Screen_Recorder
             // CheckBoxAllMonitors
             // 
             CheckBoxAllMonitors.AutoSize = true;
-            CheckBoxAllMonitors.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            CheckBoxAllMonitors.Font = new Font("Segoe UI", 9.75F);
             CheckBoxAllMonitors.ForeColor = Color.White;
             CheckBoxAllMonitors.Location = new Point(10, 128);
             CheckBoxAllMonitors.Name = "CheckBoxAllMonitors";
@@ -394,7 +394,7 @@ namespace Simple_Screen_Recorder
             // comboBoxFps
             // 
             comboBoxFps.DrawMode = DrawMode.OwnerDrawVariable;
-            comboBoxFps.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxFps.Font = new Font("Segoe UI", 8.25F);
             comboBoxFps.FormattingEnabled = true;
             comboBoxFps.Location = new Point(8, 99);
             comboBoxFps.Name = "comboBoxFps";
@@ -405,7 +405,7 @@ namespace Simple_Screen_Recorder
             // 
             labelFps.AutoSize = true;
             labelFps.BackColor = Color.Transparent;
-            labelFps.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelFps.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             labelFps.ForeColor = Color.Crimson;
             labelFps.Location = new Point(7, 79);
             labelFps.Margin = new Padding(4, 0, 4, 0);
@@ -426,7 +426,7 @@ namespace Simple_Screen_Recorder
             crownGroupBox2.Controls.Add(Label5);
             crownGroupBox2.Controls.Add(RadioDesktop);
             crownGroupBox2.Controls.Add(label7);
-            crownGroupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            crownGroupBox2.Font = new Font("Segoe UI", 12F);
             crownGroupBox2.Location = new Point(13, 347);
             crownGroupBox2.Name = "crownGroupBox2";
             crownGroupBox2.Size = new Size(445, 258);
@@ -437,7 +437,7 @@ namespace Simple_Screen_Recorder
             // ComboBoxMicrophone
             // 
             ComboBoxMicrophone.DrawMode = DrawMode.OwnerDrawVariable;
-            ComboBoxMicrophone.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBoxMicrophone.Font = new Font("Segoe UI", 8F);
             ComboBoxMicrophone.FormattingEnabled = true;
             ComboBoxMicrophone.Location = new Point(9, 222);
             ComboBoxMicrophone.Name = "ComboBoxMicrophone";
@@ -447,7 +447,7 @@ namespace Simple_Screen_Recorder
             // ComboBoxSpeaker
             // 
             ComboBoxSpeaker.DrawMode = DrawMode.OwnerDrawVariable;
-            ComboBoxSpeaker.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBoxSpeaker.Font = new Font("Segoe UI", 8F);
             ComboBoxSpeaker.FormattingEnabled = true;
             ComboBoxSpeaker.Location = new Point(10, 173);
             ComboBoxSpeaker.Name = "ComboBoxSpeaker";
@@ -458,7 +458,7 @@ namespace Simple_Screen_Recorder
             // 
             radioMicrophone.AutoSize = true;
             radioMicrophone.BackColor = Color.Transparent;
-            radioMicrophone.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            radioMicrophone.Font = new Font("Segoe UI", 9.75F);
             radioMicrophone.ForeColor = Color.White;
             radioMicrophone.Location = new Point(13, 99);
             radioMicrophone.Margin = new Padding(4, 3, 4, 3);
@@ -476,7 +476,7 @@ namespace Simple_Screen_Recorder
             crownGroupBox3.Controls.Add(btnOutputRecordings);
             crownGroupBox3.Controls.Add(btnStartRecording);
             crownGroupBox3.Controls.Add(BtnStop);
-            crownGroupBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            crownGroupBox3.Font = new Font("Segoe UI", 12F);
             crownGroupBox3.Location = new Point(13, 26);
             crownGroupBox3.Name = "crownGroupBox3";
             crownGroupBox3.Size = new Size(445, 164);
@@ -490,7 +490,7 @@ namespace Simple_Screen_Recorder
             btnMergedFiles.FlatAppearance.MouseDownBackColor = Color.CornflowerBlue;
             btnMergedFiles.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
             btnMergedFiles.FlatStyle = FlatStyle.Flat;
-            btnMergedFiles.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMergedFiles.Font = new Font("Segoe UI", 9F);
             btnMergedFiles.ForeColor = Color.Transparent;
             btnMergedFiles.Image = Properties.Resources.folder_button_2;
             btnMergedFiles.ImageAlign = ContentAlignment.MiddleLeft;
@@ -506,7 +506,7 @@ namespace Simple_Screen_Recorder
             // remuxToolStripMenuItem
             // 
             remuxToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { mergeVideoDesktopAndMicAudioToolStripMenuItem, mergeVideoAndDesktopAudioToolStripMenuItem });
-            remuxToolStripMenuItem.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            remuxToolStripMenuItem.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
             remuxToolStripMenuItem.ForeColor = SystemColors.Control;
             remuxToolStripMenuItem.Name = "remuxToolStripMenuItem";
             remuxToolStripMenuItem.Size = new Size(111, 20);
@@ -515,7 +515,7 @@ namespace Simple_Screen_Recorder
             // mergeVideoDesktopAndMicAudioToolStripMenuItem
             // 
             mergeVideoDesktopAndMicAudioToolStripMenuItem.BackColor = SystemColors.WindowFrame;
-            mergeVideoDesktopAndMicAudioToolStripMenuItem.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            mergeVideoDesktopAndMicAudioToolStripMenuItem.Font = new Font("Segoe UI", 8.25F);
             mergeVideoDesktopAndMicAudioToolStripMenuItem.ForeColor = Color.Black;
             mergeVideoDesktopAndMicAudioToolStripMenuItem.Name = "mergeVideoDesktopAndMicAudioToolStripMenuItem";
             mergeVideoDesktopAndMicAudioToolStripMenuItem.Size = new Size(261, 22);
@@ -525,7 +525,7 @@ namespace Simple_Screen_Recorder
             // mergeVideoAndDesktopAudioToolStripMenuItem
             // 
             mergeVideoAndDesktopAudioToolStripMenuItem.BackColor = SystemColors.WindowFrame;
-            mergeVideoAndDesktopAudioToolStripMenuItem.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            mergeVideoAndDesktopAudioToolStripMenuItem.Font = new Font("Segoe UI", 8.25F);
             mergeVideoAndDesktopAudioToolStripMenuItem.ForeColor = Color.Black;
             mergeVideoAndDesktopAudioToolStripMenuItem.Name = "mergeVideoAndDesktopAudioToolStripMenuItem";
             mergeVideoAndDesktopAudioToolStripMenuItem.Size = new Size(261, 22);
@@ -534,7 +534,7 @@ namespace Simple_Screen_Recorder
             // 
             // audioToolStripMenuItem
             // 
-            audioToolStripMenuItem.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            audioToolStripMenuItem.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
             audioToolStripMenuItem.ForeColor = SystemColors.Control;
             audioToolStripMenuItem.Name = "audioToolStripMenuItem";
             audioToolStripMenuItem.Size = new Size(95, 20);
@@ -544,7 +544,7 @@ namespace Simple_Screen_Recorder
             // languagesToolStripMenuItem
             // 
             languagesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { englishToolStripMenuItem, españolToolStripMenuItem, italianoToolStripMenuItem, deutschToolStripMenuItem, frenchToolStripMenuItem, ukranianToolStripMenuItem, toolStripMenuItem1, 中文简体ToolStripMenuItem, 日本語ToolStripMenuItem, العربيةToolStripMenuItem });
-            languagesToolStripMenuItem.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            languagesToolStripMenuItem.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
             languagesToolStripMenuItem.ForeColor = SystemColors.Control;
             languagesToolStripMenuItem.Name = "languagesToolStripMenuItem";
             languagesToolStripMenuItem.Size = new Size(73, 20);
@@ -553,7 +553,7 @@ namespace Simple_Screen_Recorder
             // englishToolStripMenuItem
             // 
             englishToolStripMenuItem.BackColor = SystemColors.WindowFrame;
-            englishToolStripMenuItem.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            englishToolStripMenuItem.Font = new Font("Segoe UI", 8.25F);
             englishToolStripMenuItem.ForeColor = SystemColors.Control;
             englishToolStripMenuItem.Name = "englishToolStripMenuItem";
             englishToolStripMenuItem.Size = new Size(174, 22);
@@ -563,7 +563,7 @@ namespace Simple_Screen_Recorder
             // españolToolStripMenuItem
             // 
             españolToolStripMenuItem.BackColor = SystemColors.WindowFrame;
-            españolToolStripMenuItem.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            españolToolStripMenuItem.Font = new Font("Segoe UI", 8.25F);
             españolToolStripMenuItem.ForeColor = SystemColors.Control;
             españolToolStripMenuItem.Name = "españolToolStripMenuItem";
             españolToolStripMenuItem.Size = new Size(174, 22);
@@ -573,7 +573,7 @@ namespace Simple_Screen_Recorder
             // italianoToolStripMenuItem
             // 
             italianoToolStripMenuItem.BackColor = SystemColors.WindowFrame;
-            italianoToolStripMenuItem.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            italianoToolStripMenuItem.Font = new Font("Segoe UI", 8.25F);
             italianoToolStripMenuItem.ForeColor = SystemColors.Control;
             italianoToolStripMenuItem.Name = "italianoToolStripMenuItem";
             italianoToolStripMenuItem.Size = new Size(174, 22);
@@ -583,7 +583,7 @@ namespace Simple_Screen_Recorder
             // deutschToolStripMenuItem
             // 
             deutschToolStripMenuItem.BackColor = SystemColors.WindowFrame;
-            deutschToolStripMenuItem.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            deutschToolStripMenuItem.Font = new Font("Segoe UI", 8.25F);
             deutschToolStripMenuItem.ForeColor = SystemColors.Control;
             deutschToolStripMenuItem.Name = "deutschToolStripMenuItem";
             deutschToolStripMenuItem.Size = new Size(174, 22);
@@ -593,7 +593,7 @@ namespace Simple_Screen_Recorder
             // frenchToolStripMenuItem
             // 
             frenchToolStripMenuItem.BackColor = SystemColors.WindowFrame;
-            frenchToolStripMenuItem.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            frenchToolStripMenuItem.Font = new Font("Segoe UI", 8.25F);
             frenchToolStripMenuItem.ForeColor = SystemColors.Control;
             frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
             frenchToolStripMenuItem.Size = new Size(174, 22);
@@ -603,7 +603,7 @@ namespace Simple_Screen_Recorder
             // ukranianToolStripMenuItem
             // 
             ukranianToolStripMenuItem.BackColor = SystemColors.WindowFrame;
-            ukranianToolStripMenuItem.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ukranianToolStripMenuItem.Font = new Font("Segoe UI", 8.25F);
             ukranianToolStripMenuItem.ForeColor = SystemColors.Control;
             ukranianToolStripMenuItem.Name = "ukranianToolStripMenuItem";
             ukranianToolStripMenuItem.Size = new Size(174, 22);
@@ -613,7 +613,7 @@ namespace Simple_Screen_Recorder
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.BackColor = SystemColors.WindowFrame;
-            toolStripMenuItem1.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStripMenuItem1.Font = new Font("Segoe UI", 8.25F);
             toolStripMenuItem1.ForeColor = SystemColors.Control;
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(174, 22);
@@ -623,7 +623,7 @@ namespace Simple_Screen_Recorder
             // 中文简体ToolStripMenuItem
             // 
             中文简体ToolStripMenuItem.BackColor = SystemColors.WindowFrame;
-            中文简体ToolStripMenuItem.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            中文简体ToolStripMenuItem.Font = new Font("Segoe UI", 8.25F);
             中文简体ToolStripMenuItem.ForeColor = SystemColors.Control;
             中文简体ToolStripMenuItem.Name = "中文简体ToolStripMenuItem";
             中文简体ToolStripMenuItem.Size = new Size(174, 22);
@@ -633,7 +633,7 @@ namespace Simple_Screen_Recorder
             // 日本語ToolStripMenuItem
             // 
             日本語ToolStripMenuItem.BackColor = SystemColors.WindowFrame;
-            日本語ToolStripMenuItem.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            日本語ToolStripMenuItem.Font = new Font("Segoe UI", 8.25F);
             日本語ToolStripMenuItem.ForeColor = SystemColors.Control;
             日本語ToolStripMenuItem.Name = "日本語ToolStripMenuItem";
             日本語ToolStripMenuItem.Size = new Size(174, 22);
@@ -643,7 +643,7 @@ namespace Simple_Screen_Recorder
             // العربيةToolStripMenuItem
             // 
             العربيةToolStripMenuItem.BackColor = SystemColors.WindowFrame;
-            العربيةToolStripMenuItem.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            العربيةToolStripMenuItem.Font = new Font("Segoe UI", 8.25F);
             العربيةToolStripMenuItem.ForeColor = SystemColors.Control;
             العربيةToolStripMenuItem.Name = "العربيةToolStripMenuItem";
             العربيةToolStripMenuItem.Size = new Size(174, 22);
@@ -652,7 +652,7 @@ namespace Simple_Screen_Recorder
             // 
             // aboutToolStripMenuItem
             // 
-            aboutToolStripMenuItem.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            aboutToolStripMenuItem.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
             aboutToolStripMenuItem.ForeColor = SystemColors.Control;
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             aboutToolStripMenuItem.Size = new Size(50, 20);
@@ -662,7 +662,7 @@ namespace Simple_Screen_Recorder
             // menuStrip1
             // 
             menuStrip1.BackColor = SystemColors.WindowFrame;
-            menuStrip1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            menuStrip1.Font = new Font("Segoe UI", 9F);
             menuStrip1.Items.AddRange(new ToolStripItem[] { remuxToolStripMenuItem, audioToolStripMenuItem, languagesToolStripMenuItem, aboutToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";

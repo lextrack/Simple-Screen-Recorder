@@ -22,7 +22,11 @@ namespace Simple_Screen_Recorder.UI
         private void AudioRecorderMainWindow_Load(object sender, EventArgs e)
         {
             GetTextsMain();
+            ConfigureAudioComponents();
+        }
 
+        private void ConfigureAudioComponents()
+        {
             AudioRecorderMic.OpenComp();
             ComboBoxMicrophone.DataSource = AudioRecorderMic.cboDIspositivos.DataSource;
             AudioRecorderDesktop.OpenComp();
@@ -38,7 +42,15 @@ namespace Simple_Screen_Recorder.UI
 
             if (RadioTwoTrack.Checked == true)
             {
-                RecMic();
+                if (WaveIn.DeviceCount > 0)
+                {
+                    RecMic();
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show(StringsEN.message3, "Error");
+                }
+
                 RecSpeaker();
             }
             else if (RadioDesktop.Checked == true)
@@ -47,7 +59,14 @@ namespace Simple_Screen_Recorder.UI
             }
             else
             {
-                RecMic();
+                if (WaveIn.DeviceCount > 0)
+                {
+                    RecMic();
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show(StringsEN.message3, "Error");
+                }
             }
 
             ProcessStartInfo ProcessId = new("cmd.exe", $"/c {RecorderScreenMainWindow.ResourcePath} -f gdigrab AudioRecordings/" + AudioName + "");

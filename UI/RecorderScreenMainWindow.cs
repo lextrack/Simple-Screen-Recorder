@@ -24,18 +24,38 @@ namespace Simple_Screen_Recorder
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void InitializeForm()
         {
-            this.KeyPreview = true;
-
             GetTextsMain();
             CheckMonitors();
+            ConfigureAudioComponents();
+            InitializeComboBoxes();
+            CreateOutputFolder();
+            SetKeyPreview();
+        }
 
-            ScreenAudioMic.OpenComp();
-            ComboBoxMicrophone.DataSource = ScreenAudioMic.cboDIspositivos.DataSource;
-            ScreenAudioDesktop.OpenComp();
-            ComboBoxSpeaker.DataSource = ScreenAudioDesktop.cboDIspositivos.DataSource;
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            InitializeForm();
+        }
 
+        private void SetKeyPreview()
+        {
+            this.KeyPreview = true;
+        }
+
+        private void CreateOutputFolder()
+        {
+            string outputFolderPath = Path.Combine(Application.StartupPath, "OutputFiles");
+
+            if (!Directory.Exists(outputFolderPath))
+            {
+                Directory.CreateDirectory(outputFolderPath);
+            }
+        }
+
+        private void InitializeComboBoxes()
+        {
             comboBoxCodec.Items.AddRange(new[] { "MPEG-4", "H264 NVENC (Nvidia)", "H264 AMF (AMD)" });
             comboBoxCodec.SelectedIndex = 0;
 
@@ -48,14 +68,15 @@ namespace Simple_Screen_Recorder
 
             ComboBoxFormat.Items.AddRange(new[] { ".avi", ".mkv" });
             ComboBoxFormat.SelectedIndex = 0;
+        }
 
-            string outputFolderPath = Path.Combine(Application.StartupPath, "OutputFiles");
+        private void ConfigureAudioComponents()
+        {
+            ScreenAudioMic.OpenComp();
+            ComboBoxMicrophone.DataSource = ScreenAudioMic.cboDIspositivos.DataSource;
 
-            if (!Directory.Exists(outputFolderPath))
-            {
-
-                Directory.CreateDirectory(outputFolderPath);
-            }
+            ScreenAudioDesktop.OpenComp();
+            ComboBoxSpeaker.DataSource = ScreenAudioDesktop.cboDIspositivos.DataSource;
         }
 
         private void btnStartRecording_Click(object sender, EventArgs e)
@@ -68,7 +89,15 @@ namespace Simple_Screen_Recorder
 
             if (RadioTwoTrack.Checked == true)
             {
-                RecMic();
+                if (WaveIn.DeviceCount > 0)
+                {
+                    RecMic();
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show(StringsEN.message3, "Error");
+                }
+
                 RecSpeaker();
             }
             else if (RadioDesktop.Checked == true)
@@ -77,7 +106,14 @@ namespace Simple_Screen_Recorder
             }
             else
             {
-                RecMic();
+                if (WaveIn.DeviceCount > 0)
+                {
+                    RecMic();
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show(StringsEN.message3, "Error");
+                }
             }
 
             VideoCodecs();
@@ -345,6 +381,7 @@ namespace Simple_Screen_Recorder
         private void GetTextsMain()
         {
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Settings.Default.Languages);
+
             aboutToolStripMenuItem.Text = StringsEN.aboutToolStripMenuItem;
             BtnExit.Text = StringsEN.BtnExit;
             btnStartRecording.Text = StringsEN.btnStartRecording;

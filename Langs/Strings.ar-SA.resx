@@ -235,6 +235,9 @@ TutorialesVbNET و Flaticon.</value>
   <data name="message2" xml:space="preserve">
     <value>يجب أن تتوقف عن التسجيل أولاً!</value>
   </data>
+  <data name="message3" xml:space="preserve">
+    <value>ليس لديك ميكروفون متصل بالكمبيوتر. سيتم تسجيل صوت السماعة فقط.</value>
+  </data>
   <data name="MessageMerge" xml:space="preserve">
     <value>اكتمل عملية الدمج</value>
   </data>

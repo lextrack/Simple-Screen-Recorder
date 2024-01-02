@@ -490,5 +490,13 @@ namespace Simple_Screen_Recorder.Langs
             }
         }
 
+        internal static string message3
+        {
+            get
+            {
+                return ResourceManager.GetString("message3", resourceCulture);
+            }
+        }
+
     }
 }

@@ -49,7 +49,7 @@
             // LbAbout1
             // 
             LbAbout1.AutoSize = true;
-            LbAbout1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            LbAbout1.Font = new Font("Segoe UI", 9F);
             LbAbout1.ForeColor = SystemColors.Control;
             LbAbout1.Location = new Point(22, 106);
             LbAbout1.Name = "LbAbout1";
@@ -60,24 +60,24 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI", 10F);
             label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(93, 20);
             label3.Name = "label3";
             label3.Size = new Size(151, 38);
             label3.TabIndex = 7;
-            label3.Text = "Simple Screen Recorder\r\nv1.2.5";
+            label3.Text = "Simple Screen Recorder\r\nv1.2.6";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 9F);
             label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(22, 78);
             label2.Name = "label2";
             label2.Size = new Size(151, 15);
             label2.TabIndex = 6;
-            label2.Text = "Copyright © 2023 Lextrack.";
+            label2.Text = "Copyright © 2024 Lextrack.";
             // 
             // label1
             // 
