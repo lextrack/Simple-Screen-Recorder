@@ -130,7 +130,7 @@
     <value>Indietro</value>
   </data>
   <data name="BtnDeskAudio" xml:space="preserve">
-    <value>Seleziona un file audio</value>
+    <value>Seleziona file audio</value>
   </data>
   <data name="BtnDeskAudio2" xml:space="preserve">
     <value>Selezione file audio sistema</value>
@@ -145,7 +145,7 @@
     <value>Avvia mixing</value>
   </data>
   <data name="btnMergedFiles" xml:space="preserve">
-    <value>Apri Cartella Media Unita</value>
+    <value>Apri cartella media uniti</value>
   </data>
   <data name="BtnMicAudio" xml:space="preserve">
     <value>Seleziona file audio mic</value>
@@ -157,7 +157,7 @@
     <value>Cartella destinazione</value>
   </data>
   <data name="btnOutputRecordings" xml:space="preserve">
-    <value>Visualizza le registrazioni</value>
+    <value>Apri cartella registrazioni</value>
   </data>
   <data name="btnStartRecording" xml:space="preserve">
     <value>Avvia registrazione</value>
@@ -187,13 +187,13 @@
     <value>Controlli</value>
   </data>
   <data name="Label4" xml:space="preserve">
-    <value>Microfono (Mic/Aux)</value>
+    <value>Microfono (mic/aux)</value>
   </data>
   <data name="Label5" xml:space="preserve">
-    <value>Audio sistema (Desktop Audio)</value>
+    <value>Audio sistema (audio desktop)</value>
   </data>
   <data name="Label6" xml:space="preserve">
-    <value>Metodo di registrazione audio</value>
+    <value>Metodo registrazione audio</value>
   </data>
   <data name="Label7" xml:space="preserve">
     <value>Dispositivi audio</value>
@@ -202,29 +202,29 @@
     <value>Codifica</value>
   </data>
   <data name="labelFormat" xml:space="preserve">
-    <value>Formato del file</value>
+    <value>Formato file</value>
   </data>
   <data name="labelFps" xml:space="preserve">
-    <value>Frequenza dei fotogrammi</value>
+    <value>Frequenza fotogrammi video</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Selettore del monitor</value>
+    <value>Selettore monitor</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
-    <value>Lingua</value>
+    <value>Lingua UI</value>
   </data>
   <data name="LbAbout1" xml:space="preserve">
-    <value>Puoi trovare questo progetto su GitHub,
-il suo nome è "Simple-Screen-Recorder"
-e il mio nome è "Lextrack". Restate sintonizzati,
-ce ne saranno altri prossimi aggiornamenti!</value>
+    <value>Puoi trovare info su questo programma in GitHub,
+il nome del progetto è "Simple-Screen-Recorder"
+ed il mio nome è "Lextrack". Resta sintonizzato,
+perche ci saranno altri futuri aggiornamenti!</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
     <value>Questo software è stato realizzato grazie a
 TutorialesVbNET e Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
-    <value>Unire un video e un singolo file audio</value>
+    <value>Unisci video ed un singolo file audio</value>
   </data>
   <data name="mergeVideoDesktopAndMicAudioToolStripMenuItem" xml:space="preserve">
     <value>Unisci tutti i file multimediali</value>
@@ -239,10 +239,10 @@ TutorialesVbNET e Flaticon.</value>
     <value>Non hai un microfono collegato al computer. Sarà registrato solo l'audio dell'altoparlante.</value>
   </data>
   <data name="MessageMerge" xml:space="preserve">
-    <value>Processo di unione completato</value>
+    <value>Processo unione completato</value>
   </data>
   <data name="MessageMergeTitle" xml:space="preserve">
-    <value>Strumento di unione media</value>
+    <value>Strumento unione media</value>
   </data>
   <data name="RadioDesktop" xml:space="preserve">
     <value>Solo audio sistema</value>
@@ -254,10 +254,10 @@ TutorialesVbNET e Flaticon.</value>
     <value>Audio sistema e audio microfono</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
-    <value>Strumento di unione media</value>
+    <value>Strumento unione media</value>
   </data>
   <data name="titleMerge1" xml:space="preserve">
-    <value>Unire un video e un singolo file audio</value>
+    <value>Unisci video ed un singolo file audio</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
     <value>Unisci tutti i file multimediali</value>
