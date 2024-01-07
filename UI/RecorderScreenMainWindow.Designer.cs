@@ -149,7 +149,7 @@ namespace Simple_Screen_Recorder
             Label5.BackColor = Color.Transparent;
             Label5.Font = new Font("Segoe UI", 9.75F);
             Label5.ForeColor = Color.White;
-            Label5.Location = new Point(10, 153);
+            Label5.Location = new Point(13, 154);
             Label5.Margin = new Padding(4, 0, 4, 0);
             Label5.Name = "Label5";
             Label5.Size = new Size(187, 17);
@@ -162,7 +162,7 @@ namespace Simple_Screen_Recorder
             Label4.BackColor = Color.Transparent;
             Label4.Font = new Font("Segoe UI", 9.75F);
             Label4.ForeColor = Color.White;
-            Label4.Location = new Point(9, 202);
+            Label4.Location = new Point(13, 203);
             Label4.Margin = new Padding(4, 0, 4, 0);
             Label4.Name = "Label4";
             Label4.Size = new Size(138, 17);
@@ -178,8 +178,8 @@ namespace Simple_Screen_Recorder
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label6.ForeColor = Color.Crimson;
-            label6.Location = new Point(10, 27);
+            label6.ForeColor = Color.RoyalBlue;
+            label6.Location = new Point(10, 28);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(160, 17);
@@ -191,8 +191,8 @@ namespace Simple_Screen_Recorder
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label7.ForeColor = Color.Crimson;
-            label7.Location = new Point(10, 131);
+            label7.ForeColor = Color.RoyalBlue;
+            label7.Location = new Point(10, 132);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(94, 17);
@@ -241,7 +241,7 @@ namespace Simple_Screen_Recorder
             labelCodec.AutoSize = true;
             labelCodec.BackColor = Color.Transparent;
             labelCodec.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            labelCodec.ForeColor = Color.Crimson;
+            labelCodec.ForeColor = Color.RoyalBlue;
             labelCodec.Location = new Point(230, 79);
             labelCodec.Margin = new Padding(4, 0, 4, 0);
             labelCodec.Name = "labelCodec";
@@ -329,7 +329,7 @@ namespace Simple_Screen_Recorder
             RefreshMonitors.Location = new Point(187, 45);
             RefreshMonitors.Name = "RefreshMonitors";
             RefreshMonitors.Padding = new Padding(5);
-            RefreshMonitors.Size = new Size(24, 24);
+            RefreshMonitors.Size = new Size(24, 23);
             RefreshMonitors.TabIndex = 13;
             RefreshMonitors.Click += RefreshMonitors_Click;
             // 
@@ -338,7 +338,7 @@ namespace Simple_Screen_Recorder
             labelMonitorSelector.AutoSize = true;
             labelMonitorSelector.BackColor = Color.Transparent;
             labelMonitorSelector.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            labelMonitorSelector.ForeColor = Color.Crimson;
+            labelMonitorSelector.ForeColor = Color.RoyalBlue;
             labelMonitorSelector.Location = new Point(8, 25);
             labelMonitorSelector.Margin = new Padding(4, 0, 4, 0);
             labelMonitorSelector.Name = "labelMonitorSelector";
@@ -361,7 +361,7 @@ namespace Simple_Screen_Recorder
             labelFormat.AutoSize = true;
             labelFormat.BackColor = Color.Transparent;
             labelFormat.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            labelFormat.ForeColor = Color.Crimson;
+            labelFormat.ForeColor = Color.RoyalBlue;
             labelFormat.Location = new Point(230, 25);
             labelFormat.Margin = new Padding(4, 0, 4, 0);
             labelFormat.Name = "labelFormat";
@@ -406,7 +406,7 @@ namespace Simple_Screen_Recorder
             labelFps.AutoSize = true;
             labelFps.BackColor = Color.Transparent;
             labelFps.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            labelFps.ForeColor = Color.Crimson;
+            labelFps.ForeColor = Color.RoyalBlue;
             labelFps.Location = new Point(7, 79);
             labelFps.Margin = new Padding(4, 0, 4, 0);
             labelFps.Name = "labelFps";
@@ -439,7 +439,7 @@ namespace Simple_Screen_Recorder
             ComboBoxMicrophone.DrawMode = DrawMode.OwnerDrawVariable;
             ComboBoxMicrophone.Font = new Font("Segoe UI", 8F);
             ComboBoxMicrophone.FormattingEnabled = true;
-            ComboBoxMicrophone.Location = new Point(9, 222);
+            ComboBoxMicrophone.Location = new Point(9, 223);
             ComboBoxMicrophone.Name = "ComboBoxMicrophone";
             ComboBoxMicrophone.Size = new Size(211, 23);
             ComboBoxMicrophone.TabIndex = 6;
@@ -449,7 +449,7 @@ namespace Simple_Screen_Recorder
             ComboBoxSpeaker.DrawMode = DrawMode.OwnerDrawVariable;
             ComboBoxSpeaker.Font = new Font("Segoe UI", 8F);
             ComboBoxSpeaker.FormattingEnabled = true;
-            ComboBoxSpeaker.Location = new Point(10, 173);
+            ComboBoxSpeaker.Location = new Point(10, 174);
             ComboBoxSpeaker.Name = "ComboBoxSpeaker";
             ComboBoxSpeaker.Size = new Size(211, 23);
             ComboBoxSpeaker.TabIndex = 7;

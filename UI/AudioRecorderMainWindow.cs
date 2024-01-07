@@ -22,10 +22,10 @@ namespace Simple_Screen_Recorder.UI
         private void AudioRecorderMainWindow_Load(object sender, EventArgs e)
         {
             GetTextsMain();
-            ConfigureAudioComponents();
+            OpenAudioComponents();
         }
 
-        private void ConfigureAudioComponents()
+        private void OpenAudioComponents()
         {
             AudioRecorderMic.OpenComp();
             ComboBoxMicrophone.DataSource = AudioRecorderMic.cboDIspositivos.DataSource;
@@ -40,6 +40,23 @@ namespace Simple_Screen_Recorder.UI
             CountRecAudio.Enabled = true;
             AudioName = "Audio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss");
 
+            RecordAudio();
+            DisableElementsUI();
+            RecordFfmpegInitial();
+
+        }
+
+        private void RecordFfmpegInitial()
+        {
+            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {RecorderScreenMainWindow.ResourcePath} -f gdigrab AudioRecordings/" + AudioName + "");
+            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+            ProcessId.CreateNoWindow = true;
+            ProcessId.RedirectStandardOutput = true;
+            Process.Start(ProcessId);
+        }
+
+        private void RecordAudio()
+        {
             if (RadioTwoTrack.Checked == true)
             {
                 if (WaveIn.DeviceCount > 0)
@@ -68,18 +85,9 @@ namespace Simple_Screen_Recorder.UI
                     System.Windows.MessageBox.Show(StringsEN.message3, "Error");
                 }
             }
-
-            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {RecorderScreenMainWindow.ResourcePath} -f gdigrab AudioRecordings/" + AudioName + "");
-            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-            ProcessId.CreateNoWindow = true;
-            ProcessId.RedirectStandardOutput = true;
-            Process.Start(ProcessId);
-
-            CheckElementsAudioRecordings();
-
         }
 
-        private void CheckElementsAudioRecordings()
+        private void DisableElementsUI()
         {
             btnStartRecording.Enabled = false;
             ComboBoxMicrophone.Enabled = false;
@@ -116,6 +124,12 @@ namespace Simple_Screen_Recorder.UI
             radioMicrophone.Enabled = true;
             BtnBackScreen.Enabled = true;
 
+            CheckAudioStop();
+            CheckFfmpegProcces();
+        }
+
+        private void CheckAudioStop()
+        {
             if (RadioTwoTrack.Checked == true)
             {
                 if (AudioRecorderMic.waveIn is object)
@@ -139,7 +153,10 @@ namespace Simple_Screen_Recorder.UI
 
             var soundPlayer = new System.Media.SoundPlayer();
             soundPlayer.Stop();
+        }
 
+        private void CheckFfmpegProcces()
+        {
             foreach (Process proceso in Process.GetProcesses())
             {
                 if (proceso.ProcessName == "ffmpeg")

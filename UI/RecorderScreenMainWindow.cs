@@ -28,7 +28,7 @@ namespace Simple_Screen_Recorder
         {
             GetTextsMain();
             CheckMonitors();
-            ConfigureAudioComponents();
+            OpenAudioComponents();
             InitializeComboBoxes();
             CreateOutputFolder();
             SetKeyPreview();
@@ -56,21 +56,21 @@ namespace Simple_Screen_Recorder
 
         private void InitializeComboBoxes()
         {
-            comboBoxCodec.Items.AddRange(new[] { "MPEG-4", "H264 NVENC (Nvidia)", "H264 AMF (AMD)" });
+            comboBoxCodec.Items.AddRange(new[] { "H264 (Default)", "MPEG-4", "H264 NVENC (Nvidia)", "H264 AMF (AMD)" });
             comboBoxCodec.SelectedIndex = 0;
 
             comboBoxFps.Items.AddRange(new[] { "30", "60" });
-            comboBoxFps.SelectedIndex = 0;
+            comboBoxFps.SelectedIndex = 1;
 
-            comboBoxBitrate.Items.AddRange(new[] { "2000k", "4000k", "6000k", "8000k", "10000k" });
-            comboBoxBitrate.SelectedIndex = 1;
+            comboBoxBitrate.Items.AddRange(new[] { "2000k", "4000k", "6000k", "8000k", "10000k", "15000k", "20000k" });
+            comboBoxBitrate.SelectedIndex = 2;
 
 
-            ComboBoxFormat.Items.AddRange(new[] { ".avi", ".mkv" });
+            ComboBoxFormat.Items.AddRange(new[] { ".avi", ".mkv", ".wmv" });
             ComboBoxFormat.SelectedIndex = 0;
         }
 
-        private void ConfigureAudioComponents()
+        private void OpenAudioComponents()
         {
             ScreenAudioMic.OpenComp();
             ComboBoxMicrophone.DataSource = ScreenAudioMic.cboDIspositivos.DataSource;
@@ -87,36 +87,9 @@ namespace Simple_Screen_Recorder
             TimeRec = DateTime.Now;
             CountRecVideo.Enabled = true;
 
-            if (RadioTwoTrack.Checked == true)
-            {
-                if (WaveIn.DeviceCount > 0)
-                {
-                    RecMic();
-                }
-                else
-                {
-                    System.Windows.MessageBox.Show(StringsEN.message3, "Error");
-                }
-
-                RecSpeaker();
-            }
-            else if (RadioDesktop.Checked == true)
-            {
-                RecSpeaker();
-            }
-            else
-            {
-                if (WaveIn.DeviceCount > 0)
-                {
-                    RecMic();
-                }
-                else
-                {
-                    System.Windows.MessageBox.Show(StringsEN.message3, "Error");
-                }
-            }
-
+            RecordAudio();
             VideoCodecs();
+            DisableElementsUI();
         }
 
         private void CheckMonitors()
@@ -148,113 +121,76 @@ namespace Simple_Screen_Recorder
             }
         }
 
-        private void VideoCodecs()
+        private void RecordAudio()
         {
-            if (CheckBoxAllMonitors.Checked == true)
+            if (RadioTwoTrack.Checked)
             {
-                switch (comboBoxCodec.SelectedItem)
+                if (WaveIn.DeviceCount > 0)
                 {
-                    case "MPEG-4":
-                        {
-                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
-                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} -f gdigrab -framerate " + fps + " -i desktop -c:v mpeg4 -b:v " + Bitrate + " -preset medium Recordings/" + VideoName + "");
-                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                            ProcessId.CreateNoWindow = true;
-                            ProcessId.RedirectStandardOutput = true;
-                            Process.Start(ProcessId);
-
-                            DisableElementsVideoRecordings();
-                            break;
-                        }
-
-                    case "H264 NVENC (Nvidia)":
-                        {
-                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
-                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} -f gdigrab -framerate " + fps + " -i desktop -c:v h264_nvenc -b:v " + Bitrate + " -profile:v high -preset fast Recordings/" + VideoName + "");
-                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                            ProcessId.CreateNoWindow = true;
-                            ProcessId.RedirectStandardOutput = true;
-                            Process.Start(ProcessId);
-
-                            DisableElementsVideoRecordings();
-                            break;
-                        }
-
-                    case "H264 AMF (AMD)":
-                        {
-                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
-                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
-                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} -f gdigrab -framerate " + fps + " -i desktop -c:v h264_amf -b:v " + Bitrate + "  -profile:v high -preset fast Recordings/" + VideoName + "");
-                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                            ProcessId.CreateNoWindow = true;
-                            ProcessId.RedirectStandardOutput = true;
-                            Process.Start(ProcessId);
-
-                            DisableElementsVideoRecordings();
-                            break;
-                        }
+                    RecMic();
+                }
+                else
+                {
+                    MessageBox.Show(StringsEN.message3, "Error");
                 }
 
+                RecSpeaker();
+            }
+            else if (RadioDesktop.Checked)
+            {
+                RecSpeaker();
             }
             else
             {
-                switch (comboBoxCodec.SelectedItem)
+                if (WaveIn.DeviceCount > 0)
                 {
-                    case "MPEG-4":
-                        {
-                            Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
-                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
-                            Rectangle bounds = selectedScreen.Bounds;
-                            string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -i desktop -c:v mpeg4 -b:v " + Bitrate + " -preset medium Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
-                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} " + getScreen);
-                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                            ProcessId.CreateNoWindow = true;
-                            ProcessId.RedirectStandardOutput = true;
-                            Process.Start(ProcessId);
-
-                            DisableElementsVideoRecordings();
-                            break;
-                        }
-
-                    case "H264 NVENC (Nvidia)":
-                        {
-                            Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
-                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
-                            Rectangle bounds = selectedScreen.Bounds;
-                            string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -i desktop -c:v h264_nvenc -b:v " + Bitrate + " -profile:v main -preset fast Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
-                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} " + getScreen);
-                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                            ProcessId.CreateNoWindow = true;
-                            ProcessId.RedirectStandardOutput = true;
-                            Process.Start(ProcessId);
-
-                            DisableElementsVideoRecordings();
-                            break;
-                        }
-
-                    case "H264 AMF (AMD)":
-                        {
-                            Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
-                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
-                            Rectangle bounds = selectedScreen.Bounds;
-                            string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -show_region 1 -i desktop -c:v h264_amf -b:v " + Bitrate + " -profile:v main -preset fast Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
-                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} " + getScreen);
-                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-                            ProcessId.CreateNoWindow = true;
-                            ProcessId.RedirectStandardOutput = true;
-                            Process.Start(ProcessId);
-
-                            DisableElementsVideoRecordings();
-                            break;
-                        }
+                    RecMic();
+                }
+                else
+                {
+                    MessageBox.Show(StringsEN.message3, "Error");
                 }
             }
-
         }
 
-        private void DisableElementsVideoRecordings()
+        private void VideoCodecs()
+        {
+            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+            string Bitrate = (string)comboBoxBitrate.SelectedItem;
+
+            Screen selectedScreen = CheckBoxAllMonitors.Checked ? Screen.PrimaryScreen : Screen.AllScreens[comboBoxMonitors.SelectedIndex];
+            Rectangle bounds = selectedScreen.Bounds;
+
+            string codecArguments = "";
+            switch (comboBoxCodec.SelectedItem)
+            {
+                case "H264 (Default)":
+                    codecArguments = $"-c:v h264_mf -qp 0 -b:v {Bitrate} Recordings/{VideoName}";
+                    break;
+
+                case "MPEG-4":
+                    codecArguments = $"-c:v mpeg4 -b:v {Bitrate} -preset medium Recordings/{VideoName}";
+                    break;
+
+                case "H264 NVENC (Nvidia)":
+                    codecArguments = $"-c:v h264_nvenc -qp 0 -b:v {Bitrate} Recordings/{VideoName}";
+                    break;
+
+                case "H264 AMF (AMD)":
+                    codecArguments = $"-c:v h264_amf -qp 0 -b:v {Bitrate} Recordings/{VideoName}";
+                    break;
+            }
+
+            string getScreen = $"-f gdigrab -framerate {fps} -offset_x {bounds.Left} -offset_y {bounds.Top} -video_size {bounds.Width}x{bounds.Height} -i desktop {codecArguments}";
+
+            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} {getScreen}");
+            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+            ProcessId.CreateNoWindow = true;
+            ProcessId.RedirectStandardOutput = true;
+            Process.Start(ProcessId);
+        }
+
+        private void DisableElementsUI()
         {
             comboBoxMonitors.Enabled = false;
             btnStartRecording.Enabled = false;
@@ -289,6 +225,12 @@ namespace Simple_Screen_Recorder
             menuStrip1.Enabled = true;
             comboBoxBitrate.Enabled = true;
 
+            CheckAudioStop();
+            CheckFfmpegProcces();
+        }
+
+        private void CheckAudioStop()
+        {
             if (RadioTwoTrack.Checked == true)
             {
                 if (ScreenAudioMic.waveIn is object)
@@ -312,7 +254,10 @@ namespace Simple_Screen_Recorder
 
             var soundPlayer = new System.Media.SoundPlayer();
             soundPlayer.Stop();
+        }
 
+        private void CheckFfmpegProcces()
+        {
             foreach (Process proceso in Process.GetProcesses())
             {
                 if (proceso.ProcessName == "ffmpeg")

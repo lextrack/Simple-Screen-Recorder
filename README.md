@@ -24,9 +24,9 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 
 - Select the **monitor** that you want to record from the "Monitor selector" dropdown menu.<br>
 
-- If you check the "Capture all monitors" option, the app is going to create a video with all the monitors connected to the system.<br>
+- If you check the "Capture all monitors" option, the app is going to record a video with all the monitors connected to the PC.<br>
 
-- Use the radio buttons to select whether you want to record the audio from both the microphone and desktop Audio, just the microphone, or just the desktop Audio.<br>
+- Use the radio buttons to select whether you want to record the audio from both the microphone and desktop audio.<br>
 
 - Click the "Start Recording" button to begin the screen recording process. The screen recording will begin and the timer in the lower left corner of the window will start counting up.<br>
 
@@ -50,8 +50,8 @@ Select the Audio Recording option in the main window and you can record audio fr
 
 <h2 align="center">Install</h2>
 <p align="center">
-  Windows 7, 8.1, 10, 11 (64 bits) | v1.2.6 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.6/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
-  Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.Net 8.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-5.1.2-full_build-shared)</a> <br><br>
+  Windows 10, 11 (64 bits) | v1.2.7 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.7/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
+  Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.Net 8.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-6.1.1-full_build-shared)</a> <br><br>
   <img src="./Capture.png">
 </p>
 

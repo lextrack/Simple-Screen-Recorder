@@ -47,9 +47,9 @@
             BtnMergeAll.ForeColor = Color.Transparent;
             BtnMergeAll.Image = Properties.Resources.mixing_button;
             BtnMergeAll.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnMergeAll.Location = new Point(97, 144);
+            BtnMergeAll.Location = new Point(95, 150);
             BtnMergeAll.Name = "BtnMergeAll";
-            BtnMergeAll.Size = new Size(150, 39);
+            BtnMergeAll.Size = new Size(155, 39);
             BtnMergeAll.TabIndex = 13;
             BtnMergeAll.Text = "Start mixing";
             BtnMergeAll.TextAlign = ContentAlignment.MiddleRight;
@@ -59,8 +59,8 @@
             // txtAudioDesk
             // 
             txtAudioDesk.BorderStyle = BorderStyle.FixedSingle;
-            txtAudioDesk.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAudioDesk.Location = new Point(253, 60);
+            txtAudioDesk.Font = new Font("Segoe UI", 8F);
+            txtAudioDesk.Location = new Point(256, 60);
             txtAudioDesk.Name = "txtAudioDesk";
             txtAudioDesk.RightToLeft = RightToLeft.Yes;
             txtAudioDesk.Size = new Size(216, 22);
@@ -69,8 +69,8 @@
             // txtVideoPath
             // 
             txtVideoPath.BorderStyle = BorderStyle.FixedSingle;
-            txtVideoPath.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtVideoPath.Location = new Point(253, 21);
+            txtVideoPath.Font = new Font("Segoe UI", 8F);
+            txtVideoPath.Location = new Point(256, 21);
             txtVideoPath.Name = "txtVideoPath";
             txtVideoPath.RightToLeft = RightToLeft.Yes;
             txtVideoPath.Size = new Size(216, 22);
@@ -81,11 +81,11 @@
             BtnDeskAudio.FlatAppearance.MouseDownBackColor = Color.CornflowerBlue;
             BtnDeskAudio.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
             BtnDeskAudio.FlatStyle = FlatStyle.Flat;
-            BtnDeskAudio.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnDeskAudio.Font = new Font("Segoe UI", 9F);
             BtnDeskAudio.ForeColor = Color.Transparent;
             BtnDeskAudio.Image = Properties.Resources.sound_waves_button;
             BtnDeskAudio.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnDeskAudio.Location = new Point(11, 49);
+            BtnDeskAudio.Location = new Point(14, 49);
             BtnDeskAudio.Name = "BtnDeskAudio";
             BtnDeskAudio.Size = new Size(236, 41);
             BtnDeskAudio.TabIndex = 8;
@@ -99,11 +99,11 @@
             BtnVideo.FlatAppearance.MouseDownBackColor = Color.CornflowerBlue;
             BtnVideo.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
             BtnVideo.FlatStyle = FlatStyle.Flat;
-            BtnVideo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnVideo.Font = new Font("Segoe UI", 9F);
             BtnVideo.ForeColor = Color.Transparent;
             BtnVideo.Image = Properties.Resources.video_button;
             BtnVideo.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnVideo.Location = new Point(11, 10);
+            BtnVideo.Location = new Point(14, 10);
             BtnVideo.Name = "BtnVideo";
             BtnVideo.Size = new Size(236, 41);
             BtnVideo.TabIndex = 7;
@@ -120,9 +120,9 @@
             btnOutputF.ForeColor = Color.Transparent;
             btnOutputF.Image = Properties.Resources.folder_button;
             btnOutputF.ImageAlign = ContentAlignment.MiddleLeft;
-            btnOutputF.Location = new Point(253, 144);
+            btnOutputF.Location = new Point(256, 150);
             btnOutputF.Name = "btnOutputF";
-            btnOutputF.Size = new Size(150, 39);
+            btnOutputF.Size = new Size(155, 39);
             btnOutputF.TabIndex = 14;
             btnOutputF.Text = "Output folder";
             btnOutputF.TextAlign = ContentAlignment.MiddleRight;
@@ -139,7 +139,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
-            ClientSize = new Size(481, 200);
+            ClientSize = new Size(484, 201);
             Controls.Add(btnOutputF);
             Controls.Add(BtnMergeAll);
             Controls.Add(txtAudioDesk);

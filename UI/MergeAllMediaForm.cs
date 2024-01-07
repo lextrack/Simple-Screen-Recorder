@@ -30,7 +30,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
         {
             Process conversionProcess = new Process();
             conversionProcess.StartInfo.FileName = "cmd.exe";
-            conversionProcess.StartInfo.Arguments = $"/c {RecorderScreenMainWindow.ResourcePath} -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -i " + txtAudioMic.Text + " -filter_complex amerge -shortest -c:v copy -c:a aac -b:a 320k OutputFiles/" + outputFileName + " & exit /b";
+            conversionProcess.StartInfo.Arguments = $"/c {RecorderScreenMainWindow.ResourcePath} -i " + txtVideoPath.Text + " -i " + txtAudioDesk.Text + " -i " + txtAudioMic.Text + " -filter_complex amerge -c:v copy -c:a aac -b:a 320k OutputFiles/" + outputFileName + " & exit /b";
             conversionProcess.Start();
 
             conversionProcess.EnableRaisingEvents = true;
@@ -47,8 +47,18 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
 
         private void BtnVideo_Click(object sender, EventArgs e)
         {
+            string recordingsFolder = Path.Combine(Directory.GetCurrentDirectory(), "Recordings");
+
+            if (!Directory.Exists(recordingsFolder))
+            {
+                Directory.CreateDirectory(recordingsFolder);
+            }
+
             var archivo = new OpenFileDialog();
-            archivo.InitialDirectory = Directory.GetCurrentDirectory();
+            archivo.InitialDirectory = recordingsFolder;
+            archivo.Filter = "Video files|*.avi;*.mkv;*.wmv|All files|*.*";
+            archivo.Multiselect = false;  // Solo permite la selección de un archivo
+
             if (archivo.ShowDialog() == DialogResult.OK)
             {
                 txtVideoPath.Text = archivo.FileName;
@@ -57,8 +67,18 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
 
         private void BtnDeskAudio_Click(object sender, EventArgs e)
         {
+            string recordingsFolder = Path.Combine(Directory.GetCurrentDirectory(), "Recordings");
+
+            if (!Directory.Exists(recordingsFolder))
+            {
+                Directory.CreateDirectory(recordingsFolder);
+            }
+
             var archivo = new OpenFileDialog();
-            archivo.InitialDirectory = Directory.GetCurrentDirectory();
+            archivo.InitialDirectory = recordingsFolder;
+            archivo.Filter = "Audio files|*.wav;*.aac|All files|*.*";
+            archivo.Multiselect = false;  // Solo permite la selección de un archivo
+
             if (archivo.ShowDialog() == DialogResult.OK)
             {
                 txtAudioDesk.Text = archivo.FileName;
@@ -67,13 +87,24 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
 
         private void BtnMicAudio_Click(object sender, EventArgs e)
         {
+            string recordingsFolder = Path.Combine(Directory.GetCurrentDirectory(), "Recordings");
+
+            if (!Directory.Exists(recordingsFolder))
+            {
+                Directory.CreateDirectory(recordingsFolder);
+            }
+
             var archivo = new OpenFileDialog();
-            archivo.InitialDirectory = Directory.GetCurrentDirectory();
+            archivo.InitialDirectory = recordingsFolder;
+            archivo.Filter = "Audio files|*.wav;*.aac|All files|*.*";
+            archivo.Multiselect = false;  // Solo permite la selección de un archivo
+
             if (archivo.ShowDialog() == DialogResult.OK)
             {
                 txtAudioMic.Text = archivo.FileName;
             }
         }
+
 
         private void btnOutputF_Click(object sender, EventArgs e)
         {

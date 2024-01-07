@@ -135,7 +135,7 @@
             crownGroupBox2.Font = new Font("Segoe UI", 12F);
             crownGroupBox2.Location = new Point(13, 170);
             crownGroupBox2.Name = "crownGroupBox2";
-            crownGroupBox2.Size = new Size(329, 257);
+            crownGroupBox2.Size = new Size(329, 261);
             crownGroupBox2.TabIndex = 58;
             crownGroupBox2.TabStop = false;
             crownGroupBox2.Text = "Audio settings";
@@ -146,7 +146,7 @@
             radioMicrophone.BackColor = Color.Transparent;
             radioMicrophone.Font = new Font("Segoe UI", 9.75F);
             radioMicrophone.ForeColor = SystemColors.Control;
-            radioMicrophone.Location = new Point(14, 98);
+            radioMicrophone.Location = new Point(13, 99);
             radioMicrophone.Margin = new Padding(4, 3, 4, 3);
             radioMicrophone.Name = "radioMicrophone";
             radioMicrophone.Size = new Size(162, 21);
@@ -160,8 +160,8 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label6.ForeColor = Color.Crimson;
-            label6.Location = new Point(7, 24);
+            label6.ForeColor = Color.RoyalBlue;
+            label6.Location = new Point(10, 28);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(160, 17);
@@ -174,7 +174,7 @@
             Label4.BackColor = Color.Transparent;
             Label4.Font = new Font("Segoe UI", 9.75F);
             Label4.ForeColor = SystemColors.Control;
-            Label4.Location = new Point(11, 202);
+            Label4.Location = new Point(13, 206);
             Label4.Margin = new Padding(4, 0, 4, 0);
             Label4.Name = "Label4";
             Label4.Size = new Size(138, 17);
@@ -188,7 +188,7 @@
             RadioTwoTrack.Checked = true;
             RadioTwoTrack.Font = new Font("Segoe UI", 9.75F);
             RadioTwoTrack.ForeColor = SystemColors.Control;
-            RadioTwoTrack.Location = new Point(14, 44);
+            RadioTwoTrack.Location = new Point(13, 48);
             RadioTwoTrack.Margin = new Padding(4, 3, 4, 3);
             RadioTwoTrack.Name = "RadioTwoTrack";
             RadioTwoTrack.Size = new Size(250, 21);
@@ -203,7 +203,7 @@
             Label5.BackColor = Color.Transparent;
             Label5.Font = new Font("Segoe UI", 9.75F);
             Label5.ForeColor = SystemColors.Control;
-            Label5.Location = new Point(11, 150);
+            Label5.Location = new Point(13, 154);
             Label5.Margin = new Padding(4, 0, 4, 0);
             Label5.Name = "Label5";
             Label5.Size = new Size(187, 17);
@@ -216,7 +216,7 @@
             RadioDesktop.BackColor = Color.Transparent;
             RadioDesktop.Font = new Font("Segoe UI", 9.75F);
             RadioDesktop.ForeColor = SystemColors.Control;
-            RadioDesktop.Location = new Point(14, 71);
+            RadioDesktop.Location = new Point(13, 73);
             RadioDesktop.Margin = new Padding(4, 3, 4, 3);
             RadioDesktop.Name = "RadioDesktop";
             RadioDesktop.Size = new Size(132, 21);
@@ -230,8 +230,8 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label7.ForeColor = Color.Crimson;
-            label7.Location = new Point(8, 129);
+            label7.ForeColor = Color.RoyalBlue;
+            label7.Location = new Point(10, 132);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(94, 17);
@@ -243,7 +243,7 @@
             ComboBoxMicrophone.DrawMode = DrawMode.OwnerDrawVariable;
             ComboBoxMicrophone.Font = new Font("Segoe UI", 9F);
             ComboBoxMicrophone.FormattingEnabled = true;
-            ComboBoxMicrophone.Location = new Point(15, 223);
+            ComboBoxMicrophone.Location = new Point(15, 226);
             ComboBoxMicrophone.Name = "ComboBoxMicrophone";
             ComboBoxMicrophone.Size = new Size(209, 24);
             ComboBoxMicrophone.TabIndex = 6;
@@ -253,7 +253,7 @@
             ComboBoxSpeaker.DrawMode = DrawMode.OwnerDrawVariable;
             ComboBoxSpeaker.Font = new Font("Segoe UI", 9F);
             ComboBoxSpeaker.FormattingEnabled = true;
-            ComboBoxSpeaker.Location = new Point(15, 171);
+            ComboBoxSpeaker.Location = new Point(15, 174);
             ComboBoxSpeaker.Name = "ComboBoxSpeaker";
             ComboBoxSpeaker.Size = new Size(209, 24);
             ComboBoxSpeaker.TabIndex = 5;
@@ -267,7 +267,7 @@
             LbTimer.AutoSize = true;
             LbTimer.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             LbTimer.ForeColor = Color.White;
-            LbTimer.Location = new Point(13, 445);
+            LbTimer.Location = new Point(13, 447);
             LbTimer.Margin = new Padding(4, 0, 4, 0);
             LbTimer.Name = "LbTimer";
             LbTimer.Size = new Size(71, 20);
@@ -283,7 +283,7 @@
             BtnBackScreen.ForeColor = Color.Transparent;
             BtnBackScreen.Image = Properties.Resources.back;
             BtnBackScreen.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnBackScreen.Location = new Point(199, 433);
+            BtnBackScreen.Location = new Point(199, 437);
             BtnBackScreen.Margin = new Padding(4, 3, 4, 3);
             BtnBackScreen.Name = "BtnBackScreen";
             BtnBackScreen.Size = new Size(143, 39);
@@ -297,7 +297,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
-            ClientSize = new Size(355, 479);
+            ClientSize = new Size(355, 486);
             ControlBox = false;
             Controls.Add(BtnBackScreen);
             Controls.Add(LbTimer);
