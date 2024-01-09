@@ -155,39 +155,122 @@ namespace Simple_Screen_Recorder
 
         private void VideoCodecs()
         {
-            int fps = int.Parse((string)comboBoxFps.SelectedItem);
-            string Bitrate = (string)comboBoxBitrate.SelectedItem;
-
-            Screen selectedScreen = CheckBoxAllMonitors.Checked ? Screen.PrimaryScreen : Screen.AllScreens[comboBoxMonitors.SelectedIndex];
-            Rectangle bounds = selectedScreen.Bounds;
-
-            string codecArguments = "";
-            switch (comboBoxCodec.SelectedItem)
+            if (CheckBoxAllMonitors.Checked == true)
             {
-                case "H264 (Default)":
-                    codecArguments = $"-c:v h264_mf -qp 0 -b:v {Bitrate} Recordings/{VideoName}";
-                    break;
+                switch (comboBoxCodec.SelectedItem)
+                {
+                    case "H264 (Default)":
+                        {
+                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} -f gdigrab -framerate " + fps + " -i desktop -c:v h264_mf -qp 0 -b:v " + Bitrate + " Recordings/" + VideoName + "");
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
+                            break;
+                        }
 
-                case "MPEG-4":
-                    codecArguments = $"-c:v mpeg4 -b:v {Bitrate} -preset medium Recordings/{VideoName}";
-                    break;
+                    case "MPEG-4":
+                        {
+                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} -f gdigrab -framerate " + fps + " -i desktop -c:v mpeg4 -b:v " + Bitrate + " -preset medium Recordings/" + VideoName + "");
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
+                            break;
+                        }
 
-                case "H264 NVENC (Nvidia)":
-                    codecArguments = $"-c:v h264_nvenc -qp 0 -b:v {Bitrate} Recordings/{VideoName}";
-                    break;
+                    case "H264 NVENC (Nvidia)":
+                        {
+                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} -f gdigrab -framerate " + fps + " -i desktop -c:v h264_nvenc -qp 0 -b:v " + Bitrate + " Recordings/" + VideoName + "");
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
+                            break;
+                        }
 
-                case "H264 AMF (AMD)":
-                    codecArguments = $"-c:v h264_amf -qp 0 -b:v {Bitrate} Recordings/{VideoName}";
-                    break;
+                    case "H264 AMF (AMD)":
+                        {
+                            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} -f gdigrab -framerate " + fps + " -i desktop -c:v h264_amf -qp 0 -b:v " + Bitrate + " Recordings/" + VideoName + "");
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
+                            break;
+                        }
+                }
+
+            }
+            else
+            {
+                switch (comboBoxCodec.SelectedItem)
+                {
+                    case "H264 (Default)":
+                        {
+                            Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
+                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
+                            Rectangle bounds = selectedScreen.Bounds;
+                            string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -i desktop -c:v h264_mf -qp 0 -b:v " + Bitrate + " -preset medium Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} " + getScreen);
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
+                            break;
+                        }
+
+                    case "MPEG-4":
+                        {
+                            Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
+                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
+                            Rectangle bounds = selectedScreen.Bounds;
+                            string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -i desktop -c:v mpeg4 -b:v " + Bitrate + " -preset medium Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} " + getScreen);
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
+                            break;
+                        }
+
+                    case "H264 NVENC (Nvidia)":
+                        {
+                            Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
+                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
+                            Rectangle bounds = selectedScreen.Bounds;
+                            string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -i desktop -c:v h264_nvenc -qp 0 -b:v " + Bitrate + " Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} " + getScreen);
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
+                            break;
+                        }
+
+                    case "H264 AMF (AMD)":
+                        {
+                            Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
+                            string Bitrate = (string)comboBoxBitrate.SelectedItem;
+                            Rectangle bounds = selectedScreen.Bounds;
+                            string getScreen = string.Format("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -show_region 1 -i desktop -c:v h264_amf -qp 0 -b:v " + Bitrate + " Recordings/{5}", comboBoxFps.SelectedItem, bounds.Left, bounds.Top, bounds.Width, bounds.Height, VideoName);
+                            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} " + getScreen);
+                            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
+                            ProcessId.CreateNoWindow = true;
+                            ProcessId.RedirectStandardOutput = true;
+                            Process.Start(ProcessId);
+                            break;
+                        }
+                }
             }
 
-            string getScreen = $"-f gdigrab -framerate {fps} -offset_x {bounds.Left} -offset_y {bounds.Top} -video_size {bounds.Width}x{bounds.Height} -i desktop {codecArguments}";
-
-            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {ResourcePath} {getScreen}");
-            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-            ProcessId.CreateNoWindow = true;
-            ProcessId.RedirectStandardOutput = true;
-            Process.Start(ProcessId);
         }
 
         private void DisableElementsUI()
