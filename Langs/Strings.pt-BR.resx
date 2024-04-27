@@ -183,6 +183,12 @@
   <data name="crownGroupBox3" xml:space="preserve">
     <value>Controles de gravação</value>
   </data>
+  <data name="Desktop" xml:space="preserve">
+    <value>Somente áudio do sistema</value>
+  </data>
+  <data name="DesktopAudio" xml:space="preserve">
+    <value>Somente áudio do sistema</value>
+  </data>
   <data name="Label2" xml:space="preserve">
     <value>Controles de gravação</value>
   </data>
@@ -244,14 +250,11 @@ TutorialesVbNET e Flaticon.</value>
   <data name="MessageMergeTitle" xml:space="preserve">
     <value>Ferramenta de fusão de mídia</value>
   </data>
-  <data name="RadioDesktop" xml:space="preserve">
-    <value>Somente áudio do sistema</value>
-  </data>
-  <data name="radioMicrophone" xml:space="preserve">
+  <data name="Microphone" xml:space="preserve">
     <value>Somente áudio do microfone</value>
   </data>
-  <data name="RadioTwoTrack" xml:space="preserve">
-    <value>Sistema de som e microfone de áudio</value>
+  <data name="MicrophoneAudio" xml:space="preserve">
+    <value>Somente áudio do microfone</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
     <value>Ferramenta de fusão de mídia</value>
@@ -261,5 +264,11 @@ TutorialesVbNET e Flaticon.</value>
   </data>
   <data name="titleMerge2" xml:space="preserve">
     <value>Mesclar todos os arquivos de mídia</value>
+  </data>
+  <data name="TwoTrack" xml:space="preserve">
+    <value>Sistema de som e microfone de áudio</value>
+  </data>
+  <data name="TwoTrackAudio" xml:space="preserve">
+    <value>Sistema de som e microfone de áudio</value>
   </data>
 </root>

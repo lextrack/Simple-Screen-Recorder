@@ -12,7 +12,7 @@ namespace Simple_Screen_Recorder.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.2.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.9.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -32,6 +32,78 @@ namespace Simple_Screen_Recorder.Properties {
             }
             set {
                 this["Languages"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SelectedCodec {
+            get {
+                return ((string)(this["SelectedCodec"]));
+            }
+            set {
+                this["SelectedCodec"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SelectedFormat {
+            get {
+                return ((string)(this["SelectedFormat"]));
+            }
+            set {
+                this["SelectedFormat"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SelectedFramerate {
+            get {
+                return ((string)(this["SelectedFramerate"]));
+            }
+            set {
+                this["SelectedFramerate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SelectedBitrate {
+            get {
+                return ((string)(this["SelectedBitrate"]));
+            }
+            set {
+                this["SelectedBitrate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int AudioSourceIndex {
+            get {
+                return ((int)(this["AudioSourceIndex"]));
+            }
+            set {
+                this["AudioSourceIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int AudioRecordingSourceIndex {
+            get {
+                return ((int)(this["AudioRecordingSourceIndex"]));
+            }
+            set {
+                this["AudioRecordingSourceIndex"] = value;
             }
         }
     }

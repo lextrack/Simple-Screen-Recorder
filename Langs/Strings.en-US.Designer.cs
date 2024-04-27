@@ -498,5 +498,57 @@ namespace Simple_Screen_Recorder.Langs
             }
         }
 
+        internal static string Desktop
+        {
+            get
+            {
+                return ResourceManager.GetString("Desktop", resourceCulture);
+            }
+        }
+
+        internal static string Microphone
+        {
+            get
+            {
+                return ResourceManager.GetString("Microphone", resourceCulture);
+            }
+        }
+
+        internal static string TwoTrack
+        {
+            get
+            {
+                return ResourceManager.GetString("TwoTrack", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        /// Audio UI from here
+        /// </summary>
+
+        internal static string TwoTrackAudio
+        {
+            get
+            {
+                return ResourceManager.GetString("TwoTrackAudio", resourceCulture);
+            }
+        }
+
+        internal static string MicrophoneAudio
+        {
+            get
+            {
+                return ResourceManager.GetString("MicrophoneAudio", resourceCulture);
+            }
+        }
+
+        internal static string DesktopAudio
+        {
+            get
+            {
+                return ResourceManager.GetString("DesktopAudio", resourceCulture);
+            }
+        }
+
     }
 }

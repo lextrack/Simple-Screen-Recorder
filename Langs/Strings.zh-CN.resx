@@ -183,6 +183,12 @@
   <data name="crownGroupBox3" xml:space="preserve">
     <value>视频录制控制</value>
   </data>
+  <data name="Desktop" xml:space="preserve">
+    <value>只有系统音频 （Desktop Audio）</value>
+  </data>
+  <data name="DesktopAudio" xml:space="preserve">
+    <value>只有系统音频 （Desktop Audio）</value>
+  </data>
   <data name="Label2" xml:space="preserve">
     <value>视频录制控制</value>
   </data>
@@ -243,14 +249,11 @@
   <data name="MessageMergeTitle" xml:space="preserve">
     <value>媒体合并工具</value>
   </data>
-  <data name="RadioDesktop" xml:space="preserve">
-    <value>只有系统音频 （Desktop Audio）</value>
-  </data>
-  <data name="radioMicrophone" xml:space="preserve">
+  <data name="Microphone" xml:space="preserve">
     <value>只有麦克风音频 （Mic/Aux）</value>
   </data>
-  <data name="RadioTwoTrack" xml:space="preserve">
-    <value>系统声音和话筒音频</value>
+  <data name="MicrophoneAudio" xml:space="preserve">
+    <value>只有麦克风音频 （Mic/Aux）</value>
   </data>
   <data name="remuxToolStripMenuItem" xml:space="preserve">
     <value>媒体合并工具</value>
@@ -260,5 +263,11 @@
   </data>
   <data name="titleMerge2" xml:space="preserve">
     <value>合并所有媒体文件</value>
+  </data>
+  <data name="TwoTrack" xml:space="preserve">
+    <value>系统声音和话筒音频</value>
+  </data>
+  <data name="TwoTrackAudio" xml:space="preserve">
+    <value>系统声音和话筒音频</value>
   </data>
 </root>

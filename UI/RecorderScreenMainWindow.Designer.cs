@@ -51,8 +51,6 @@ namespace Simple_Screen_Recorder
             btnOutputRecordings = new Button();
             labelCodec = new Label();
             comboBoxCodec = new ReaLTaiizor.Controls.CrownComboBox();
-            RadioTwoTrack = new RadioButton();
-            RadioDesktop = new RadioButton();
             crownGroupBox1 = new ReaLTaiizor.Controls.CrownGroupBox();
             comboBoxBitrate = new ReaLTaiizor.Controls.CrownComboBox();
             RefreshMonitors = new ReaLTaiizor.Controls.CrownButton();
@@ -64,9 +62,9 @@ namespace Simple_Screen_Recorder
             comboBoxFps = new ReaLTaiizor.Controls.CrownComboBox();
             labelFps = new Label();
             crownGroupBox2 = new ReaLTaiizor.Controls.CrownGroupBox();
+            comboBoxAudioSource = new ReaLTaiizor.Controls.CrownComboBox();
             ComboBoxMicrophone = new ReaLTaiizor.Controls.CrownComboBox();
             ComboBoxSpeaker = new ReaLTaiizor.Controls.CrownComboBox();
-            radioMicrophone = new RadioButton();
             crownGroupBox3 = new ReaLTaiizor.Controls.CrownGroupBox();
             btnMergedFiles = new Button();
             remuxToolStripMenuItem = new ToolStripMenuItem();
@@ -136,7 +134,7 @@ namespace Simple_Screen_Recorder
             LbTimer.AutoSize = true;
             LbTimer.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             LbTimer.ForeColor = Color.White;
-            LbTimer.Location = new Point(11, 622);
+            LbTimer.Location = new Point(13, 583);
             LbTimer.Margin = new Padding(4, 0, 4, 0);
             LbTimer.Name = "LbTimer";
             LbTimer.Size = new Size(71, 20);
@@ -149,7 +147,7 @@ namespace Simple_Screen_Recorder
             Label5.BackColor = Color.Transparent;
             Label5.Font = new Font("Segoe UI", 9.75F);
             Label5.ForeColor = Color.White;
-            Label5.Location = new Point(13, 154);
+            Label5.Location = new Point(13, 117);
             Label5.Margin = new Padding(4, 0, 4, 0);
             Label5.Name = "Label5";
             Label5.Size = new Size(187, 17);
@@ -162,7 +160,7 @@ namespace Simple_Screen_Recorder
             Label4.BackColor = Color.Transparent;
             Label4.Font = new Font("Segoe UI", 9.75F);
             Label4.ForeColor = Color.White;
-            Label4.Location = new Point(13, 203);
+            Label4.Location = new Point(13, 166);
             Label4.Margin = new Padding(4, 0, 4, 0);
             Label4.Name = "Label4";
             Label4.Size = new Size(138, 17);
@@ -192,7 +190,7 @@ namespace Simple_Screen_Recorder
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             label7.ForeColor = Color.RoyalBlue;
-            label7.Location = new Point(10, 132);
+            label7.Location = new Point(10, 96);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(94, 17);
@@ -208,7 +206,7 @@ namespace Simple_Screen_Recorder
             BtnExit.ForeColor = Color.Transparent;
             BtnExit.Image = Properties.Resources.log_out_button;
             BtnExit.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnExit.Location = new Point(315, 612);
+            BtnExit.Location = new Point(315, 574);
             BtnExit.Margin = new Padding(4, 3, 4, 3);
             BtnExit.Name = "BtnExit";
             BtnExit.Size = new Size(143, 39);
@@ -258,37 +256,6 @@ namespace Simple_Screen_Recorder
             comboBoxCodec.Name = "comboBoxCodec";
             comboBoxCodec.Size = new Size(136, 23);
             comboBoxCodec.TabIndex = 4;
-            // 
-            // RadioTwoTrack
-            // 
-            RadioTwoTrack.AutoSize = true;
-            RadioTwoTrack.BackColor = Color.Transparent;
-            RadioTwoTrack.Checked = true;
-            RadioTwoTrack.Font = new Font("Segoe UI", 9.75F);
-            RadioTwoTrack.ForeColor = Color.White;
-            RadioTwoTrack.Location = new Point(13, 48);
-            RadioTwoTrack.Margin = new Padding(4, 3, 4, 3);
-            RadioTwoTrack.Name = "RadioTwoTrack";
-            RadioTwoTrack.Size = new Size(250, 21);
-            RadioTwoTrack.TabIndex = 53;
-            RadioTwoTrack.TabStop = true;
-            RadioTwoTrack.Text = "System sounds and microphone audio";
-            RadioTwoTrack.UseVisualStyleBackColor = false;
-            // 
-            // RadioDesktop
-            // 
-            RadioDesktop.AutoSize = true;
-            RadioDesktop.BackColor = Color.Transparent;
-            RadioDesktop.Font = new Font("Segoe UI", 9.75F);
-            RadioDesktop.ForeColor = Color.White;
-            RadioDesktop.Location = new Point(13, 73);
-            RadioDesktop.Margin = new Padding(4, 3, 4, 3);
-            RadioDesktop.Name = "RadioDesktop";
-            RadioDesktop.Size = new Size(132, 21);
-            RadioDesktop.TabIndex = 6;
-            RadioDesktop.TabStop = true;
-            RadioDesktop.Text = "System audio only";
-            RadioDesktop.UseVisualStyleBackColor = false;
             // 
             // crownGroupBox1
             // 
@@ -417,57 +384,50 @@ namespace Simple_Screen_Recorder
             // crownGroupBox2
             // 
             crownGroupBox2.BorderColor = Color.Gray;
+            crownGroupBox2.Controls.Add(comboBoxAudioSource);
             crownGroupBox2.Controls.Add(ComboBoxMicrophone);
             crownGroupBox2.Controls.Add(ComboBoxSpeaker);
-            crownGroupBox2.Controls.Add(radioMicrophone);
             crownGroupBox2.Controls.Add(label6);
             crownGroupBox2.Controls.Add(Label4);
-            crownGroupBox2.Controls.Add(RadioTwoTrack);
             crownGroupBox2.Controls.Add(Label5);
-            crownGroupBox2.Controls.Add(RadioDesktop);
             crownGroupBox2.Controls.Add(label7);
             crownGroupBox2.Font = new Font("Segoe UI", 12F);
             crownGroupBox2.Location = new Point(13, 347);
             crownGroupBox2.Name = "crownGroupBox2";
-            crownGroupBox2.Size = new Size(445, 258);
+            crownGroupBox2.Size = new Size(445, 221);
             crownGroupBox2.TabIndex = 56;
             crownGroupBox2.TabStop = false;
             crownGroupBox2.Text = "Audio settings";
+            // 
+            // comboBoxAudioSource
+            // 
+            comboBoxAudioSource.DrawMode = DrawMode.OwnerDrawVariable;
+            comboBoxAudioSource.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBoxAudioSource.FormattingEnabled = true;
+            comboBoxAudioSource.Location = new Point(10, 58);
+            comboBoxAudioSource.Name = "comboBoxAudioSource";
+            comboBoxAudioSource.Size = new Size(277, 23);
+            comboBoxAudioSource.TabIndex = 6;
             // 
             // ComboBoxMicrophone
             // 
             ComboBoxMicrophone.DrawMode = DrawMode.OwnerDrawVariable;
             ComboBoxMicrophone.Font = new Font("Segoe UI", 8F);
             ComboBoxMicrophone.FormattingEnabled = true;
-            ComboBoxMicrophone.Location = new Point(9, 223);
+            ComboBoxMicrophone.Location = new Point(9, 186);
             ComboBoxMicrophone.Name = "ComboBoxMicrophone";
-            ComboBoxMicrophone.Size = new Size(211, 23);
-            ComboBoxMicrophone.TabIndex = 6;
+            ComboBoxMicrophone.Size = new Size(278, 23);
+            ComboBoxMicrophone.TabIndex = 8;
             // 
             // ComboBoxSpeaker
             // 
             ComboBoxSpeaker.DrawMode = DrawMode.OwnerDrawVariable;
             ComboBoxSpeaker.Font = new Font("Segoe UI", 8F);
             ComboBoxSpeaker.FormattingEnabled = true;
-            ComboBoxSpeaker.Location = new Point(10, 174);
+            ComboBoxSpeaker.Location = new Point(10, 137);
             ComboBoxSpeaker.Name = "ComboBoxSpeaker";
-            ComboBoxSpeaker.Size = new Size(211, 23);
+            ComboBoxSpeaker.Size = new Size(277, 23);
             ComboBoxSpeaker.TabIndex = 7;
-            // 
-            // radioMicrophone
-            // 
-            radioMicrophone.AutoSize = true;
-            radioMicrophone.BackColor = Color.Transparent;
-            radioMicrophone.Font = new Font("Segoe UI", 9.75F);
-            radioMicrophone.ForeColor = Color.White;
-            radioMicrophone.Location = new Point(13, 99);
-            radioMicrophone.Margin = new Padding(4, 3, 4, 3);
-            radioMicrophone.Name = "radioMicrophone";
-            radioMicrophone.Size = new Size(162, 21);
-            radioMicrophone.TabIndex = 55;
-            radioMicrophone.TabStop = true;
-            radioMicrophone.Text = "Microphone audio only";
-            radioMicrophone.UseVisualStyleBackColor = false;
             // 
             // crownGroupBox3
             // 
@@ -675,7 +635,7 @@ namespace Simple_Screen_Recorder
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
-            ClientSize = new Size(472, 657);
+            ClientSize = new Size(472, 620);
             Controls.Add(crownGroupBox3);
             Controls.Add(crownGroupBox2);
             Controls.Add(crownGroupBox1);
@@ -717,12 +677,9 @@ namespace Simple_Screen_Recorder
         internal Button btnOutputRecordings;
         internal Label labelCodec;
         private ReaLTaiizor.Controls.CrownComboBox comboBoxCodec;
-        internal RadioButton RadioTwoTrack;
-        internal RadioButton RadioDesktop;
         private ReaLTaiizor.Controls.CrownGroupBox crownGroupBox1;
         private ReaLTaiizor.Controls.CrownGroupBox crownGroupBox2;
         private ReaLTaiizor.Controls.CrownGroupBox crownGroupBox3;
-        internal RadioButton radioMicrophone;
         internal Label labelFps;
         private ReaLTaiizor.Controls.CrownComboBox comboBoxFps;
         private ReaLTaiizor.Controls.CrownCheckBox CheckBoxAllMonitors;
@@ -734,6 +691,8 @@ namespace Simple_Screen_Recorder
         private ReaLTaiizor.Controls.CrownComboBox ComboBoxMicrophone;
         private ReaLTaiizor.Controls.CrownComboBox ComboBoxSpeaker;
         private ReaLTaiizor.Controls.CrownComboBox comboBoxBitrate;
+        internal Button btnMergedFiles;
+        private ReaLTaiizor.Controls.CrownComboBox comboBoxAudioSource;
         private ToolStripMenuItem remuxToolStripMenuItem;
         private ToolStripMenuItem mergeVideoDesktopAndMicAudioToolStripMenuItem;
         private ToolStripMenuItem mergeVideoAndDesktopAudioToolStripMenuItem;
@@ -743,14 +702,13 @@ namespace Simple_Screen_Recorder
         private ToolStripMenuItem españolToolStripMenuItem;
         private ToolStripMenuItem italianoToolStripMenuItem;
         private ToolStripMenuItem deutschToolStripMenuItem;
+        private ToolStripMenuItem frenchToolStripMenuItem;
         private ToolStripMenuItem ukranianToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem 中文简体ToolStripMenuItem;
         private ToolStripMenuItem 日本語ToolStripMenuItem;
+        private ToolStripMenuItem العربيةToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem frenchToolStripMenuItem;
-        internal Button btnMergedFiles;
-        private ToolStripMenuItem العربيةToolStripMenuItem;
     }
 }

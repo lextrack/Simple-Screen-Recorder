@@ -23,6 +23,7 @@ namespace Simple_Screen_Recorder.UI
         {
             GetTextsMain();
             OpenAudioComponents();
+            LoadUserSettingsCombobox();
         }
 
         private void OpenAudioComponents()
@@ -55,46 +56,11 @@ namespace Simple_Screen_Recorder.UI
             Process.Start(ProcessId);
         }
 
-        private void RecordAudio()
-        {
-            if (RadioTwoTrack.Checked == true)
-            {
-                if (WaveIn.DeviceCount > 0)
-                {
-                    RecMic();
-                }
-                else
-                {
-                    System.Windows.MessageBox.Show(StringsEN.message3, "Error");
-                }
-
-                RecSpeaker();
-            }
-            else if (RadioDesktop.Checked == true)
-            {
-                RecSpeaker();
-            }
-            else
-            {
-                if (WaveIn.DeviceCount > 0)
-                {
-                    RecMic();
-                }
-                else
-                {
-                    System.Windows.MessageBox.Show(StringsEN.message3, "Error");
-                }
-            }
-        }
-
         private void DisableElementsUI()
         {
             btnStartRecording.Enabled = false;
             ComboBoxMicrophone.Enabled = false;
             ComboBoxSpeaker.Enabled = false;
-            RadioTwoTrack.Enabled = false;
-            RadioDesktop.Enabled = false;
-            radioMicrophone.Enabled = false;
             BtnBackScreen.Enabled = false;
         }
 
@@ -119,36 +85,74 @@ namespace Simple_Screen_Recorder.UI
             btnStartRecording.Enabled = true;
             ComboBoxMicrophone.Enabled = true;
             ComboBoxSpeaker.Enabled = true;
-            RadioTwoTrack.Enabled = true;
-            RadioDesktop.Enabled = true;
-            radioMicrophone.Enabled = true;
             BtnBackScreen.Enabled = true;
 
             CheckAudioStop();
             CheckFfmpegProcces();
         }
 
+        private void RecordAudio()
+        {
+            string selectedOption = comboBoxAudioSourceAudio.SelectedItem.ToString();
+
+            if (selectedOption == StringsEN.TwoTrackAudio)
+            {
+                if (WaveIn.DeviceCount > 0)
+                {
+                    RecMic();
+                }
+                else
+                {
+                    MessageBox.Show(StringsEN.message3, "Error");
+                }
+                RecSpeaker();
+            }
+            else if (selectedOption == StringsEN.DesktopAudio)
+            {
+                RecSpeaker();
+            }
+            else if (selectedOption == StringsEN.MicrophoneAudio)
+            {
+                if (WaveIn.DeviceCount > 0)
+                {
+                    RecMic();
+                }
+                else
+                {
+                    MessageBox.Show(StringsEN.message3, "Error");
+                }
+            }
+        }
+
+
         private void CheckAudioStop()
         {
-            if (RadioTwoTrack.Checked == true)
-            {
-                if (AudioRecorderMic.waveIn is object)
-                {
-                    AudioRecorderMic.waveIn.StopRecording();
-                }
+            string selectedOption = comboBoxAudioSourceAudio.SelectedItem.ToString();
 
-                if (AudioRecorderDesktop.waveIn is object)
+            if (selectedOption == StringsEN.TwoTrack)
+            {
+                if (ScreenAudioMic.waveIn is object)
                 {
-                    AudioRecorderDesktop.waveIn.StopRecording();
+                    ScreenAudioMic.waveIn.StopRecording();
+                }
+                if (ScreenAudioDesktop.waveIn is object)
+                {
+                    ScreenAudioDesktop.waveIn.StopRecording();
                 }
             }
-            else if (AudioRecorderDesktop.waveIn is object)
+            else if (selectedOption == StringsEN.Desktop)
             {
-                AudioRecorderDesktop.waveIn.StopRecording();
+                if (ScreenAudioDesktop.waveIn is object)
+                {
+                    ScreenAudioDesktop.waveIn.StopRecording();
+                }
             }
-            else if (AudioRecorderMic.waveIn is object)
+            else if (selectedOption == StringsEN.Microphone)
             {
-                AudioRecorderMic.waveIn.StopRecording();
+                if (ScreenAudioMic.waveIn is object)
+                {
+                    ScreenAudioMic.waveIn.StopRecording();
+                }
             }
 
             var soundPlayer = new System.Media.SoundPlayer();
@@ -206,17 +210,31 @@ namespace Simple_Screen_Recorder.UI
             Label5.Text = StringsEN.Label5;
             label6.Text = StringsEN.Label6;
             label7.Text = StringsEN.Label7;
-            RadioDesktop.Text = StringsEN.RadioDesktop;
-            RadioTwoTrack.Text = StringsEN.RadioTwoTrack;
             btnOutputRecordings.Text = StringsEN.btnOutputRecordings;
             crownGroupBox2.Text = StringsEN.crownGroupBox2;
             crownGroupBox3.Text = StringsEN.crownGroupBox3;
-            radioMicrophone.Text = StringsEN.radioMicrophone;
             BtnBackScreen.Text = StringsEN.BtnBackScreen;
+
+            int selectedIndex = comboBoxAudioSourceAudio.SelectedIndex;
+            comboBoxAudioSourceAudio.Items.Clear();
+            comboBoxAudioSourceAudio.Items.Add(StringsEN.TwoTrackAudio);
+            comboBoxAudioSourceAudio.Items.Add(StringsEN.DesktopAudio);
+            comboBoxAudioSourceAudio.Items.Add(StringsEN.MicrophoneAudio);
+            comboBoxAudioSourceAudio.SelectedIndex = selectedIndex;
+        }
+        private void LoadUserSettingsCombobox()
+        {
+            comboBoxAudioSourceAudio.SelectedIndex = Settings.Default.AudioRecordingSourceIndex;
+        }
+
+        private void SaveUserSettingsComboboxAudio()
+        {
+            Settings.Default.AudioRecordingSourceIndex = comboBoxAudioSourceAudio.SelectedIndex;
         }
 
         private void AudioRecorderMainWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
+            SaveUserSettingsComboboxAudio();
             Settings.Default.Save();
         }
 

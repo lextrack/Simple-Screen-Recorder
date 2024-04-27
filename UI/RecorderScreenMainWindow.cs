@@ -32,6 +32,7 @@ namespace Simple_Screen_Recorder
             InitializeComboBoxes();
             CreateOutputFolder();
             SetKeyPreview();
+            LoadUserSettingsCombobox();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -60,15 +61,18 @@ namespace Simple_Screen_Recorder
             comboBoxCodec.SelectedIndex = 0;
 
             comboBoxFps.Items.AddRange(new[] { "30", "60" });
-            comboBoxFps.SelectedIndex = 1;
+            comboBoxFps.SelectedIndex = 0;
 
             comboBoxBitrate.Items.AddRange(new[] { "2000k", "4000k", "6000k", "8000k", "10000k", "15000k", "20000k" });
-            comboBoxBitrate.SelectedIndex = 2;
+            comboBoxBitrate.SelectedIndex = 0;
 
 
             ComboBoxFormat.Items.AddRange(new[] { ".avi", ".mkv", ".wmv" });
             ComboBoxFormat.SelectedIndex = 0;
+
         }
+
+
 
         private void OpenAudioComponents()
         {
@@ -121,37 +125,67 @@ namespace Simple_Screen_Recorder
             }
         }
 
-        private void RecordAudio()
-        {
-            if (RadioTwoTrack.Checked)
-            {
-                if (WaveIn.DeviceCount > 0)
+        #region Testing things in VideoCodecs
+        /*private void StartRecordingProcess(string codec, int fps, string bitrate, string screenArgs)
                 {
-                    RecMic();
-                }
-                else
-                {
-                    MessageBox.Show(StringsEN.message3, "Error");
+                    try
+                    {
+                        string ffmpegArgs = $"{ResourcePath} -f gdigrab -framerate {fps} {screenArgs} -c:v {codec} -b:v {bitrate} Recordings/{VideoName}";
+
+                        ProcessStartInfo processInfo = new("cmd.exe", $"/c {ffmpegArgs}")
+                        {
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            CreateNoWindow = true,
+                            RedirectStandardOutput = true
+                        };
+                        Process.Start(processInfo);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Failed to start recording: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
-                RecSpeaker();
-            }
-            else if (RadioDesktop.Checked)
+        private void VideoCodecs()
+        {
+            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+            string bitrate = (string)comboBoxBitrate.SelectedItem;
+            string codecArgs;
+            string codec;
+
+            if (CheckBoxAllMonitors.Checked)
             {
-                RecSpeaker();
+                codecArgs = "-i desktop";
             }
             else
             {
-                if (WaveIn.DeviceCount > 0)
-                {
-                    RecMic();
-                }
-                else
-                {
-                    MessageBox.Show(StringsEN.message3, "Error");
-                }
+                Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
+                Rectangle bounds = selectedScreen.Bounds;
+                codecArgs = $"-offset_x {bounds.Left} -offset_y {bounds.Top} -video_size {bounds.Width}x{bounds.Height} -i desktop";
             }
-        }
+
+            switch (comboBoxCodec.SelectedItem.ToString())
+            {
+                case "H264 (Default)":
+                    codec = "h264_mf -qp 0";
+                    break;
+                case "MPEG-4":
+                    codec = "mpeg4 -preset medium";
+                    break;
+                case "H264 NVENC (Nvidia)":
+                    codec = "h264_nvenc -qp 0";
+                    break;
+                case "H264 AMF (AMD)":
+                    codec = "h264_amf -qp 0";
+                    break;
+                default:
+                    codec = "h264_mf -qp 0";
+                    break;
+            }
+
+            StartRecordingProcess(codec, fps, bitrate, codecArgs);
+        }*/
+        #endregion
 
         private void VideoCodecs()
         {
@@ -273,71 +307,74 @@ namespace Simple_Screen_Recorder
 
         }
 
-        private void DisableElementsUI()
+        private void RecordAudio()
         {
-            comboBoxMonitors.Enabled = false;
-            btnStartRecording.Enabled = false;
-            ComboBoxMicrophone.Enabled = false;
-            ComboBoxSpeaker.Enabled = false;
-            comboBoxCodec.Enabled = false;
-            comboBoxFps.Enabled = false;
-            RadioTwoTrack.Enabled = false;
-            RadioDesktop.Enabled = false;
-            radioMicrophone.Enabled = false;
-            CheckBoxAllMonitors.Enabled = false;
-            ComboBoxFormat.Enabled = false;
-            RefreshMonitors.Enabled = false;
-            menuStrip1.Enabled = false;
-            comboBoxBitrate.Enabled = false;
+            string selectedOption = comboBoxAudioSource.SelectedItem.ToString();
+
+            if (selectedOption == StringsEN.TwoTrack)
+            {
+                if (WaveIn.DeviceCount > 0)
+                {
+                    RecMic();
+                }
+                else
+                {
+                    MessageBox.Show(StringsEN.message3, "Error");
+                }
+                RecSpeaker();
+            }
+            else if (selectedOption == StringsEN.Desktop)
+            {
+                RecSpeaker();  
+            }
+            else if (selectedOption == StringsEN.Microphone)
+            {
+                if (WaveIn.DeviceCount > 0)
+                {
+                    RecMic();
+                }
+                else
+                {
+                    MessageBox.Show(StringsEN.message3, "Error");
+                }
+            }
         }
 
-        private void StopRec()
-        {
-            btnStartRecording.Enabled = true;
-            comboBoxCodec.Enabled = true;
-            ComboBoxMicrophone.Enabled = true;
-            ComboBoxSpeaker.Enabled = true;
-            comboBoxMonitors.Enabled = true;
-            RadioTwoTrack.Enabled = true;
-            RadioDesktop.Enabled = true;
-            radioMicrophone.Enabled = true;
-            comboBoxFps.Enabled = true;
-            CheckBoxAllMonitors.Enabled = true;
-            ComboBoxFormat.Enabled = true;
-            RefreshMonitors.Enabled = true;
-            menuStrip1.Enabled = true;
-            comboBoxBitrate.Enabled = true;
-
-            CheckAudioStop();
-            CheckFfmpegProcces();
-        }
 
         private void CheckAudioStop()
         {
-            if (RadioTwoTrack.Checked == true)
+            string selectedOption = comboBoxAudioSource.SelectedItem.ToString();
+
+            if (selectedOption == StringsEN.TwoTrack)
             {
                 if (ScreenAudioMic.waveIn is object)
                 {
                     ScreenAudioMic.waveIn.StopRecording();
                 }
-
                 if (ScreenAudioDesktop.waveIn is object)
                 {
                     ScreenAudioDesktop.waveIn.StopRecording();
                 }
             }
-            else if (ScreenAudioDesktop.waveIn is object)
+            else if (selectedOption == StringsEN.Desktop)
             {
-                ScreenAudioDesktop.waveIn.StopRecording();
+                if (ScreenAudioDesktop.waveIn is object)
+                {
+                    ScreenAudioDesktop.waveIn.StopRecording();
+                }
             }
-            else if (ScreenAudioMic.waveIn is object)
+            else if (selectedOption == StringsEN.Microphone)
             {
-                ScreenAudioMic.waveIn.StopRecording();
+                if (ScreenAudioMic.waveIn is object)
+                {
+                    ScreenAudioMic.waveIn.StopRecording();
+                }
             }
 
             var soundPlayer = new System.Media.SoundPlayer();
             soundPlayer.Stop();
         }
+
 
         private void CheckFfmpegProcces()
         {
@@ -375,6 +412,41 @@ namespace Simple_Screen_Recorder
             ScreenAudioDesktop.waveIn.StartRecording();
         }
 
+        private void DisableElementsUI()
+        {
+            comboBoxMonitors.Enabled = false;
+            btnStartRecording.Enabled = false;
+            ComboBoxMicrophone.Enabled = false;
+            ComboBoxSpeaker.Enabled = false;
+            comboBoxCodec.Enabled = false;
+            comboBoxFps.Enabled = false;
+
+            CheckBoxAllMonitors.Enabled = false;
+            ComboBoxFormat.Enabled = false;
+            RefreshMonitors.Enabled = false;
+            menuStrip1.Enabled = false;
+            comboBoxBitrate.Enabled = false;
+        }
+
+        private void StopRec()
+        {
+            btnStartRecording.Enabled = true;
+            comboBoxCodec.Enabled = true;
+            ComboBoxMicrophone.Enabled = true;
+            ComboBoxSpeaker.Enabled = true;
+            comboBoxMonitors.Enabled = true;
+
+            comboBoxFps.Enabled = true;
+            CheckBoxAllMonitors.Enabled = true;
+            ComboBoxFormat.Enabled = true;
+            RefreshMonitors.Enabled = true;
+            menuStrip1.Enabled = true;
+            comboBoxBitrate.Enabled = true;
+
+            CheckAudioStop();
+            CheckFfmpegProcces();
+        }
+
         private void BtnStop_Click(object sender, EventArgs e)
         {
             try
@@ -404,7 +476,7 @@ namespace Simple_Screen_Recorder
             }
         }
 
-        #region TranslationCode
+        #region Translations's code
 
         private void GetTextsMain()
         {
@@ -421,8 +493,7 @@ namespace Simple_Screen_Recorder
             languagesToolStripMenuItem.Text = StringsEN.languagesToolStripMenuItem;
             mergeVideoAndDesktopAudioToolStripMenuItem.Text = StringsEN.mergeVideoAndDesktopAudioToolStripMenuItem;
             mergeVideoDesktopAndMicAudioToolStripMenuItem.Text = StringsEN.mergeVideoDesktopAndMicAudioToolStripMenuItem;
-            RadioDesktop.Text = StringsEN.RadioDesktop;
-            RadioTwoTrack.Text = StringsEN.RadioTwoTrack;
+
             remuxToolStripMenuItem.Text = StringsEN.remuxToolStripMenuItem;
             btnOutputRecordings.Text = StringsEN.btnOutputRecordings;
             labelCodec.Text = StringsEN.labelCodec;
@@ -430,12 +501,20 @@ namespace Simple_Screen_Recorder
             crownGroupBox2.Text = StringsEN.crownGroupBox2;
             crownGroupBox3.Text = StringsEN.crownGroupBox3;
             audioToolStripMenuItem.Text = StringsEN.audioToolStripMenuItem;
-            radioMicrophone.Text = StringsEN.radioMicrophone;
+
             labelFps.Text = StringsEN.labelFps;
             CheckBoxAllMonitors.Text = StringsEN.CheckBoxAllMonitors;
             labelFormat.Text = StringsEN.labelFormat;
             labelMonitorSelector.Text = StringsEN.labelMonitorSelector;
             btnMergedFiles.Text = StringsEN.btnMergedFiles;
+
+            int selectedIndex = comboBoxAudioSource.SelectedIndex; // Guardar el índice seleccionado
+            comboBoxAudioSource.Items.Clear();
+            comboBoxAudioSource.Items.Add(StringsEN.TwoTrack);
+            comboBoxAudioSource.Items.Add(StringsEN.Desktop);
+            comboBoxAudioSource.Items.Add(StringsEN.Microphone);
+            comboBoxAudioSource.SelectedIndex = selectedIndex; // Restaurar el índice seleccionado
+
         }
 
         private void españolToolStripMenuItem_Click(object sender, EventArgs e)
@@ -498,30 +577,31 @@ namespace Simple_Screen_Recorder
             GetTextsMain();
         }
 
-        #endregion
-
-        private void RecorderScreenMainWindow_KeyDown(object sender, KeyEventArgs e)
+        private void LoadUserSettingsCombobox()
         {
-            if (btnStartRecording.Enabled == true && e.KeyCode == Keys.F9)
-            {
-                btnStartRecording.PerformClick();
-            }
-            else if (e.KeyCode == Keys.F9)
-            {
-                BtnStop.PerformClick();
-            }
-
-            if (e.KeyCode == Keys.F10)
-            {
-                btnOutputRecordings.PerformClick();
-            }
-
-            if (e.KeyCode == Keys.Escape)
-            {
-                BtnExit.PerformClick();
-            }
-
+            comboBoxCodec.Text = Settings.Default.SelectedCodec;
+            ComboBoxFormat.Text = Settings.Default.SelectedFormat;
+            comboBoxFps.Text = Settings.Default.SelectedFramerate;
+            comboBoxBitrate.Text = Settings.Default.SelectedBitrate;
+            comboBoxAudioSource.SelectedIndex = Settings.Default.AudioSourceIndex;
         }
+
+        private void SaveUserSettingsComboboxRec()
+        {
+            Settings.Default.SelectedCodec = comboBoxCodec.Text;
+            Settings.Default.SelectedFormat = ComboBoxFormat.Text;
+            Settings.Default.SelectedFramerate = comboBoxFps.Text;
+            Settings.Default.SelectedBitrate = comboBoxBitrate.Text;
+            Settings.Default.AudioSourceIndex = comboBoxAudioSource.SelectedIndex;
+        }
+
+        private void RecorderScreenForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SaveUserSettingsComboboxRec();
+            Settings.Default.Save();
+        }
+
+        #endregion
 
         private void CountRecVideo_Tick(object sender, EventArgs e)
         {
@@ -564,9 +644,27 @@ namespace Simple_Screen_Recorder
             Process.Start("explorer.exe", Path.Combine(Application.StartupPath, "OutputFiles"));
         }
 
-        private void RecorderScreenForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void RecorderScreenMainWindow_KeyDown(object sender, KeyEventArgs e)
         {
-            Settings.Default.Save();
+            if (btnStartRecording.Enabled == true && e.KeyCode == Keys.F9)
+            {
+                btnStartRecording.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F9)
+            {
+                BtnStop.PerformClick();
+            }
+
+            if (e.KeyCode == Keys.F10)
+            {
+                btnOutputRecordings.PerformClick();
+            }
+
+            if (e.KeyCode == Keys.Escape)
+            {
+                BtnExit.PerformClick();
+            }
+
         }
     }
 }

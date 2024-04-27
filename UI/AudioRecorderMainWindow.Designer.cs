@@ -35,12 +35,10 @@
             btnStartRecording = new Button();
             BtnStop = new Button();
             crownGroupBox2 = new ReaLTaiizor.Controls.CrownGroupBox();
-            radioMicrophone = new RadioButton();
+            comboBoxAudioSourceAudio = new ReaLTaiizor.Controls.CrownComboBox();
             label6 = new Label();
             Label4 = new Label();
-            RadioTwoTrack = new RadioButton();
             Label5 = new Label();
-            RadioDesktop = new RadioButton();
             label7 = new Label();
             ComboBoxMicrophone = new ReaLTaiizor.Controls.CrownComboBox();
             ComboBoxSpeaker = new ReaLTaiizor.Controls.CrownComboBox();
@@ -123,37 +121,30 @@
             // crownGroupBox2
             // 
             crownGroupBox2.BorderColor = Color.Gray;
-            crownGroupBox2.Controls.Add(radioMicrophone);
+            crownGroupBox2.Controls.Add(comboBoxAudioSourceAudio);
             crownGroupBox2.Controls.Add(label6);
             crownGroupBox2.Controls.Add(Label4);
-            crownGroupBox2.Controls.Add(RadioTwoTrack);
             crownGroupBox2.Controls.Add(Label5);
-            crownGroupBox2.Controls.Add(RadioDesktop);
             crownGroupBox2.Controls.Add(label7);
             crownGroupBox2.Controls.Add(ComboBoxMicrophone);
             crownGroupBox2.Controls.Add(ComboBoxSpeaker);
             crownGroupBox2.Font = new Font("Segoe UI", 12F);
             crownGroupBox2.Location = new Point(13, 170);
             crownGroupBox2.Name = "crownGroupBox2";
-            crownGroupBox2.Size = new Size(329, 261);
+            crownGroupBox2.Size = new Size(329, 223);
             crownGroupBox2.TabIndex = 58;
             crownGroupBox2.TabStop = false;
             crownGroupBox2.Text = "Audio settings";
             // 
-            // radioMicrophone
+            // comboBoxAudioSourceAudio
             // 
-            radioMicrophone.AutoSize = true;
-            radioMicrophone.BackColor = Color.Transparent;
-            radioMicrophone.Font = new Font("Segoe UI", 9.75F);
-            radioMicrophone.ForeColor = SystemColors.Control;
-            radioMicrophone.Location = new Point(13, 99);
-            radioMicrophone.Margin = new Padding(4, 3, 4, 3);
-            radioMicrophone.Name = "radioMicrophone";
-            radioMicrophone.Size = new Size(162, 21);
-            radioMicrophone.TabIndex = 55;
-            radioMicrophone.TabStop = true;
-            radioMicrophone.Text = "Microphone audio only";
-            radioMicrophone.UseVisualStyleBackColor = false;
+            comboBoxAudioSourceAudio.DrawMode = DrawMode.OwnerDrawVariable;
+            comboBoxAudioSourceAudio.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBoxAudioSourceAudio.FormattingEnabled = true;
+            comboBoxAudioSourceAudio.Location = new Point(13, 57);
+            comboBoxAudioSourceAudio.Name = "comboBoxAudioSourceAudio";
+            comboBoxAudioSourceAudio.Size = new Size(221, 23);
+            comboBoxAudioSourceAudio.TabIndex = 42;
             // 
             // label6
             // 
@@ -174,28 +165,12 @@
             Label4.BackColor = Color.Transparent;
             Label4.Font = new Font("Segoe UI", 9.75F);
             Label4.ForeColor = SystemColors.Control;
-            Label4.Location = new Point(13, 206);
+            Label4.Location = new Point(13, 169);
             Label4.Margin = new Padding(4, 0, 4, 0);
             Label4.Name = "Label4";
             Label4.Size = new Size(138, 17);
             Label4.TabIndex = 38;
             Label4.Text = "Microphone (Mic/Aux)";
-            // 
-            // RadioTwoTrack
-            // 
-            RadioTwoTrack.AutoSize = true;
-            RadioTwoTrack.BackColor = Color.Transparent;
-            RadioTwoTrack.Checked = true;
-            RadioTwoTrack.Font = new Font("Segoe UI", 9.75F);
-            RadioTwoTrack.ForeColor = SystemColors.Control;
-            RadioTwoTrack.Location = new Point(13, 48);
-            RadioTwoTrack.Margin = new Padding(4, 3, 4, 3);
-            RadioTwoTrack.Name = "RadioTwoTrack";
-            RadioTwoTrack.Size = new Size(250, 21);
-            RadioTwoTrack.TabIndex = 4;
-            RadioTwoTrack.TabStop = true;
-            RadioTwoTrack.Text = "System sounds and microphone audio";
-            RadioTwoTrack.UseVisualStyleBackColor = false;
             // 
             // Label5
             // 
@@ -203,27 +178,12 @@
             Label5.BackColor = Color.Transparent;
             Label5.Font = new Font("Segoe UI", 9.75F);
             Label5.ForeColor = SystemColors.Control;
-            Label5.Location = new Point(13, 154);
+            Label5.Location = new Point(13, 117);
             Label5.Margin = new Padding(4, 0, 4, 0);
             Label5.Name = "Label5";
             Label5.Size = new Size(187, 17);
             Label5.TabIndex = 6;
             Label5.Text = "System sound (Desktop Audio)";
-            // 
-            // RadioDesktop
-            // 
-            RadioDesktop.AutoSize = true;
-            RadioDesktop.BackColor = Color.Transparent;
-            RadioDesktop.Font = new Font("Segoe UI", 9.75F);
-            RadioDesktop.ForeColor = SystemColors.Control;
-            RadioDesktop.Location = new Point(13, 73);
-            RadioDesktop.Margin = new Padding(4, 3, 4, 3);
-            RadioDesktop.Name = "RadioDesktop";
-            RadioDesktop.Size = new Size(132, 21);
-            RadioDesktop.TabIndex = 53;
-            RadioDesktop.TabStop = true;
-            RadioDesktop.Text = "System audio only";
-            RadioDesktop.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
@@ -231,7 +191,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             label7.ForeColor = Color.RoyalBlue;
-            label7.Location = new Point(10, 132);
+            label7.Location = new Point(10, 95);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(94, 17);
@@ -243,9 +203,9 @@
             ComboBoxMicrophone.DrawMode = DrawMode.OwnerDrawVariable;
             ComboBoxMicrophone.Font = new Font("Segoe UI", 9F);
             ComboBoxMicrophone.FormattingEnabled = true;
-            ComboBoxMicrophone.Location = new Point(15, 226);
+            ComboBoxMicrophone.Location = new Point(15, 189);
             ComboBoxMicrophone.Name = "ComboBoxMicrophone";
-            ComboBoxMicrophone.Size = new Size(209, 24);
+            ComboBoxMicrophone.Size = new Size(219, 24);
             ComboBoxMicrophone.TabIndex = 6;
             // 
             // ComboBoxSpeaker
@@ -253,9 +213,9 @@
             ComboBoxSpeaker.DrawMode = DrawMode.OwnerDrawVariable;
             ComboBoxSpeaker.Font = new Font("Segoe UI", 9F);
             ComboBoxSpeaker.FormattingEnabled = true;
-            ComboBoxSpeaker.Location = new Point(15, 174);
+            ComboBoxSpeaker.Location = new Point(15, 137);
             ComboBoxSpeaker.Name = "ComboBoxSpeaker";
-            ComboBoxSpeaker.Size = new Size(209, 24);
+            ComboBoxSpeaker.Size = new Size(219, 24);
             ComboBoxSpeaker.TabIndex = 5;
             // 
             // CountRecAudio
@@ -267,7 +227,7 @@
             LbTimer.AutoSize = true;
             LbTimer.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             LbTimer.ForeColor = Color.White;
-            LbTimer.Location = new Point(13, 447);
+            LbTimer.Location = new Point(13, 410);
             LbTimer.Margin = new Padding(4, 0, 4, 0);
             LbTimer.Name = "LbTimer";
             LbTimer.Size = new Size(71, 20);
@@ -283,7 +243,7 @@
             BtnBackScreen.ForeColor = Color.Transparent;
             BtnBackScreen.Image = Properties.Resources.back;
             BtnBackScreen.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnBackScreen.Location = new Point(199, 437);
+            BtnBackScreen.Location = new Point(199, 402);
             BtnBackScreen.Margin = new Padding(4, 3, 4, 3);
             BtnBackScreen.Name = "BtnBackScreen";
             BtnBackScreen.Size = new Size(143, 39);
@@ -297,7 +257,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
-            ClientSize = new Size(355, 486);
+            ClientSize = new Size(355, 450);
             ControlBox = false;
             Controls.Add(BtnBackScreen);
             Controls.Add(LbTimer);
@@ -327,16 +287,14 @@
         private ReaLTaiizor.Controls.CrownGroupBox crownGroupBox2;
         internal Label label6;
         internal Label Label4;
-        internal RadioButton RadioTwoTrack;
         internal Label Label5;
-        internal RadioButton RadioDesktop;
         internal Label label7;
         private ReaLTaiizor.Controls.CrownComboBox ComboBoxMicrophone;
         private ReaLTaiizor.Controls.CrownComboBox ComboBoxSpeaker;
         private System.Windows.Forms.Timer CountRecAudio;
         internal Label LbTimer;
-        internal RadioButton radioMicrophone;
         internal Button BtnStop;
         internal Button BtnBackScreen;
+        private ReaLTaiizor.Controls.CrownComboBox comboBoxAudioSourceAudio;
     }
 }

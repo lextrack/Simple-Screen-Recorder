@@ -38,6 +38,21 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 Select the Audio Recording option in the main window and you can record audio from your PC. The recorded audio files are stored in the "Audio Recordings" folder.<br>
 </p>
 
+<h2 align="center">Important installation notice for Simple-Screen-Recorder</h2>
+To ensure that Simple-Screen-Recorder functions correctly without any issues related to video recording, please adhere to the following guidelines when choosing a location:
+
+**Avoid using the application in the Program Files**  directory or any other system-protected areas that might require elevated permissions.
+
+**Avoid lengthy file paths.** For example, avoid paths like C:\Users\lextrack\source\repos\lextrack\Simple-Screen-Recorder\bin\Release\net8.0-windows10.0.22621.0\publish\win-x64\Recordings as they can lead to issues with file management and recording functionality.
+
+**Do not rename the application's folder.** Renaming could lead to issues with accessing the necessary files for recording.
+
+Where can you install the app?
+
+- Your "Documents" folder.
+
+- Or extract it in a simple root directory, such as "C:\Simple-Screen-Recorder".
+
 <h2 align="center">Features</h2>
 
 - Screen recording in avi or mkv file format with a wide range of encoders, frames per second and bitrate<br>
@@ -45,16 +60,17 @@ Select the Audio Recording option in the main window and you can record audio fr
 - Merge media files (mkv output format)<br>
 - Keyboard shortcuts (video recording): F9 to start and stop recordings, F10 to open recordings folders and ESC to close the app<br>
 - Audio recording separately<br>
-- Grab the screen or output from any monitor connected to your PC<br>
+- Record any monitor connected to your PC<br>
 - Availability in ten languages (English, Español, Français, Deutsch, Українська, 日本語, Português do Brasil, 中文(简体), العربية and Italiano)
 
 <h2 align="center">Install</h2>
 <p align="center">
-  Windows 10, 11 (64 bits) | v1.2.7 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.7/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
+  Windows 8, 10, 11 (64 bits) | v1.2.8 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.8/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
   Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.Net 8.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-6.1.1-full_build-shared)</a> <br><br>
   <img src="./Capture.png">
 </p>
 
 <h2 align="center">Acknowledgments</h2>
 
-Thanks to **Flaticon** for the icon and **TutorialesVbNET** for give me the idea to create this.
+<p>Thanks to <strong>Flaticon</strong> for the icon and <strong>TutorialesVbNET</strong> for giving me the idea to create this.</p>
+
