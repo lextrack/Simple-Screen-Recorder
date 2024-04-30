@@ -227,7 +227,7 @@ are updates coming soon!</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
     <value>This software is made possible by
-TutorialesVbNET and Flaticon.</value>
+TutorialesVbNET, FFmpeg and Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>Merge video and a single audio file</value>

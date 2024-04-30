@@ -227,8 +227,9 @@
 お見逃しなく！</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
-    <value>このソフトウェアはTutorialesVbNETと
-Flaticonによって可能になりました。</value>
+    <value>このソフトウェアは、TutorialesVbNET、
+FFmpeg、およびFlaticon
+のおかげで可能となりました。</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>ビデオと1つのオーディオファイルをマージする</value>

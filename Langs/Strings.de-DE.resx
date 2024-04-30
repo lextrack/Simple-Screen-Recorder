@@ -229,7 +229,7 @@ weitere Updates werden bald verfügbar sein!</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
     <value>Diese Software wird ermöglicht 
-durch TutorialesVbNET und Flaticon.</value>
+durch TutorialesVbNET, FFmpeg und Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>Video zusammenführen mit nur einer Audio-Datei</value>

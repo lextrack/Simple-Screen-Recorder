@@ -26,13 +26,13 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 
 - If you check the "Capture all monitors" option, the app is going to record a video with all the monitors connected to the PC.<br>
 
-- Use the radio buttons to select whether you want to record the audio from both the microphone and desktop audio.<br>
+- In the section **Audio recording method**, use the combobox to select the audio component you want to record, such as desktop audio or a connected microphone.<br>
 
 - Click the "Start Recording" button to begin the screen recording process. The screen recording will begin and the timer in the lower left corner of the window will start counting up.<br>
 
 - To stop the screen recording, click the "Stop Recording" button. The recorded video file will be saved in the "Recordings" folder.<br>
 
-- When you enter the "Recordings" folder, you'll see the audio and video files separated. Having the files like this is very useful if you want to edit the video and audio tracks with total freedom. However, you also can combine/merge your audio and video files using the "Media Merge" tool. All the merged files will be saved in the "Output Files" folder.<br>
+- When you enter the "Recordings" folder, you'll see the audio and video files separated. Having files like this is very useful if you want to edit the video and audio tracks with total freedom. However, you also can combine/merge your audio and video files using the "Media Merge" tool. All the merged files will be saved in the "Output Files" folder.<br>
 
 - You can also record audio separately. You can record your microphone, desktop audio, or both separately. 
 Select the Audio Recording option in the main window and you can record audio from your PC. The recorded audio files are stored in the "Audio Recordings" folder.<br>
@@ -65,7 +65,7 @@ Where can you install the app?
 
 <h2 align="center">Demo</h2>
 <p align="center">
-  Watch a demo of version 1.2.8 of the app on YouTube:
+  Watch a demo of the app recording gameplay on YouTube:
   <br>
   <a href="https://www.youtube.com/watch?v=IhTJTVahbbk" target="_blank">
     <img src="https://i.ibb.co/R9LZT1Q/vlcsnap-2024-04-29-19h43m28s768.png" alt="Simple-Screen-Recorder app test | C# Project (.NET 8 and WinForms)" width="852" height="480">
@@ -74,12 +74,12 @@ Where can you install the app?
 
 <h2 align="center">Install</h2>
 <p align="center">
-  Windows 8, 10, 11 (64 bits) | v1.2.8 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.8/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
+  Windows 8, 10, 11 (64 bits) | v1.2.9 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.9/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
   Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.Net 8.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-6.1.1-full_build-shared)</a> <br><br>
   <img src="./Capture.png">
 </p>
 
 <h2 align="center">Acknowledgments</h2>
 
-<p>Thanks to <strong>Flaticon</strong> for the icon and <strong>TutorialesVbNET</strong> for giving me the idea to create this.</p>
+<p>Thanks to <strong>Flaticon</strong> for the icons, <strong>FFmpeg</strong> for their incredible framework, <strong>NAudio</strong>, and <strong>TutorialesVbNET</strong> for giving me the inspiration to create this.</p>
 

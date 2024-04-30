@@ -40,11 +40,6 @@ namespace Simple_Screen_Recorder
             InitializeForm();
         }
 
-        private void SetKeyPreview()
-        {
-            this.KeyPreview = true;
-        }
-
         private void CreateOutputFolder()
         {
             string outputFolderPath = Path.Combine(Application.StartupPath, "OutputFiles");
@@ -71,8 +66,6 @@ namespace Simple_Screen_Recorder
             ComboBoxFormat.SelectedIndex = 0;
 
         }
-
-
 
         private void OpenAudioComponents()
         {
@@ -124,68 +117,6 @@ namespace Simple_Screen_Recorder
                 comboBoxMonitors.Enabled = true;
             }
         }
-
-        #region Testing things in VideoCodecs
-        /*private void StartRecordingProcess(string codec, int fps, string bitrate, string screenArgs)
-                {
-                    try
-                    {
-                        string ffmpegArgs = $"{ResourcePath} -f gdigrab -framerate {fps} {screenArgs} -c:v {codec} -b:v {bitrate} Recordings/{VideoName}";
-
-                        ProcessStartInfo processInfo = new("cmd.exe", $"/c {ffmpegArgs}")
-                        {
-                            WindowStyle = ProcessWindowStyle.Hidden,
-                            CreateNoWindow = true,
-                            RedirectStandardOutput = true
-                        };
-                        Process.Start(processInfo);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Failed to start recording: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
-        private void VideoCodecs()
-        {
-            int fps = int.Parse((string)comboBoxFps.SelectedItem);
-            string bitrate = (string)comboBoxBitrate.SelectedItem;
-            string codecArgs;
-            string codec;
-
-            if (CheckBoxAllMonitors.Checked)
-            {
-                codecArgs = "-i desktop";
-            }
-            else
-            {
-                Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
-                Rectangle bounds = selectedScreen.Bounds;
-                codecArgs = $"-offset_x {bounds.Left} -offset_y {bounds.Top} -video_size {bounds.Width}x{bounds.Height} -i desktop";
-            }
-
-            switch (comboBoxCodec.SelectedItem.ToString())
-            {
-                case "H264 (Default)":
-                    codec = "h264_mf -qp 0";
-                    break;
-                case "MPEG-4":
-                    codec = "mpeg4 -preset medium";
-                    break;
-                case "H264 NVENC (Nvidia)":
-                    codec = "h264_nvenc -qp 0";
-                    break;
-                case "H264 AMF (AMD)":
-                    codec = "h264_amf -qp 0";
-                    break;
-                default:
-                    codec = "h264_mf -qp 0";
-                    break;
-            }
-
-            StartRecordingProcess(codec, fps, bitrate, codecArgs);
-        }*/
-        #endregion
 
         private void VideoCodecs()
         {
@@ -404,13 +335,75 @@ namespace Simple_Screen_Recorder
             ScreenAudioDesktop.Cleanup();
             ScreenAudioDesktop.CreateWaveInDevice();
 
-            var soundPlayer = new System.Media.SoundPlayer(Properties.Resources.Background);
+            var soundPlayer = new System.Media.SoundPlayer(Resources.Background);
             soundPlayer.PlayLooping();
 
             ScreenAudioDesktop.outputFilename = "SystemAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
             ScreenAudioDesktop.writer = new WaveFileWriter(Path.Combine(ScreenAudioDesktop.outputFolder, ScreenAudioDesktop.outputFilename), ScreenAudioDesktop.waveIn.WaveFormat);
             ScreenAudioDesktop.waveIn.StartRecording();
         }
+
+        #region Testing things with VideoCodecs
+        /*private void StartRecordingProcess(string codec, int fps, string bitrate, string screenArgs)
+                {
+                    try
+                    {
+                        string ffmpegArgs = $"{ResourcePath} -f gdigrab -framerate {fps} {screenArgs} -c:v {codec} -b:v {bitrate} Recordings/{VideoName}";
+
+                        ProcessStartInfo processInfo = new("cmd.exe", $"/c {ffmpegArgs}")
+                        {
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            CreateNoWindow = true,
+                            RedirectStandardOutput = true
+                        };
+                        Process.Start(processInfo);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Failed to start recording: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+        private void VideoCodecs()
+        {
+            int fps = int.Parse((string)comboBoxFps.SelectedItem);
+            string bitrate = (string)comboBoxBitrate.SelectedItem;
+            string codecArgs;
+            string codec;
+
+            if (CheckBoxAllMonitors.Checked)
+            {
+                codecArgs = "-i desktop";
+            }
+            else
+            {
+                Screen selectedScreen = Screen.AllScreens[comboBoxMonitors.SelectedIndex];
+                Rectangle bounds = selectedScreen.Bounds;
+                codecArgs = $"-offset_x {bounds.Left} -offset_y {bounds.Top} -video_size {bounds.Width}x{bounds.Height} -i desktop";
+            }
+
+            switch (comboBoxCodec.SelectedItem.ToString())
+            {
+                case "H264 (Default)":
+                    codec = "h264_mf -qp 0";
+                    break;
+                case "MPEG-4":
+                    codec = "mpeg4 -preset medium";
+                    break;
+                case "H264 NVENC (Nvidia)":
+                    codec = "h264_nvenc -qp 0";
+                    break;
+                case "H264 AMF (AMD)":
+                    codec = "h264_amf -qp 0";
+                    break;
+                default:
+                    codec = "h264_mf -qp 0";
+                    break;
+            }
+
+            StartRecordingProcess(codec, fps, bitrate, codecArgs);
+        }*/
+        #endregion
 
         private void DisableElementsUI()
         {
@@ -420,12 +413,12 @@ namespace Simple_Screen_Recorder
             ComboBoxSpeaker.Enabled = false;
             comboBoxCodec.Enabled = false;
             comboBoxFps.Enabled = false;
-
             CheckBoxAllMonitors.Enabled = false;
             ComboBoxFormat.Enabled = false;
             RefreshMonitors.Enabled = false;
             menuStrip1.Enabled = false;
             comboBoxBitrate.Enabled = false;
+            comboBoxAudioSource.Enabled = false;
         }
 
         private void StopRec()
@@ -435,13 +428,13 @@ namespace Simple_Screen_Recorder
             ComboBoxMicrophone.Enabled = true;
             ComboBoxSpeaker.Enabled = true;
             comboBoxMonitors.Enabled = true;
-
             comboBoxFps.Enabled = true;
             CheckBoxAllMonitors.Enabled = true;
             ComboBoxFormat.Enabled = true;
             RefreshMonitors.Enabled = true;
             menuStrip1.Enabled = true;
             comboBoxBitrate.Enabled = true;
+            comboBoxAudioSource.Enabled = true;
 
             CheckAudioStop();
             CheckFfmpegProcces();
@@ -508,12 +501,12 @@ namespace Simple_Screen_Recorder
             labelMonitorSelector.Text = StringsEN.labelMonitorSelector;
             btnMergedFiles.Text = StringsEN.btnMergedFiles;
 
-            int selectedIndex = comboBoxAudioSource.SelectedIndex; // Guardar el índice seleccionado
+            int selectedIndex = comboBoxAudioSource.SelectedIndex;
             comboBoxAudioSource.Items.Clear();
             comboBoxAudioSource.Items.Add(StringsEN.TwoTrack);
             comboBoxAudioSource.Items.Add(StringsEN.Desktop);
             comboBoxAudioSource.Items.Add(StringsEN.Microphone);
-            comboBoxAudioSource.SelectedIndex = selectedIndex; // Restaurar el índice seleccionado
+            comboBoxAudioSource.SelectedIndex = selectedIndex;
 
         }
 
@@ -664,7 +657,11 @@ namespace Simple_Screen_Recorder
             {
                 BtnExit.PerformClick();
             }
+        }
 
+        private void SetKeyPreview()
+        {
+            this.KeyPreview = true;
         }
     }
 }

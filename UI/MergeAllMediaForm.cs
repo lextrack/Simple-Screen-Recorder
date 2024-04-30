@@ -57,7 +57,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
             var archivo = new OpenFileDialog();
             archivo.InitialDirectory = recordingsFolder;
             archivo.Filter = "Video files|*.avi;*.mkv;*.wmv|All files|*.*";
-            archivo.Multiselect = false;  // Solo permite la selección de un archivo
+            archivo.Multiselect = false;
 
             if (archivo.ShowDialog() == DialogResult.OK)
             {
@@ -77,7 +77,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
             var archivo = new OpenFileDialog();
             archivo.InitialDirectory = recordingsFolder;
             archivo.Filter = "Audio files|*.wav;*.aac|All files|*.*";
-            archivo.Multiselect = false;  // Solo permite la selección de un archivo
+            archivo.Multiselect = false;  
 
             if (archivo.ShowDialog() == DialogResult.OK)
             {
@@ -97,7 +97,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
             var archivo = new OpenFileDialog();
             archivo.InitialDirectory = recordingsFolder;
             archivo.Filter = "Audio files|*.wav;*.aac|All files|*.*";
-            archivo.Multiselect = false;  // Solo permite la selección de un archivo
+            archivo.Multiselect = false; 
 
             if (archivo.ShowDialog() == DialogResult.OK)
             {

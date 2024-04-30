@@ -227,7 +227,7 @@ habrán más actualizaciones próximante!</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
     <value>Este software fue hecho gracias a
-TutorialesVbNET y Flaticon.</value>
+TutorialesVbNET, FFmpeg y Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>Mezclar solo vídeo y un audio</value>
