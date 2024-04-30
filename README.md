@@ -75,7 +75,7 @@ Where can you install the app?
 <h2 align="center">Install</h2>
 <p align="center">
   Windows 8, 10, 11 (64 bits) | v1.2.9 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.9/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
-  Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.Net 8.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg-6.1.1-full_build-shared)</a> <br><br>
+  Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.Net 8.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg 7.0 full_build-shared)</a> <br><br>
   <img src="./Capture.png">
 </p>
 
