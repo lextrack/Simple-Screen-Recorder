@@ -63,15 +63,6 @@ Where can you install the app?
 - Record any monitor connected to your PC<br>
 - Availability in ten languages (English, Español, Français, Deutsch, Українська, 日本語, Português do Brasil, 中文(简体), العربية and Italiano)
 
-<h2 align="center">Demo</h2>
-<p align="center">
-  Watch a demo of the app recording gameplay on YouTube:
-  <br>
-  <a href="https://www.youtube.com/watch?v=IhTJTVahbbk" target="_blank">
-    <img src="https://i.ibb.co/R9LZT1Q/vlcsnap-2024-04-29-19h43m28s768.png" alt="Simple-Screen-Recorder app test | C# Project (.NET 8 and WinForms)" width="852" height="480">
-  </a>
-</p>
-
 <h2 align="center">Install</h2>
 <p align="center">
   Windows 8, 10, 11 (64 bits) | v1.2.9 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.2.9/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>

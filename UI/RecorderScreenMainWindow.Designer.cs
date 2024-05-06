@@ -210,7 +210,7 @@ namespace Simple_Screen_Recorder
             BtnExit.Margin = new Padding(4, 3, 4, 3);
             BtnExit.Name = "BtnExit";
             BtnExit.Size = new Size(143, 39);
-            BtnExit.TabIndex = 11;
+            BtnExit.TabIndex = 12;
             BtnExit.Text = "    Exit";
             BtnExit.UseVisualStyleBackColor = true;
             BtnExit.Click += BtnExit_Click;
@@ -255,7 +255,7 @@ namespace Simple_Screen_Recorder
             comboBoxCodec.Location = new Point(230, 99);
             comboBoxCodec.Name = "comboBoxCodec";
             comboBoxCodec.Size = new Size(136, 23);
-            comboBoxCodec.TabIndex = 4;
+            comboBoxCodec.TabIndex = 6;
             // 
             // crownGroupBox1
             // 
@@ -287,7 +287,7 @@ namespace Simple_Screen_Recorder
             comboBoxBitrate.Location = new Point(372, 99);
             comboBoxBitrate.Name = "comboBoxBitrate";
             comboBoxBitrate.Size = new Size(61, 23);
-            comboBoxBitrate.TabIndex = 5;
+            comboBoxBitrate.TabIndex = 7;
             // 
             // RefreshMonitors
             // 
@@ -344,7 +344,7 @@ namespace Simple_Screen_Recorder
             ComboBoxFormat.Location = new Point(230, 45);
             ComboBoxFormat.Name = "ComboBoxFormat";
             ComboBoxFormat.Size = new Size(203, 23);
-            ComboBoxFormat.TabIndex = 5;
+            ComboBoxFormat.TabIndex = 4;
             // 
             // CheckBoxAllMonitors
             // 
@@ -354,7 +354,7 @@ namespace Simple_Screen_Recorder
             CheckBoxAllMonitors.Location = new Point(10, 128);
             CheckBoxAllMonitors.Name = "CheckBoxAllMonitors";
             CheckBoxAllMonitors.Size = new Size(146, 21);
-            CheckBoxAllMonitors.TabIndex = 6;
+            CheckBoxAllMonitors.TabIndex = 12;
             CheckBoxAllMonitors.Text = "Capture all monitors";
             CheckBoxAllMonitors.CheckedChanged += CheckBoxAllMonitors_CheckedChanged;
             // 
@@ -366,7 +366,7 @@ namespace Simple_Screen_Recorder
             comboBoxFps.Location = new Point(8, 99);
             comboBoxFps.Name = "comboBoxFps";
             comboBoxFps.Size = new Size(203, 23);
-            comboBoxFps.TabIndex = 6;
+            comboBoxFps.TabIndex = 5;
             // 
             // labelFps
             // 
@@ -407,7 +407,7 @@ namespace Simple_Screen_Recorder
             comboBoxAudioSource.Location = new Point(10, 58);
             comboBoxAudioSource.Name = "comboBoxAudioSource";
             comboBoxAudioSource.Size = new Size(277, 23);
-            comboBoxAudioSource.TabIndex = 6;
+            comboBoxAudioSource.TabIndex = 8;
             // 
             // ComboBoxMicrophone
             // 
@@ -417,7 +417,7 @@ namespace Simple_Screen_Recorder
             ComboBoxMicrophone.Location = new Point(9, 186);
             ComboBoxMicrophone.Name = "ComboBoxMicrophone";
             ComboBoxMicrophone.Size = new Size(278, 23);
-            ComboBoxMicrophone.TabIndex = 8;
+            ComboBoxMicrophone.TabIndex = 10;
             // 
             // ComboBoxSpeaker
             // 
@@ -427,7 +427,7 @@ namespace Simple_Screen_Recorder
             ComboBoxSpeaker.Location = new Point(10, 137);
             ComboBoxSpeaker.Name = "ComboBoxSpeaker";
             ComboBoxSpeaker.Size = new Size(277, 23);
-            ComboBoxSpeaker.TabIndex = 7;
+            ComboBoxSpeaker.TabIndex = 9;
             // 
             // crownGroupBox3
             // 

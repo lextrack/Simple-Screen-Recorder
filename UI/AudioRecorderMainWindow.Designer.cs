@@ -76,7 +76,7 @@
             btnOutputRecordings.Margin = new Padding(4, 3, 4, 3);
             btnOutputRecordings.Name = "btnOutputRecordings";
             btnOutputRecordings.Size = new Size(296, 40);
-            btnOutputRecordings.TabIndex = 7;
+            btnOutputRecordings.TabIndex = 6;
             btnOutputRecordings.Text = " Open Recordings Folder";
             btnOutputRecordings.UseVisualStyleBackColor = true;
             btnOutputRecordings.Click += btnOutputRecordings_Click;
@@ -144,7 +144,7 @@
             comboBoxAudioSourceAudio.Location = new Point(13, 57);
             comboBoxAudioSourceAudio.Name = "comboBoxAudioSourceAudio";
             comboBoxAudioSourceAudio.Size = new Size(221, 23);
-            comboBoxAudioSourceAudio.TabIndex = 42;
+            comboBoxAudioSourceAudio.TabIndex = 3;
             // 
             // label6
             // 
@@ -206,7 +206,7 @@
             ComboBoxMicrophone.Location = new Point(15, 189);
             ComboBoxMicrophone.Name = "ComboBoxMicrophone";
             ComboBoxMicrophone.Size = new Size(219, 24);
-            ComboBoxMicrophone.TabIndex = 6;
+            ComboBoxMicrophone.TabIndex = 5;
             // 
             // ComboBoxSpeaker
             // 
@@ -216,7 +216,7 @@
             ComboBoxSpeaker.Location = new Point(15, 137);
             ComboBoxSpeaker.Name = "ComboBoxSpeaker";
             ComboBoxSpeaker.Size = new Size(219, 24);
-            ComboBoxSpeaker.TabIndex = 5;
+            ComboBoxSpeaker.TabIndex = 4;
             // 
             // CountRecAudio
             // 

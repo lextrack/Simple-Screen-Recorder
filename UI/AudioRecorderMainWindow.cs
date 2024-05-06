@@ -14,7 +14,6 @@ namespace Simple_Screen_Recorder.UI
         private string AudioName = "";
         public int ProcessId { get; private set; }
 
-        public static string ResourcePath = Path.Combine(Directory.GetCurrentDirectory(), @"FFmpegResources\ffmpeg");
 
         public AudioRecorderMainWindow()
         {
@@ -24,11 +23,11 @@ namespace Simple_Screen_Recorder.UI
         private void AudioRecorderMainWindow_Load(object sender, EventArgs e)
         {
             GetTextsMain();
-            OpenAudioComponents();
+            InitializeAudioComponents();
             LoadUserSettingsCombobox();
         }
 
-        private void OpenAudioComponents()
+        private void InitializeAudioComponents()
         {
             AudioRecorderMic.OpenComp();
             ComboBoxMicrophone.DataSource = AudioRecorderMic.cboDIspositivos.DataSource;
@@ -45,86 +44,51 @@ namespace Simple_Screen_Recorder.UI
 
             RecordAudio();
             DisableElementsUI();
-            RecordFfmpegInitial();
         }
-
-        private void RecordFfmpegInitial()
-        {
-            ProcessStartInfo ProcessId = new("cmd.exe", $"/c {RecorderScreenMainWindow.ResourcePath} -f gdigrab AudioRecordings/" + AudioName + "");
-            ProcessId.WindowStyle = ProcessWindowStyle.Hidden;
-            ProcessId.CreateNoWindow = true;
-            ProcessId.RedirectStandardOutput = true;
-            Process.Start(ProcessId);
-        }
-
-        private void DisableElementsUI()
-        {
-            btnStartRecording.Enabled = false;
-            ComboBoxMicrophone.Enabled = false;
-            ComboBoxSpeaker.Enabled = false;
-            BtnBackScreen.Enabled = false;
-            comboBoxAudioSourceAudio.Enabled = false;
-        }
-
-        private void BtnStop_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                LbTimer.ForeColor = Color.White;
-                LbTimer.Text = "00:00:00";
-                CountRecAudio.Enabled = false;
-                StopAudioRec();
-
-            }
-            catch (Exception)
-            {
-                return;
-            }
-        }
-
-        private void StopAudioRec()
-        {
-            btnStartRecording.Enabled = true;
-            ComboBoxMicrophone.Enabled = true;
-            ComboBoxSpeaker.Enabled = true;
-            BtnBackScreen.Enabled = true;
-            comboBoxAudioSourceAudio.Enabled = true;
-
-            CheckAudioStop();
-            CheckFfmpegProcces();
-        }
-
         private void RecordAudio()
         {
             string selectedOption = comboBoxAudioSourceAudio.SelectedItem.ToString();
 
             if (selectedOption == StringsEN.TwoTrackAudio)
             {
-                if (WaveIn.DeviceCount > 0)
-                {
-                    RecMic();
-                }
-                else
-                {
-                    MessageBox.Show(StringsEN.message3, "Error");
-                }
-                RecSpeaker();
+                RecordTwoTracks();
             }
             else if (selectedOption == StringsEN.DesktopAudio)
             {
-                RecSpeaker();
+                RecordDesktopAudio();
             }
             else if (selectedOption == StringsEN.MicrophoneAudio)
             {
-                if (WaveIn.DeviceCount > 0)
-                {
-                    RecMic();
-                }
-                else
-                {
-                    MessageBox.Show(StringsEN.message3, "Error");
-                }
+                RecordMicrophone();
             }
+        }
+
+        private void RecordTwoTracks()
+        {
+            if (WaveIn.DeviceCount == 0)
+            {
+                MessageBox.Show(StringsEN.message3, "Error");
+                return;
+            }
+
+            RecMic();
+            RecSpeaker();
+        }
+
+        private void RecordDesktopAudio()
+        {
+            RecSpeaker();
+        }
+
+        private void RecordMicrophone()
+        {
+            if (WaveIn.DeviceCount == 0)
+            {
+                MessageBox.Show(StringsEN.message3, "Error");
+                return;
+            }
+
+            RecMic();
         }
 
         private void CheckAudioStop()
@@ -161,20 +125,52 @@ namespace Simple_Screen_Recorder.UI
             soundPlayer.Stop();
         }
 
-        private void CheckFfmpegProcces()
+        private void StopAudioRecordingProcess()
         {
-            foreach (Process proceso in Process.GetProcesses())
-            {
-                if (proceso.ProcessName == "ffmpeg")
-                {
-                    proceso.Kill();
-                }
-            }
+            btnStartRecording.Enabled = true;
+            ComboBoxMicrophone.Enabled = true;
+            ComboBoxSpeaker.Enabled = true;
+            BtnBackScreen.Enabled = true;
+            comboBoxAudioSourceAudio.Enabled = true;
 
-            Process proc = Process.GetProcessById(ProcessId);
-            proc.Kill();
+            CheckAudioStop();
         }
 
+
+        private void BtnStop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LbTimer.ForeColor = Color.White;
+                LbTimer.Text = "00:00:00";
+                CountRecAudio.Enabled = false;
+                StopAudioRecordingProcess();
+                EnableElementsUI();
+
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+
+        private void DisableElementsUI()
+        {
+            btnStartRecording.Enabled = false;
+            ComboBoxMicrophone.Enabled = false;
+            ComboBoxSpeaker.Enabled = false;
+            BtnBackScreen.Enabled = false;
+            comboBoxAudioSourceAudio.Enabled = false;
+        }
+
+        private void EnableElementsUI()
+        {
+            btnStartRecording.Enabled = true;
+            ComboBoxMicrophone.Enabled = true;
+            ComboBoxSpeaker.Enabled = true;
+            BtnBackScreen.Enabled = true;
+            comboBoxAudioSourceAudio.Enabled = true;
+        }
         private static void RecMic()
         {
             AudioRecorderMic.Cleanup();

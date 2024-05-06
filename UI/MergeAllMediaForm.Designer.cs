@@ -50,7 +50,7 @@
             BtnVideo2.Location = new Point(14, 10);
             BtnVideo2.Name = "BtnVideo2";
             BtnVideo2.Size = new Size(236, 41);
-            BtnVideo2.TabIndex = 0;
+            BtnVideo2.TabIndex = 1;
             BtnVideo2.Text = "Select a video file";
             BtnVideo2.TextAlign = ContentAlignment.MiddleRight;
             BtnVideo2.UseVisualStyleBackColor = true;
@@ -65,7 +65,7 @@
             BtnDeskAudio2.Location = new Point(14, 89);
             BtnDeskAudio2.Name = "BtnDeskAudio2";
             BtnDeskAudio2.Size = new Size(236, 41);
-            BtnDeskAudio2.TabIndex = 1;
+            BtnDeskAudio2.TabIndex = 3;
             BtnDeskAudio2.Text = "Select a system sound file";
             BtnDeskAudio2.TextAlign = ContentAlignment.MiddleRight;
             BtnDeskAudio2.UseVisualStyleBackColor = true;
@@ -77,6 +77,7 @@
             txtVideoPath.Font = new Font("Segoe UI", 8F);
             txtVideoPath.Location = new Point(256, 21);
             txtVideoPath.Name = "txtVideoPath";
+            txtVideoPath.ReadOnly = true;
             txtVideoPath.RightToLeft = RightToLeft.Yes;
             txtVideoPath.Size = new Size(216, 22);
             txtVideoPath.TabIndex = 2;
@@ -87,6 +88,7 @@
             txtAudioDesk.Font = new Font("Segoe UI", 8F);
             txtAudioDesk.Location = new Point(256, 100);
             txtAudioDesk.Name = "txtAudioDesk";
+            txtAudioDesk.ReadOnly = true;
             txtAudioDesk.RightToLeft = RightToLeft.Yes;
             txtAudioDesk.Size = new Size(216, 22);
             txtAudioDesk.TabIndex = 3;
@@ -97,6 +99,7 @@
             txtAudioMic.Font = new Font("Segoe UI", 8F);
             txtAudioMic.Location = new Point(256, 60);
             txtAudioMic.Name = "txtAudioMic";
+            txtAudioMic.ReadOnly = true;
             txtAudioMic.RightToLeft = RightToLeft.Yes;
             txtAudioMic.Size = new Size(216, 22);
             txtAudioMic.TabIndex = 5;
@@ -110,7 +113,7 @@
             BtnMicAudio.Location = new Point(14, 49);
             BtnMicAudio.Name = "BtnMicAudio";
             BtnMicAudio.Size = new Size(236, 41);
-            BtnMicAudio.TabIndex = 4;
+            BtnMicAudio.TabIndex = 2;
             BtnMicAudio.Text = "Select a mic audio file";
             BtnMicAudio.TextAlign = ContentAlignment.MiddleRight;
             BtnMicAudio.UseVisualStyleBackColor = true;
@@ -125,7 +128,7 @@
             BtnMergeAll2.Location = new Point(95, 150);
             BtnMergeAll2.Name = "BtnMergeAll2";
             BtnMergeAll2.Size = new Size(155, 39);
-            BtnMergeAll2.TabIndex = 6;
+            BtnMergeAll2.TabIndex = 4;
             BtnMergeAll2.Text = "Start mixing";
             BtnMergeAll2.TextAlign = ContentAlignment.MiddleRight;
             BtnMergeAll2.UseVisualStyleBackColor = true;
@@ -140,7 +143,7 @@
             btnOutputF2.Location = new Point(256, 150);
             btnOutputF2.Name = "btnOutputF2";
             btnOutputF2.Size = new Size(155, 39);
-            btnOutputF2.TabIndex = 15;
+            btnOutputF2.TabIndex = 5;
             btnOutputF2.Text = "Output folder";
             btnOutputF2.TextAlign = ContentAlignment.MiddleRight;
             btnOutputF2.UseVisualStyleBackColor = true;
