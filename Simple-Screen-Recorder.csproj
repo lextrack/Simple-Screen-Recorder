@@ -20,6 +20,7 @@
     <RepositoryUrl>https://github.com/lextrack/Simple-Screen-Recorder</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>

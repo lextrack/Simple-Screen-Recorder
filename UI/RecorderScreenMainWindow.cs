@@ -127,7 +127,8 @@ namespace Simple_Screen_Recorder
                 {
                     WindowStyle = ProcessWindowStyle.Hidden,
                     CreateNoWindow = true,
-                    RedirectStandardOutput = true
+                    RedirectStandardOutput = true,
+                    Verb = "runas" // do a flip
                 };
                 Process.Start(processInfo);
             }
