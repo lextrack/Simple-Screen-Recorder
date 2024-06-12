@@ -15,6 +15,7 @@ namespace Simple_Screen_Recorder.ScreenRecorderWin
             this.Text = StringsEN.AboutForm;
             LbAbout1.Text = StringsEN.LbAbout1;
             LbAbout2.Text = StringsEN.LbAbout2;
+            labelCopyright.Text = StringsEN.labelCopyright;
         }
 
         private void AboutForm_FormClosed(object sender, FormClosedEventArgs e)

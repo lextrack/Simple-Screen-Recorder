@@ -210,6 +210,13 @@
   <data name="labelCodec" xml:space="preserve">
     <value>Кодувальник</value>
   </data>
+  <data name="labelCopyright" xml:space="preserve">
+    <value>Simple Screen Recorder — це програма для запису
+екранута звуку з відкритим вихідним 
+кодом для Windows.
+
+Оригінальний автор: Lextrack.</value>
+  </data>
   <data name="labelFormat" xml:space="preserve">
     <value>Формат файлу</value>
   </data>
@@ -232,7 +239,7 @@
   <data name="LbAbout2" xml:space="preserve">
     <value>Це програмне забезпечення 
 стало можливим завдяки
-TutorialesVbNET, FFmpeg і Flaticon.</value>
+TutorialesVbNET, FFmpeg, NAudio і Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>Об'єднайте відео та лише один аудіофайл</value>

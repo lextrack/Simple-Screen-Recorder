@@ -207,6 +207,12 @@
   <data name="labelCodec" xml:space="preserve">
     <value>مشفر</value>
   </data>
+  <data name="labelCopyright" xml:space="preserve">
+    <value>Simple Screen Recorder هو مسجل شاشة
+ وصوت مفتوح المصدر لنظام Windows.
+
+المؤلف الأصلي: Lextrack.</value>
+  </data>
   <data name="labelFormat" xml:space="preserve">
     <value>تنسيق الملف</value>
   </data>
@@ -227,7 +233,7 @@
   </data>
   <data name="LbAbout2" xml:space="preserve">
     <value>هذا البرنامج ممكن بفضل 
-TutorialesVbNET FFmpeg و Flaticon.</value>
+TutorialesVbNET FFmpeg NAudio و Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>دمج ملف فيديو وملف صوتي واحد</value>

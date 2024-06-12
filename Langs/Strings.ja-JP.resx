@@ -207,6 +207,12 @@
   <data name="labelCodec" xml:space="preserve">
     <value>エンコーダー</value>
   </data>
+  <data name="labelCopyright" xml:space="preserve">
+    <value>Simple Screen Recorder は、Windows 
+用のオープンソースの画面と音声のレコーダーです。
+
+オリジナルの作者: Lextrack。</value>
+  </data>
   <data name="labelFormat" xml:space="preserve">
     <value>ファイルフォーマット</value>
   </data>
@@ -228,7 +234,7 @@
   </data>
   <data name="LbAbout2" xml:space="preserve">
     <value>このソフトウェアは、TutorialesVbNET、
-FFmpeg、およびFlaticon
+NAudio、FFmpeg、およびFlaticon
 のおかげで可能となりました。</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">

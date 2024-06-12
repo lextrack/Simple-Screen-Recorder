@@ -207,6 +207,12 @@
   <data name="labelCodec" xml:space="preserve">
     <value>Encoder</value>
   </data>
+  <data name="labelCopyright" xml:space="preserve">
+    <value>Simple Screen Recorder is an open-source 
+screen and audio recorder for Windows.
+
+Original author: Lextrack.</value>
+  </data>
   <data name="labelFormat" xml:space="preserve">
     <value>File format</value>
   </data>
@@ -227,7 +233,7 @@ are updates coming soon!</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
     <value>This software is made possible by
-TutorialesVbNET, FFmpeg and Flaticon.</value>
+TutorialesVbNET, FFmpeg, NAudio and Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>Merge video and a single audio file</value>

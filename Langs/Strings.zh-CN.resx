@@ -207,6 +207,12 @@
   <data name="labelCodec" xml:space="preserve">
     <value>编码器</value>
   </data>
+  <data name="labelCopyright" xml:space="preserve">
+    <value>Simple Screen Recorder 是一个用于 
+Windows 的开源屏幕和音频录制工具。
+
+原作者：Lextrack。</value>
+  </data>
   <data name="labelFormat" xml:space="preserve">
     <value>文件格式</value>
   </data>
@@ -226,7 +232,7 @@
   </data>
   <data name="LbAbout2" xml:space="preserve">
     <value>这个软件是由于
-教程VbNET FFmpeg 和 Flaticon。</value>
+教程VbNET FFmpeg NAudio 和 Flaticon。</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>混合视频和只有一个音频文件</value>

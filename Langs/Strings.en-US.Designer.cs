@@ -114,17 +114,6 @@ namespace Simple_Screen_Recorder.Langs
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Controls.
-        /// </summary>
-        internal static string Label2
-        {
-            get
-            {
-                return ResourceManager.GetString("Label2", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Looks up a localized string similar to Microphone.
         /// </summary>
         internal static string Label4
@@ -519,6 +508,14 @@ namespace Simple_Screen_Recorder.Langs
             get
             {
                 return ResourceManager.GetString("TwoTrack", resourceCulture);
+            }
+        }
+
+        internal static string labelCopyright
+        {
+            get
+            {
+                return ResourceManager.GetString("labelCopyright", resourceCulture);
             }
         }
 

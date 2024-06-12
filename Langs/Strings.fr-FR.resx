@@ -210,6 +210,12 @@ l'enregistrement</value>
   <data name="labelCodec" xml:space="preserve">
     <value>Encodeur</value>
   </data>
+  <data name="labelCopyright" xml:space="preserve">
+    <value>Simple Screen Recorder est un enregistreur
+d'écran et de son open source pour Windows.
+
+Auteur original : Lextrack.</value>
+  </data>
   <data name="labelFormat" xml:space="preserve">
     <value>Format de fichier</value>
   </data>
@@ -225,14 +231,13 @@ l'enregistrement</value>
   <data name="LbAbout1" xml:space="preserve">
     <value>Vous pouvez trouver ce projet sur GitHub,
 son nom est "Simple-Screen-Recorder", 
-et mon pseudo est "Lextrack".
-Gardez un œil sur ce projet,
-de nouvelles mises 
-à jour arrivent bientôt!</value>
+et mon pseudo est "Lextrack". Gardez un œil
+sur ce projet, de nouvelles mises à jour 
+arrivent bientôt!</value>
   </data>
   <data name="LbAbout2" xml:space="preserve">
-    <value>Ce logiciel est rendu possible
-grâce à TutorialesVbNET, FFmpeg et Flaticon.</value>
+    <value>Ce logiciel est rendu possible grâce à
+TutorialesVbNET, FFmpeg, NAudio et Flaticon.</value>
   </data>
   <data name="mergeVideoAndDesktopAudioToolStripMenuItem" xml:space="preserve">
     <value>Fusionner une vidéo et un fichier audio unique</value>
