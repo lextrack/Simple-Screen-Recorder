@@ -12,25 +12,25 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 <h2 align="center">How to use it?</h2>
 <p align="center">
 
-- In the main screen recording window, select the **audio input device** that you want to use to record the audio track from the "Microphone (Mic/Aux)" dropdown menu.<br>
+- In the main screen recording window, select the **audio input device** that you want to use to record the audio track from the **Microphone (Mic/Aux)** dropdown menu.<br>
 
-- Select the **audio output device** that you want to use to record the audio track from the "System sound (Desktop Audio)" dropdown menu.<br>
+- Select the **audio output device** that you want to use to record the audio track from the **System sound (Desktop Audio)** dropdown menu.<br>
 
-- Select the **codec** that you want to use from the "Encoder" dropdown menu. The available codecs are "MPEG-4", "H264 NVENC (Nvidia Graphics Cards)" and "H264 AMF (AMD Graphics Cards)".<br>
+- Select the **codec** that you want to use from the **Encoder** dropdown menu. The available codecs are "MPEG-4", "H264 NVENC (Nvidia Graphics Cards)" and "H264 AMF (AMD Graphics Cards)".<br>
 
-- Select the **file format** that you want to use from the "File Format" dropdown menu. The available formats are "MKV" and "AVI". I recommend using AVI.<br>
+- Select the **file format** that you want to use from the **File Format** dropdown menu. The available formats are "MKV", "AVI", "WMV". **I recommend to use MKV**.<br>
 
-- Select the **framerate** that you want to use from the "Video framerate" dropdown menu. You can record a video at 30 or 60 fps.<br>
+- Select the **framerate** that you want to use from the **Video framerate** dropdown menu. You can record a video at 30 or 60 fps.<br>
 
-- Select the **monitor** that you want to record from the "Monitor selector" dropdown menu.<br>
+- Select the **monitor** that you want to record from the **Monitor selector** dropdown menu.<br>
 
-- If you check the "Capture all monitors" option, the app is going to record a video with all the monitors connected to the PC.<br>
+- If you check the **Capture all monitors** option, the app is going to record a video with all the monitors connected to the PC.<br>
 
 - In the section **Audio recording method**, use the combobox to select the audio component you want to record, such as desktop audio or a connected microphone.<br>
 
-- Click the "Start Recording" button to begin the screen recording process. The screen recording will begin and the timer in the lower left corner of the window will start counting up.<br>
+- Click the **Start Recording** button to begin the screen recording process. The timer in the lower left corner of the window will	start counting up.<br>
 
-- To stop the screen recording, click the "Stop Recording" button. The recorded video file will be saved in the "Recordings" folder.<br>
+- To stop the screen recording, click the **Stop Recording** button. The recorded video file will be saved in the "Recordings" folder.<br>
 
 - When you enter the "Recordings" folder, you'll see the audio and video files separated. Having files like this is very useful if you want to edit the video and audio tracks with total freedom. However, you also can combine/merge your audio and video files using the "Media Merge" tool. All the merged files will be saved in the "Output Files" folder.<br>
 
@@ -47,7 +47,9 @@ To ensure that Simple-Screen-Recorder functions correctly without any issues rel
 
 **Do not rename the application's folder.** Renaming could lead to issues with accessing the necessary files for recording.
 
-Where can you install the app?
+To prevent **Windows UAC prompts from interrupting recording**, you should select the second-to-last option, which says "Notify me only when apps try to make changes to my computer (do not dim my desktop)". Or, if you want, completely disable it.
+
+Where can you **install the app**?
 
 - Your "Documents" folder.
 
