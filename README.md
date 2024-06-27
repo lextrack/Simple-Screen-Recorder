@@ -38,7 +38,7 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 Select the Audio Recording option in the main window and you can record audio from your PC. The recorded audio files are stored in the "Audio Recordings" folder.<br>
 </p>
 
-<h2 align="center">Important installation notice for Simple-Screen-Recorder</h2>
+<h2 align="center">Important installation and use notice for Simple-Screen-Recorder</h2>
 To ensure that Simple-Screen-Recorder functions correctly without any issues related to video recording, please adhere to the following guidelines when choosing a location:
 
 **Avoid using the application in the Program Files**  directory or any other system-protected areas that might require elevated permissions.
