@@ -3,7 +3,6 @@
 </p>
 <h1 align="center">Simple Screen Recorder</h1>
 
-
 <h2 align="center">Introduction</h2>
 <p align="left">
 Simple Screen Recorder is a tool that allows users to record their screen activity and audio. Here are instructions on how to use the Simple Screen Recorder to create screen recordings and audio recordings.
@@ -70,6 +69,11 @@ Where can you **install the app**?
   Windows 8, 10, 11 (64 bits) | v1.3.0 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.3.0/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
   Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.Net 8.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg 7.0 full_build-shared)</a> <br><br>
   <img src="./Capture.png">
+</p>
+
+<h2 align="center">Similar projects?</h2>
+<p align="left">
+I made another <a href="https://github.com/lextrack/MiniScreenRecorder">screen recorder in Python</a> for Windows and Linux. It's much simpler, and the resulting video recording is in MP4 format with audio included.
 </p>
 
 <h2 align="center">Acknowledgments</h2>
