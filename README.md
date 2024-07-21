@@ -73,7 +73,7 @@ Where can you **install the app**?
 
 <h2 align="center">Similar projects?</h2>
 <p align="left">
-I made another <a href="https://github.com/lextrack/MiniScreenRecorder">screen recorder in Python</a> for Windows and Linux. It's much simpler, and the resulting video recording is in MP4 format with audio included.
+I have made another <a href="https://github.com/lextrack/MiniScreenRecorder">screen recorder in Python</a> in Python for Windows and Linux. It is even simpler and lighter, and the resulting video recording is in MP4 or MKV format with included audio without the need for conversion. Additionally, it allows recording a specific area of the screen.
 </p>
 
 <h2 align="center">Acknowledgments</h2>
