@@ -54,26 +54,9 @@ Where can you **install the app**?
 
 - Or extract it in a simple root directory, such as "C:\Simple-Screen-Recorder".
 
-<h2 align="center">Features</h2>
-
-- Screen recording in avi or mkv file format with a wide range of encoders, frames per second and bitrate<br>
-- Possibility to record your microphone or desktop audio (or both at the same time)<br>
-- Merge media files (mkv output format)<br>
-- Keyboard shortcuts (video recording): F9 to start and stop recordings, F10 to open recordings folders and ESC to close the app<br>
-- Audio recording separately<br>
-- Record any monitor connected to your PC<br>
-- Availability in ten languages (English, Español, Français, Deutsch, Українська, 日本語, Português do Brasil, 中文(简体), العربية and Italiano)
-
-<h2 align="center">Install</h2>
-<p align="center">
-  Windows 8, 10, 11 (64 bits) | v1.3.0 | <a href="https://github.com/lextrack/Simple-Screen-Recorder/releases/download/1.3.0/Simple-Screen-Recorder-Release-Portable.7z">Download directly from GitHub</a><br><br>
-  Uses <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.Net 8.0</a> and <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg (ffmpeg 7.0 full_build-shared)</a> <br><br>
-  <img src="./Capture.png">
-</p>
-
-<h2 align="center">Similar projects?</h2>
+<h2 align="center">Similar project</h2>
 <p align="left">
-I have made another <a href="https://github.com/lextrack/MiniScreenRecorder">screen recorder in Python</a> in Python for Windows and Linux. It is even simpler and lighter, and the resulting video recording is in MP4 or MKV format with included audio without the need for conversion. Additionally, it allows recording a specific area of the screen.
+I have made another <a href="https://github.com/lextrack/MiniScreenRecorder">screen recorder</a> for Windows and Linux. It is even simpler and lighter, and the resulting video recording is in MP4 or MKV format with included audio without the need for conversion. Additionally, it allows recording a specific area of the screen.
 </p>
 
 <h2 align="center">Acknowledgments</h2>
