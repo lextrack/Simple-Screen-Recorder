@@ -71,7 +71,7 @@ namespace Simple_Screen_Recorder
             comboBoxBitrate.SelectedIndex = 0;
 
 
-            ComboBoxFormat.Items.AddRange(new[] { ".mkv", ".avi", ".wmv" });
+            ComboBoxFormat.Items.AddRange(new[] { ".mkv", ".avi" });
             ComboBoxFormat.SelectedIndex = 0;
         }
 
@@ -94,14 +94,7 @@ namespace Simple_Screen_Recorder
 
         private void CheckBoxAllMonitors_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckBoxAllMonitors.Checked)
-            {
-                comboBoxMonitors.Enabled = false;
-            }
-            else
-            {
-                comboBoxMonitors.Enabled = true;
-            }
+            comboBoxMonitors.Enabled = !CheckBoxAllMonitors.Checked;
         }
 
         private void btnStartRecording_Click(object sender, EventArgs e)
@@ -112,24 +105,38 @@ namespace Simple_Screen_Recorder
             TimeRec = DateTime.Now;
             CountRecVideo.Enabled = true;
 
-            RecordAudio();
-            VideoCodecs();
-            DisableElementsUI();
+            DateTime startTimestamp = DateTime.Now.AddMilliseconds(100);
+
+            Task audioTask = RecordAudio(startTimestamp);
+            Task videoTask = Task.Run(() => VideoCodecs(startTimestamp));
+
+            Task.WhenAll(audioTask, videoTask).ContinueWith(_ =>
+            {
+                DisableElementsUI();
+            }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
-        private void StartRecordingProcess(string codec, int fps, string bitrate, string screenArgs)
+        private async Task StartRecordingProcess(string codec, int fps, string bitrate, string screenArgs, DateTime startTimestamp)
         {
+            TimeSpan delay = startTimestamp - DateTime.Now;
+
+            if (delay > TimeSpan.Zero)
+            {
+                await Task.Delay(delay);
+            }
+
             try
             {
-                string ffmpegArgs = $"{ResourcePath} -f gdigrab -framerate {fps} {screenArgs} -c:v {codec} -b:v {bitrate} Recordings/{VideoName}";
+                string ffmpegArgs = $"{ResourcePath} -f gdigrab -framerate {fps} {screenArgs} -c:v {codec} -b:v {bitrate} -pix_fmt yuv420p -vsync 1 -loglevel info -hide_banner Recordings/{VideoName}";
 
                 ProcessStartInfo processInfo = new("cmd.exe", $"/c {ffmpegArgs}")
                 {
                     WindowStyle = ProcessWindowStyle.Hidden,
                     CreateNoWindow = true,
                     RedirectStandardOutput = true,
-                    Verb = "runas" // do a flip
+                    Verb = "runas"
                 };
+
                 Process.Start(processInfo);
             }
             catch (Exception ex)
@@ -138,7 +145,7 @@ namespace Simple_Screen_Recorder
             }
         }
 
-        private void VideoCodecs()
+        private void VideoCodecs(DateTime startTimestamp)
         {
             int fps = int.Parse((string)comboBoxFps.SelectedItem);
             string bitrate = (string)comboBoxBitrate.SelectedItem;
@@ -159,27 +166,35 @@ namespace Simple_Screen_Recorder
             switch (comboBoxCodec.SelectedItem.ToString())
             {
                 case "H264 (Default)":
-                    codec = "h264_mf -qp 0";
+                    codec = "h264_mf";
                     break;
                 case "MPEG-4":
                     codec = "mpeg4 -preset medium";
                     break;
                 case "H264 NVENC (Nvidia)":
-                    codec = "h264_nvenc -qp 0";
+                    codec = "h264_nvenc";
                     break;
                 case "H264 AMF (AMD)":
-                    codec = "h264_amf -qp 0";
+                    codec = "h264_amf";
                     break;
                 default:
-                    codec = "h264_mf -qp 0";
+                    codec = "h264_mf";
                     break;
             }
 
-            StartRecordingProcess(codec, fps, bitrate, codecArgs);
+            Task.Run(() => StartRecordingProcess(codec, fps, bitrate, codecArgs, startTimestamp)).Wait();
         }
 
-        private void RecordAudio()
+
+        private async Task RecordAudio(DateTime startTimestamp)
         {
+            TimeSpan delay = startTimestamp - DateTime.Now;
+
+            if (delay > TimeSpan.Zero)
+            {
+                await Task.Delay(delay);
+            }
+
             string selectedOption = comboBoxAudioSource.SelectedItem.ToString();
 
             if (selectedOption == StringsEN.TwoTrack)
@@ -194,6 +209,52 @@ namespace Simple_Screen_Recorder
             {
                 RecordMicrophone();
             }
+        }
+
+
+        private void CheckFfmpegProcces()
+        {
+            var ffmpegProcesses = Process.GetProcessesByName("ffmpeg");
+
+            foreach (var process in ffmpegProcesses)
+            {
+                try
+                {
+                    if (process.MainModule.FileName.Contains(ResourcePath))
+                    {
+                        process.Kill();
+                        process.WaitForExit();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Failed to stop ffmpeg process: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void StopRecordingProcess()
+        {
+            EnableElementsUI();
+            CheckAudioStop();
+            CheckFfmpegProcces();
+        }
+
+        private void BtnStop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LbTimer.ForeColor = Color.White;
+                LbTimer.Text = "00:00:00";
+                CountRecVideo.Enabled = false;
+                StopRecordingProcess();
+
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
         }
 
         private void RecordTwoTracks()
@@ -258,51 +319,6 @@ namespace Simple_Screen_Recorder
             soundPlayer.Stop();
         }
 
-        private void CheckFfmpegProcces()
-        {
-            var ffmpegProcesses = Process.GetProcessesByName("ffmpeg");
-
-            foreach (var process in ffmpegProcesses)
-            {
-                try
-                {
-                    if (process.MainModule.FileName.Contains(ResourcePath))
-                    {
-                        process.Kill();
-                        process.WaitForExit();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Failed to stop ffmpeg process: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void StopRecordingProcess()
-        {
-            EnableElementsUI();
-            CheckAudioStop();
-            CheckFfmpegProcces();
-        }
-
-        private void BtnStop_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                LbTimer.ForeColor = Color.White;
-                LbTimer.Text = "00:00:00";
-                CountRecVideo.Enabled = false;
-                StopRecordingProcess();
-
-            }
-            catch (Exception)
-            {
-                return;
-            }
-
-        }
-
         private static void RecMic()
         {
             ScreenAudioMic.Cleanup();
@@ -326,6 +342,23 @@ namespace Simple_Screen_Recorder
         }
 
         #region Some shit about UI
+        private void EnableElementsUI()
+        {
+            btnStartRecording.Enabled = true;
+            comboBoxCodec.Enabled = true;
+            ComboBoxMicrophone.Enabled = true;
+            ComboBoxSpeaker.Enabled = true;
+            comboBoxFps.Enabled = true;
+            CheckBoxAllMonitors.Enabled = true;
+            ComboBoxFormat.Enabled = true;
+            RefreshMonitors.Enabled = true;
+            menuStrip1.Enabled = true;
+            comboBoxBitrate.Enabled = true;
+            comboBoxAudioSource.Enabled = true;
+
+            comboBoxMonitors.Enabled = !CheckBoxAllMonitors.Checked;
+        }
+
         private void DisableElementsUI()
         {
             comboBoxMonitors.Enabled = false;
@@ -340,22 +373,6 @@ namespace Simple_Screen_Recorder
             menuStrip1.Enabled = false;
             comboBoxBitrate.Enabled = false;
             comboBoxAudioSource.Enabled = false;
-        }
-
-        private void EnableElementsUI()
-        {
-            btnStartRecording.Enabled = true;
-            comboBoxCodec.Enabled = true;
-            ComboBoxMicrophone.Enabled = true;
-            ComboBoxSpeaker.Enabled = true;
-            comboBoxMonitors.Enabled = true;
-            comboBoxFps.Enabled = true;
-            CheckBoxAllMonitors.Enabled = true;
-            ComboBoxFormat.Enabled = true;
-            RefreshMonitors.Enabled = true;
-            menuStrip1.Enabled = true;
-            comboBoxBitrate.Enabled = true;
-            comboBoxAudioSource.Enabled = true;
         }
         #endregion
 
