@@ -224,7 +224,7 @@
     <value>Частота кадрів</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Вибір монітора</value>
+    <value>Монітор або селектор області</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Мова</value>

@@ -12,8 +12,6 @@ namespace Simple_Screen_Recorder.UI
     {
         private DateTime TimeRec = new DateTime();
         private string AudioName = "";
-        public int ProcessId { get; private set; }
-
 
         public AudioRecorderMainWindow()
         {
@@ -135,7 +133,6 @@ namespace Simple_Screen_Recorder.UI
 
             CheckAudioStop();
         }
-
 
         private void BtnStop_Click(object sender, EventArgs e)
         {

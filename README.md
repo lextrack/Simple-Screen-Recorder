@@ -13,9 +13,8 @@ Simple Screen Recorder is a tool that allows users to record their screen activi
 
 - Select audio input/output devices from dropdown menus.<br>
 - Choose codec, file format (MKV recommended), and framerate.<br>
-- Select monitor to record or capture all.<br>
+- Select a monitor to record, a specific area, or capture all your monitors at the same time.<br>
 - Choose audio recording method.<br>
-- Files saved in "Recordings" folder.<br>
 - Use "Media Merge" to combine audio and video.<br>
 - Option to record audio only in "Audio Recordings".<br>
 

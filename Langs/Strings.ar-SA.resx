@@ -220,7 +220,7 @@
     <value>معدل الإطار فيديو</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>محدد الشاشة</value>
+    <value>شاشة أو محدد منطقة</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>اللغات</value>

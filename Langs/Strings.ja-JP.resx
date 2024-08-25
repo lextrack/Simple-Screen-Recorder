@@ -220,7 +220,7 @@
     <value>ビデオフレームレート</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>モニターセレクター</value>
+    <value>モニターまたはエリアセレクター</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>言語</value>

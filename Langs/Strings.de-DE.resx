@@ -223,7 +223,7 @@ Originalautor: Lextrack.</value>
     <value>Bilder pro Sekunde</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Monitorauswahl</value>
+    <value>Monitor oder Bereichswähler</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Sprachen</value>

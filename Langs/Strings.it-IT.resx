@@ -220,7 +220,7 @@ Autore originale: Lextrack.</value>
     <value>Frequenza fotogrammi video</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Selettore monitor</value>
+    <value>Monitor o selettore di area</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Lingua UI</value>

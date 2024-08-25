@@ -223,7 +223,7 @@ Auteur original : Lextrack.</value>
     <value>Fréquence d'images</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Sélecteur de moniteur</value>
+    <value>Moniteur ou sélecteur de zone</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Langues</value>

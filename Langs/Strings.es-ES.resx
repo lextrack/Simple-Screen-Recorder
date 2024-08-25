@@ -220,7 +220,7 @@ Autor original: Lextrack.</value>
     <value>Fotogramas por segundo</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Selector de monitor</value>
+    <value>Monitor o selector de área</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Idiomas</value>

@@ -309,9 +309,9 @@ namespace Simple_Screen_Recorder
             labelMonitorSelector.Location = new Point(8, 25);
             labelMonitorSelector.Margin = new Padding(4, 0, 4, 0);
             labelMonitorSelector.Name = "labelMonitorSelector";
-            labelMonitorSelector.Size = new Size(110, 17);
+            labelMonitorSelector.Size = new Size(157, 17);
             labelMonitorSelector.TabIndex = 54;
-            labelMonitorSelector.Text = "Monitor selector";
+            labelMonitorSelector.Text = "Monitor or area selector";
             // 
             // comboBoxMonitors
             // 
