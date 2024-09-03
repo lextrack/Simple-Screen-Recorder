@@ -220,7 +220,7 @@ Autor original: Lextrack.</value>
     <value>Fotogramas por segundo</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Monitor o selector de área</value>
+    <value>Selector de monitor</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Idiomas</value>
@@ -276,5 +276,8 @@ TutorialesVbNET, FFmpeg, NAudio y Flaticon.</value>
   </data>
   <data name="TwoTrackAudio" xml:space="preserve">
     <value>Audio del sistema y micrófono</value>
+  </data>
+  <data name="ButtonCustomArea" xml:space="preserve">
+    <value>Grabar un área personalizada</value>
   </data>
 </root>

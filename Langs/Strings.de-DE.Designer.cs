@@ -450,12 +450,6 @@ namespace Simple_Screen_Recorder.Langs
                 return ResourceManager.GetString("labelMonitorSelector", resourceCulture);
             }
         }
-        internal static string radioButtonCustomArea
-        {
-            get
-            {
-                return ResourceManager.GetString("radioButtonCustomArea", resourceCulture);
-            }
-        }
+
     }
 }

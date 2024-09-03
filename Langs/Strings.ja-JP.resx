@@ -220,7 +220,7 @@
     <value>ビデオフレームレート</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>モニターまたはエリアセレクター</value>
+    <value>モニターセレクター</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>言語</value>
@@ -278,5 +278,8 @@ NAudio、FFmpeg、およびFlaticon
   </data>
   <data name="TwoTrackAudio" xml:space="preserve">
     <value>システムサウンドとマイクロフォンオーディオ</value>
+  </data>
+  <data name="ButtonCustomArea" xml:space="preserve">
+    <value>カスタムエリアを記録する</value>
   </data>
 </root>

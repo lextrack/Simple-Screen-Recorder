@@ -223,7 +223,7 @@ Auteur original : Lextrack.</value>
     <value>Fréquence d'images</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Moniteur ou sélecteur de zone</value>
+    <value>Sélecteur de moniteur</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Langues</value>
@@ -280,5 +280,8 @@ TutorialesVbNET, FFmpeg, NAudio et Flaticon.</value>
   </data>
   <data name="TwoTrackAudio" xml:space="preserve">
     <value>Son système et audio du microphone</value>
+  </data>
+  <data name="ButtonCustomArea" xml:space="preserve">
+    <value>Enregistrer une zone personnalisée</value>
   </data>
 </root>

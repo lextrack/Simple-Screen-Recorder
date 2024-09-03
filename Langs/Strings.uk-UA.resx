@@ -175,7 +175,7 @@
     <value>Виберіть відеофайл</value>
   </data>
   <data name="CheckBoxAllMonitors" xml:space="preserve">
-    <value>Захоплення всіх моніторів одночасно</value>
+    <value>Захоплення всіх моніторів</value>
   </data>
   <data name="crownGroupBox1" xml:space="preserve">
     <value>Налаштування відео</value>
@@ -224,7 +224,7 @@
     <value>Частота кадрів</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Монітор або селектор області</value>
+    <value>Вибір монітора</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Мова</value>
@@ -282,5 +282,8 @@ TutorialesVbNET, FFmpeg, NAudio і Flaticon.</value>
   </data>
   <data name="TwoTrackAudio" xml:space="preserve">
     <value>Системний звук і звук мікрофона</value>
+  </data>
+  <data name="ButtonCustomArea" xml:space="preserve">
+    <value>Запис користувацької області</value>
   </data>
 </root>

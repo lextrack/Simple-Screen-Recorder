@@ -52,6 +52,7 @@ namespace Simple_Screen_Recorder
             labelCodec = new Label();
             comboBoxCodec = new ReaLTaiizor.Controls.CrownComboBox();
             crownGroupBox1 = new ReaLTaiizor.Controls.CrownGroupBox();
+            ButtonCustomArea = new ReaLTaiizor.Controls.CrownButton();
             comboBoxBitrate = new ReaLTaiizor.Controls.CrownComboBox();
             RefreshMonitors = new ReaLTaiizor.Controls.CrownButton();
             labelMonitorSelector = new Label();
@@ -260,6 +261,7 @@ namespace Simple_Screen_Recorder
             // crownGroupBox1
             // 
             crownGroupBox1.BorderColor = Color.Gray;
+            crownGroupBox1.Controls.Add(ButtonCustomArea);
             crownGroupBox1.Controls.Add(comboBoxBitrate);
             crownGroupBox1.Controls.Add(RefreshMonitors);
             crownGroupBox1.Controls.Add(labelMonitorSelector);
@@ -279,6 +281,16 @@ namespace Simple_Screen_Recorder
             crownGroupBox1.TabStop = false;
             crownGroupBox1.Text = "Video settings";
             // 
+            // ButtonCustomArea
+            // 
+            ButtonCustomArea.Font = new Font("Segoe UI", 8.25F);
+            ButtonCustomArea.Location = new Point(230, 127);
+            ButtonCustomArea.Name = "ButtonCustomArea";
+            ButtonCustomArea.Padding = new Padding(5);
+            ButtonCustomArea.Size = new Size(203, 23);
+            ButtonCustomArea.TabIndex = 7;
+            ButtonCustomArea.Click += ButtonCustomArea_Click;
+            // 
             // comboBoxBitrate
             // 
             comboBoxBitrate.DrawMode = DrawMode.OwnerDrawVariable;
@@ -287,7 +299,7 @@ namespace Simple_Screen_Recorder
             comboBoxBitrate.Location = new Point(372, 99);
             comboBoxBitrate.Name = "comboBoxBitrate";
             comboBoxBitrate.Size = new Size(61, 23);
-            comboBoxBitrate.TabIndex = 7;
+            comboBoxBitrate.TabIndex = 11;
             // 
             // RefreshMonitors
             // 
@@ -710,5 +722,6 @@ namespace Simple_Screen_Recorder
         private ToolStripMenuItem العربيةToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private MenuStrip menuStrip1;
+        private ReaLTaiizor.Controls.CrownButton ButtonCustomArea;
     }
 }

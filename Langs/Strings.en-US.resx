@@ -220,7 +220,7 @@ Original author: Lextrack.</value>
     <value>Video framerate</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>Monitor or area selector</value>
+    <value>Monitor selector</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>Languages</value>
@@ -277,7 +277,7 @@ TutorialesVbNET, FFmpeg, NAudio and Flaticon.</value>
   <data name="TwoTrackAudio" xml:space="preserve">
     <value>System sound and microphone audio</value>
   </data>
-  <data name="radioButtonCustomArea" xml:space="preserve">
-    <value>pruebaaaa</value>
+  <data name="ButtonCustomArea" xml:space="preserve">
+    <value>Record a custom area</value>
   </data>
 </root>

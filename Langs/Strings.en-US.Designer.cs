@@ -547,5 +547,13 @@ namespace Simple_Screen_Recorder.Langs
             }
         }
 
+        internal static string ButtonCustomArea
+        {
+            get
+            {
+                return ResourceManager.GetString("ButtonCustomArea", resourceCulture);
+            }
+        }
+
     }
 }

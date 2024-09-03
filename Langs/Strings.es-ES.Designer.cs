@@ -372,5 +372,12 @@ namespace Simple_Screen_Recorder.Langs
                 return ResourceManager.GetString("labelCodec", resourceCulture);
             }
         }
+        internal static string ButtonCustomArea
+        {
+            get
+            {
+                return ResourceManager.GetString("ButtonCustomArea", resourceCulture);
+            }
+        }
     }
 }

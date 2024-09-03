@@ -18,8 +18,8 @@ namespace Simple_Screen_Recorder
         private DateTime TimeRec = DateTime.MinValue;
         private string VideoName = "";
         public static string ResourcePath = Path.Combine(Directory.GetCurrentDirectory(), @"FFmpegResources\ffmpeg");
-        private RadioButton radioButtonCustomArea;
-        public int ProcessId { get; private set; }
+        private Rectangle? SelectedCustomArea = null;
+        private bool IsCustomAreaSelected = false;
 
         public RecorderScreenMainWindow()
         {
@@ -35,20 +35,6 @@ namespace Simple_Screen_Recorder
             CreateOutputFolder();
             SetKeyPreview();
             LoadUserSettingsCombobox();
-            RadioButtonArea();
-        }
-
-        private void RadioButtonArea()
-        {
-            radioButtonCustomArea = new RadioButton();
-            radioButtonCustomArea.Text = "Record a custom area";
-            radioButtonCustomArea.CheckedChanged += RadioButtonCustomArea_CheckedChanged;
-        }
-
-        private void RadioButtonCustomArea_CheckedChanged(object sender, EventArgs e)
-        {
-            comboBoxMonitors.Enabled = !radioButtonCustomArea.Checked;
-            CheckBoxAllMonitors.Enabled = !radioButtonCustomArea.Checked;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -93,17 +79,16 @@ namespace Simple_Screen_Recorder
 
         private void CheckMonitors()
         {
-            var monitorOptions = Screen.AllScreens.Select((screen, index) =>
+            var monitorNames = Screen.AllScreens.Select((screen, index) =>
             {
                 var prefix = screen.Primary ? "Main monitor" : $"Monitor {index + 1}";
                 return $"{prefix} ({screen.Bounds.Width}x{screen.Bounds.Height})";
-            }).ToList();
+            }).ToArray();
 
-            monitorOptions.Add("Record a custom area");
-
-            comboBoxMonitors.DataSource = monitorOptions;
+            comboBoxMonitors.DataSource = monitorNames;
             comboBoxMonitors.SelectedIndex = 0;
         }
+
         private void RefreshMonitors_Click(object sender, EventArgs e)
         {
             CheckMonitors();
@@ -112,7 +97,44 @@ namespace Simple_Screen_Recorder
         private void CheckBoxAllMonitors_CheckedChanged(object sender, EventArgs e)
         {
             comboBoxMonitors.Enabled = !CheckBoxAllMonitors.Checked;
+            ButtonCustomArea.Enabled = !CheckBoxAllMonitors.Checked;
             if (CheckBoxAllMonitors.Checked)
+            {
+                comboBoxMonitors.SelectedIndex = 0;
+                ResetCustomAreaSelection();
+            }
+
+        }
+
+        private void ButtonCustomArea_Click(object sender, EventArgs e)
+        {
+            using (var areaSelector = new AreaSelector())
+            {
+                if (areaSelector.ShowDialog() == DialogResult.OK)
+                {
+                    SelectedCustomArea = areaSelector.SelectedArea;
+                    IsCustomAreaSelected = true;
+
+                    comboBoxMonitors.Enabled = false;
+                    CheckBoxAllMonitors.Checked = false;
+                    CheckBoxAllMonitors.Enabled = false;
+                    comboBoxMonitors.Text = $"Custom Area ({SelectedCustomArea.Value.Width}x{SelectedCustomArea.Value.Height})";
+                }
+                else
+                {
+                    ResetCustomAreaSelection();
+                }
+            }
+        }
+
+        private void ResetCustomAreaSelection()
+        {
+            SelectedCustomArea = null;
+            IsCustomAreaSelected = false;
+            comboBoxMonitors.Enabled = !CheckBoxAllMonitors.Checked;
+            CheckBoxAllMonitors.Enabled = true;
+            ButtonCustomArea.Enabled = !CheckBoxAllMonitors.Checked;
+            if (!CheckBoxAllMonitors.Checked)
             {
                 comboBoxMonitors.SelectedIndex = 0;
             }
@@ -128,20 +150,10 @@ namespace Simple_Screen_Recorder
             {
                 codecArgs = "-i desktop";
             }
-            else if (comboBoxMonitors.SelectedItem.ToString() == "Record a custom area")
+            else if (IsCustomAreaSelected && SelectedCustomArea.HasValue)
             {
-                using (var areaSelector = new AreaSelector())
-                {
-                    if (areaSelector.ShowDialog() == DialogResult.OK)
-                    {
-                        Rectangle selectedArea = areaSelector.SelectedArea;
-                        codecArgs = $"-video_size {selectedArea.Width}x{selectedArea.Height} -offset_x {selectedArea.Left} -offset_y {selectedArea.Top} -i desktop";
-                    }
-                    else
-                    {
-                        return;
-                    }
-                }
+                Rectangle area = SelectedCustomArea.Value;
+                codecArgs = $"-video_size {area.Width}x{area.Height} -offset_x {area.Left} -offset_y {area.Top} -i desktop";
             }
             else
             {
@@ -250,7 +262,7 @@ namespace Simple_Screen_Recorder
                         {
                             process.CloseMainWindow();
 
-                            if (!process.WaitForExit(2000))
+                            if (!process.WaitForExit(3000))
                             {
                                 process.Kill();
                                 process.WaitForExit();
@@ -290,6 +302,7 @@ namespace Simple_Screen_Recorder
                 LbTimer.Text = "00:00:00";
                 CountRecVideo.Enabled = false;
                 StopRecordingProcess();
+                ResetCustomAreaSelection();
 
             }
             catch (Exception)
@@ -395,7 +408,7 @@ namespace Simple_Screen_Recorder
             }
         }
 
-        #region Some shit about UI
+        #region Enable/disableUI
         private void EnableElementsUI()
         {
             btnStartRecording.Enabled = true;
@@ -409,7 +422,7 @@ namespace Simple_Screen_Recorder
             menuStrip1.Enabled = true;
             comboBoxBitrate.Enabled = true;
             comboBoxAudioSource.Enabled = true;
-
+            ButtonCustomArea.Enabled = !CheckBoxAllMonitors.Checked;
             comboBoxMonitors.Enabled = !CheckBoxAllMonitors.Checked;
         }
 
@@ -427,6 +440,7 @@ namespace Simple_Screen_Recorder
             menuStrip1.Enabled = false;
             comboBoxBitrate.Enabled = false;
             comboBoxAudioSource.Enabled = false;
+            ButtonCustomArea.Enabled = false;
         }
         #endregion
 
@@ -461,6 +475,7 @@ namespace Simple_Screen_Recorder
             labelFormat.Text = StringsEN.labelFormat;
             labelMonitorSelector.Text = StringsEN.labelMonitorSelector;
             btnMergedFiles.Text = StringsEN.btnMergedFiles;
+            ButtonCustomArea.Text = StringsEN.ButtonCustomArea;
 
             int selectedIndex = comboBoxAudioSource.SelectedIndex;
             comboBoxAudioSource.Items.Clear();

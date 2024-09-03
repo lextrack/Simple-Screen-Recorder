@@ -220,7 +220,7 @@
     <value>معدل الإطار فيديو</value>
   </data>
   <data name="labelMonitorSelector" xml:space="preserve">
-    <value>شاشة أو محدد منطقة</value>
+    <value>محدد الشاشة</value>
   </data>
   <data name="languagesToolStripMenuItem" xml:space="preserve">
     <value>اللغات</value>
@@ -276,5 +276,8 @@ TutorialesVbNET FFmpeg NAudio و Flaticon.</value>
   </data>
   <data name="TwoTrackAudio" xml:space="preserve">
     <value>الصوت النظام والميكروفون</value>
+  </data>
+  <data name="ButtonCustomArea" xml:space="preserve">
+    <value>تسجيل منطقة مخصصة</value>
   </data>
 </root>

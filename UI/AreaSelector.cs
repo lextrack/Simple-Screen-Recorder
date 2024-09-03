@@ -20,7 +20,7 @@
 
             Label guideLabel = new Label
             {
-                Text = "Click and drag to select an area. Release the click to finish.",
+                Text = "Click and drag to select an area. Release the button to finish and then press the start recording button.",
                 ForeColor = Color.White,
                 BackColor = Color.Black,
                 AutoSize = false,
@@ -67,7 +67,7 @@
 
                 if (width < 10 || height < 10)
                 {
-                    MessageBox.Show("This selection is invalid, please try again.", "Confirm Selection");
+                    MessageBox.Show("This selection is invalid, please try again.", "Error");
                     startPoint = Point.Empty;
                     endPoint = Point.Empty;
                     this.Invalidate();
