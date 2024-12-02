@@ -1,13 +1,15 @@
-﻿using Microsoft.VisualBasic;
-using NAudio.Wave;
+﻿using Microsoft.Win32;
+using NAudio.CoreAudioApi;
+using Serilog;
 using Simple_Screen_Recorder.AudioComp;
 using Simple_Screen_Recorder.Langs;
 using Simple_Screen_Recorder.Properties;
 using Simple_Screen_Recorder.ScreenRecorderWin;
 using Simple_Screen_Recorder.UI;
-using System.ComponentModel;
+using Simple_Screen_Recorder.Utils;
 using System.Diagnostics;
 using System.IO;
+using System.Text.Json;
 using Application = System.Windows.Forms.Application;
 
 namespace Simple_Screen_Recorder
@@ -20,6 +22,12 @@ namespace Simple_Screen_Recorder
         public static string ResourcePath = Path.Combine(Directory.GetCurrentDirectory(), @"FFmpegResources\ffmpeg");
         private Rectangle? SelectedCustomArea = null;
         private bool IsCustomAreaSelected = false;
+        private AudioManager? microphoneManager;
+        private AudioManager? systemAudioManager;
+        private readonly ILogger _logger = LoggerConfig.Logger;
+        private const string RECORDING_STATE_FILE = "recording_state.json";
+        private bool isRecording = false;
+        private Process? ffmpegProcess;
 
         public RecorderScreenMainWindow()
         {
@@ -28,13 +36,31 @@ namespace Simple_Screen_Recorder
 
         private void InitializeForm()
         {
-            GetTextsMain();
-            CheckMonitors();
-            InitializeAudioComponents();
-            InitializeComboBoxes();
-            CreateOutputFolder();
-            SetKeyPreview();
-            LoadUserSettingsCombobox();
+            var startTime = DateTime.Now;
+            try
+            {
+                _logger.LogOperationStart("InitializeForm");
+
+                CheckForInterruptedRecording();
+
+                GetTextsMain();
+                CheckMonitors();
+                InitializeAudioComponents();
+                InitializeComboBoxes();
+                CreateOutputFolder();
+                SetKeyPreview();
+                LoadUserSettingsCombobox();
+
+                SystemEvents.PowerModeChanged += SystemEvents_PowerModeChanged;
+                Application.ApplicationExit += Application_ApplicationExit;
+
+                _logger.LogOperationEnd("InitializeForm", DateTime.Now - startTime);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error initializing form");
+                throw;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,21 +70,47 @@ namespace Simple_Screen_Recorder
 
         private void CreateOutputFolder()
         {
-            string outputFolderPath = Path.Combine(Application.StartupPath, "OutputFiles");
-
-            if (!Directory.Exists(outputFolderPath))
+            try
             {
-                Directory.CreateDirectory(outputFolderPath);
+                string outputFolderPath = Path.Combine(Application.StartupPath, "OutputFiles");
+                string recordingsFolderPath = Path.Combine(Application.StartupPath, "Recordings");
+
+                if (!Directory.Exists(outputFolderPath))
+                {
+                    Directory.CreateDirectory(outputFolderPath);
+                    _logger.Information("Created OutputFiles directory: {Path}", outputFolderPath);
+                }
+
+                if (!Directory.Exists(recordingsFolderPath))
+                {
+                    Directory.CreateDirectory(recordingsFolderPath);
+                    _logger.Information("Created Recordings directory: {Path}", recordingsFolderPath);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error creating output directories");
+                MessageBox.Show("Error creating necessary folders. Please make sure the application has write permissions.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void InitializeAudioComponents()
         {
-            ScreenAudioMic.OpenComp();
-            ComboBoxMicrophone.DataSource = ScreenAudioMic.cboDIspositivos.DataSource;
+            try
+            {
+                var inputDevices = AudioManager.GetAudioDevices(DataFlow.Capture);
+                ComboBoxMicrophone.DataSource = inputDevices;
+                ComboBoxMicrophone.DisplayMember = "FriendlyName";
 
-            ScreenAudioDesktop.OpenComp();
-            ComboBoxSpeaker.DataSource = ScreenAudioDesktop.cboDIspositivos.DataSource;
+                var outputDevices = AudioManager.GetAudioDevices(DataFlow.Render);
+                ComboBoxSpeaker.DataSource = outputDevices;
+                ComboBoxSpeaker.DisplayMember = "FriendlyName";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error initializing audio devices: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void InitializeComboBoxes()
@@ -69,11 +121,11 @@ namespace Simple_Screen_Recorder
             comboBoxFps.Items.AddRange(new[] { "30", "60" });
             comboBoxFps.SelectedIndex = 0;
 
-            comboBoxBitrate.Items.AddRange(new[] { "2000k", "4000k", "6000k", "8000k", "10000k", "15000k", "20000k", "30000k" });
-            comboBoxBitrate.SelectedIndex = 0;
+            comboBoxBitrate.Items.AddRange(new[] { "2000k", "4000k", "6000k", "8000k", "10000k", "15000k", "20000k" });
+            comboBoxBitrate.SelectedIndex = 1;
 
 
-            ComboBoxFormat.Items.AddRange(new[] { ".mkv", ".avi" });
+            ComboBoxFormat.Items.AddRange(new[] { ".mkv" });
             ComboBoxFormat.SelectedIndex = 0;
         }
 
@@ -142,48 +194,333 @@ namespace Simple_Screen_Recorder
 
         private async void btnStartRecording_Click(object sender, EventArgs e)
         {
-            var format = ComboBoxFormat.SelectedItem.ToString();
-            VideoName = $"Video.{DateTime.Now.ToString(DateFormat)}.{format.TrimStart('.')}";
-
-            string codecArgs;
-            if (CheckBoxAllMonitors.Checked)
+            try
             {
-                codecArgs = "-i desktop";
+                var startTime = DateTime.Now;
+                _logger.LogOperationStart("StartRecording");
+
+                var format = ComboBoxFormat.SelectedItem.ToString();
+                VideoName = $"Video.{DateTime.Now.ToString(DateFormat)}.{format.TrimStart('.')}";
+                _logger.Information("Video file name: {VideoName}", VideoName);
+
+                isRecording = true;
+                SaveRecordingState();
+
+                string codecArgs;
+                if (CheckBoxAllMonitors.Checked)
+                {
+                    _logger.Information("Recording mode: All monitors");
+                    codecArgs = "-i desktop";
+                }
+                else if (IsCustomAreaSelected && SelectedCustomArea.HasValue)
+                {
+                    Rectangle area = SelectedCustomArea.Value;
+                    _logger.Information("Recording mode: Custom area {Width}x{Height} in position ({X},{Y})",
+                        area.Width, area.Height, area.X, area.Y);
+                    codecArgs = $"-video_size {area.Width}x{area.Height} -offset_x {area.Left} -offset_y {area.Top} -i desktop";
+                }
+                else
+                {
+                    int selectedIndex = comboBoxMonitors.SelectedIndex;
+                    Screen selectedScreen = Screen.AllScreens[selectedIndex];
+                    Rectangle bounds = selectedScreen.Bounds;
+                    _logger.Information("Recording mode: Monitor {Index}({Width}x{Height})",
+                        selectedIndex, bounds.Width, bounds.Height);
+                    codecArgs = $"-offset_x {bounds.Left} -offset_y {bounds.Top} -video_size {bounds.Width}x{bounds.Height} -i desktop";
+                }
+
+                string codec = DetermineCodec();
+                _logger.LogRecordingSettings(
+                    codec,
+                    int.Parse((string)comboBoxFps.SelectedItem),
+                    (string)comboBoxBitrate.SelectedItem,
+                    format
+                );
+
+                DateTime startTimestamp = DateTime.Now.AddMilliseconds(500);
+                _logger.Information("Programmed start time: {StartTime}", startTimestamp);
+
+                TimeRec = DateTime.Now;
+                LbTimer.ForeColor = Color.IndianRed;
+                CountRecVideo.Enabled = true;
+
+                _logger.Information("Starting audio and video recording tasks");
+                Task audioTask = RecordAudio(startTimestamp);
+                Task videoTask = Task.Run(() => StartRecordingProcess(
+                    codec,
+                    int.Parse((string)comboBoxFps.SelectedItem),
+                    (string)comboBoxBitrate.SelectedItem,
+                    codecArgs,
+                    startTimestamp));
+
+                await Task.WhenAll(audioTask, videoTask);
+                _logger.Information("Recording tasks started correctly");
+
+                DisableElementsUI();
+                _logger.LogOperationEnd("StartRecording", DateTime.Now - startTime);
             }
-            else if (IsCustomAreaSelected && SelectedCustomArea.HasValue)
+            catch (Exception ex)
             {
-                Rectangle area = SelectedCustomArea.Value;
-                codecArgs = $"-video_size {area.Width}x{area.Height} -offset_x {area.Left} -offset_y {area.Top} -i desktop";
+                _logger.Error(ex, "Error when starting recording");
+                MessageBox.Show($"Error when starting recording: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                isRecording = false;
+                _logger.Error(ex, "Error when starting recording");
+
+                try
+                {
+                    EnableElementsUI();
+                    LbTimer.ForeColor = Color.White;
+                    CountRecVideo.Enabled = false;
+                }
+                catch (Exception uiEx)
+                {
+                    _logger.Error(uiEx, "Error restoring the UI after a save error");
+                }
             }
-            else
+        }
+
+        private void SaveRecordingState()
+        {
+            try
             {
-                int selectedIndex = comboBoxMonitors.SelectedIndex;
-                Screen selectedScreen = Screen.AllScreens[selectedIndex];
-                Rectangle bounds = selectedScreen.Bounds;
-                codecArgs = $"-offset_x {bounds.Left} -offset_y {bounds.Top} -video_size {bounds.Width}x{bounds.Height} -i desktop";
+                var state = new RecordingState
+                {
+                    VideoName = VideoName,
+                    StartTime = TimeRec,
+                    WasRecording = isRecording
+                };
+
+                string statePath = Path.Combine(Application.StartupPath, RECORDING_STATE_FILE);
+                string jsonState = JsonSerializer.Serialize(state);
+                File.WriteAllText(statePath, jsonState);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error saving recording state");
+            }
+        }
+
+        private void CheckForInterruptedRecording()
+        {
+            try
+            {
+                string statePath = Path.Combine(Application.StartupPath, RECORDING_STATE_FILE);
+                if (File.Exists(statePath))
+                {
+                    var state = JsonSerializer.Deserialize<RecordingState>(File.ReadAllText(statePath));
+                    if (state.WasRecording)
+                    {
+                        _logger.Warning("Detected interrupted recording: {VideoName}", state.VideoName);
+
+                        var result = MessageBox.Show(
+                            "An interrupted recording was detected, do you want to try to recover the files?",
+                            "Interrupted Recording",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Warning);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            RecoverInterruptedRecording(state);
+                        }
+                    }
+
+                    // Limpiar el archivo de estado
+                    File.Delete(statePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error checking for interrupted recording");
+            }
+        }
+
+        private class RecordingState
+        {
+            public string VideoName { get; set; }
+            public DateTime StartTime { get; set; }
+            public bool WasRecording { get; set; }
+        }
+
+
+        private void RecoverInterruptedRecording(RecordingState state)
+        {
+            try
+            {
+                string recordingsPath = Path.Combine(Application.StartupPath, "Recordings");
+                string[] relevantFiles = Directory.GetFiles(recordingsPath,
+                    $"*{state.StartTime.ToString(DateFormat)}*");
+
+                if (relevantFiles.Length == 0)
+                {
+                    _logger.Information("No files found that need recovery");
+                    MessageBox.Show(
+                        "The recording files were successfully closed and do not need to be recovered.",
+                        "Recovery",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Solo crear la carpeta Interrupted si hay archivos .temp para mover
+                bool hasCorruptedFiles = relevantFiles.Any(f => f.EndsWith(".temp") ||
+                    (Path.GetExtension(f) == ".mkv" && !IsValidVideoFile(f)));
+
+                if (!hasCorruptedFiles)
+                {
+                    _logger.Information("Archivos encontrados pero parecen ser válidos");
+                    MessageBox.Show(
+                        "The recording files appear to be in good condition and do not require recovery.",
+                        "Recovery",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    return;
+                }
+
+                string corruptedPath = Path.Combine(recordingsPath, "Interrupted");
+                Directory.CreateDirectory(corruptedPath);
+
+                foreach (string file in relevantFiles)
+                {
+                    try
+                    {
+                        string fileName = Path.GetFileName(file);
+                        if (file.Contains("Interrupted")) continue;
+
+                        // Si es un archivo .temp, intentar primero repararlo
+                        if (file.EndsWith(".temp"))
+                        {
+                            try
+                            {
+                                string finalPath = file.Replace(".temp", ".wav");
+                                File.Move(file, finalPath);
+                                _logger.Information("Successfully repaired audio file: {File}", finalPath);
+                                continue;
+                            }
+                            catch (Exception ex)
+                            {
+                                _logger.Error(ex, "Could not repair audio file, moving to Interrupted: {File}", file);
+                            }
+                        }
+
+                        string destinationPath = Path.Combine(corruptedPath, fileName);
+                        if (File.Exists(destinationPath))
+                        {
+                            string fileNameWithoutExt = Path.GetFileNameWithoutExtension(fileName);
+                            string extension = Path.GetExtension(fileName);
+                            int counter = 1;
+                            while (File.Exists(destinationPath))
+                            {
+                                fileName = $"{fileNameWithoutExt}_{counter}{extension}";
+                                destinationPath = Path.Combine(corruptedPath, fileName);
+                                counter++;
+                            }
+                        }
+
+                        File.Move(file, destinationPath);
+                        _logger.Information("Moved corrupted file to interrupted folder: {FileName}", fileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.Error(ex, "Error processing file: {File}", file);
+                    }
+                }
+
+                MessageBox.Show(
+                    "The recording files have been processed.\n" +
+                    "- Audio files attempted to be repaired.\n" +
+                    "- The corrupted files have been moved to the folder 'Interrupted'.",
+                    "Recovery Completed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error recovering interrupted recording");
+                MessageBox.Show(
+                    "Error when trying to recover files.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private bool IsValidVideoFile(string filePath)
+        {
+            try
+            {
+                using var fs = File.OpenRead(filePath);
+                byte[] header = new byte[4];
+                if (fs.Read(header, 0, header.Length) < header.Length)
+                    return false;
+
+                if (header[0] == 0x1A && header[1] == 0x45 &&
+                    header[2] == 0xDF && header[3] == 0xA3)
+                    return true;
+
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void SystemEvents_PowerModeChanged(object sender, PowerModeChangedEventArgs e)
+        {
+            if (e.Mode == PowerModes.Suspend && isRecording)
+            {
+                _logger.Warning("System entering suspend mode while recording");
+                try
+                {
+                    if (LbTimer.InvokeRequired)
+                    {
+                        LbTimer.Invoke(new Action(() =>
+                        {
+                            CountRecVideo.Enabled = false;
+                            LbTimer.Text = "00:00:00";
+                            LbTimer.ForeColor = Color.White;
+                        }));
+                    }
+                    else
+                    {
+                        CountRecVideo.Enabled = false;
+                        LbTimer.Text = "00:00:00";
+                        LbTimer.ForeColor = Color.White;
+                    }
+
+                    TimeRec = DateTime.MinValue;
+
+                    StopRecordingProcess();
+                    isRecording = false;
+                }
+                catch (Exception ex)
+                {
+                    _logger.Error(ex, "Error handling system suspend");
+                }
+            }
+            else if (e.Mode == PowerModes.Resume)
+            {
+                _logger.Information("System resuming from suspend mode");
+            }
+        }
+
+
+        private void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            if (isRecording)
+            {
+                _logger.Warning("Application exiting while recording");
+                StopRecordingProcess();
             }
 
-            string codec = DetermineCodec();
-
-            DateTime startTimestamp = DateTime.Now.AddMilliseconds(500);
-
-            TimeRec = DateTime.Now;
-            LbTimer.ForeColor = Color.IndianRed;
-            CountRecVideo.Enabled = true;
-
-            Task audioTask = RecordAudio(startTimestamp);
-            Task videoTask = Task.Run(() => StartRecordingProcess(codec, int.Parse((string)comboBoxFps.SelectedItem), (string)comboBoxBitrate.SelectedItem, codecArgs, startTimestamp));
-
-            await Task.WhenAll(audioTask, videoTask);
-
-            DisableElementsUI();
+            SystemEvents.PowerModeChanged -= SystemEvents_PowerModeChanged;
         }
 
 
         private async Task StartRecordingProcess(string codec, int fps, string bitrate, string screenArgs, DateTime startTimestamp)
         {
             TimeSpan delay = startTimestamp - DateTime.Now;
-
             if (delay > TimeSpan.Zero)
             {
                 await Task.Delay(delay);
@@ -197,17 +534,37 @@ namespace Simple_Screen_Recorder
                 {
                     WindowStyle = ProcessWindowStyle.Hidden,
                     CreateNoWindow = true,
+                    RedirectStandardInput = true,
                     RedirectStandardOutput = true,
                     UseShellExecute = false
                 };
 
-                Process.Start(processInfo);
+                ffmpegProcess = Process.Start(processInfo);
             }
             catch (Exception ex)
             {
+                _logger.Error(ex, "Failed to start FFmpeg process");
                 MessageBox.Show($"Failed to start recording: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void OnFfmpegExited(object? sender, EventArgs e)
+        {
+            try
+            {
+                _logger.Information("FFmpeg process exited naturally");
+
+                if (microphoneManager != null || systemAudioManager != null)
+                {
+                    CheckAudioStop();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error handling FFmpeg exit");
+            }
+        }
+
 
         private string DetermineCodec()
         {
@@ -223,75 +580,159 @@ namespace Simple_Screen_Recorder
 
         private async Task RecordAudio(DateTime startTimestamp)
         {
-            TimeSpan delay = startTimestamp - DateTime.Now;
+            try
+            {
+                TimeSpan delay = startTimestamp - DateTime.Now;
+                if (delay > TimeSpan.Zero)
+                {
+                    await Task.Delay(delay);
+                }
 
-            if (delay > TimeSpan.Zero)
-            {
-                await Task.Delay(delay);
-            }
+                string outputPath = Path.Combine(Application.StartupPath, "Recordings");
+                string selectedOption = comboBoxAudioSource.SelectedItem.ToString();
 
-            string selectedOption = comboBoxAudioSource.SelectedItem.ToString();
-
-            if (selectedOption == StringsEN.TwoTrack)
-            {
-                RecordTwoTracks();
+                if (selectedOption == StringsEN.TwoTrack)
+                {
+                    StartTwoTracksRecording(outputPath);
+                }
+                else if (selectedOption == StringsEN.Desktop)
+                {
+                    StartDesktopRecording(outputPath);
+                }
+                else if (selectedOption == StringsEN.Microphone)
+                {
+                    StartMicrophoneRecording(outputPath);
+                }
             }
-            else if (selectedOption == StringsEN.Desktop)
+            catch (Exception ex)
             {
-                RecordDesktopAudio();
-            }
-            else if (selectedOption == StringsEN.Microphone)
-            {
-                RecordMicrophone();
+                MessageBox.Show($"Error starting audio recording: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void StartTwoTracksRecording(string outputPath)
+        {
+            var micDevice = (MMDevice)ComboBoxMicrophone.SelectedItem;
+            var speakerDevice = (MMDevice)ComboBoxSpeaker.SelectedItem;
+
+            microphoneManager = new AudioManager(outputPath);
+            systemAudioManager = new AudioManager(outputPath);
+
+            microphoneManager.StartMicrophoneRecording(micDevice);
+            systemAudioManager.StartSystemAudioRecording(speakerDevice);
+        }
+
+        private void StartDesktopRecording(string outputPath)
+        {
+            var speakerDevice = (MMDevice)ComboBoxSpeaker.SelectedItem;
+            systemAudioManager = new AudioManager(outputPath);
+            systemAudioManager.StartSystemAudioRecording(speakerDevice);
+        }
+
+        private void StartMicrophoneRecording(string outputPath)
+        {
+            var micDevice = (MMDevice)ComboBoxMicrophone.SelectedItem;
+            microphoneManager = new AudioManager(outputPath);
+            microphoneManager.StartMicrophoneRecording(micDevice);
+        }
+
 
         private void CheckFfmpegProcces()
         {
-            Cursor.Current = Cursors.WaitCursor;
-
-            var ffmpegProcesses = Process.GetProcessesByName("ffmpeg");
-
-            foreach (var process in ffmpegProcesses)
+            var startTime = DateTime.Now;
+            _logger.LogOperationStart("CheckFfmpegProcess");
+            try
             {
-                try
+                if (ffmpegProcess != null)
                 {
-                    if (!process.HasExited)
-                    {
-                        if (process.MainModule != null && process.MainModule.FileName.Contains(ResourcePath))
-                        {
-                            process.CloseMainWindow();
+                    _logger.Information("FFmpeg process found: {ProcessId}", ffmpegProcess.Id);
 
-                            if (!process.WaitForExit(3000))
-                            {
-                                process.Kill();
-                                process.WaitForExit();
-                            }
+                    try
+                    {
+                        var taskKillProcess = Process.Start(new ProcessStartInfo
+                        {
+                            FileName = "taskkill",
+                            Arguments = $"/PID {ffmpegProcess.Id}",
+                            CreateNoWindow = true,
+                            UseShellExecute = false
+                        });
+                        taskKillProcess?.WaitForExit(1000);
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.Warning(ex, "Taskkill attempt failed for FFmpeg process");
+                    }
+
+                    if (!ffmpegProcess.HasExited)
+                    {
+                        _logger.Warning("FFmpeg process still running after taskkill, forcing termination");
+                        try
+                        {
+                            ffmpegProcess.Kill(true);
+                            ffmpegProcess.WaitForExit(1000);
+                        }
+                        catch (Exception ex)
+                        {
+                            _logger.Error(ex, "Error force-killing FFmpeg process");
+                        }
+                    }
+
+                    _logger.Information("FFmpeg process terminated");
+                    ffmpegProcess = null;
+                }
+                else
+                {
+                    foreach (var process in Process.GetProcessesByName("ffmpeg"))
+                    {
+                        try
+                        {
+                            _logger.Warning("Found orphaned FFmpeg process: {ProcessId}", process.Id);
+                            process.Kill(true);
+                            process.WaitForExit(1000);
+                            _logger.Information("Terminated orphaned FFmpeg process: {ProcessId}", process.Id);
+                        }
+                        catch (Exception ex)
+                        {
+                            _logger.Error(ex, "Error terminating orphaned FFmpeg process");
                         }
                     }
                 }
-                catch (InvalidOperationException ex)
-                {
-                    MessageBox.Show($"The process has been completed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (Win32Exception ex)
-                {
-                    MessageBox.Show($"Error while trying to access the ffmpeg process: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Failed to stop ffmpeg process: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
-
-            Cursor.Current = Cursors.Default;
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error in CheckFfmpegProcess");
+            }
+            finally
+            {
+                _logger.LogOperationEnd("CheckFfmpegProcess", DateTime.Now - startTime);
+            }
         }
 
-        private void StopRecordingProcess()
+        private async Task StopRecordingProcess()
         {
-            EnableElementsUI();
-            CheckAudioStop();
-            CheckFfmpegProcces();
+            var startTime = DateTime.Now;
+            _logger.LogOperationStart("StopRecordingProcess");
+
+            try
+            {
+                CheckFfmpegProcces();
+                await Task.Delay(500);
+
+                CheckAudioStop();
+                await Task.Delay(500);
+
+                EnableElementsUI();
+
+                _logger.Information("Recording process stopped successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error when stopping the recording process");
+            }
+            finally
+            {
+                _logger.LogOperationEnd("StopRecordingProcess", DateTime.Now - startTime);
+            }
         }
 
         private void BtnStop_Click(object sender, EventArgs e)
@@ -312,88 +753,37 @@ namespace Simple_Screen_Recorder
 
         }
 
-        private void RecordTwoTracks()
-        {
-            if (WaveIn.DeviceCount == 0)
-            {
-                MessageBox.Show(StringsEN.message3, "Error");
-                return;
-            }
-
-            RecMic();
-            RecSpeaker();
-        }
-
-        private void RecordDesktopAudio()
-        {
-            RecSpeaker();
-        }
-
-        private void RecordMicrophone()
-        {
-            if (WaveIn.DeviceCount == 0)
-            {
-                MessageBox.Show(StringsEN.message3, "Error");
-                return;
-            }
-
-            RecMic();
-        }
-
         private void CheckAudioStop()
         {
-            string selectedOption = comboBoxAudioSource.SelectedItem.ToString();
-
-            if (selectedOption == StringsEN.TwoTrack)
+            var startTime = DateTime.Now;
+            _logger.LogOperationStart("CheckAudioStop");
+            try
             {
-                if (ScreenAudioMic.waveIn is object)
+                if (microphoneManager != null)
                 {
-                    ScreenAudioMic.waveIn.StopRecording();
+                    _logger.Information("Stopping microphone recording");
+                    microphoneManager.StopRecording();
+                    microphoneManager.Dispose();
+                    microphoneManager = null;
                 }
-                if (ScreenAudioDesktop.waveIn is object)
+                if (systemAudioManager != null)
                 {
-                    ScreenAudioDesktop.waveIn.StopRecording();
+                    _logger.Information("Stopping system audio recording");
+                    systemAudioManager.StopRecording();
+                    systemAudioManager.Dispose();
+                    systemAudioManager = null;
                 }
+                _logger.Information("Audio recording successfully stopped");
             }
-            else if (selectedOption == StringsEN.Desktop)
+            catch (Exception ex)
             {
-                if (ScreenAudioDesktop.waveIn is object)
-                {
-                    ScreenAudioDesktop.waveIn.StopRecording();
-                }
+                _logger.Error(ex, "Error stopping audio recording");
+                MessageBox.Show($"Error stopping audio recording: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (selectedOption == StringsEN.Microphone)
+            finally
             {
-                if (ScreenAudioMic.waveIn is object)
-                {
-                    ScreenAudioMic.waveIn.StopRecording();
-                }
+                _logger.LogOperationEnd("CheckAudioStop", DateTime.Now - startTime);
             }
-
-            var soundPlayer = new System.Media.SoundPlayer();
-            soundPlayer.Stop();
-        }
-
-        private static void RecMic()
-        {
-            ScreenAudioMic.Cleanup();
-            ScreenAudioMic.CreateWaveInDevice();
-            ScreenAudioMic.outputFilename = "MicrophoneAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
-            ScreenAudioMic.writer = new WaveFileWriter(Path.Combine(ScreenAudioMic.outputFolder, ScreenAudioMic.outputFilename), ScreenAudioMic.waveIn.WaveFormat);
-            ScreenAudioMic.waveIn.StartRecording();
-        }
-
-        private static void RecSpeaker()
-        {
-            ScreenAudioDesktop.Cleanup();
-            ScreenAudioDesktop.CreateWaveInDevice();
-
-            var soundPlayer = new System.Media.SoundPlayer(Resources.Background);
-            soundPlayer.PlayLooping();
-
-            ScreenAudioDesktop.outputFilename = "SystemAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
-            ScreenAudioDesktop.writer = new WaveFileWriter(Path.Combine(ScreenAudioDesktop.outputFolder, ScreenAudioDesktop.outputFilename), ScreenAudioDesktop.waveIn.WaveFormat);
-            ScreenAudioDesktop.waveIn.StartRecording();
         }
 
         private void BtnExit_Click(object sender, EventArgs e)

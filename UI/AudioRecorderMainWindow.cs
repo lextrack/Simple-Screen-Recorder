@@ -1,8 +1,9 @@
-﻿using Microsoft.VisualBasic;
-using NAudio.Wave;
+﻿using NAudio.CoreAudioApi;
+using Serilog;
 using Simple_Screen_Recorder.AudioComp;
 using Simple_Screen_Recorder.Langs;
 using Simple_Screen_Recorder.Properties;
+using Simple_Screen_Recorder.Utils;
 using System.Diagnostics;
 using System.IO;
 
@@ -12,10 +13,24 @@ namespace Simple_Screen_Recorder.UI
     {
         private DateTime TimeRec = new DateTime();
         private string AudioName = "";
+        private AudioManager? microphoneManager;
+        private AudioManager? systemAudioManager;
+        private readonly ILogger _logger = LoggerConfig.Logger;
 
         public AudioRecorderMainWindow()
         {
-            InitializeComponent();
+            var startTime = DateTime.Now;
+            _logger.LogOperationStart("AudioRecorderMainWindow.Initialize");
+            try
+            {
+                InitializeComponent();
+                _logger.LogOperationEnd("AudioRecorderMainWindow.Initialize", DateTime.Now - startTime);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error when initializing AudioRecorderMainWindow");
+                throw;
+            }
         }
 
         private void AudioRecorderMainWindow_Load(object sender, EventArgs e)
@@ -27,127 +42,147 @@ namespace Simple_Screen_Recorder.UI
 
         private void InitializeAudioComponents()
         {
-            AudioRecorderMic.OpenComp();
-            ComboBoxMicrophone.DataSource = AudioRecorderMic.cboDIspositivos.DataSource;
-            AudioRecorderDesktop.OpenComp();
-            ComboBoxSpeaker.DataSource = AudioRecorderDesktop.cboDIspositivos.DataSource;
+            var startTime = DateTime.Now;
+            _logger.LogOperationStart("InitializeAudioComponents");
+            try
+            {
+                var inputDevices = AudioManager.GetAudioDevices(DataFlow.Capture);
+                ComboBoxMicrophone.DataSource = inputDevices;
+                ComboBoxMicrophone.DisplayMember = "FriendlyName";
+                _logger.Information("Input devices loaded: {Count}", inputDevices.Count);
+
+                var outputDevices = AudioManager.GetAudioDevices(DataFlow.Render);
+                ComboBoxSpeaker.DataSource = outputDevices;
+                ComboBoxSpeaker.DisplayMember = "FriendlyName";
+                _logger.Information("Loaded output devices: {Count}", outputDevices.Count);
+
+                _logger.LogOperationEnd("InitializeAudioComponents", DateTime.Now - startTime);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error initializing audio devices");
+                MessageBox.Show($"Error initializing audio devices: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnStartRecording_Click(object sender, EventArgs e)
         {
-            LbTimer.ForeColor = Color.IndianRed;
-            TimeRec = DateTime.Now;
-            CountRecAudio.Enabled = true;
-            AudioName = "Audio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss");
+            var startTime = DateTime.Now;
+            _logger.LogOperationStart("StartAudioRecording");
+            try
+            {
+                LbTimer.ForeColor = Color.IndianRed;
+                TimeRec = DateTime.Now;
+                CountRecAudio.Enabled = true;
+                AudioName = "Audio." + DateTime.Now.ToString("MM-dd-yyyy.HH.mm.ss");
+                _logger.Information("Starting audio recording: {FileName}", AudioName);
 
-            RecordAudio();
-            DisableElementsUI();
+                StartAudioRecording();
+                DisableElementsUI();
+                _logger.LogOperationEnd("StartAudioRecording", DateTime.Now - startTime);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error when starting audio recording");
+                MessageBox.Show($"Error starting recording: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                EnableElementsUI();
+            }
         }
-        private void RecordAudio()
+
+        private void StartAudioRecording()
         {
+            string outputPath = Path.Combine(Application.StartupPath, "AudioRecordings");
+            Directory.CreateDirectory(outputPath);
+            _logger.Information("Output directory: {Path}", outputPath);
+
             string selectedOption = comboBoxAudioSourceAudio.SelectedItem.ToString();
+            _logger.Information("Selected recording mode: {Mode}", selectedOption);
 
-            if (selectedOption == StringsEN.TwoTrackAudio)
+            try
             {
-                RecordTwoTracks();
-            }
-            else if (selectedOption == StringsEN.DesktopAudio)
-            {
-                RecordDesktopAudio();
-            }
-            else if (selectedOption == StringsEN.MicrophoneAudio)
-            {
-                RecordMicrophone();
-            }
-        }
-
-        private void RecordTwoTracks()
-        {
-            if (WaveIn.DeviceCount == 0)
-            {
-                MessageBox.Show(StringsEN.message3, "Error");
-                return;
-            }
-
-            RecMic();
-            RecSpeaker();
-        }
-
-        private void RecordDesktopAudio()
-        {
-            RecSpeaker();
-        }
-
-        private void RecordMicrophone()
-        {
-            if (WaveIn.DeviceCount == 0)
-            {
-                MessageBox.Show(StringsEN.message3, "Error");
-                return;
-            }
-
-            RecMic();
-        }
-
-        private void CheckAudioStop()
-        {
-            string selectedOption = comboBoxAudioSourceAudio.SelectedItem.ToString();
-
-            if (selectedOption == StringsEN.TwoTrackAudio)
-            {
-                if (AudioRecorderMic.waveIn is object)
+                if (selectedOption == StringsEN.TwoTrackAudio)
                 {
-                    AudioRecorderMic.waveIn.StopRecording();
+                    var micDevice = (MMDevice)ComboBoxMicrophone.SelectedItem;
+                    var speakerDevice = (MMDevice)ComboBoxSpeaker.SelectedItem;
+                    _logger.Information("Starting two-track recording - Microphone: {Mic}, System Audio: {Speaker}",
+                        micDevice.FriendlyName, speakerDevice.FriendlyName);
+
+                    microphoneManager = new AudioManager(outputPath);
+                    systemAudioManager = new AudioManager(outputPath);
+
+                    microphoneManager.StartMicrophoneRecording(micDevice);
+                    systemAudioManager.StartSystemAudioRecording(speakerDevice);
                 }
-                if (AudioRecorderDesktop.waveIn is object)
+                else if (selectedOption == StringsEN.DesktopAudio)
                 {
-                    AudioRecorderDesktop.waveIn.StopRecording();
+                    var speakerDevice = (MMDevice)ComboBoxSpeaker.SelectedItem;
+                    _logger.Information("Starting system audio recording: {Device}", speakerDevice.FriendlyName);
+
+                    systemAudioManager = new AudioManager(outputPath);
+                    systemAudioManager.StartSystemAudioRecording(speakerDevice);
+                }
+                else if (selectedOption == StringsEN.MicrophoneAudio)
+                {
+                    var micDevice = (MMDevice)ComboBoxMicrophone.SelectedItem;
+                    _logger.Information("Starting microphone recording: {Device}", micDevice.FriendlyName);
+
+                    microphoneManager = new AudioManager(outputPath);
+                    microphoneManager.StartMicrophoneRecording(micDevice);
                 }
             }
-            else if (selectedOption == StringsEN.DesktopAudio)
+            catch (Exception ex)
             {
-                if (AudioRecorderDesktop.waveIn is object)
-                {
-                    AudioRecorderDesktop.waveIn.StopRecording();
-                }
+                _logger.Error(ex, "Error when starting audio recording");
+                throw;
             }
-            else if (selectedOption == StringsEN.MicrophoneAudio)
-            {
-                if (AudioRecorderMic.waveIn is object)
-                {
-                    AudioRecorderMic.waveIn.StopRecording();
-                }
-            }
-
-            var soundPlayer = new System.Media.SoundPlayer();
-            soundPlayer.Stop();
         }
 
-        private void StopAudioRecordingProcess()
+        private void StopAudioRecording()
         {
-            btnStartRecording.Enabled = true;
-            ComboBoxMicrophone.Enabled = true;
-            ComboBoxSpeaker.Enabled = true;
-            BtnBackScreen.Enabled = true;
-            comboBoxAudioSourceAudio.Enabled = true;
-
-            CheckAudioStop();
+            var startTime = DateTime.Now;
+            _logger.LogOperationStart("StopAudioRecording");
+            try
+            {
+                if (microphoneManager != null)
+                {
+                    _logger.Information("Stopping microphone recording");
+                    microphoneManager.StopRecording();
+                    microphoneManager.Dispose();
+                    microphoneManager = null;
+                }
+                if (systemAudioManager != null)
+                {
+                    _logger.Information("Stopping system audio recording");
+                    systemAudioManager.StopRecording();
+                    systemAudioManager.Dispose();
+                    systemAudioManager = null;
+                }
+                _logger.LogOperationEnd("StopAudioRecording", DateTime.Now - startTime);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error stopping audio recording");
+                MessageBox.Show($"Error stopping recording: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtnStop_Click(object sender, EventArgs e)
         {
+            var startTime = DateTime.Now;
+            _logger.LogOperationStart("StopRecording");
             try
             {
                 LbTimer.ForeColor = Color.White;
                 LbTimer.Text = "00:00:00";
                 CountRecAudio.Enabled = false;
-                StopAudioRecordingProcess();
+                StopAudioRecording();
                 EnableElementsUI();
-
+                _logger.LogOperationEnd("StopRecording", DateTime.Now - startTime);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return;
+                _logger.Error(ex, "Error when stopping recording");
+                MessageBox.Show($"Error stopping recording: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -168,27 +203,6 @@ namespace Simple_Screen_Recorder.UI
             BtnBackScreen.Enabled = true;
             comboBoxAudioSourceAudio.Enabled = true;
         }
-        private static void RecMic()
-        {
-            AudioRecorderMic.Cleanup();
-            AudioRecorderMic.CreateWaveInDevice();
-            AudioRecorderMic.outputFilename = "MicrophoneAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
-            AudioRecorderMic.writer = new WaveFileWriter(Path.Combine(AudioRecorderMic.outputFolder, AudioRecorderMic.outputFilename), AudioRecorderMic.waveIn.WaveFormat);
-            AudioRecorderMic.waveIn.StartRecording();
-        }
-
-        private static void RecSpeaker()
-        {
-            AudioRecorderDesktop.Cleanup();
-            AudioRecorderDesktop.CreateWaveInDevice();
-
-            var soundPlayer = new System.Media.SoundPlayer(Resources.Background);
-            soundPlayer.PlayLooping();
-
-            AudioRecorderDesktop.outputFilename = "SystemAudio." + Strings.Format(DateTime.Now, "MM-dd-yyyy.HH.mm.ss") + ".wav";
-            AudioRecorderDesktop.writer = new WaveFileWriter(Path.Combine(AudioRecorderDesktop.outputFolder, AudioRecorderDesktop.outputFilename), AudioRecorderDesktop.waveIn.WaveFormat);
-            AudioRecorderDesktop.waveIn.StartRecording();
-        }
 
         private void btnOutputRecordings_Click(object sender, EventArgs e)
         {
@@ -198,7 +212,9 @@ namespace Simple_Screen_Recorder.UI
         private void CountRecAudio_Tick(object sender, EventArgs e)
         {
             var Difference = DateTime.Now.Subtract(TimeRec);
-            LbTimer.Text = "Rec: " + Difference.Hours.ToString().PadLeft(2, '0') + ":" + Difference.Minutes.ToString().PadLeft(2, '0') + ":" + Difference.Seconds.ToString().PadLeft(2, '0');
+            LbTimer.Text = "Rec: " + Difference.Hours.ToString().PadLeft(2, '0') + ":" +
+                           Difference.Minutes.ToString().PadLeft(2, '0') + ":" +
+                           Difference.Seconds.ToString().PadLeft(2, '0');
         }
 
         private void GetTextsMain()
@@ -242,10 +258,9 @@ namespace Simple_Screen_Recorder.UI
 
         private void BtnBackScreen_Click(object sender, EventArgs e)
         {
-
             if (btnStartRecording.Enabled == false)
             {
-                System.Windows.MessageBox.Show(StringsEN.message2, "Error");
+                MessageBox.Show(StringsEN.message2, "Error");
             }
             else
             {

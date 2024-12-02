@@ -17,9 +17,14 @@ namespace Simple_Screen_Recorder
         {
             try
             {
-                if (disposing && components is object)
+                if (disposing)
                 {
-                    components.Dispose();
+                    if (components is object)
+                    {
+                        components.Dispose();
+                    }
+                    microphoneManager?.Dispose();
+                    systemAudioManager?.Dispose();
                 }
             }
             finally

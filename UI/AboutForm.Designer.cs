@@ -66,7 +66,7 @@
             label3.Name = "label3";
             label3.Size = new Size(151, 38);
             label3.TabIndex = 7;
-            label3.Text = "Simple Screen Recorder\r\nv1.3.3";
+            label3.Text = "Simple Screen Recorder\r\nv1.3.4\r\n";
             // 
             // labelCopyright
             // 

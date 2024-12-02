@@ -1,4 +1,6 @@
-﻿namespace Simple_Screen_Recorder.UI
+﻿using System.Diagnostics;
+
+namespace Simple_Screen_Recorder.UI
 {
     partial class AudioRecorderMainWindow
     {
@@ -11,13 +13,25 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        [DebuggerNonUserCode()]
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            try
             {
-                components.Dispose();
+                if (disposing)
+                {
+                    if (components is object)
+                    {
+                        components.Dispose();
+                    }
+                    microphoneManager?.Dispose();
+                    systemAudioManager?.Dispose();
+                }
             }
-            base.Dispose(disposing);
+            finally
+            {
+                base.Dispose(disposing);
+            }
         }
 
         #region Windows Form Designer generated code
